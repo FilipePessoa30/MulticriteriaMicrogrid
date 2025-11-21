@@ -22,30 +22,31 @@ python run_reopt_mcdm.py `
 Saídas: `topsis_<perfil>.csv`, `fuzzy_topsis_<perfil>.csv`, `vikor_<perfil>.csv`, `all_ranks.csv`, `summary.json`.
 
 ## Resultados obtidos (dados do REopt)
-Critérios: custo=LCOE (fallback LCC); emissões=Fuel_cost_$ (proxy); confiabilidade=Percent_Load_Target. Pesos padrão: econômico 0.6/0.2/0.2, sustentável 0.25/0.45/0.30, resiliente 0.3/0.1/0.6.
+Critérios: custo = LCOE (fallback LCC); emissões = calculadas de forma aproximada a partir de Fuel_cost$/L e Diesel_Price_Code (fator 2.68 kgCO₂/L; fallback Fuel_cost se faltar preço); confiabilidade = Percent_Load_Target. Pesos: econômico 0.6/0.2/0.2, sustentável 0.25/0.45/0.30, resiliente 0.3/0.1/0.6. Observação: emissões são proxy de custo de diesel; sem dados de consumo/geração a diesel, não há CO₂ real.
 
 - **Econômico:** TOPSIS → Lodwar_PLS85_PV+battery; Fuzzy-TOPSIS → Lodwar_PLS100_PV+battery; VIKOR → Lusaka_PLS100_PV+battery.
-- **Sustentável:** TOPSIS → Lodwar_PLS95_PV+battery; Fuzzy-TOPSIS → Lodwar_PLS100_PV+battery; **VIKOR → Lusaka_PLS100_Diesel only** (divergência).
+- **Sustentável:** TOPSIS → Lodwar_PLS95_PV+battery; Fuzzy-TOPSIS → Lodwar_PLS100_PV+battery; VIKOR → Lodwar_PLS100_Diesel only (divergência).
 - **Resiliente:** TOPSIS → Lodwar_PLS95_PV+battery; Fuzzy-TOPSIS → Lodwar_PLS100_PV+battery; VIKOR → Lusaka_PLS100_PV+battery.
-- **Leitura:** PV+battery é dominante na maioria dos perfis/métodos; o perfil sustentável pelo VIKOR puxou Diesel only em Lusaka, refletindo o trade-off com a “emissão proxy” e confiabilidade.
+- **Leitura:** PV+battery domina na maioria dos perfis/métodos; VIKOR diverge no sustentável, influenciado pela proxy de emissões e confiabilidade.
 
 ### Sensibilidade (v = 0.3/0.5/0.7 no VIKOR)
 Comando: `python run_reopt_sensitivity.py --csv dados_preprocessados/reopt_ALL_blocks_v3_8.csv --out reopt_mcdm_sensitivity --vikor_v 0.3,0.5,0.7 --fuzziness 0.05`
 
 Resumo dos vencedores (fuzzy_topsis vs vikor):
-- **Econômico:** Fuzzy-TOPSIS = Lodwar_PLS100_PV+battery; VIKOR = Lusaka_PLS100_PV+battery (estável para v=0.3/0.5/0.7).
-- **Sustentável:** Fuzzy-TOPSIS = Lodwar_PLS100_PV+battery; VIKOR = Lusaka_PLS100_Diesel only (v=0.3/0.5) e Lodwar_PLS100_Diesel only (v=0.7). VIKOR favorece diesel-only conforme v aumenta.
+- **Econômico:** Fuzzy-TOPSIS = Lodwar_PLS100_PV+battery; VIKOR = Lusaka_PLS100_PV+battery (estável).
+- **Sustentável:** Fuzzy-TOPSIS = Lodwar_PLS100_PV+battery; VIKOR = Diesel only (Lusaka v=0.3, Lodwar v=0.5, Accra v=0.7).
 - **Resiliente:** Fuzzy-TOPSIS = Lodwar_PLS100_PV+battery; VIKOR = Lusaka_PLS100_PV+battery (estável).
-
-**Conclusão da sensibilidade:** Fuzzy-TOPSIS é estável (sempre Lodwar_PLS100_PV+battery). VIKOR é sensível no perfil sustentável, alternando Diesel only conforme v aumenta; nos demais perfis, mantém PV+battery. Indica que a proxy de emissões (Fuel_cost) e a confiabilidade estão pesando mais que o custo em algumas combinações, recomendando revisar o critério de emissões se CO₂ real estiver disponível.
 
 ### Decisão final por perfil (v=0.5, regra: maioria → Borda → média)
 Gerado com `finalize_profiles_from_sensitivity.py` sobre `reopt_mcdm_sensitivity/all_ranks_sensitivity.csv`:
 - Econômico: TOPSIS=Lodwar_PLS85_PV+battery | Fuzzy=Lodwar_PLS100_PV+battery | VIKOR=Lusaka_PLS100_PV+battery → **Final: Lodwar_PLS100_PV+battery (Borda)**.
-- Sustentável: TOPSIS=Lodwar_PLS95_PV+battery | Fuzzy=Lodwar_PLS100_PV+battery | VIKOR=Lusaka_PLS100_Diesel only → **Final: Lodwar_PLS100_PV+battery (Borda)**.
+- Sustentável: TOPSIS=Lodwar_PLS95_PV+battery | Fuzzy=Lodwar_PLS100_PV+battery | VIKOR=Lodwar_PLS100_Diesel only → **Final: Lodwar_PLS100_PV+battery (Borda)**.
 - Resiliente: TOPSIS=Lodwar_PLS95_PV+battery | Fuzzy=Lodwar_PLS100_PV+battery | VIKOR=Lusaka_PLS100_PV+battery → **Final: Lodwar_PLS100_PV+battery (Borda)**.
 
-Nota: PV+battery (Lodwar_PLS100) prevalece como decisão final em todos os perfis com a regra de desempate; a divergência do VIKOR no perfil sustentável fica registrada, mas não altera a decisão final pelo método composto.
+**Nota:** Os resultados refletem as alternativas do REopt (PV + bateria/diesel) e emissões aproximadas; para cenários C1–C4 (solar/eólica/híbrido/rede) e CO₂ real, seria necessário gerar uma matriz específica com esses cenários e dados de consumo/geração a diesel.
+
+## Observação sobre cenários
+Os rankings e a decisão final refletem as alternativas do REopt (PV + bateria/diesel). Para cumprir totalmente os cenários C1–C4 (solar, eólica, híbrido, rede de apoio), é necessário gerar uma matriz específica com esses cenários (e emissões reais) e reaplicar os métodos. Enquanto isso, os resultados aqui se aplicam aos arranjos disponíveis no REopt.
 
 ## Próximos passos alinhados à metodologia
 - Incluir cenários solares/eólicos/híbridos/rede reais (C1–C4) ou gerar um CSV com esses cenários e rerodar os métodos.

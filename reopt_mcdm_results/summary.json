@@ -28,7 +28,7 @@
     "sustainable": {
       "topsis": "Lodwar_PLS95_PV+battery",
       "fuzzy_topsis": "Lodwar_PLS100_PV+battery",
-      "vikor": "Lusaka_PLS100_Diesel only"
+      "vikor": "Lodwar_PLS100_Diesel only"
     },
     "resilient": {
       "topsis": "Lodwar_PLS95_PV+battery",

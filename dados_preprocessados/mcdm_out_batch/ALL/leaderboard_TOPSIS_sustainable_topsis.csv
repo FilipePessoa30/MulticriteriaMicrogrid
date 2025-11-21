@@ -1,0 +1,5 @@
+alternative,profile,method,score,rank
+PV+Battery,TOPSIS_sustainable,topsis,0.8709149085404536,1
+PV+Diesel,TOPSIS_sustainable,topsis,0.3143002709301226,2
+PV+Battery+Diesel,TOPSIS_sustainable,topsis,0.3120427548616208,3
+Diesel,TOPSIS_sustainable,topsis,0.10079272076965351,4

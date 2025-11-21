@@ -1,0 +1,5 @@
+alternative,profile,method,score,rank
+PV+Battery,TOPSIS_resilient,vikor,0.0,1
+PV+Battery+Diesel,TOPSIS_resilient,vikor,0.7498395641888344,2
+PV+Diesel,TOPSIS_resilient,vikor,0.9129670626346904,3
+Diesel,TOPSIS_resilient,vikor,0.9539304440435277,4

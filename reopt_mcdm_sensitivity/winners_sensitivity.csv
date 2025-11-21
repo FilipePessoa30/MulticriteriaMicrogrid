@@ -1,0 +1,10 @@
+profile,vikor_v,winner_topsis,winner_fuzzy_topsis,winner_vikor
+economic,0.3,Lodwar_PLS85_PV+battery,Lodwar_PLS100_PV+battery,Lusaka_PLS100_PV+battery
+economic,0.5,Lodwar_PLS85_PV+battery,Lodwar_PLS100_PV+battery,Lusaka_PLS100_PV+battery
+economic,0.7,Lodwar_PLS85_PV+battery,Lodwar_PLS100_PV+battery,Lusaka_PLS100_PV+battery
+sustainable,0.3,Lodwar_PLS95_PV+battery,Lodwar_PLS100_PV+battery,Lusaka_PLS100_Diesel only
+sustainable,0.5,Lodwar_PLS95_PV+battery,Lodwar_PLS100_PV+battery,Lusaka_PLS100_Diesel only
+sustainable,0.7,Lodwar_PLS95_PV+battery,Lodwar_PLS100_PV+battery,Lodwar_PLS100_Diesel only
+resilient,0.3,Lodwar_PLS95_PV+battery,Lodwar_PLS100_PV+battery,Lusaka_PLS100_PV+battery
+resilient,0.5,Lodwar_PLS95_PV+battery,Lodwar_PLS100_PV+battery,Lusaka_PLS100_PV+battery
+resilient,0.7,Lodwar_PLS95_PV+battery,Lodwar_PLS100_PV+battery,Lusaka_PLS100_PV+battery

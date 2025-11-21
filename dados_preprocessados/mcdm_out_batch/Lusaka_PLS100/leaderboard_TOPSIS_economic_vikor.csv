@@ -1,0 +1,5 @@
+alternative,profile,method,score,rank
+PV+Battery,TOPSIS_economic,vikor,0.0,1
+PV+Battery+Diesel,TOPSIS_economic,vikor,0.7433560738607737,2
+Diesel,TOPSIS_economic,vikor,0.9065624246552026,3
+PV+Diesel,TOPSIS_economic,vikor,0.9278931583424104,4

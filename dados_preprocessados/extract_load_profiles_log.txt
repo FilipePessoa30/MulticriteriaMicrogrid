@@ -1,0 +1,15 @@
+[2025-11-21T01:38:19] Início
+[2025-11-21T01:38:19] Arquivo Excel: dados/2 - Microgrid_Load_Profile_Explorer.xlsx
+[2025-11-21T01:38:19] → Residencial: procurando em 'HouseholdLoadProfiles' a âncora 'Total Low Income'...
+[2025-11-21T01:38:19]   • Âncora encontrada em linha 3, coluna 4: 'Low Income Household'
+[2025-11-21T01:38:19]   • Residencial: 24 valores em coluna 4 (abaixo da âncora 3,4).
+[2025-11-21T01:38:19] ✓ household_total_low_income_24h.csv salvo (24 valores).
+[2025-11-21T01:38:19] → Comercial: procurando em 'CommercialLoadProfiles' a âncora 'Total Commercial Load'...
+[2025-11-21T01:38:19]   • Âncora encontrada em linha 0, coluna 1: 'RURAL AFRICAN COMMERCIAL LOAD PROFILES'
+[2025-11-21T01:38:19]   • Comercial: 24 valores em coluna 2 (abaixo da âncora 0,1).
+[2025-11-21T01:38:19] ✓ commercial_total_load_24h.csv salvo (24 valores).
+[2025-11-21T01:38:19] → Coincidence Factor: varrendo 'CoincidenceFactor_HouseholdLoad'...
+[2025-11-21T01:38:19]   • CF: blocos lidos=1; horas sem amostra=nenhuma
+[2025-11-21T01:38:19] ✓ coincidence_factor_hourly_avg.csv salvo.
+[2025-11-21T01:38:19] ✓ village_profile_24h.csv salvo.
+[2025-11-21T01:38:19] Concluído com sucesso.

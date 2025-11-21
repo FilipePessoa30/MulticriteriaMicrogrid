@@ -1,0 +1,5 @@
+alternative,rank
+PV+Diesel,1
+PV+Battery,2
+PV+Battery+Diesel,3
+Diesel,4

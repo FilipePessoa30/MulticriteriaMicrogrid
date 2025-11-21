@@ -1,0 +1,5 @@
+alternative,profile,method,score,rank
+PV+Battery,TOPSIS_economic,fuzzy_topsis,0.9999887247503926,1
+PV+Diesel,TOPSIS_economic,fuzzy_topsis,0.41600462829568385,2
+PV+Battery+Diesel,TOPSIS_economic,fuzzy_topsis,0.3497226672546743,3
+Diesel,TOPSIS_economic,fuzzy_topsis,6.2215011626429745e-06,4

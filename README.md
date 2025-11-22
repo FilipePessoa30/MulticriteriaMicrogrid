@@ -10,6 +10,7 @@
 
 ## Scripts-chave
 
+- `extrair_tudo_reopt.py` (em `dados/`): lê o Excel do REopt e gera `dados_preprocessados/reopt_ALL_blocks_v3_8.csv` (consolidado com PLS, sistemas, LCOE, Fuel_cost etc.).
 - `run_reopt_mcdm.py`: roda TOPSIS, Fuzzy-TOPSIS e VIKOR sobre `dados_preprocessados/reopt_ALL_blocks_v3_8.csv`. Saídas por perfil: `topsis_<perfil>.csv`, `fuzzy_topsis_<perfil>.csv`, `vikor_<perfil>.csv`, `all_ranks.csv`, `summary.json`.
   - Exemplo:
     ```powershell
@@ -36,7 +37,6 @@
       --vikor_v 0.5 `
       --out reopt_mcdm_sensitivity/final_profile_decisions.csv
     ```
-- `build_mcdm_from_reopt.py`: extrator/normalizador original do REopt (mantido).
 
 ## Resultados obtidos (dados do REopt)
 

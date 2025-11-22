@@ -133,13 +133,14 @@ def main():
     df = pd.read_csv(args.csv)
     df["alternative"] = df.apply(lambda r: f"{r.get('Region','')}_PLS{int(r.get('Percent_Load_Target',0))}_{r.get('System','')}", axis=1)
     cost = df.get("LCOE_$_per_kWh", pd.Series([np.nan]*len(df))).fillna(df.get("REopt_LCC_$", pd.Series([np.nan]*len(df))))
-    price_map = {"32": 3.2, "36": 3.6, "44": 4.4}
+    price_map = {"32": 3.2, "36": 3.6, "44": 4.4}  # $/gal
     if args.diesel_price_override:
         price_series = pd.Series([args.diesel_price_override] * len(df))
     else:
         price_series = df.get("Diesel_Price_Code", pd.Series([""] * len(df))).astype(str).map(price_map)
     fuel_cost = df.get("Fuel_cost_$", pd.Series([np.nan] * len(df)))
-    litres = fuel_cost / price_series.replace(0, np.nan)
+    gallons = fuel_cost / price_series.replace(0, np.nan)
+    litres = gallons * 3.785
     emissions = (litres * args.kgco2_per_litre).fillna(fuel_cost)
     reliability = df.get("Percent_Load_Target", pd.Series([np.nan]*len(df)))
     mat = pd.DataFrame({

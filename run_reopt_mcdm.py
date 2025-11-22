@@ -161,16 +161,17 @@ def main():
     cost_fallback = df.get("REopt_LCC_$", pd.Series([np.nan]*len(df)))
     cost = cost.fillna(cost_fallback)
 
-    # emissões: calcula litros = Fuel_cost / preço (código 32/36/44 -> 3.2/3.6/4.4 $/L por padrão)
-    price_map = {"32": 3.2, "36": 3.6, "44": 4.4}
+    # emissões: Fuel_cost ($) / preço ($/gal) -> gal; converte para L e multiplica por kgCO2/L.
+    # Se não houver preço, usa Fuel_cost como proxy (para não virar NaN).
+    price_map = {"32": 3.2, "36": 3.6, "44": 4.4}  # $/gal
     if args.diesel_price_override:
         price_series = pd.Series([args.diesel_price_override] * len(df))
     else:
         price_series = df.get("Diesel_Price_Code", pd.Series([""] * len(df))).astype(str).map(price_map)
     fuel_cost = df.get("Fuel_cost_$", pd.Series([np.nan] * len(df)))
-    litres = fuel_cost / price_series.replace(0, np.nan)
-    emissions = litres * args.kgco2_per_litre
-    emissions = emissions.fillna(fuel_cost)  # fallback
+    gallons = fuel_cost / price_series.replace(0, np.nan)
+    litres = gallons * 3.785  # 1 gal = 3.785 L
+    emissions = (litres * args.kgco2_per_litre).fillna(fuel_cost)
     reliability = df.get("Percent_Load_Target", pd.Series([np.nan]*len(df)))
 
     mat = pd.DataFrame({

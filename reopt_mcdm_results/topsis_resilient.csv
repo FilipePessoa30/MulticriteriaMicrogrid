@@ -89,7 +89,7 @@ Lodwar_PLS90_PV+battery+diesel,0.9310458467497432,Lodwar,90,PV+battery+diesel,to
 Accra_PLS95_PV+battery+diesel,0.9309375321001995,Accra,95,PV+battery+diesel,topsis,resilient,88
 Accra_PLS100_PV+battery+diesel,0.9308438002343441,Accra,100,PV+battery+diesel,topsis,resilient,89
 Lodwar_PLS100_PV+battery+diesel,0.9307543917681774,Lodwar,100,PV+battery+diesel,topsis,resilient,90
-Lodwar_PLS100_PV+battery+diesel,0.9306918167874236,Lodwar,100,PV+battery+diesel,topsis,resilient,91
+Lodwar_PLS100_PV+battery+diesel,0.9306918167874237,Lodwar,100,PV+battery+diesel,topsis,resilient,91
 Lodwar_PLS95_PV+battery+diesel,0.9303267455503699,Lodwar,95,PV+battery+diesel,topsis,resilient,92
 Lusaka_PLS95_PV+battery+diesel,0.9300349327044133,Lusaka,95,PV+battery+diesel,topsis,resilient,93
 Lodwar_PLS100_PV+battery+diesel,0.9298178016464766,Lodwar,100,PV+battery+diesel,topsis,resilient,94
@@ -174,7 +174,7 @@ Lodwar_PLS95_PV+battery,0.9238999709529492,Lodwar,95,PV+battery,topsis,resilient
 Lodwar_PLS90_PV+battery+diesel,0.9237377172948984,Lodwar,90,PV+battery+diesel,topsis,resilient,173
 Lusaka_PLS95_PV+battery+diesel,0.9236571210342809,Lusaka,95,PV+battery+diesel,topsis,resilient,174
 Lodwar_PLS100_PV+battery+diesel,0.9236131462837378,Lodwar,100,PV+battery+diesel,topsis,resilient,175
-Lodwar_PLS100_PV+battery+diesel,0.9235643985129143,Lodwar,100,PV+battery+diesel,topsis,resilient,176
+Lodwar_PLS100_PV+battery+diesel,0.9235643985129145,Lodwar,100,PV+battery+diesel,topsis,resilient,176
 Accra_PLS95_PV+battery+diesel,0.9235095554978702,Accra,95,PV+battery+diesel,topsis,resilient,177
 Accra_PLS100_PV+battery+diesel,0.9234837712348053,Accra,100,PV+battery+diesel,topsis,resilient,178
 Lusaka_PLS95_PV+battery+diesel,0.9233666841434263,Lusaka,95,PV+battery+diesel,topsis,resilient,179
@@ -205,10 +205,10 @@ Lodwar_PLS90_PV+battery,0.9226362447373452,Lodwar,90,PV+battery,topsis,resilient
 Lodwar_PLS90_PV+battery,0.9226362447373452,Lodwar,90,PV+battery,topsis,resilient,204
 Lodwar_PLS95_PV+battery+diesel,0.9225416019095248,Lodwar,95,PV+battery+diesel,topsis,resilient,205
 Lodwar_PLS95_PV+battery+diesel,0.9223740926339948,Lodwar,95,PV+battery+diesel,topsis,resilient,206
-Lodwar_PLS100_PV+battery+diesel,0.9223201365890726,Lodwar,100,PV+battery+diesel,topsis,resilient,207
+Lodwar_PLS100_PV+battery+diesel,0.9223201365890729,Lodwar,100,PV+battery+diesel,topsis,resilient,207
 Lodwar_PLS95_PV+battery+diesel,0.9223161010158824,Lodwar,95,PV+battery+diesel,topsis,resilient,208
 Lodwar_PLS100_PV+battery+diesel,0.9221789719607018,Lodwar,100,PV+battery+diesel,topsis,resilient,209
-Accra_PLS100_PV+battery+diesel,0.9221007233219239,Accra,100,PV+battery+diesel,topsis,resilient,210
+Accra_PLS100_PV+battery+diesel,0.9221007233219242,Accra,100,PV+battery+diesel,topsis,resilient,210
 Accra_PLS95_PV+battery+diesel,0.9219118808980042,Accra,95,PV+battery+diesel,topsis,resilient,211
 Lodwar_PLS95_PV+battery+diesel,0.9218839329274823,Lodwar,95,PV+battery+diesel,topsis,resilient,212
 Lodwar_PLS90_PV+battery+diesel,0.9216743853405824,Lodwar,90,PV+battery+diesel,topsis,resilient,213
@@ -229,7 +229,7 @@ Lusaka_PLS95_PV+battery,0.9213091607610149,Lusaka,95,PV+battery,topsis,resilient
 Accra_PLS90_PV+battery+diesel,0.9212945252405421,Accra,90,PV+battery+diesel,topsis,resilient,228
 Lodwar_PLS95_PV+battery+diesel,0.9212842480150741,Lodwar,95,PV+battery+diesel,topsis,resilient,229
 Lusaka_PLS100_PV+battery+diesel,0.9212492470651445,Lusaka,100,PV+battery+diesel,topsis,resilient,230
-Lodwar_PLS90_PV+battery+diesel,0.9210430607162619,Lodwar,90,PV+battery+diesel,topsis,resilient,231
+Lodwar_PLS90_PV+battery+diesel,0.921043060716262,Lodwar,90,PV+battery+diesel,topsis,resilient,231
 Accra_PLS95_PV+battery+diesel,0.9209672779573822,Accra,95,PV+battery+diesel,topsis,resilient,232
 Accra_PLS90_PV+battery+diesel,0.9209560715564777,Accra,90,PV+battery+diesel,topsis,resilient,233
 Accra_PLS100_PV+battery+diesel,0.9208231043181919,Accra,100,PV+battery+diesel,topsis,resilient,234
@@ -491,7 +491,7 @@ Lusaka_PLS100_PV+battery+diesel,0.9084568870570352,Lusaka,100,PV+battery+diesel,
 Lodwar_PLS95_PV+battery+diesel,0.9084139371453572,Lodwar,95,PV+battery+diesel,topsis,resilient,490
 Lodwar_PLS90_PV+battery+diesel,0.908404867486447,Lodwar,90,PV+battery+diesel,topsis,resilient,491
 Accra_PLS100_PV+battery+diesel,0.9083883429008845,Accra,100,PV+battery+diesel,topsis,resilient,492
-Accra_PLS95_PV+battery+diesel,0.9083604373780365,Accra,95,PV+battery+diesel,topsis,resilient,493
+Accra_PLS95_PV+battery+diesel,0.9083604373780367,Accra,95,PV+battery+diesel,topsis,resilient,493
 Lodwar_PLS100_Diesel only,0.9083393734794261,Lodwar,100,Diesel only,topsis,resilient,494
 Lodwar_PLS100_Diesel only,0.9083393734794261,Lodwar,100,Diesel only,topsis,resilient,495
 Accra_PLS100_Diesel only,0.9083393734794261,Accra,100,Diesel only,topsis,resilient,496
@@ -518,7 +518,7 @@ Accra_PLS95_PV+battery,0.9082649136914647,Accra,95,PV+battery,topsis,resilient,5
 Accra_PLS95_PV+battery,0.9082649136914647,Accra,95,PV+battery,topsis,resilient,517
 Lodwar_PLS95_PV+battery+diesel,0.9082384840959687,Lodwar,95,PV+battery+diesel,topsis,resilient,518
 Accra_PLS95_PV+battery+diesel,0.9082093594686014,Accra,95,PV+battery+diesel,topsis,resilient,519
-Accra_PLS90_PV+battery+diesel,0.9082071864381458,Accra,90,PV+battery+diesel,topsis,resilient,520
+Accra_PLS90_PV+battery+diesel,0.9082071864381459,Accra,90,PV+battery+diesel,topsis,resilient,520
 Accra_PLS90_PV+battery+diesel,0.9080592337457272,Accra,90,PV+battery+diesel,topsis,resilient,521
 Lodwar_PLS95_PV+battery+diesel,0.9080308077638006,Lodwar,95,PV+battery+diesel,topsis,resilient,522
 Accra_PLS100_PV+battery+diesel,0.9079294173506853,Accra,100,PV+battery+diesel,topsis,resilient,523
@@ -597,25 +597,25 @@ Lusaka_PLS100_PV+battery+diesel,0.9061168936006957,Lusaka,100,PV+battery+diesel,
 Lodwar_PLS100_PV+battery+diesel,0.9060771447886113,Lodwar,100,PV+battery+diesel,topsis,resilient,596
 Lodwar_PLS100_PV+battery+diesel,0.9060192886201185,Lodwar,100,PV+battery+diesel,topsis,resilient,597
 Lusaka_PLS100_PV+battery+diesel,0.9060191915174528,Lusaka,100,PV+battery+diesel,topsis,resilient,598
-Accra_PLS95_PV+battery+diesel,0.9059852274371561,Accra,95,PV+battery+diesel,topsis,resilient,599
+Accra_PLS95_PV+battery+diesel,0.9059852274371563,Accra,95,PV+battery+diesel,topsis,resilient,599
 Lusaka_PLS100_PV+battery+diesel,0.9059545123549079,Lusaka,100,PV+battery+diesel,topsis,resilient,600
 Lodwar_PLS90_PV+battery+diesel,0.9059490560128101,Lodwar,90,PV+battery+diesel,topsis,resilient,601
 Lusaka_PLS95_PV+battery+diesel,0.9059333479800958,Lusaka,95,PV+battery+diesel,topsis,resilient,602
 Lusaka_PLS90_PV+battery+diesel,0.9058901592547529,Lusaka,90,PV+battery+diesel,topsis,resilient,603
-Lusaka_PLS100_Diesel only,0.9058869687073668,Lusaka,100,Diesel only,topsis,resilient,604
-Accra_PLS100_Diesel only,0.9058869687073668,Accra,100,Diesel only,topsis,resilient,605
+Accra_PLS100_Diesel only,0.9058869687073668,Accra,100,Diesel only,topsis,resilient,604
+Lusaka_PLS100_Diesel only,0.9058869687073668,Lusaka,100,Diesel only,topsis,resilient,605
 Lusaka_PLS100_Diesel only,0.9058869687073668,Lusaka,100,Diesel only,topsis,resilient,606
 Lusaka_PLS100_Diesel only,0.9058869687073668,Lusaka,100,Diesel only,topsis,resilient,607
-Lusaka_PLS100_Diesel only,0.9058869687073668,Lusaka,100,Diesel only,topsis,resilient,608
+Lodwar_PLS100_Diesel only,0.9058869687073668,Lodwar,100,Diesel only,topsis,resilient,608
 Lodwar_PLS100_Diesel only,0.9058869687073668,Lodwar,100,Diesel only,topsis,resilient,609
 Lodwar_PLS100_Diesel only,0.9058869687073668,Lodwar,100,Diesel only,topsis,resilient,610
-Lodwar_PLS100_Diesel only,0.9058869687073668,Lodwar,100,Diesel only,topsis,resilient,611
-Accra_PLS100_Diesel only,0.9058869687073668,Accra,100,Diesel only,topsis,resilient,612
-Lusaka_PLS100_Diesel only,0.9058869687073668,Lusaka,100,Diesel only,topsis,resilient,613
-Accra_PLS100_Diesel only,0.9058869687073668,Accra,100,Diesel only,topsis,resilient,614
-Accra_PLS100_Diesel only,0.9058869687073668,Accra,100,Diesel only,topsis,resilient,615
+Accra_PLS100_Diesel only,0.9058869687073668,Accra,100,Diesel only,topsis,resilient,611
+Lusaka_PLS100_Diesel only,0.9058869687073668,Lusaka,100,Diesel only,topsis,resilient,612
+Accra_PLS100_Diesel only,0.9058869687073668,Accra,100,Diesel only,topsis,resilient,613
+Lusaka_PLS100_Diesel only,0.9058869687073668,Lusaka,100,Diesel only,topsis,resilient,614
+Lodwar_PLS100_Diesel only,0.9058869687073668,Lodwar,100,Diesel only,topsis,resilient,615
 Accra_PLS100_Diesel only,0.9058869687073668,Accra,100,Diesel only,topsis,resilient,616
-Lodwar_PLS100_Diesel only,0.9058869687073668,Lodwar,100,Diesel only,topsis,resilient,617
+Accra_PLS100_Diesel only,0.9058869687073668,Accra,100,Diesel only,topsis,resilient,617
 Lodwar_PLS95_PV+battery+diesel,0.9058482190255812,Lodwar,95,PV+battery+diesel,topsis,resilient,618
 Accra_PLS100_PV+battery+diesel,0.905829322968687,Accra,100,PV+battery+diesel,topsis,resilient,619
 Accra_PLS90_PV+battery+diesel,0.9057473426582172,Accra,90,PV+battery+diesel,topsis,resilient,620
@@ -643,20 +643,20 @@ Lusaka_PLS95_PV+battery+diesel,0.9051965383778606,Lusaka,95,PV+battery+diesel,to
 Lodwar_PLS100_PV+battery+diesel,0.9051329534914607,Lodwar,100,PV+battery+diesel,topsis,resilient,642
 Lusaka_PLS90_PV+battery+diesel,0.9050774512341465,Lusaka,90,PV+battery+diesel,topsis,resilient,643
 Accra_PLS90_PV+battery+diesel,0.9050720197616979,Accra,90,PV+battery+diesel,topsis,resilient,644
-Lodwar_PLS95_Diesel only,0.9050683193093995,Lodwar,95,Diesel only,topsis,resilient,645
-Lusaka_PLS95_Diesel only,0.9050683193093995,Lusaka,95,Diesel only,topsis,resilient,646
-Accra_PLS95_Diesel only,0.9050683193093995,Accra,95,Diesel only,topsis,resilient,647
-Lusaka_PLS95_Diesel only,0.9050683193093995,Lusaka,95,Diesel only,topsis,resilient,648
-Accra_PLS95_Diesel only,0.9050683193093995,Accra,95,Diesel only,topsis,resilient,649
-Lusaka_PLS95_Diesel only,0.9050683193093993,Lusaka,95,Diesel only,topsis,resilient,650
-Lodwar_PLS95_Diesel only,0.9050683193093993,Lodwar,95,Diesel only,topsis,resilient,651
-Lusaka_PLS95_Diesel only,0.9050683193093993,Lusaka,95,Diesel only,topsis,resilient,652
-Lodwar_PLS95_Diesel only,0.9050683193093993,Lodwar,95,Diesel only,topsis,resilient,653
-Lodwar_PLS95_Diesel only,0.9050683193093993,Lodwar,95,Diesel only,topsis,resilient,654
-Accra_PLS95_Diesel only,0.9050683193093993,Accra,95,Diesel only,topsis,resilient,655
-Accra_PLS95_Diesel only,0.9050683193093993,Accra,95,Diesel only,topsis,resilient,656
-Accra_PLS95_Diesel only,0.9050683193093993,Accra,95,Diesel only,topsis,resilient,657
-Lusaka_PLS95_Diesel only,0.9050683193093993,Lusaka,95,Diesel only,topsis,resilient,658
+Lodwar_PLS95_Diesel only,0.9050683193093997,Lodwar,95,Diesel only,topsis,resilient,645
+Lodwar_PLS95_Diesel only,0.9050683193093995,Lodwar,95,Diesel only,topsis,resilient,646
+Lodwar_PLS95_Diesel only,0.9050683193093995,Lodwar,95,Diesel only,topsis,resilient,647
+Lodwar_PLS95_Diesel only,0.9050683193093995,Lodwar,95,Diesel only,topsis,resilient,648
+Lusaka_PLS95_Diesel only,0.9050683193093995,Lusaka,95,Diesel only,topsis,resilient,649
+Lusaka_PLS95_Diesel only,0.9050683193093995,Lusaka,95,Diesel only,topsis,resilient,650
+Accra_PLS95_Diesel only,0.9050683193093995,Accra,95,Diesel only,topsis,resilient,651
+Lusaka_PLS95_Diesel only,0.9050683193093995,Lusaka,95,Diesel only,topsis,resilient,652
+Lusaka_PLS95_Diesel only,0.9050683193093995,Lusaka,95,Diesel only,topsis,resilient,653
+Accra_PLS95_Diesel only,0.9050683193093995,Accra,95,Diesel only,topsis,resilient,654
+Accra_PLS95_Diesel only,0.9050683193093995,Accra,95,Diesel only,topsis,resilient,655
+Accra_PLS95_Diesel only,0.9050683193093995,Accra,95,Diesel only,topsis,resilient,656
+Accra_PLS95_Diesel only,0.9050683193093995,Accra,95,Diesel only,topsis,resilient,657
+Lusaka_PLS95_Diesel only,0.9050683193093995,Lusaka,95,Diesel only,topsis,resilient,658
 Lodwar_PLS85_PV+battery+diesel,0.9050452742491724,Lodwar,85,PV+battery+diesel,topsis,resilient,659
 Lodwar_PLS95_PV+battery+diesel,0.9050372971439344,Lodwar,95,PV+battery+diesel,topsis,resilient,660
 Lusaka_PLS90_PV+battery+diesel,0.9050325405684523,Lusaka,90,PV+battery+diesel,topsis,resilient,661
@@ -670,7 +670,7 @@ Lodwar_PLS90_PV+battery+diesel,0.9048360989385238,Lodwar,90,PV+battery+diesel,to
 Lusaka_PLS90_PV+battery+diesel,0.9047922974713383,Lusaka,90,PV+battery+diesel,topsis,resilient,669
 Lodwar_PLS95_PV+battery+diesel,0.9047555411708285,Lodwar,95,PV+battery+diesel,topsis,resilient,670
 Lodwar_PLS90_PV+battery+diesel,0.9047024246295048,Lodwar,90,PV+battery+diesel,topsis,resilient,671
-Lusaka_PLS100_PV+battery+diesel,0.9046372221410087,Lusaka,100,PV+battery+diesel,topsis,resilient,672
+Lusaka_PLS100_PV+battery+diesel,0.904637222141009,Lusaka,100,PV+battery+diesel,topsis,resilient,672
 Accra_PLS95_PV+battery+diesel,0.9045680840697562,Accra,95,PV+battery+diesel,topsis,resilient,673
 Lodwar_PLS95_PV+battery+diesel,0.9044462975639861,Lodwar,95,PV+battery+diesel,topsis,resilient,674
 Accra_PLS100_PV+battery+diesel,0.904387812882799,Accra,100,PV+battery+diesel,topsis,resilient,675
@@ -756,7 +756,7 @@ Lusaka_PLS90_PV+battery+diesel,0.9027733712074406,Lusaka,90,PV+battery+diesel,to
 Lusaka_PLS90_PV+battery+diesel,0.9027496228802285,Lusaka,90,PV+battery+diesel,topsis,resilient,755
 Accra_PLS95_PV+battery+diesel,0.902733650671629,Accra,95,PV+battery+diesel,topsis,resilient,756
 Accra_PLS100_PV+battery+diesel,0.902605618729029,Accra,100,PV+battery+diesel,topsis,resilient,757
-Lodwar_PLS95_PV+battery+diesel,0.9025962771820055,Lodwar,95,PV+battery+diesel,topsis,resilient,758
+Lodwar_PLS95_PV+battery+diesel,0.9025962771820057,Lodwar,95,PV+battery+diesel,topsis,resilient,758
 Lodwar_PLS85_PV+battery+diesel,0.9025848150955642,Lodwar,85,PV+battery+diesel,topsis,resilient,759
 Lodwar_PLS90_PV+battery+diesel,0.9025527625026794,Lodwar,90,PV+battery+diesel,topsis,resilient,760
 Lodwar_PLS100_PV+battery+diesel,0.9025271496228877,Lodwar,100,PV+battery+diesel,topsis,resilient,761
@@ -835,7 +835,7 @@ Lodwar_PLS95_PV+battery+diesel,0.9006234833731307,Lodwar,95,PV+battery+diesel,to
 Lusaka_PLS90_PV+battery+diesel,0.9005917536264254,Lusaka,90,PV+battery+diesel,topsis,resilient,834
 Lusaka_PLS100_PV+battery+diesel,0.9005580257454828,Lusaka,100,PV+battery+diesel,topsis,resilient,835
 Lodwar_PLS100_PV+battery+diesel,0.9005162717201574,Lodwar,100,PV+battery+diesel,topsis,resilient,836
-Lusaka_PLS90_PV+battery+diesel,0.9004815241001398,Lusaka,90,PV+battery+diesel,topsis,resilient,837
+Lusaka_PLS90_PV+battery+diesel,0.9004815241001399,Lusaka,90,PV+battery+diesel,topsis,resilient,837
 Lodwar_PLS100_PV+battery+diesel,0.9004309021970618,Lodwar,100,PV+battery+diesel,topsis,resilient,838
 Lusaka_PLS100_PV+battery+diesel,0.9003521182971317,Lusaka,100,PV+battery+diesel,topsis,resilient,839
 Accra_PLS95_PV+battery+diesel,0.9003517431757123,Accra,95,PV+battery+diesel,topsis,resilient,840
@@ -1038,14 +1038,14 @@ Lusaka_PLS90_PV+battery+diesel,0.8966301122907551,Lusaka,90,PV+battery+diesel,to
 Lodwar_PLS85_PV+battery+diesel,0.8966093416367543,Lodwar,85,PV+battery+diesel,topsis,resilient,1037
 Lodwar_PLS95_PV+battery+diesel,0.8965922204307697,Lodwar,95,PV+battery+diesel,topsis,resilient,1038
 Accra_PLS85_PV+battery+diesel,0.8965473000614103,Accra,85,PV+battery+diesel,topsis,resilient,1039
-Lodwar_PLS95_PV+battery+diesel,0.8965415536336481,Lodwar,95,PV+battery+diesel,topsis,resilient,1040
+Lodwar_PLS95_PV+battery+diesel,0.8965415536336482,Lodwar,95,PV+battery+diesel,topsis,resilient,1040
 Accra_PLS100_PV+battery+diesel,0.8965372492175249,Accra,100,PV+battery+diesel,topsis,resilient,1041
 Lodwar_PLS95_PV+battery+diesel,0.8965215207548863,Lodwar,95,PV+battery+diesel,topsis,resilient,1042
 Lodwar_PLS100_PV+battery+diesel,0.8964661574552789,Lodwar,100,PV+battery+diesel,topsis,resilient,1043
 Lodwar_PLS95_PV+battery+diesel,0.8964355877752481,Lodwar,95,PV+battery+diesel,topsis,resilient,1044
 Lusaka_PLS90_PV+battery+diesel,0.896425259967518,Lusaka,90,PV+battery+diesel,topsis,resilient,1045
 Lodwar_PLS90_PV+battery+diesel,0.8964247697186751,Lodwar,90,PV+battery+diesel,topsis,resilient,1046
-Lusaka_PLS85_PV+battery+diesel,0.8964010570730088,Lusaka,85,PV+battery+diesel,topsis,resilient,1047
+Lusaka_PLS85_PV+battery+diesel,0.896401057073009,Lusaka,85,PV+battery+diesel,topsis,resilient,1047
 Lusaka_PLS95_Diesel only,0.8963919536156101,Lusaka,95,Diesel only,topsis,resilient,1048
 Lodwar_PLS95_Diesel only,0.8963919536156101,Lodwar,95,Diesel only,topsis,resilient,1049
 Lusaka_PLS95_Diesel only,0.8963919536156101,Lusaka,95,Diesel only,topsis,resilient,1050
@@ -1093,7 +1093,7 @@ Lodwar_PLS85_PV+battery+diesel,0.8957333564273441,Lodwar,85,PV+battery+diesel,to
 Lodwar_PLS95_PV+battery+diesel,0.8956954533789159,Lodwar,95,PV+battery+diesel,topsis,resilient,1092
 Lusaka_PLS95_PV+battery+diesel,0.8956815596732012,Lusaka,95,PV+battery+diesel,topsis,resilient,1093
 Lusaka_PLS90_PV+battery+diesel,0.8956413309050304,Lusaka,90,PV+battery+diesel,topsis,resilient,1094
-Lodwar_PLS95_PV+battery+diesel,0.895508529939509,Lodwar,95,PV+battery+diesel,topsis,resilient,1095
+Lodwar_PLS95_PV+battery+diesel,0.8955085299395091,Lodwar,95,PV+battery+diesel,topsis,resilient,1095
 Lusaka_PLS85_PV+battery+diesel,0.8954965081057318,Lusaka,85,PV+battery+diesel,topsis,resilient,1096
 Accra_PLS90_PV+battery+diesel,0.8954621058997967,Accra,90,PV+battery+diesel,topsis,resilient,1097
 Lusaka_PLS90_PV+battery+diesel,0.8954381633293713,Lusaka,90,PV+battery+diesel,topsis,resilient,1098
@@ -1190,7 +1190,7 @@ Accra_PLS95_PV+battery+diesel,0.8941301902430674,Accra,95,PV+battery+diesel,tops
 Lodwar_PLS95_PV+battery+diesel,0.8940734758189871,Lodwar,95,PV+battery+diesel,topsis,resilient,1189
 Lusaka_PLS85_PV+battery+diesel,0.8940709135036309,Lusaka,85,PV+battery+diesel,topsis,resilient,1190
 Lusaka_PLS95_PV+battery+diesel,0.8939502483845493,Lusaka,95,PV+battery+diesel,topsis,resilient,1191
-Lodwar_PLS100_PV+battery+diesel,0.893932094388565,Lodwar,100,PV+battery+diesel,topsis,resilient,1192
+Lodwar_PLS100_PV+battery+diesel,0.8939320943885651,Lodwar,100,PV+battery+diesel,topsis,resilient,1192
 Accra_PLS90_PV+battery+diesel,0.8939224751955323,Accra,90,PV+battery+diesel,topsis,resilient,1193
 Lodwar_PLS90_PV+battery+diesel,0.8939122741922267,Lodwar,90,PV+battery+diesel,topsis,resilient,1194
 Lodwar_PLS90_PV+battery,0.8938606421104683,Lodwar,90,PV+battery,topsis,resilient,1195
@@ -1235,7 +1235,7 @@ Lusaka_PLS100_PV+battery+diesel,0.8936744004029941,Lusaka,100,PV+battery+diesel,
 Lodwar_PLS90_PV+battery+diesel,0.8936305085393208,Lodwar,90,PV+battery+diesel,topsis,resilient,1234
 Lusaka_PLS90_PV+battery+diesel,0.893590640878774,Lusaka,90,PV+battery+diesel,topsis,resilient,1235
 Lodwar_PLS95_PV+battery+diesel,0.8935430502409714,Lodwar,95,PV+battery+diesel,topsis,resilient,1236
-Accra_PLS95_PV+battery+diesel,0.8935330260452298,Accra,95,PV+battery+diesel,topsis,resilient,1237
+Accra_PLS95_PV+battery+diesel,0.89353302604523,Accra,95,PV+battery+diesel,topsis,resilient,1237
 Lodwar_PLS95_PV+battery+diesel,0.893503748016841,Lodwar,95,PV+battery+diesel,topsis,resilient,1238
 Lodwar_PLS90_PV+battery+diesel,0.8934483860605434,Lodwar,90,PV+battery+diesel,topsis,resilient,1239
 Accra_PLS90_PV+battery+diesel,0.8934375705773031,Accra,90,PV+battery+diesel,topsis,resilient,1240
@@ -1256,7 +1256,7 @@ Lusaka_PLS95_Diesel only,0.8933283493663229,Lusaka,95,Diesel only,topsis,resilie
 Lodwar_PLS95_Diesel only,0.8933283493663229,Lodwar,95,Diesel only,topsis,resilient,1255
 Lodwar_PLS85_PV+battery+diesel,0.8932748351715252,Lodwar,85,PV+battery+diesel,topsis,resilient,1256
 Accra_PLS95_PV+battery+diesel,0.8932325179643436,Accra,95,PV+battery+diesel,topsis,resilient,1257
-Lusaka_PLS90_PV+battery+diesel,0.893222768588652,Lusaka,90,PV+battery+diesel,topsis,resilient,1258
+Lusaka_PLS90_PV+battery+diesel,0.8932227685886522,Lusaka,90,PV+battery+diesel,topsis,resilient,1258
 Accra_PLS95_PV+battery+diesel,0.8931902743080904,Accra,95,PV+battery+diesel,topsis,resilient,1259
 Lusaka_PLS100_PV+battery+diesel,0.8931561672596964,Lusaka,100,PV+battery+diesel,topsis,resilient,1260
 Accra_PLS85_PV+battery+diesel,0.8931537626789152,Accra,85,PV+battery+diesel,topsis,resilient,1261
@@ -1272,7 +1272,7 @@ Lusaka_PLS100_PV+battery+diesel,0.893019388731347,Lusaka,100,PV+battery+diesel,t
 Lodwar_PLS85_PV+battery+diesel,0.8930037824178885,Lodwar,85,PV+battery+diesel,topsis,resilient,1271
 Accra_PLS100_PV+battery+diesel,0.8929684118731291,Accra,100,PV+battery+diesel,topsis,resilient,1272
 Accra_PLS95_PV+battery+diesel,0.8929569355520955,Accra,95,PV+battery+diesel,topsis,resilient,1273
-Lodwar_PLS100_PV+battery+diesel,0.8929401763179958,Lodwar,100,PV+battery+diesel,topsis,resilient,1274
+Lodwar_PLS100_PV+battery+diesel,0.892940176317996,Lodwar,100,PV+battery+diesel,topsis,resilient,1274
 Lusaka_PLS95_PV+battery+diesel,0.8928666445971848,Lusaka,95,PV+battery+diesel,topsis,resilient,1275
 Lodwar_PLS85_PV+battery+diesel,0.8928623076905238,Lodwar,85,PV+battery+diesel,topsis,resilient,1276
 Lodwar_PLS100_PV+battery+diesel,0.8928368121143556,Lodwar,100,PV+battery+diesel,topsis,resilient,1277
@@ -1314,7 +1314,7 @@ Lodwar_PLS95_PV+battery+diesel,0.8918909901876887,Lodwar,95,PV+battery+diesel,to
 Accra_PLS85_PV+battery+diesel,0.8918524590383323,Accra,85,PV+battery+diesel,topsis,resilient,1313
 Lusaka_PLS100_PV+battery+diesel,0.8918424167199908,Lusaka,100,PV+battery+diesel,topsis,resilient,1314
 Lodwar_PLS90_PV+battery+diesel,0.8917969010494298,Lodwar,90,PV+battery+diesel,topsis,resilient,1315
-Lodwar_PLS100_PV+battery+diesel,0.8917902062059166,Lodwar,100,PV+battery+diesel,topsis,resilient,1316
+Lodwar_PLS100_PV+battery+diesel,0.8917902062059169,Lodwar,100,PV+battery+diesel,topsis,resilient,1316
 Lodwar_PLS95_PV+battery+diesel,0.8917808551424768,Lodwar,95,PV+battery+diesel,topsis,resilient,1317
 Lodwar_PLS95_PV+battery+diesel,0.891735891949171,Lodwar,95,PV+battery+diesel,topsis,resilient,1318
 Lodwar_PLS85_PV+battery+diesel,0.8917030013302215,Lodwar,85,PV+battery+diesel,topsis,resilient,1319
@@ -1394,7 +1394,7 @@ Lusaka_PLS85_PV+battery+diesel,0.8897431673718406,Lusaka,85,PV+battery+diesel,to
 Lodwar_PLS85_PV+battery+diesel,0.8897240215311841,Lodwar,85,PV+battery+diesel,topsis,resilient,1393
 Lodwar_PLS90_PV+battery+diesel,0.8896979339776068,Lodwar,90,PV+battery+diesel,topsis,resilient,1394
 Accra_PLS85_PV+battery+diesel,0.8896648710008505,Accra,85,PV+battery+diesel,topsis,resilient,1395
-Lodwar_PLS100_PV+battery+diesel,0.8896362631861638,Lodwar,100,PV+battery+diesel,topsis,resilient,1396
+Lodwar_PLS100_PV+battery+diesel,0.8896362631861641,Lodwar,100,PV+battery+diesel,topsis,resilient,1396
 Accra_PLS90_PV+battery+diesel,0.8896086077077995,Accra,90,PV+battery+diesel,topsis,resilient,1397
 Accra_PLS100_PV+battery+diesel,0.8896045668461674,Accra,100,PV+battery+diesel,topsis,resilient,1398
 Accra_PLS100_PV+battery+diesel,0.8895829457208921,Accra,100,PV+battery+diesel,topsis,resilient,1399
@@ -1417,7 +1417,7 @@ Lodwar_PLS100_Diesel only,0.8893584044447218,Lodwar,100,Diesel only,topsis,resil
 Lodwar_PLS100_Diesel only,0.8893584044447218,Lodwar,100,Diesel only,topsis,resilient,1416
 Lusaka_PLS100_Diesel only,0.8893584044447218,Lusaka,100,Diesel only,topsis,resilient,1417
 Lusaka_PLS100_Diesel only,0.8893584044447218,Lusaka,100,Diesel only,topsis,resilient,1418
-Accra_PLS100_PV+battery+diesel,0.8893534528345469,Accra,100,PV+battery+diesel,topsis,resilient,1419
+Accra_PLS100_PV+battery+diesel,0.8893534528345471,Accra,100,PV+battery+diesel,topsis,resilient,1419
 Accra_PLS100_PV+battery+diesel,0.8893440106576492,Accra,100,PV+battery+diesel,topsis,resilient,1420
 Lodwar_PLS95_PV+battery+diesel,0.8893010307981198,Lodwar,95,PV+battery+diesel,topsis,resilient,1421
 Lusaka_PLS95_PV+battery+diesel,0.8892978524256736,Lusaka,95,PV+battery+diesel,topsis,resilient,1422
@@ -1534,7 +1534,7 @@ Lusaka_PLS95_PV+battery+diesel,0.8879016797101817,Lusaka,95,PV+battery+diesel,to
 Accra_PLS90_PV+battery+diesel,0.8878992975198243,Accra,90,PV+battery+diesel,topsis,resilient,1533
 Lusaka_PLS85_PV+battery+diesel,0.8878333631897705,Lusaka,85,PV+battery+diesel,topsis,resilient,1534
 Lodwar_PLS95_PV+battery+diesel,0.8878310491154167,Lodwar,95,PV+battery+diesel,topsis,resilient,1535
-Accra_PLS100_PV+battery+diesel,0.887824313724764,Accra,100,PV+battery+diesel,topsis,resilient,1536
+Accra_PLS100_PV+battery+diesel,0.8878243137247642,Accra,100,PV+battery+diesel,topsis,resilient,1536
 Lusaka_PLS95_PV+battery+diesel,0.887762407314845,Lusaka,95,PV+battery+diesel,topsis,resilient,1537
 Lusaka_PLS95_PV+battery+diesel,0.887755901184632,Lusaka,95,PV+battery+diesel,topsis,resilient,1538
 Accra_PLS85_PV+battery+diesel,0.8877319312118791,Accra,85,PV+battery+diesel,topsis,resilient,1539
@@ -1703,7 +1703,7 @@ Lusaka_PLS95_PV+battery+diesel,0.8859475632345617,Lusaka,95,PV+battery+diesel,to
 Lodwar_PLS95_PV+battery+diesel,0.8859132583002427,Lodwar,95,PV+battery+diesel,topsis,resilient,1702
 Lodwar_PLS85_PV+battery+diesel,0.8858872019042635,Lodwar,85,PV+battery+diesel,topsis,resilient,1703
 Lusaka_PLS90_PV+battery+diesel,0.8858741413659067,Lusaka,90,PV+battery+diesel,topsis,resilient,1704
-Lodwar_PLS90_PV+battery+diesel,0.8858201124990852,Lodwar,90,PV+battery+diesel,topsis,resilient,1705
+Lodwar_PLS90_PV+battery+diesel,0.8858201124990853,Lodwar,90,PV+battery+diesel,topsis,resilient,1705
 Lusaka_PLS90_PV+battery+diesel,0.8858192544386242,Lusaka,90,PV+battery+diesel,topsis,resilient,1706
 Accra_PLS95_Diesel only,0.8858033160574655,Accra,95,Diesel only,topsis,resilient,1707
 Lodwar_PLS95_Diesel only,0.8858033160574652,Lodwar,95,Diesel only,topsis,resilient,1708
@@ -1785,7 +1785,7 @@ Lodwar_PLS100_PV+battery+diesel,0.8853101366462794,Lodwar,100,PV+battery+diesel,
 Lodwar_PLS85_PV+battery+diesel,0.8853038489919526,Lodwar,85,PV+battery+diesel,topsis,resilient,1784
 Lodwar_PLS85_PV+battery+diesel,0.8852813482515323,Lodwar,85,PV+battery+diesel,topsis,resilient,1785
 Accra_PLS90_PV+battery+diesel,0.8852741745614261,Accra,90,PV+battery+diesel,topsis,resilient,1786
-Lusaka_PLS100_PV+battery+diesel,0.8852407612431559,Lusaka,100,PV+battery+diesel,topsis,resilient,1787
+Lusaka_PLS100_PV+battery+diesel,0.885240761243156,Lusaka,100,PV+battery+diesel,topsis,resilient,1787
 Lusaka_PLS100_PV+battery+diesel,0.8851656548308341,Lusaka,100,PV+battery+diesel,topsis,resilient,1788
 Lodwar_PLS90_PV+battery+diesel,0.8850863108166117,Lodwar,90,PV+battery+diesel,topsis,resilient,1789
 Accra_PLS90_PV+battery+diesel,0.8850841014472774,Accra,90,PV+battery+diesel,topsis,resilient,1790
@@ -1835,7 +1835,7 @@ Accra_PLS95_Diesel only,0.8848139130391013,Accra,95,Diesel only,topsis,resilient
 Lodwar_PLS95_Diesel only,0.8848139130391013,Lodwar,95,Diesel only,topsis,resilient,1834
 Accra_PLS95_Diesel only,0.8848139130391013,Accra,95,Diesel only,topsis,resilient,1835
 Lusaka_PLS90_PV+battery+diesel,0.8848070419755474,Lusaka,90,PV+battery+diesel,topsis,resilient,1836
-Accra_PLS95_PV+battery+diesel,0.8847984275248837,Accra,95,PV+battery+diesel,topsis,resilient,1837
+Accra_PLS95_PV+battery+diesel,0.8847984275248839,Accra,95,PV+battery+diesel,topsis,resilient,1837
 Lodwar_PLS95_PV+battery,0.8847321303592136,Lodwar,95,PV+battery,topsis,resilient,1838
 Lodwar_PLS95_PV+battery,0.8847321303592136,Lodwar,95,PV+battery,topsis,resilient,1839
 Lodwar_PLS95_PV+battery,0.8847321303592136,Lodwar,95,PV+battery,topsis,resilient,1840
@@ -1998,11 +1998,11 @@ Lusaka_PLS85_PV+battery+diesel,0.8827789082619301,Lusaka,85,PV+battery+diesel,to
 Accra_PLS85_PV+battery+diesel,0.8826871288139565,Accra,85,PV+battery+diesel,topsis,resilient,1997
 Lodwar_PLS90_PV+battery+diesel,0.8826832629648321,Lodwar,90,PV+battery+diesel,topsis,resilient,1998
 Lusaka_PLS90_PV+battery+diesel,0.8826494497218436,Lusaka,90,PV+battery+diesel,topsis,resilient,1999
-Lusaka_PLS100_PV+battery+diesel,0.882607298638611,Lusaka,100,PV+battery+diesel,topsis,resilient,2000
+Lusaka_PLS100_PV+battery+diesel,0.8826072986386112,Lusaka,100,PV+battery+diesel,topsis,resilient,2000
 Lusaka_PLS95_PV+battery+diesel,0.8826044255272244,Lusaka,95,PV+battery+diesel,topsis,resilient,2001
 Lusaka_PLS90_PV+battery+diesel,0.8825624094947874,Lusaka,90,PV+battery+diesel,topsis,resilient,2002
 Lodwar_PLS85_PV+battery+diesel,0.8825377015138882,Lodwar,85,PV+battery+diesel,topsis,resilient,2003
-Lusaka_PLS85_PV+battery+diesel,0.8825326821084,Lusaka,85,PV+battery+diesel,topsis,resilient,2004
+Lusaka_PLS85_PV+battery+diesel,0.8825326821084002,Lusaka,85,PV+battery+diesel,topsis,resilient,2004
 Lodwar_PLS90_PV+battery+diesel,0.8825184468121595,Lodwar,90,PV+battery+diesel,topsis,resilient,2005
 Lodwar_PLS90_PV+battery+diesel,0.8825151871525542,Lodwar,90,PV+battery+diesel,topsis,resilient,2006
 Lodwar_PLS80_PV+battery,0.8824924601285103,Lodwar,80,PV+battery,topsis,resilient,2007
@@ -2035,7 +2035,7 @@ Accra_PLS85_PV+battery+diesel,0.8822309635080796,Accra,85,PV+battery+diesel,tops
 Lodwar_PLS90_PV+battery+diesel,0.8822052299285421,Lodwar,90,PV+battery+diesel,topsis,resilient,2034
 Accra_PLS100_PV+battery+diesel,0.8821889277648917,Accra,100,PV+battery+diesel,topsis,resilient,2035
 Lusaka_PLS100_PV+battery+diesel,0.8821374784920317,Lusaka,100,PV+battery+diesel,topsis,resilient,2036
-Lodwar_PLS85_PV+battery+diesel,0.882114035389249,Lodwar,85,PV+battery+diesel,topsis,resilient,2037
+Lodwar_PLS85_PV+battery+diesel,0.8821140353892492,Lodwar,85,PV+battery+diesel,topsis,resilient,2037
 Accra_PLS100_PV+battery+diesel,0.882062106533117,Accra,100,PV+battery+diesel,topsis,resilient,2038
 Lodwar_PLS85_PV+battery+diesel,0.8820487452711897,Lodwar,85,PV+battery+diesel,topsis,resilient,2039
 Accra_PLS95_PV+battery+diesel,0.881992947150513,Accra,95,PV+battery+diesel,topsis,resilient,2040
@@ -2149,7 +2149,7 @@ Lusaka_PLS95_PV+battery+diesel,0.8806702512672695,Lusaka,95,PV+battery+diesel,to
 Accra_PLS85_PV+battery+diesel,0.8806479122433719,Accra,85,PV+battery+diesel,topsis,resilient,2148
 Lodwar_PLS80_PV+battery+diesel,0.8806313650218613,Lodwar,80,PV+battery+diesel,topsis,resilient,2149
 Lodwar_PLS90_PV+battery+diesel,0.8805983643598463,Lodwar,90,PV+battery+diesel,topsis,resilient,2150
-Accra_PLS85_PV+battery+diesel,0.8805797205494208,Accra,85,PV+battery+diesel,topsis,resilient,2151
+Accra_PLS85_PV+battery+diesel,0.8805797205494209,Accra,85,PV+battery+diesel,topsis,resilient,2151
 Accra_PLS95_Diesel only,0.8805574406232721,Accra,95,Diesel only,topsis,resilient,2152
 Accra_PLS95_Diesel only,0.8805574406232721,Accra,95,Diesel only,topsis,resilient,2153
 Lusaka_PLS95_Diesel only,0.8805574406232721,Lusaka,95,Diesel only,topsis,resilient,2154
@@ -2186,7 +2186,7 @@ Lusaka_PLS90_Diesel only,0.8802834763925103,Lusaka,90,Diesel only,topsis,resilie
 Lodwar_PLS90_Diesel only,0.8802834763925103,Lodwar,90,Diesel only,topsis,resilient,2185
 Lodwar_PLS90_Diesel only,0.8802834763925103,Lodwar,90,Diesel only,topsis,resilient,2186
 Lodwar_PLS90_Diesel only,0.8802834763925103,Lodwar,90,Diesel only,topsis,resilient,2187
-Lusaka_PLS95_PV+battery+diesel,0.8802717134952174,Lusaka,95,PV+battery+diesel,topsis,resilient,2188
+Lusaka_PLS95_PV+battery+diesel,0.8802717134952176,Lusaka,95,PV+battery+diesel,topsis,resilient,2188
 Lusaka_PLS95_PV+battery+diesel,0.880248141884626,Lusaka,95,PV+battery+diesel,topsis,resilient,2189
 Lodwar_PLS85_PV+battery+diesel,0.880246567073175,Lodwar,85,PV+battery+diesel,topsis,resilient,2190
 Lodwar_PLS80_PV+battery+diesel,0.880240341072843,Lodwar,80,PV+battery+diesel,topsis,resilient,2191
@@ -2245,7 +2245,7 @@ Lusaka_PLS90_PV+battery+diesel,0.8797671974434721,Lusaka,90,PV+battery+diesel,to
 Lodwar_PLS85_PV+battery+diesel,0.879752442000417,Lodwar,85,PV+battery+diesel,topsis,resilient,2244
 Lusaka_PLS90_PV+battery+diesel,0.8797346496701249,Lusaka,90,PV+battery+diesel,topsis,resilient,2245
 Accra_PLS85_PV+battery+diesel,0.8797232648222363,Accra,85,PV+battery+diesel,topsis,resilient,2246
-Lusaka_PLS100_PV+battery+diesel,0.8797142158134513,Lusaka,100,PV+battery+diesel,topsis,resilient,2247
+Lusaka_PLS100_PV+battery+diesel,0.8797142158134515,Lusaka,100,PV+battery+diesel,topsis,resilient,2247
 Lusaka_PLS85_Diesel only,0.879681743324051,Lusaka,85,Diesel only,topsis,resilient,2248
 Lusaka_PLS85_Diesel only,0.879681743324051,Lusaka,85,Diesel only,topsis,resilient,2249
 Accra_PLS85_Diesel only,0.879681743324051,Accra,85,Diesel only,topsis,resilient,2250
@@ -2516,7 +2516,7 @@ Accra_PLS95_PV+battery+diesel,0.876490035553332,Accra,95,PV+battery+diesel,topsi
 Lodwar_PLS90_PV+battery+diesel,0.876489583570208,Lodwar,90,PV+battery+diesel,topsis,resilient,2515
 Lodwar_PLS95_PV+battery+diesel,0.8764490420377374,Lodwar,95,PV+battery+diesel,topsis,resilient,2516
 Lusaka_PLS100_PV+battery+diesel,0.8764348737728227,Lusaka,100,PV+battery+diesel,topsis,resilient,2517
-Accra_PLS95_PV+battery+diesel,0.8764330428124819,Accra,95,PV+battery+diesel,topsis,resilient,2518
+Accra_PLS95_PV+battery+diesel,0.8764330428124821,Accra,95,PV+battery+diesel,topsis,resilient,2518
 Lusaka_PLS85_PV+battery+diesel,0.8764299518890843,Lusaka,85,PV+battery+diesel,topsis,resilient,2519
 Lusaka_PLS90_PV+battery+diesel,0.8764140248896086,Lusaka,90,PV+battery+diesel,topsis,resilient,2520
 Lusaka_PLS80_PV+battery+diesel,0.8763943171035066,Lusaka,80,PV+battery+diesel,topsis,resilient,2521
@@ -2692,7 +2692,7 @@ Lodwar_PLS100_PV+battery+diesel,0.874283511723652,Lodwar,100,PV+battery+diesel,t
 Lodwar_PLS80_PV+battery+diesel,0.8742766291381021,Lodwar,80,PV+battery+diesel,topsis,resilient,2691
 Lodwar_PLS85_PV+battery+diesel,0.8742740058444002,Lodwar,85,PV+battery+diesel,topsis,resilient,2692
 Lodwar_PLS90_PV+battery+diesel,0.8742416897199186,Lodwar,90,PV+battery+diesel,topsis,resilient,2693
-Lodwar_PLS90_PV+battery+diesel,0.8742317290183185,Lodwar,90,PV+battery+diesel,topsis,resilient,2694
+Lodwar_PLS90_PV+battery+diesel,0.8742317290183186,Lodwar,90,PV+battery+diesel,topsis,resilient,2694
 Lusaka_PLS85_PV+battery+diesel,0.8742285375666958,Lusaka,85,PV+battery+diesel,topsis,resilient,2695
 Lusaka_PLS80_PV+battery+diesel,0.8742249963555645,Lusaka,80,PV+battery+diesel,topsis,resilient,2696
 Accra_PLS90_PV+battery+diesel,0.8742220253849465,Accra,90,PV+battery+diesel,topsis,resilient,2697
@@ -2745,7 +2745,7 @@ Accra_PLS95_PV+battery,0.8739018767894617,Accra,95,PV+battery,topsis,resilient,2
 Accra_PLS95_PV+battery,0.8739018767894617,Accra,95,PV+battery,topsis,resilient,2744
 Accra_PLS95_PV+battery,0.8739018767894617,Accra,95,PV+battery,topsis,resilient,2745
 Accra_PLS95_PV+battery,0.8739018767894617,Accra,95,PV+battery,topsis,resilient,2746
-Lodwar_PLS85_PV+battery+diesel,0.8738865438424758,Lodwar,85,PV+battery+diesel,topsis,resilient,2747
+Lodwar_PLS85_PV+battery+diesel,0.873886543842476,Lodwar,85,PV+battery+diesel,topsis,resilient,2747
 Lodwar_PLS90_Diesel only,0.8738802003578355,Lodwar,90,Diesel only,topsis,resilient,2748
 Accra_PLS90_Diesel only,0.8738802003578355,Accra,90,Diesel only,topsis,resilient,2749
 Lodwar_PLS90_Diesel only,0.8738802003578355,Lodwar,90,Diesel only,topsis,resilient,2750
@@ -2976,7 +2976,7 @@ Lodwar_PLS85_PV+battery+diesel,0.8714020868209282,Lodwar,85,PV+battery+diesel,to
 Lodwar_PLS95_PV+battery+diesel,0.8713891578038818,Lodwar,95,PV+battery+diesel,topsis,resilient,2975
 Lusaka_PLS80_PV+battery+diesel,0.8713756775758158,Lusaka,80,PV+battery+diesel,topsis,resilient,2976
 Lodwar_PLS100_PV+battery+diesel,0.8713331391352874,Lodwar,100,PV+battery+diesel,topsis,resilient,2977
-Accra_PLS100_PV+battery+diesel,0.871276682845813,Accra,100,PV+battery+diesel,topsis,resilient,2978
+Accra_PLS100_PV+battery+diesel,0.8712766828458132,Accra,100,PV+battery+diesel,topsis,resilient,2978
 Lusaka_PLS85_PV+battery+diesel,0.8712514614392801,Lusaka,85,PV+battery+diesel,topsis,resilient,2979
 Accra_PLS100_Diesel only,0.8712430371923833,Accra,100,Diesel only,topsis,resilient,2980
 Lodwar_PLS100_Diesel only,0.8712430371923833,Lodwar,100,Diesel only,topsis,resilient,2981
@@ -3047,7 +3047,7 @@ Accra_PLS90_PV+battery+diesel,0.8705976947445301,Accra,90,PV+battery+diesel,tops
 Lodwar_PLS90_PV+battery+diesel,0.8705823805323021,Lodwar,90,PV+battery+diesel,topsis,resilient,3046
 Lodwar_PLS100_PV+battery+diesel,0.8705646020737783,Lodwar,100,PV+battery+diesel,topsis,resilient,3047
 Lodwar_PLS80_PV+battery+diesel,0.8705623424638539,Lodwar,80,PV+battery+diesel,topsis,resilient,3048
-Lodwar_PLS95_PV+battery+diesel,0.870547513766659,Lodwar,95,PV+battery+diesel,topsis,resilient,3049
+Lodwar_PLS95_PV+battery+diesel,0.8705475137666588,Lodwar,95,PV+battery+diesel,topsis,resilient,3049
 Accra_PLS85_PV+battery+diesel,0.8705376595722382,Accra,85,PV+battery+diesel,topsis,resilient,3050
 Lusaka_PLS95_Diesel only,0.8705261190369388,Lusaka,95,Diesel only,topsis,resilient,3051
 Accra_PLS95_Diesel only,0.8705261190369387,Accra,95,Diesel only,topsis,resilient,3052
@@ -3143,7 +3143,7 @@ Accra_PLS85_PV+battery+diesel,0.8700337086205904,Accra,85,PV+battery+diesel,tops
 Accra_PLS100_PV+battery+diesel,0.8700232065404833,Accra,100,PV+battery+diesel,topsis,resilient,3142
 Lodwar_PLS100_PV+battery+diesel,0.8700225106633754,Lodwar,100,PV+battery+diesel,topsis,resilient,3143
 Accra_PLS85_PV+battery+diesel,0.8700180386348536,Accra,85,PV+battery+diesel,topsis,resilient,3144
-Lusaka_PLS95_PV+battery+diesel,0.8700138721652748,Lusaka,95,PV+battery+diesel,topsis,resilient,3145
+Lusaka_PLS95_PV+battery+diesel,0.870013872165275,Lusaka,95,PV+battery+diesel,topsis,resilient,3145
 Lusaka_PLS85_PV+battery+diesel,0.8699616129214343,Lusaka,85,PV+battery+diesel,topsis,resilient,3146
 Lodwar_PLS80_PV+battery,0.8699002896609821,Lodwar,80,PV+battery,topsis,resilient,3147
 Lodwar_PLS80_PV+battery,0.8699002896609821,Lodwar,80,PV+battery,topsis,resilient,3148
@@ -3237,7 +3237,7 @@ Lusaka_PLS80_PV+battery+diesel,0.8691054655323867,Lusaka,80,PV+battery+diesel,to
 Accra_PLS90_PV+battery+diesel,0.8690605939346955,Accra,90,PV+battery+diesel,topsis,resilient,3236
 Lodwar_PLS85_PV+battery+diesel,0.8690489572596152,Lodwar,85,PV+battery+diesel,topsis,resilient,3237
 Accra_PLS85_PV+battery+diesel,0.8690468187900853,Accra,85,PV+battery+diesel,topsis,resilient,3238
-Lodwar_PLS95_PV+battery+diesel,0.869044301856993,Lodwar,95,PV+battery+diesel,topsis,resilient,3239
+Lodwar_PLS95_PV+battery+diesel,0.8690443018569929,Lodwar,95,PV+battery+diesel,topsis,resilient,3239
 Lodwar_PLS90_Diesel only,0.8690322456470598,Lodwar,90,Diesel only,topsis,resilient,3240
 Lodwar_PLS90_Diesel only,0.8690322456470598,Lodwar,90,Diesel only,topsis,resilient,3241
 Lodwar_PLS90_Diesel only,0.8690322456470598,Lodwar,90,Diesel only,topsis,resilient,3242
@@ -3248,7 +3248,7 @@ Lusaka_PLS90_Diesel only,0.8690322456470598,Lusaka,90,Diesel only,topsis,resilie
 Accra_PLS90_Diesel only,0.8690322456470598,Accra,90,Diesel only,topsis,resilient,3247
 Accra_PLS90_Diesel only,0.8690322456470598,Accra,90,Diesel only,topsis,resilient,3248
 Lodwar_PLS90_PV+battery+diesel,0.8690088237621842,Lodwar,90,PV+battery+diesel,topsis,resilient,3249
-Lodwar_PLS95_PV+battery+diesel,0.8690082982150099,Lodwar,95,PV+battery+diesel,topsis,resilient,3250
+Lodwar_PLS95_PV+battery+diesel,0.8690082982150101,Lodwar,95,PV+battery+diesel,topsis,resilient,3250
 Accra_PLS95_PV+battery+diesel,0.8689673431336968,Accra,95,PV+battery+diesel,topsis,resilient,3251
 Accra_PLS100_PV+battery+diesel,0.8689625136912251,Accra,100,PV+battery+diesel,topsis,resilient,3252
 Accra_PLS80_PV+battery+diesel,0.8689250586701924,Accra,80,PV+battery+diesel,topsis,resilient,3253
@@ -3274,7 +3274,7 @@ Lusaka_PLS85_PV+battery+diesel,0.8685400292120161,Lusaka,85,PV+battery+diesel,to
 Accra_PLS95_PV+battery+diesel,0.8685310218759082,Accra,95,PV+battery+diesel,topsis,resilient,3273
 Lodwar_PLS80_PV+battery+diesel,0.8685287117610578,Lodwar,80,PV+battery+diesel,topsis,resilient,3274
 Lusaka_PLS95_PV+battery+diesel,0.8685186474985487,Lusaka,95,PV+battery+diesel,topsis,resilient,3275
-Lusaka_PLS95_Diesel only,0.8685172821968034,Lusaka,95,Diesel only,topsis,resilient,3276
+Lusaka_PLS95_Diesel only,0.8685172821968035,Lusaka,95,Diesel only,topsis,resilient,3276
 Accra_PLS95_Diesel only,0.8685172821968034,Accra,95,Diesel only,topsis,resilient,3277
 Accra_PLS95_Diesel only,0.8685172821968031,Accra,95,Diesel only,topsis,resilient,3278
 Lodwar_PLS95_Diesel only,0.8685172821968031,Lodwar,95,Diesel only,topsis,resilient,3279
@@ -3286,7 +3286,7 @@ Lusaka_PLS95_Diesel only,0.8685172821968031,Lusaka,95,Diesel only,topsis,resilie
 Lodwar_PLS95_Diesel only,0.8685172821968031,Lodwar,95,Diesel only,topsis,resilient,3285
 Lusaka_PLS95_Diesel only,0.8685172821968031,Lusaka,95,Diesel only,topsis,resilient,3286
 Lodwar_PLS95_PV+battery+diesel,0.8685164090742387,Lodwar,95,PV+battery+diesel,topsis,resilient,3287
-Lodwar_PLS95_PV+battery+diesel,0.868461150200258,Lodwar,95,PV+battery+diesel,topsis,resilient,3288
+Lodwar_PLS95_PV+battery+diesel,0.8684611502002583,Lodwar,95,PV+battery+diesel,topsis,resilient,3288
 Lusaka_PLS85_PV+battery,0.8684609165233643,Lusaka,85,PV+battery,topsis,resilient,3289
 Lusaka_PLS85_PV+battery,0.8684609165233643,Lusaka,85,PV+battery,topsis,resilient,3290
 Lusaka_PLS85_PV+battery,0.8684609165233643,Lusaka,85,PV+battery,topsis,resilient,3291
@@ -3297,7 +3297,7 @@ Lusaka_PLS85_PV+battery,0.8684609165233643,Lusaka,85,PV+battery,topsis,resilient
 Lusaka_PLS85_PV+battery,0.8684609165233643,Lusaka,85,PV+battery,topsis,resilient,3296
 Lusaka_PLS85_PV+battery,0.8684609165233643,Lusaka,85,PV+battery,topsis,resilient,3297
 Accra_PLS100_PV+battery+diesel,0.8684557859832288,Accra,100,PV+battery+diesel,topsis,resilient,3298
-Lodwar_PLS90_PV+battery+diesel,0.8684462514035098,Lodwar,90,PV+battery+diesel,topsis,resilient,3299
+Lodwar_PLS90_PV+battery+diesel,0.8684462514035101,Lodwar,90,PV+battery+diesel,topsis,resilient,3299
 Lusaka_PLS100_PV+battery+diesel,0.8684386569896265,Lusaka,100,PV+battery+diesel,topsis,resilient,3300
 Lodwar_PLS80_PV+battery+diesel,0.8684309826745972,Lodwar,80,PV+battery+diesel,topsis,resilient,3301
 Lusaka_PLS95_PV+battery+diesel,0.8684297072653169,Lusaka,95,PV+battery+diesel,topsis,resilient,3302
@@ -3383,7 +3383,7 @@ Lusaka_PLS80_PV+battery+diesel,0.8678013778174334,Lusaka,80,PV+battery+diesel,to
 Lodwar_PLS80_PV+battery+diesel,0.8677889417727818,Lodwar,80,PV+battery+diesel,topsis,resilient,3382
 Accra_PLS95_PV+battery+diesel,0.8677838860443233,Accra,95,PV+battery+diesel,topsis,resilient,3383
 Accra_PLS90_PV+battery+diesel,0.8677806246889731,Accra,90,PV+battery+diesel,topsis,resilient,3384
-Lusaka_PLS95_PV+battery+diesel,0.8677760686817149,Lusaka,95,PV+battery+diesel,topsis,resilient,3385
+Lusaka_PLS95_PV+battery+diesel,0.8677760686817151,Lusaka,95,PV+battery+diesel,topsis,resilient,3385
 Lodwar_PLS80_PV+battery+diesel,0.8677668488109992,Lodwar,80,PV+battery+diesel,topsis,resilient,3386
 Accra_PLS90_PV+battery+diesel,0.8677630819384717,Accra,90,PV+battery+diesel,topsis,resilient,3387
 Lodwar_PLS100_PV+battery+diesel,0.8677596517935572,Lodwar,100,PV+battery+diesel,topsis,resilient,3388
@@ -3558,7 +3558,7 @@ Lodwar_PLS80_PV+battery+diesel,0.8660650818907835,Lodwar,80,PV+battery+diesel,to
 Accra_PLS85_PV+battery+diesel,0.8660515933828253,Accra,85,PV+battery+diesel,topsis,resilient,3557
 Accra_PLS100_PV+battery+diesel,0.8660321698478921,Accra,100,PV+battery+diesel,topsis,resilient,3558
 Lodwar_PLS85_PV+battery+diesel,0.8659646820027684,Lodwar,85,PV+battery+diesel,topsis,resilient,3559
-Lodwar_PLS100_PV+battery+diesel,0.8659640241123436,Lodwar,100,PV+battery+diesel,topsis,resilient,3560
+Lodwar_PLS100_PV+battery+diesel,0.8659640241123437,Lodwar,100,PV+battery+diesel,topsis,resilient,3560
 Accra_PLS100_PV+battery+diesel,0.8659411745288685,Accra,100,PV+battery+diesel,topsis,resilient,3561
 Lodwar_PLS100_PV+battery+diesel,0.865927181970435,Lodwar,100,PV+battery+diesel,topsis,resilient,3562
 Lodwar_PLS95_PV+battery+diesel,0.8659153624613718,Lodwar,95,PV+battery+diesel,topsis,resilient,3563
@@ -3587,7 +3587,7 @@ Lodwar_PLS100_PV+battery+diesel,0.8656843810721986,Lodwar,100,PV+battery+diesel,
 Lodwar_PLS85_PV+battery+diesel,0.8656776318137517,Lodwar,85,PV+battery+diesel,topsis,resilient,3586
 Lusaka_PLS90_PV+battery+diesel,0.8656265463994689,Lusaka,90,PV+battery+diesel,topsis,resilient,3587
 Accra_PLS85_PV+battery+diesel,0.8656209930178556,Accra,85,PV+battery+diesel,topsis,resilient,3588
-Lodwar_PLS100_PV+battery+diesel,0.8656129951215963,Lodwar,100,PV+battery+diesel,topsis,resilient,3589
+Lodwar_PLS100_PV+battery+diesel,0.8656129951215961,Lodwar,100,PV+battery+diesel,topsis,resilient,3589
 Lusaka_PLS100_PV+battery+diesel,0.8656085413632939,Lusaka,100,PV+battery+diesel,topsis,resilient,3590
 Lusaka_PLS100_PV+battery+diesel,0.865607361418533,Lusaka,100,PV+battery+diesel,topsis,resilient,3591
 Lusaka_PLS85_PV+battery+diesel,0.8656027583560151,Lusaka,85,PV+battery+diesel,topsis,resilient,3592
@@ -3636,7 +3636,7 @@ Accra_PLS90_PV+battery+diesel,0.8649275952906551,Accra,90,PV+battery+diesel,tops
 Lodwar_PLS90_PV+battery+diesel,0.8649243489611381,Lodwar,90,PV+battery+diesel,topsis,resilient,3635
 Lodwar_PLS95_PV+battery+diesel,0.8649195686013746,Lodwar,95,PV+battery+diesel,topsis,resilient,3636
 Accra_PLS95_PV+battery+diesel,0.8648689771043764,Accra,95,PV+battery+diesel,topsis,resilient,3637
-Lodwar_PLS85_PV+battery+diesel,0.8648515509450504,Lodwar,85,PV+battery+diesel,topsis,resilient,3638
+Lodwar_PLS85_PV+battery+diesel,0.8648515509450506,Lodwar,85,PV+battery+diesel,topsis,resilient,3638
 Accra_PLS90_PV+battery+diesel,0.8648459505706739,Accra,90,PV+battery+diesel,topsis,resilient,3639
 Lodwar_PLS85_PV+battery+diesel,0.8648271742225611,Lodwar,85,PV+battery+diesel,topsis,resilient,3640
 Lusaka_PLS90_PV+battery+diesel,0.8648144003995952,Lusaka,90,PV+battery+diesel,topsis,resilient,3641
@@ -3670,7 +3670,7 @@ Lusaka_PLS85_PV+battery+diesel,0.8643534188567451,Lusaka,85,PV+battery+diesel,to
 Lodwar_PLS95_PV+battery+diesel,0.8643484953299201,Lodwar,95,PV+battery+diesel,topsis,resilient,3669
 Lodwar_PLS95_PV+battery+diesel,0.864324525947677,Lodwar,95,PV+battery+diesel,topsis,resilient,3670
 Accra_PLS90_PV+battery+diesel,0.8642971625295283,Accra,90,PV+battery+diesel,topsis,resilient,3671
-Accra_PLS80_PV+battery+diesel,0.8642903756334112,Accra,80,PV+battery+diesel,topsis,resilient,3672
+Accra_PLS80_PV+battery+diesel,0.8642903756334113,Accra,80,PV+battery+diesel,topsis,resilient,3672
 Lusaka_PLS80_PV+battery+diesel,0.8642802250797416,Lusaka,80,PV+battery+diesel,topsis,resilient,3673
 Accra_PLS95_PV+battery+diesel,0.8642781840674719,Accra,95,PV+battery+diesel,topsis,resilient,3674
 Accra_PLS100_PV+battery+diesel,0.8642780438309732,Accra,100,PV+battery+diesel,topsis,resilient,3675
@@ -3727,7 +3727,7 @@ Lodwar_PLS90_Diesel only,0.863912695620326,Lodwar,90,Diesel only,topsis,resilien
 Accra_PLS90_Diesel only,0.863912695620326,Accra,90,Diesel only,topsis,resilient,3726
 Lusaka_PLS80_PV+battery+diesel,0.8639003228168791,Lusaka,80,PV+battery+diesel,topsis,resilient,3727
 Lodwar_PLS85_PV+battery+diesel,0.8638525497649265,Lodwar,85,PV+battery+diesel,topsis,resilient,3728
-Accra_PLS100_PV+battery+diesel,0.8638168533028734,Accra,100,PV+battery+diesel,topsis,resilient,3729
+Accra_PLS100_PV+battery+diesel,0.8638168533028735,Accra,100,PV+battery+diesel,topsis,resilient,3729
 Lodwar_PLS80_PV+battery+diesel,0.8637878658020378,Lodwar,80,PV+battery+diesel,topsis,resilient,3730
 Accra_PLS95_PV+battery+diesel,0.8637849877809254,Accra,95,PV+battery+diesel,topsis,resilient,3731
 Accra_PLS95_PV+battery+diesel,0.8637833314332363,Accra,95,PV+battery+diesel,topsis,resilient,3732
@@ -3814,7 +3814,7 @@ Lodwar_PLS95_PV+battery+diesel,0.862689523442182,Lodwar,95,PV+battery+diesel,top
 Lusaka_PLS90_PV+battery+diesel,0.8626619894394105,Lusaka,90,PV+battery+diesel,topsis,resilient,3813
 Lodwar_PLS90_PV+battery+diesel,0.862627313950297,Lodwar,90,PV+battery+diesel,topsis,resilient,3814
 Lodwar_PLS80_PV+battery+diesel,0.8626205141936891,Lodwar,80,PV+battery+diesel,topsis,resilient,3815
-Lodwar_PLS100_PV+battery+diesel,0.8626171351498118,Lodwar,100,PV+battery+diesel,topsis,resilient,3816
+Lodwar_PLS100_PV+battery+diesel,0.862617135149812,Lodwar,100,PV+battery+diesel,topsis,resilient,3816
 Accra_PLS90_PV+battery+diesel,0.8625690759880538,Accra,90,PV+battery+diesel,topsis,resilient,3817
 Accra_PLS90_PV+battery,0.8625681218782797,Accra,90,PV+battery,topsis,resilient,3818
 Accra_PLS90_PV+battery,0.8625681218782797,Accra,90,PV+battery,topsis,resilient,3819
@@ -3896,7 +3896,7 @@ Lodwar_PLS85_PV+battery,0.8623028199665488,Lodwar,85,PV+battery,topsis,resilient
 Lodwar_PLS100_PV+battery+diesel,0.8622907747627397,Lodwar,100,PV+battery+diesel,topsis,resilient,3895
 Accra_PLS85_PV+battery+diesel,0.8622761701495829,Accra,85,PV+battery+diesel,topsis,resilient,3896
 Lusaka_PLS80_PV+battery+diesel,0.8622525786437958,Lusaka,80,PV+battery+diesel,topsis,resilient,3897
-Lusaka_PLS90_PV+battery+diesel,0.8622445047910129,Lusaka,90,PV+battery+diesel,topsis,resilient,3898
+Lusaka_PLS90_PV+battery+diesel,0.862244504791013,Lusaka,90,PV+battery+diesel,topsis,resilient,3898
 Lusaka_PLS80_PV+battery+diesel,0.8621859012986809,Lusaka,80,PV+battery+diesel,topsis,resilient,3899
 Lusaka_PLS85_PV+battery+diesel,0.8621814696218127,Lusaka,85,PV+battery+diesel,topsis,resilient,3900
 Lodwar_PLS80_PV+battery+diesel,0.8621809400501576,Lodwar,80,PV+battery+diesel,topsis,resilient,3901
@@ -4190,7 +4190,7 @@ Lusaka_PLS95_PV+battery+diesel,0.8593132036101001,Lusaka,95,PV+battery+diesel,to
 Lusaka_PLS85_PV+battery+diesel,0.859300484393482,Lusaka,85,PV+battery+diesel,topsis,resilient,4189
 Lodwar_PLS90_PV+battery+diesel,0.8592826072960865,Lodwar,90,PV+battery+diesel,topsis,resilient,4190
 Accra_PLS80_PV+battery+diesel,0.8592671447280156,Accra,80,PV+battery+diesel,topsis,resilient,4191
-Lodwar_PLS90_PV+battery+diesel,0.8592497161354606,Lodwar,90,PV+battery+diesel,topsis,resilient,4192
+Lodwar_PLS90_PV+battery+diesel,0.8592497161354609,Lodwar,90,PV+battery+diesel,topsis,resilient,4192
 Lusaka_PLS95_PV+battery+diesel,0.8592157389269445,Lusaka,95,PV+battery+diesel,topsis,resilient,4193
 Lodwar_PLS80_PV+battery+diesel,0.8591956318512126,Lodwar,80,PV+battery+diesel,topsis,resilient,4194
 Lodwar_PLS90_PV+battery+diesel,0.8591754245336692,Lodwar,90,PV+battery+diesel,topsis,resilient,4195
@@ -4280,7 +4280,7 @@ Lodwar_PLS100_PV+battery+diesel,0.8581919114428587,Lodwar,100,PV+battery+diesel,
 Lusaka_PLS80_PV+battery+diesel,0.8581121367966746,Lusaka,80,PV+battery+diesel,topsis,resilient,4279
 Accra_PLS80_PV+battery+diesel,0.8580854093302103,Accra,80,PV+battery+diesel,topsis,resilient,4280
 Lodwar_PLS80_PV+battery+diesel,0.8580738688538736,Lodwar,80,PV+battery+diesel,topsis,resilient,4281
-Accra_PLS100_PV+battery+diesel,0.8580708429896006,Accra,100,PV+battery+diesel,topsis,resilient,4282
+Accra_PLS100_PV+battery+diesel,0.8580708429896008,Accra,100,PV+battery+diesel,topsis,resilient,4282
 Lodwar_PLS85_PV+battery+diesel,0.858057140446384,Lodwar,85,PV+battery+diesel,topsis,resilient,4283
 Accra_PLS85_PV+battery+diesel,0.858046402138486,Accra,85,PV+battery+diesel,topsis,resilient,4284
 Accra_PLS100_PV+battery+diesel,0.8580401028392218,Accra,100,PV+battery+diesel,topsis,resilient,4285
@@ -4496,7 +4496,7 @@ Lodwar_PLS95_PV+battery,0.8559513506112127,Lodwar,95,PV+battery,topsis,resilient
 Lodwar_PLS95_PV+battery,0.8559513506112127,Lodwar,95,PV+battery,topsis,resilient,4495
 Lodwar_PLS95_PV+battery,0.8559513506112127,Lodwar,95,PV+battery,topsis,resilient,4496
 Lusaka_PLS90_PV+battery+diesel,0.855908215857616,Lusaka,90,PV+battery+diesel,topsis,resilient,4497
-Lusaka_PLS100_PV+battery+diesel,0.8559029103622839,Lusaka,100,PV+battery+diesel,topsis,resilient,4498
+Lusaka_PLS100_PV+battery+diesel,0.855902910362284,Lusaka,100,PV+battery+diesel,topsis,resilient,4498
 Lodwar_PLS85_PV+battery+diesel,0.8558920752584946,Lodwar,85,PV+battery+diesel,topsis,resilient,4499
 Lodwar_PLS80_PV+battery+diesel,0.855887377323021,Lodwar,80,PV+battery+diesel,topsis,resilient,4500
 Accra_PLS100_PV+battery+diesel,0.8558702745490498,Accra,100,PV+battery+diesel,topsis,resilient,4501
@@ -4508,7 +4508,7 @@ Lodwar_PLS100_PV+battery+diesel,0.8558156514342538,Lodwar,100,PV+battery+diesel,
 Accra_PLS85_PV+battery+diesel,0.8558033478774031,Accra,85,PV+battery+diesel,topsis,resilient,4507
 Accra_PLS90_PV+battery+diesel,0.8558028204316822,Accra,90,PV+battery+diesel,topsis,resilient,4508
 Lusaka_PLS95_PV+battery+diesel,0.8557891718659277,Lusaka,95,PV+battery+diesel,topsis,resilient,4509
-Lodwar_PLS95_PV+battery+diesel,0.8557885372417777,Lodwar,95,PV+battery+diesel,topsis,resilient,4510
+Lodwar_PLS95_PV+battery+diesel,0.8557885372417778,Lodwar,95,PV+battery+diesel,topsis,resilient,4510
 Lodwar_PLS95_PV+battery+diesel,0.8557690620654628,Lodwar,95,PV+battery+diesel,topsis,resilient,4511
 Lodwar_PLS80_PV+battery+diesel,0.855764327018799,Lodwar,80,PV+battery+diesel,topsis,resilient,4512
 Lusaka_PLS80_PV+battery,0.8557589827075983,Lusaka,80,PV+battery,topsis,resilient,4513
@@ -4878,7 +4878,7 @@ Lusaka_PLS85_Diesel only,0.8526367612096947,Lusaka,85,Diesel only,topsis,resilie
 Lusaka_PLS85_Diesel only,0.8526367612096947,Lusaka,85,Diesel only,topsis,resilient,4877
 Lodwar_PLS85_Diesel only,0.8526367612096947,Lodwar,85,Diesel only,topsis,resilient,4878
 Lusaka_PLS85_Diesel only,0.8526367612096947,Lusaka,85,Diesel only,topsis,resilient,4879
-Accra_PLS90_PV+battery+diesel,0.8526336112416469,Accra,90,PV+battery+diesel,topsis,resilient,4880
+Accra_PLS90_PV+battery+diesel,0.852633611241647,Accra,90,PV+battery+diesel,topsis,resilient,4880
 Lodwar_PLS95_PV+battery+diesel,0.8526242616963857,Lodwar,95,PV+battery+diesel,topsis,resilient,4881
 Accra_PLS100_PV+battery+diesel,0.8525794805442686,Accra,100,PV+battery+diesel,topsis,resilient,4882
 Accra_PLS100_Diesel only,0.852578627568104,Accra,100,Diesel only,topsis,resilient,4883
@@ -4901,7 +4901,7 @@ Accra_PLS85_PV+battery,0.8525600834587086,Accra,85,PV+battery,topsis,resilient,4
 Accra_PLS85_PV+battery,0.8525600834587086,Accra,85,PV+battery,topsis,resilient,4900
 Accra_PLS85_PV+battery,0.8525600834587086,Accra,85,PV+battery,topsis,resilient,4901
 Lusaka_PLS85_PV+battery+diesel,0.8525558967399992,Lusaka,85,PV+battery+diesel,topsis,resilient,4902
-Accra_PLS85_PV+battery+diesel,0.8525320582855836,Accra,85,PV+battery+diesel,topsis,resilient,4903
+Accra_PLS85_PV+battery+diesel,0.8525320582855839,Accra,85,PV+battery+diesel,topsis,resilient,4903
 Lusaka_PLS95_PV+battery+diesel,0.8525262926421501,Lusaka,95,PV+battery+diesel,topsis,resilient,4904
 Lodwar_PLS80_PV+battery+diesel,0.8525144772571583,Lodwar,80,PV+battery+diesel,topsis,resilient,4905
 Lodwar_PLS90_PV+battery,0.8525091627617506,Lodwar,90,PV+battery,topsis,resilient,4906
@@ -5023,7 +5023,7 @@ Lusaka_PLS80_PV+battery+diesel,0.8517836479099445,Lusaka,80,PV+battery+diesel,to
 Lusaka_PLS80_PV+battery+diesel,0.8517743078285671,Lusaka,80,PV+battery+diesel,topsis,resilient,5022
 Accra_PLS85_PV+battery+diesel,0.8517708199115331,Accra,85,PV+battery+diesel,topsis,resilient,5023
 Accra_PLS95_PV+battery+diesel,0.8517695027065424,Accra,95,PV+battery+diesel,topsis,resilient,5024
-Lusaka_PLS100_PV+battery+diesel,0.8517535436605473,Lusaka,100,PV+battery+diesel,topsis,resilient,5025
+Lusaka_PLS100_PV+battery+diesel,0.8517535436605475,Lusaka,100,PV+battery+diesel,topsis,resilient,5025
 Accra_PLS90_Diesel only,0.8517320451664847,Accra,90,Diesel only,topsis,resilient,5026
 Lusaka_PLS90_Diesel only,0.8517320451664847,Lusaka,90,Diesel only,topsis,resilient,5027
 Lusaka_PLS90_Diesel only,0.8517320451664847,Lusaka,90,Diesel only,topsis,resilient,5028
@@ -5213,7 +5213,7 @@ Lusaka_PLS85_PV+battery+diesel,0.8503089477750513,Lusaka,85,PV+battery+diesel,to
 Lodwar_PLS80_PV+battery+diesel,0.850261462104499,Lodwar,80,PV+battery+diesel,topsis,resilient,5212
 Lodwar_PLS90_PV+battery+diesel,0.8502553281743859,Lodwar,90,PV+battery+diesel,topsis,resilient,5213
 Lodwar_PLS85_PV+battery+diesel,0.8502396436778175,Lodwar,85,PV+battery+diesel,topsis,resilient,5214
-Lusaka_PLS85_PV+battery+diesel,0.8502187829480172,Lusaka,85,PV+battery+diesel,topsis,resilient,5215
+Lusaka_PLS85_PV+battery+diesel,0.8502187829480173,Lusaka,85,PV+battery+diesel,topsis,resilient,5215
 Lusaka_PLS95_PV+battery+diesel,0.8502135633268333,Lusaka,95,PV+battery+diesel,topsis,resilient,5216
 Accra_PLS80_PV+battery+diesel,0.8501754814330151,Accra,80,PV+battery+diesel,topsis,resilient,5217
 Accra_PLS80_PV+battery+diesel,0.8501644549991504,Accra,80,PV+battery+diesel,topsis,resilient,5218
@@ -5239,7 +5239,7 @@ Lusaka_PLS90_PV+battery,0.8501092083624323,Lusaka,90,PV+battery,topsis,resilient
 Lusaka_PLS85_PV+battery+diesel,0.8501030344857897,Lusaka,85,PV+battery+diesel,topsis,resilient,5238
 Accra_PLS85_PV+battery+diesel,0.8500814117550122,Accra,85,PV+battery+diesel,topsis,resilient,5239
 Lusaka_PLS80_PV+battery+diesel,0.8500808276210097,Lusaka,80,PV+battery+diesel,topsis,resilient,5240
-Lodwar_PLS100_PV+battery+diesel,0.8500663994764408,Lodwar,100,PV+battery+diesel,topsis,resilient,5241
+Lodwar_PLS100_PV+battery+diesel,0.8500663994764409,Lodwar,100,PV+battery+diesel,topsis,resilient,5241
 Lodwar_PLS80_PV+battery+diesel,0.8500287084837783,Lodwar,80,PV+battery+diesel,topsis,resilient,5242
 Lusaka_PLS100_PV+battery+diesel,0.8500191824181677,Lusaka,100,PV+battery+diesel,topsis,resilient,5243
 Accra_PLS85_PV+battery+diesel,0.8500168909104945,Accra,85,PV+battery+diesel,topsis,resilient,5244
@@ -5291,7 +5291,7 @@ Accra_PLS90_Diesel only,0.8495577025627947,Accra,90,Diesel only,topsis,resilient
 Lusaka_PLS90_Diesel only,0.8495577025627947,Lusaka,90,Diesel only,topsis,resilient,5290
 Lusaka_PLS90_PV+battery+diesel,0.8495288315892914,Lusaka,90,PV+battery+diesel,topsis,resilient,5291
 Lusaka_PLS80_PV+battery+diesel,0.8494282033805388,Lusaka,80,PV+battery+diesel,topsis,resilient,5292
-Lodwar_PLS100_PV+battery+diesel,0.849419367129205,Lodwar,100,PV+battery+diesel,topsis,resilient,5293
+Lodwar_PLS100_PV+battery+diesel,0.8494193671292052,Lodwar,100,PV+battery+diesel,topsis,resilient,5293
 Accra_PLS90_Diesel only,0.8493774588008725,Accra,90,Diesel only,topsis,resilient,5294
 Lodwar_PLS90_Diesel only,0.8493774588008725,Lodwar,90,Diesel only,topsis,resilient,5295
 Lusaka_PLS90_Diesel only,0.8493774588008725,Lusaka,90,Diesel only,topsis,resilient,5296
@@ -5341,13 +5341,13 @@ Lodwar_PLS100_PV+battery+diesel,0.8489195052059779,Lodwar,100,PV+battery+diesel,
 Lusaka_PLS80_PV+battery+diesel,0.8489133826420092,Lusaka,80,PV+battery+diesel,topsis,resilient,5340
 Lusaka_PLS85_PV+battery+diesel,0.8489131756076639,Lusaka,85,PV+battery+diesel,topsis,resilient,5341
 Lodwar_PLS100_PV+battery+diesel,0.8489078785535129,Lodwar,100,PV+battery+diesel,topsis,resilient,5342
-Accra_PLS85_PV+battery+diesel,0.8488990033384263,Accra,85,PV+battery+diesel,topsis,resilient,5343
+Accra_PLS85_PV+battery+diesel,0.8488990033384264,Accra,85,PV+battery+diesel,topsis,resilient,5343
 Accra_PLS100_PV+battery+diesel,0.8488680220977175,Accra,100,PV+battery+diesel,topsis,resilient,5344
 Lodwar_PLS85_PV+battery+diesel,0.8488573365454759,Lodwar,85,PV+battery+diesel,topsis,resilient,5345
 Lodwar_PLS95_PV+battery+diesel,0.8488276651971914,Lodwar,95,PV+battery+diesel,topsis,resilient,5346
 Accra_PLS90_PV+battery+diesel,0.8488072931938375,Accra,90,PV+battery+diesel,topsis,resilient,5347
 Lodwar_PLS90_PV+battery+diesel,0.8487977337679105,Lodwar,90,PV+battery+diesel,topsis,resilient,5348
-Lodwar_PLS90_PV+battery+diesel,0.8487701540259674,Lodwar,90,PV+battery+diesel,topsis,resilient,5349
+Lodwar_PLS90_PV+battery+diesel,0.8487701540259677,Lodwar,90,PV+battery+diesel,topsis,resilient,5349
 Lusaka_PLS80_PV+battery+diesel,0.8487673024845557,Lusaka,80,PV+battery+diesel,topsis,resilient,5350
 Lodwar_PLS95_PV+battery+diesel,0.8487333619068324,Lodwar,95,PV+battery+diesel,topsis,resilient,5351
 Accra_PLS85_PV+battery+diesel,0.8487224687979767,Accra,85,PV+battery+diesel,topsis,resilient,5352
@@ -5434,7 +5434,7 @@ Accra_PLS85_Diesel only,0.848030448189946,Accra,85,Diesel only,topsis,resilient,
 Lusaka_PLS85_Diesel only,0.848030448189946,Lusaka,85,Diesel only,topsis,resilient,5433
 Accra_PLS80_PV+battery+diesel,0.8480172412750446,Accra,80,PV+battery+diesel,topsis,resilient,5434
 Lusaka_PLS80_PV+battery+diesel,0.8480166415175117,Lusaka,80,PV+battery+diesel,topsis,resilient,5435
-Lusaka_PLS90_PV+battery+diesel,0.8480111208716803,Lusaka,90,PV+battery+diesel,topsis,resilient,5436
+Lusaka_PLS90_PV+battery+diesel,0.8480111208716805,Lusaka,90,PV+battery+diesel,topsis,resilient,5436
 Lodwar_PLS80_PV+battery+diesel,0.8479919688679518,Lodwar,80,PV+battery+diesel,topsis,resilient,5437
 Lusaka_PLS90_Diesel only,0.8479910618105325,Lusaka,90,Diesel only,topsis,resilient,5438
 Lodwar_PLS90_Diesel only,0.8479910618105325,Lodwar,90,Diesel only,topsis,resilient,5439
@@ -5800,7 +5800,7 @@ Lusaka_PLS95_Diesel only,0.8448538761345289,Lusaka,95,Diesel only,topsis,resilie
 Accra_PLS95_Diesel only,0.8448538761345289,Accra,95,Diesel only,topsis,resilient,5799
 Lodwar_PLS100_PV+battery+diesel,0.8448060530873561,Lodwar,100,PV+battery+diesel,topsis,resilient,5800
 Lusaka_PLS95_PV+battery+diesel,0.844798155570215,Lusaka,95,PV+battery+diesel,topsis,resilient,5801
-Accra_PLS80_PV+battery+diesel,0.8447665255817141,Accra,80,PV+battery+diesel,topsis,resilient,5802
+Accra_PLS80_PV+battery+diesel,0.8447665255817142,Accra,80,PV+battery+diesel,topsis,resilient,5802
 Lodwar_PLS90_PV+battery+diesel,0.8447577860598446,Lodwar,90,PV+battery+diesel,topsis,resilient,5803
 Accra_PLS90_PV+battery+diesel,0.8447500446468632,Accra,90,PV+battery+diesel,topsis,resilient,5804
 Accra_PLS85_PV+battery+diesel,0.8447409812184455,Accra,85,PV+battery+diesel,topsis,resilient,5805
@@ -5948,7 +5948,7 @@ Lusaka_PLS90_Diesel only,0.843591910509549,Lusaka,90,Diesel only,topsis,resilien
 Lusaka_PLS90_Diesel only,0.843591910509549,Lusaka,90,Diesel only,topsis,resilient,5947
 Lodwar_PLS90_Diesel only,0.843591910509549,Lodwar,90,Diesel only,topsis,resilient,5948
 Lodwar_PLS90_Diesel only,0.843591910509549,Lodwar,90,Diesel only,topsis,resilient,5949
-Lodwar_PLS100_PV+battery+diesel,0.8435578752085224,Lodwar,100,PV+battery+diesel,topsis,resilient,5950
+Lodwar_PLS100_PV+battery+diesel,0.8435578752085223,Lodwar,100,PV+battery+diesel,topsis,resilient,5950
 Accra_PLS100_PV+battery+diesel,0.8435489270264517,Accra,100,PV+battery+diesel,topsis,resilient,5951
 Lusaka_PLS80_PV+battery+diesel,0.8435194852648182,Lusaka,80,PV+battery+diesel,topsis,resilient,5952
 Lodwar_PLS85_PV+battery+diesel,0.8434656857639244,Lodwar,85,PV+battery+diesel,topsis,resilient,5953
@@ -6192,8 +6192,8 @@ Accra_PLS100_PV+battery+diesel,0.8409690021840244,Accra,100,PV+battery+diesel,to
 Lodwar_PLS85_PV+battery+diesel,0.8409576385759534,Lodwar,85,PV+battery+diesel,topsis,resilient,6191
 Accra_PLS95_PV+battery+diesel,0.8409346428962636,Accra,95,PV+battery+diesel,topsis,resilient,6192
 Lusaka_PLS90_PV+battery+diesel,0.8409283598154039,Lusaka,90,PV+battery+diesel,topsis,resilient,6193
-Lodwar_PLS85_PV+battery+diesel,0.8409006297631366,Lodwar,85,PV+battery+diesel,topsis,resilient,6194
-Accra_PLS95_PV+battery+diesel,0.8408807040522293,Accra,95,PV+battery+diesel,topsis,resilient,6195
+Lodwar_PLS85_PV+battery+diesel,0.8409006297631367,Lodwar,85,PV+battery+diesel,topsis,resilient,6194
+Accra_PLS95_PV+battery+diesel,0.8408807040522291,Accra,95,PV+battery+diesel,topsis,resilient,6195
 Lusaka_PLS95_PV+battery,0.8408629357153445,Lusaka,95,PV+battery,topsis,resilient,6196
 Lusaka_PLS95_PV+battery,0.8408629357153445,Lusaka,95,PV+battery,topsis,resilient,6197
 Lusaka_PLS95_PV+battery,0.8408629357153445,Lusaka,95,PV+battery,topsis,resilient,6198
@@ -6254,7 +6254,7 @@ Lusaka_PLS85_PV+battery+diesel,0.8404184354978422,Lusaka,85,PV+battery+diesel,to
 Accra_PLS80_PV+battery+diesel,0.8404062558283772,Accra,80,PV+battery+diesel,topsis,resilient,6253
 Accra_PLS95_PV+battery+diesel,0.8403956072162695,Accra,95,PV+battery+diesel,topsis,resilient,6254
 Lusaka_PLS90_PV+battery+diesel,0.8403931275109927,Lusaka,90,PV+battery+diesel,topsis,resilient,6255
-Lodwar_PLS80_PV+battery+diesel,0.8403819419735991,Lodwar,80,PV+battery+diesel,topsis,resilient,6256
+Lodwar_PLS80_PV+battery+diesel,0.8403819419735992,Lodwar,80,PV+battery+diesel,topsis,resilient,6256
 Accra_PLS90_PV+battery+diesel,0.8403500419038306,Accra,90,PV+battery+diesel,topsis,resilient,6257
 Lodwar_PLS80_PV+battery+diesel,0.8403310099866679,Lodwar,80,PV+battery+diesel,topsis,resilient,6258
 Lusaka_PLS80_PV+battery+diesel,0.8402969319891744,Lusaka,80,PV+battery+diesel,topsis,resilient,6259
@@ -6406,7 +6406,7 @@ Accra_PLS80_PV+battery,0.8393832252243059,Accra,80,PV+battery,topsis,resilient,6
 Accra_PLS80_PV+battery,0.8393832252243059,Accra,80,PV+battery,topsis,resilient,6405
 Lusaka_PLS80_PV+battery+diesel,0.8392650989134312,Lusaka,80,PV+battery+diesel,topsis,resilient,6406
 Lusaka_PLS90_PV+battery+diesel,0.8391596407182217,Lusaka,90,PV+battery+diesel,topsis,resilient,6407
-Lusaka_PLS95_PV+battery+diesel,0.8391119214399316,Lusaka,95,PV+battery+diesel,topsis,resilient,6408
+Lusaka_PLS95_PV+battery+diesel,0.8391119214399317,Lusaka,95,PV+battery+diesel,topsis,resilient,6408
 Accra_PLS100_PV+battery+diesel,0.8390435129377709,Accra,100,PV+battery+diesel,topsis,resilient,6409
 Accra_PLS100_PV+battery+diesel,0.8390197833511334,Accra,100,PV+battery+diesel,topsis,resilient,6410
 Lodwar_PLS80_PV+battery+diesel,0.8390005154559383,Lodwar,80,PV+battery+diesel,topsis,resilient,6411
@@ -6587,7 +6587,7 @@ Lodwar_PLS80_Diesel only,0.8377067531527519,Lodwar,80,Diesel only,topsis,resilie
 Lodwar_PLS80_Diesel only,0.8377067531527519,Lodwar,80,Diesel only,topsis,resilient,6586
 Lusaka_PLS80_Diesel only,0.8377067531527519,Lusaka,80,Diesel only,topsis,resilient,6587
 Lodwar_PLS80_Diesel only,0.8377067531527519,Lodwar,80,Diesel only,topsis,resilient,6588
-Lodwar_PLS85_PV+battery+diesel,0.8376735558542876,Lodwar,85,PV+battery+diesel,topsis,resilient,6589
+Lodwar_PLS85_PV+battery+diesel,0.8376735558542877,Lodwar,85,PV+battery+diesel,topsis,resilient,6589
 Lusaka_PLS95_PV+battery+diesel,0.8376666328827468,Lusaka,95,PV+battery+diesel,topsis,resilient,6590
 Lusaka_PLS80_PV+battery+diesel,0.837644155671115,Lusaka,80,PV+battery+diesel,topsis,resilient,6591
 Lusaka_PLS85_PV+battery+diesel,0.8376337416173862,Lusaka,85,PV+battery+diesel,topsis,resilient,6592
@@ -6634,7 +6634,7 @@ Accra_PLS85_Diesel only,0.8369863944972745,Accra,85,Diesel only,topsis,resilient
 Accra_PLS85_Diesel only,0.8369863944972745,Accra,85,Diesel only,topsis,resilient,6633
 Lodwar_PLS85_Diesel only,0.8369863944972745,Lodwar,85,Diesel only,topsis,resilient,6634
 Lodwar_PLS85_Diesel only,0.8369863944972745,Lodwar,85,Diesel only,topsis,resilient,6635
-Lodwar_PLS90_PV+battery+diesel,0.8369775128917385,Lodwar,90,PV+battery+diesel,topsis,resilient,6636
+Lodwar_PLS90_PV+battery+diesel,0.8369775128917387,Lodwar,90,PV+battery+diesel,topsis,resilient,6636
 Lodwar_PLS85_PV+battery+diesel,0.8369768564596163,Lodwar,85,PV+battery+diesel,topsis,resilient,6637
 Lodwar_PLS95_PV+battery+diesel,0.8369716613812832,Lodwar,95,PV+battery+diesel,topsis,resilient,6638
 Accra_PLS90_PV+battery+diesel,0.8369619185935888,Accra,90,PV+battery+diesel,topsis,resilient,6639
@@ -6782,9 +6782,9 @@ Lodwar_PLS80_PV+battery,0.8355415699377673,Lodwar,80,PV+battery,topsis,resilient
 Lodwar_PLS80_PV+battery,0.8355415699377673,Lodwar,80,PV+battery,topsis,resilient,6781
 Lodwar_PLS80_PV+battery,0.8355415699377673,Lodwar,80,PV+battery,topsis,resilient,6782
 Lodwar_PLS80_PV+battery,0.8355415699377673,Lodwar,80,PV+battery,topsis,resilient,6783
-Lusaka_PLS85_PV+battery+diesel,0.8354553596942939,Lusaka,85,PV+battery+diesel,topsis,resilient,6784
+Lusaka_PLS85_PV+battery+diesel,0.835455359694294,Lusaka,85,PV+battery+diesel,topsis,resilient,6784
 Lusaka_PLS85_PV+battery+diesel,0.8354338185833767,Lusaka,85,PV+battery+diesel,topsis,resilient,6785
-Lusaka_PLS90_PV+battery+diesel,0.835409864834538,Lusaka,90,PV+battery+diesel,topsis,resilient,6786
+Lusaka_PLS90_PV+battery+diesel,0.8354098648345383,Lusaka,90,PV+battery+diesel,topsis,resilient,6786
 Lusaka_PLS100_PV+battery+diesel,0.835346490226279,Lusaka,100,PV+battery+diesel,topsis,resilient,6787
 Lusaka_PLS90_PV+battery+diesel,0.8352935756508856,Lusaka,90,PV+battery+diesel,topsis,resilient,6788
 Accra_PLS85_PV+battery+diesel,0.8352795907526233,Accra,85,PV+battery+diesel,topsis,resilient,6789
@@ -6795,15 +6795,15 @@ Lusaka_PLS80_PV+battery+diesel,0.8351851811740909,Lusaka,80,PV+battery+diesel,to
 Accra_PLS85_PV+battery+diesel,0.8351834646661269,Accra,85,PV+battery+diesel,topsis,resilient,6794
 Lodwar_PLS80_PV+battery+diesel,0.8350732915148209,Lodwar,80,PV+battery+diesel,topsis,resilient,6795
 Accra_PLS80_PV+battery+diesel,0.835052537257907,Accra,80,PV+battery+diesel,topsis,resilient,6796
-Lusaka_PLS85_Diesel only,0.8350103489132451,Lusaka,85,Diesel only,topsis,resilient,6797
-Accra_PLS85_Diesel only,0.8350103489132451,Accra,85,Diesel only,topsis,resilient,6798
-Lusaka_PLS85_Diesel only,0.8350103489132451,Lusaka,85,Diesel only,topsis,resilient,6799
-Accra_PLS85_Diesel only,0.8350103489132451,Accra,85,Diesel only,topsis,resilient,6800
-Lodwar_PLS85_Diesel only,0.8350103489132451,Lodwar,85,Diesel only,topsis,resilient,6801
-Lusaka_PLS85_Diesel only,0.8350103489132451,Lusaka,85,Diesel only,topsis,resilient,6802
-Lodwar_PLS85_Diesel only,0.8350103489132451,Lodwar,85,Diesel only,topsis,resilient,6803
-Accra_PLS85_Diesel only,0.8350103489132451,Accra,85,Diesel only,topsis,resilient,6804
-Lodwar_PLS85_Diesel only,0.8350103489132451,Lodwar,85,Diesel only,topsis,resilient,6805
+Lusaka_PLS85_Diesel only,0.8350103489132453,Lusaka,85,Diesel only,topsis,resilient,6797
+Accra_PLS85_Diesel only,0.8350103489132453,Accra,85,Diesel only,topsis,resilient,6798
+Lusaka_PLS85_Diesel only,0.8350103489132453,Lusaka,85,Diesel only,topsis,resilient,6799
+Accra_PLS85_Diesel only,0.8350103489132453,Accra,85,Diesel only,topsis,resilient,6800
+Lodwar_PLS85_Diesel only,0.8350103489132453,Lodwar,85,Diesel only,topsis,resilient,6801
+Lusaka_PLS85_Diesel only,0.8350103489132453,Lusaka,85,Diesel only,topsis,resilient,6802
+Lodwar_PLS85_Diesel only,0.8350103489132453,Lodwar,85,Diesel only,topsis,resilient,6803
+Accra_PLS85_Diesel only,0.8350103489132453,Accra,85,Diesel only,topsis,resilient,6804
+Lodwar_PLS85_Diesel only,0.8350103489132453,Lodwar,85,Diesel only,topsis,resilient,6805
 Lusaka_PLS85_PV+battery+diesel,0.8350046553124395,Lusaka,85,PV+battery+diesel,topsis,resilient,6806
 Lusaka_PLS95_PV+battery,0.8349671865200341,Lusaka,95,PV+battery,topsis,resilient,6807
 Lusaka_PLS95_PV+battery,0.8349671865200341,Lusaka,95,PV+battery,topsis,resilient,6808
@@ -6906,7 +6906,7 @@ Lodwar_PLS95_PV+battery+diesel,0.8342285219798666,Lodwar,95,PV+battery+diesel,to
 Lodwar_PLS80_PV+battery+diesel,0.834219584446476,Lodwar,80,PV+battery+diesel,topsis,resilient,6905
 Lodwar_PLS85_PV+battery+diesel,0.83412749653049,Lodwar,85,PV+battery+diesel,topsis,resilient,6906
 Lusaka_PLS85_PV+battery+diesel,0.8341074566046486,Lusaka,85,PV+battery+diesel,topsis,resilient,6907
-Accra_PLS80_PV+battery+diesel,0.8340853708015887,Accra,80,PV+battery+diesel,topsis,resilient,6908
+Accra_PLS80_PV+battery+diesel,0.8340853708015888,Accra,80,PV+battery+diesel,topsis,resilient,6908
 Lusaka_PLS95_PV+battery,0.8340013298030577,Lusaka,95,PV+battery,topsis,resilient,6909
 Lusaka_PLS95_PV+battery,0.8340013298030577,Lusaka,95,PV+battery,topsis,resilient,6910
 Lusaka_PLS95_PV+battery,0.8340013298030577,Lusaka,95,PV+battery,topsis,resilient,6911
@@ -6943,7 +6943,7 @@ Accra_PLS80_PV+battery,0.8337394402446588,Accra,80,PV+battery,topsis,resilient,6
 Lusaka_PLS80_PV+battery+diesel,0.8337382043186242,Lusaka,80,PV+battery+diesel,topsis,resilient,6942
 Lodwar_PLS100_PV+battery+diesel,0.8336912449768362,Lodwar,100,PV+battery+diesel,topsis,resilient,6943
 Accra_PLS95_PV+battery+diesel,0.833687007262933,Accra,95,PV+battery+diesel,topsis,resilient,6944
-Lusaka_PLS90_PV+battery+diesel,0.8336716820062694,Lusaka,90,PV+battery+diesel,topsis,resilient,6945
+Lusaka_PLS90_PV+battery+diesel,0.8336716820062696,Lusaka,90,PV+battery+diesel,topsis,resilient,6945
 Lodwar_PLS80_PV+battery,0.8336568081440859,Lodwar,80,PV+battery,topsis,resilient,6946
 Lodwar_PLS80_PV+battery,0.8336568081440859,Lodwar,80,PV+battery,topsis,resilient,6947
 Lodwar_PLS80_PV+battery,0.8336568081440859,Lodwar,80,PV+battery,topsis,resilient,6948
@@ -7027,15 +7027,15 @@ Accra_PLS90_PV+battery+diesel,0.8328500530168075,Accra,90,PV+battery+diesel,tops
 Lodwar_PLS100_PV+battery+diesel,0.8328432779324288,Lodwar,100,PV+battery+diesel,topsis,resilient,7026
 Accra_PLS80_PV+battery+diesel,0.8328181777612644,Accra,80,PV+battery+diesel,topsis,resilient,7027
 Accra_PLS85_PV+battery+diesel,0.8327799849512943,Accra,85,PV+battery+diesel,topsis,resilient,7028
-Lusaka_PLS95_Diesel only,0.8327383709756743,Lusaka,95,Diesel only,topsis,resilient,7029
-Lusaka_PLS95_Diesel only,0.8327383709756743,Lusaka,95,Diesel only,topsis,resilient,7030
-Accra_PLS95_Diesel only,0.8327383709756743,Accra,95,Diesel only,topsis,resilient,7031
-Lodwar_PLS95_Diesel only,0.8327383709756743,Lodwar,95,Diesel only,topsis,resilient,7032
-Accra_PLS95_Diesel only,0.8327383709756743,Accra,95,Diesel only,topsis,resilient,7033
-Lodwar_PLS95_Diesel only,0.8327383709756743,Lodwar,95,Diesel only,topsis,resilient,7034
-Lodwar_PLS95_Diesel only,0.8327383709756743,Lodwar,95,Diesel only,topsis,resilient,7035
-Accra_PLS95_Diesel only,0.8327383709756743,Accra,95,Diesel only,topsis,resilient,7036
-Lusaka_PLS95_Diesel only,0.8327383709756743,Lusaka,95,Diesel only,topsis,resilient,7037
+Lusaka_PLS95_Diesel only,0.8327383709756744,Lusaka,95,Diesel only,topsis,resilient,7029
+Lusaka_PLS95_Diesel only,0.8327383709756744,Lusaka,95,Diesel only,topsis,resilient,7030
+Accra_PLS95_Diesel only,0.8327383709756744,Accra,95,Diesel only,topsis,resilient,7031
+Lodwar_PLS95_Diesel only,0.8327383709756744,Lodwar,95,Diesel only,topsis,resilient,7032
+Accra_PLS95_Diesel only,0.8327383709756744,Accra,95,Diesel only,topsis,resilient,7033
+Lodwar_PLS95_Diesel only,0.8327383709756744,Lodwar,95,Diesel only,topsis,resilient,7034
+Lodwar_PLS95_Diesel only,0.8327383709756744,Lodwar,95,Diesel only,topsis,resilient,7035
+Accra_PLS95_Diesel only,0.8327383709756744,Accra,95,Diesel only,topsis,resilient,7036
+Lusaka_PLS95_Diesel only,0.8327383709756744,Lusaka,95,Diesel only,topsis,resilient,7037
 Accra_PLS80_PV+battery+diesel,0.8327292470692976,Accra,80,PV+battery+diesel,topsis,resilient,7038
 Accra_PLS90_PV+battery+diesel,0.8327261142039732,Accra,90,PV+battery+diesel,topsis,resilient,7039
 Lodwar_PLS80_PV+battery+diesel,0.8327054263715086,Lodwar,80,PV+battery+diesel,topsis,resilient,7040
@@ -7093,7 +7093,7 @@ Lodwar_PLS95_Diesel only,0.8324873086533089,Lodwar,95,Diesel only,topsis,resilie
 Accra_PLS95_Diesel only,0.8324873086533089,Accra,95,Diesel only,topsis,resilient,7092
 Accra_PLS95_Diesel only,0.8324873086533089,Accra,95,Diesel only,topsis,resilient,7093
 Accra_PLS95_Diesel only,0.8324873086533089,Accra,95,Diesel only,topsis,resilient,7094
-Lusaka_PLS100_PV+battery+diesel,0.8324711405321608,Lusaka,100,PV+battery+diesel,topsis,resilient,7095
+Lusaka_PLS100_PV+battery+diesel,0.832471140532161,Lusaka,100,PV+battery+diesel,topsis,resilient,7095
 Lusaka_PLS90_PV+battery+diesel,0.8324349490647389,Lusaka,90,PV+battery+diesel,topsis,resilient,7096
 Lusaka_PLS100_PV+battery+diesel,0.8324336532425521,Lusaka,100,PV+battery+diesel,topsis,resilient,7097
 Accra_PLS85_PV+battery+diesel,0.8323687546600184,Accra,85,PV+battery+diesel,topsis,resilient,7098
@@ -7151,15 +7151,15 @@ Lusaka_PLS90_PV+battery+diesel,0.8318789149815239,Lusaka,90,PV+battery+diesel,to
 Lodwar_PLS85_PV+battery+diesel,0.8318735456705992,Lodwar,85,PV+battery+diesel,topsis,resilient,7150
 Accra_PLS90_PV+battery+diesel,0.8318693989565635,Accra,90,PV+battery+diesel,topsis,resilient,7151
 Lodwar_PLS90_PV+battery+diesel,0.8318640351559826,Lodwar,90,PV+battery+diesel,topsis,resilient,7152
-Lusaka_PLS95_PV+battery+diesel,0.8318583613111448,Lusaka,95,PV+battery+diesel,topsis,resilient,7153
-Lodwar_PLS85_PV+battery+diesel,0.8318357595480983,Lodwar,85,PV+battery+diesel,topsis,resilient,7154
+Lusaka_PLS95_PV+battery+diesel,0.8318583613111449,Lusaka,95,PV+battery+diesel,topsis,resilient,7153
+Lodwar_PLS85_PV+battery+diesel,0.8318357595480985,Lodwar,85,PV+battery+diesel,topsis,resilient,7154
 Accra_PLS80_PV+battery+diesel,0.8318323647604128,Accra,80,PV+battery+diesel,topsis,resilient,7155
 Lodwar_PLS80_PV+battery+diesel,0.83182287159025,Lodwar,80,PV+battery+diesel,topsis,resilient,7156
 Lusaka_PLS85_PV+battery+diesel,0.8318203710199092,Lusaka,85,PV+battery+diesel,topsis,resilient,7157
 Accra_PLS95_PV+battery+diesel,0.8318083765315487,Accra,95,PV+battery+diesel,topsis,resilient,7158
 Accra_PLS90_PV+battery+diesel,0.8317740133847847,Accra,90,PV+battery+diesel,topsis,resilient,7159
 Accra_PLS85_PV+battery+diesel,0.8316486018395424,Accra,85,PV+battery+diesel,topsis,resilient,7160
-Accra_PLS85_PV+battery+diesel,0.8316201823870215,Accra,85,PV+battery+diesel,topsis,resilient,7161
+Accra_PLS85_PV+battery+diesel,0.8316201823870216,Accra,85,PV+battery+diesel,topsis,resilient,7161
 Lusaka_PLS80_PV+battery+diesel,0.8315940012883425,Lusaka,80,PV+battery+diesel,topsis,resilient,7162
 Lusaka_PLS80_PV+battery,0.8315894135756436,Lusaka,80,PV+battery,topsis,resilient,7163
 Lusaka_PLS80_PV+battery,0.8315894135756436,Lusaka,80,PV+battery,topsis,resilient,7164
@@ -7182,13 +7182,13 @@ Lodwar_PLS85_PV+battery+diesel,0.8314777379831184,Lodwar,85,PV+battery+diesel,to
 Lusaka_PLS85_PV+battery+diesel,0.8314641831278974,Lusaka,85,PV+battery+diesel,topsis,resilient,7181
 Lusaka_PLS100_PV+battery+diesel,0.8314500134804403,Lusaka,100,PV+battery+diesel,topsis,resilient,7182
 Accra_PLS85_PV+battery+diesel,0.8314316296120119,Accra,85,PV+battery+diesel,topsis,resilient,7183
-Accra_PLS95_PV+battery+diesel,0.8314047007852715,Accra,95,PV+battery+diesel,topsis,resilient,7184
+Accra_PLS95_PV+battery+diesel,0.8314047007852714,Accra,95,PV+battery+diesel,topsis,resilient,7184
 Lusaka_PLS95_PV+battery+diesel,0.8314035815700265,Lusaka,95,PV+battery+diesel,topsis,resilient,7185
 Lodwar_PLS90_PV+battery+diesel,0.8313565495477353,Lodwar,90,PV+battery+diesel,topsis,resilient,7186
 Lodwar_PLS85_PV+battery+diesel,0.8313336901185108,Lodwar,85,PV+battery+diesel,topsis,resilient,7187
 Accra_PLS100_PV+battery+diesel,0.8313329562200276,Accra,100,PV+battery+diesel,topsis,resilient,7188
 Lusaka_PLS100_PV+battery+diesel,0.8313268912188316,Lusaka,100,PV+battery+diesel,topsis,resilient,7189
-Lodwar_PLS100_PV+battery+diesel,0.8313222913577185,Lodwar,100,PV+battery+diesel,topsis,resilient,7190
+Lodwar_PLS100_PV+battery+diesel,0.8313222913577184,Lodwar,100,PV+battery+diesel,topsis,resilient,7190
 Lusaka_PLS80_PV+battery+diesel,0.8312623627724266,Lusaka,80,PV+battery+diesel,topsis,resilient,7191
 Lodwar_PLS100_PV+battery+diesel,0.8312333545550878,Lodwar,100,PV+battery+diesel,topsis,resilient,7192
 Lodwar_PLS85_PV+battery,0.8312218276452551,Lodwar,85,PV+battery,topsis,resilient,7193
@@ -7209,15 +7209,15 @@ Lusaka_PLS85_PV+battery+diesel,0.8311130005440212,Lusaka,85,PV+battery+diesel,to
 Lusaka_PLS90_PV+battery+diesel,0.8310890635737375,Lusaka,90,PV+battery+diesel,topsis,resilient,7208
 Lodwar_PLS95_PV+battery+diesel,0.8310801508784619,Lodwar,95,PV+battery+diesel,topsis,resilient,7209
 Lusaka_PLS80_PV+battery+diesel,0.8310596304859055,Lusaka,80,PV+battery+diesel,topsis,resilient,7210
-Lusaka_PLS95_Diesel only,0.8310291683214632,Lusaka,95,Diesel only,topsis,resilient,7211
-Lodwar_PLS95_Diesel only,0.8310291683214632,Lodwar,95,Diesel only,topsis,resilient,7212
-Lodwar_PLS95_Diesel only,0.8310291683214632,Lodwar,95,Diesel only,topsis,resilient,7213
-Accra_PLS95_Diesel only,0.8310291683214632,Accra,95,Diesel only,topsis,resilient,7214
-Accra_PLS95_Diesel only,0.8310291683214632,Accra,95,Diesel only,topsis,resilient,7215
-Accra_PLS95_Diesel only,0.8310291683214632,Accra,95,Diesel only,topsis,resilient,7216
-Lusaka_PLS95_Diesel only,0.8310291683214632,Lusaka,95,Diesel only,topsis,resilient,7217
-Lusaka_PLS95_Diesel only,0.8310291683214632,Lusaka,95,Diesel only,topsis,resilient,7218
-Lodwar_PLS95_Diesel only,0.8310291683214632,Lodwar,95,Diesel only,topsis,resilient,7219
+Lusaka_PLS95_Diesel only,0.8310291683214635,Lusaka,95,Diesel only,topsis,resilient,7211
+Lodwar_PLS95_Diesel only,0.8310291683214635,Lodwar,95,Diesel only,topsis,resilient,7212
+Lodwar_PLS95_Diesel only,0.8310291683214635,Lodwar,95,Diesel only,topsis,resilient,7213
+Accra_PLS95_Diesel only,0.8310291683214635,Accra,95,Diesel only,topsis,resilient,7214
+Accra_PLS95_Diesel only,0.8310291683214635,Accra,95,Diesel only,topsis,resilient,7215
+Accra_PLS95_Diesel only,0.8310291683214635,Accra,95,Diesel only,topsis,resilient,7216
+Lusaka_PLS95_Diesel only,0.8310291683214635,Lusaka,95,Diesel only,topsis,resilient,7217
+Lusaka_PLS95_Diesel only,0.8310291683214635,Lusaka,95,Diesel only,topsis,resilient,7218
+Lodwar_PLS95_Diesel only,0.8310291683214635,Lodwar,95,Diesel only,topsis,resilient,7219
 Accra_PLS100_PV+battery+diesel,0.831021578126003,Accra,100,PV+battery+diesel,topsis,resilient,7220
 Lusaka_PLS90_Diesel only,0.8310037489310412,Lusaka,90,Diesel only,topsis,resilient,7221
 Accra_PLS90_Diesel only,0.8310037489310412,Accra,90,Diesel only,topsis,resilient,7222
@@ -7282,7 +7282,7 @@ Accra_PLS95_PV+battery,0.8304507522447643,Accra,95,PV+battery,topsis,resilient,7
 Accra_PLS95_PV+battery,0.8304507522447643,Accra,95,PV+battery,topsis,resilient,7281
 Lusaka_PLS90_PV+battery+diesel,0.8304269900447324,Lusaka,90,PV+battery+diesel,topsis,resilient,7282
 Lodwar_PLS90_PV+battery+diesel,0.8304016683060387,Lodwar,90,PV+battery+diesel,topsis,resilient,7283
-Accra_PLS85_PV+battery+diesel,0.8303991227243904,Accra,85,PV+battery+diesel,topsis,resilient,7284
+Accra_PLS85_PV+battery+diesel,0.8303991227243903,Accra,85,PV+battery+diesel,topsis,resilient,7284
 Lusaka_PLS85_PV+battery+diesel,0.8303963403149561,Lusaka,85,PV+battery+diesel,topsis,resilient,7285
 Lodwar_PLS80_PV+battery+diesel,0.8303661810035855,Lodwar,80,PV+battery+diesel,topsis,resilient,7286
 Lodwar_PLS95_PV+battery,0.83033237373307,Lodwar,95,PV+battery,topsis,resilient,7287
@@ -7440,7 +7440,7 @@ Accra_PLS90_PV+battery+diesel,0.8287719082893125,Accra,90,PV+battery+diesel,tops
 Lodwar_PLS80_PV+battery+diesel,0.8287051132689103,Lodwar,80,PV+battery+diesel,topsis,resilient,7439
 Lusaka_PLS85_PV+battery+diesel,0.8286623531417254,Lusaka,85,PV+battery+diesel,topsis,resilient,7440
 Lusaka_PLS80_PV+battery+diesel,0.8286503676031748,Lusaka,80,PV+battery+diesel,topsis,resilient,7441
-Lusaka_PLS100_PV+battery+diesel,0.8286251625229768,Lusaka,100,PV+battery+diesel,topsis,resilient,7442
+Lusaka_PLS100_PV+battery+diesel,0.828625162522977,Lusaka,100,PV+battery+diesel,topsis,resilient,7442
 Lusaka_PLS85_PV+battery+diesel,0.8285588303019948,Lusaka,85,PV+battery+diesel,topsis,resilient,7443
 Accra_PLS100_PV+battery+diesel,0.8285389924241565,Accra,100,PV+battery+diesel,topsis,resilient,7444
 Lusaka_PLS80_PV+battery+diesel,0.8285304393762186,Lusaka,80,PV+battery+diesel,topsis,resilient,7445
@@ -7517,7 +7517,7 @@ Accra_PLS80_PV+battery,0.8275964371601312,Accra,80,PV+battery,topsis,resilient,7
 Accra_PLS80_PV+battery,0.8275964371601312,Accra,80,PV+battery,topsis,resilient,7516
 Accra_PLS85_PV+battery+diesel,0.8275788689694397,Accra,85,PV+battery+diesel,topsis,resilient,7517
 Lusaka_PLS95_PV+battery+diesel,0.8275626709649387,Lusaka,95,PV+battery+diesel,topsis,resilient,7518
-Lusaka_PLS80_PV+battery+diesel,0.8275457554276717,Lusaka,80,PV+battery+diesel,topsis,resilient,7519
+Lusaka_PLS80_PV+battery+diesel,0.8275457554276718,Lusaka,80,PV+battery+diesel,topsis,resilient,7519
 Lusaka_PLS85_PV+battery+diesel,0.8274932182880717,Lusaka,85,PV+battery+diesel,topsis,resilient,7520
 Lodwar_PLS95_PV+battery+diesel,0.8274919794306049,Lodwar,95,PV+battery+diesel,topsis,resilient,7521
 Accra_PLS80_PV+battery+diesel,0.8274652893469499,Accra,80,PV+battery+diesel,topsis,resilient,7522
@@ -7576,7 +7576,7 @@ Lusaka_PLS85_PV+battery,0.827039364649522,Lusaka,85,PV+battery,topsis,resilient,
 Lusaka_PLS85_PV+battery,0.827039364649522,Lusaka,85,PV+battery,topsis,resilient,7575
 Lusaka_PLS85_PV+battery,0.827039364649522,Lusaka,85,PV+battery,topsis,resilient,7576
 Lusaka_PLS85_PV+battery,0.827039364649522,Lusaka,85,PV+battery,topsis,resilient,7577
-Accra_PLS100_PV+battery+diesel,0.8270206427360497,Accra,100,PV+battery+diesel,topsis,resilient,7578
+Accra_PLS100_PV+battery+diesel,0.8270206427360499,Accra,100,PV+battery+diesel,topsis,resilient,7578
 Lodwar_PLS100_PV+battery+diesel,0.8270163813016672,Lodwar,100,PV+battery+diesel,topsis,resilient,7579
 Accra_PLS95_PV+battery+diesel,0.8269871519131297,Accra,95,PV+battery+diesel,topsis,resilient,7580
 Lodwar_PLS95_PV+battery+diesel,0.8269216749589892,Lodwar,95,PV+battery+diesel,topsis,resilient,7581
@@ -7854,10 +7854,10 @@ Lusaka_PLS90_PV+battery,0.8238538585356041,Lusaka,90,PV+battery,topsis,resilient
 Lusaka_PLS90_PV+battery,0.8238538585356041,Lusaka,90,PV+battery,topsis,resilient,7853
 Lusaka_PLS90_PV+battery,0.8238538585356041,Lusaka,90,PV+battery,topsis,resilient,7854
 Lusaka_PLS80_PV+battery+diesel,0.8238427649525463,Lusaka,80,PV+battery+diesel,topsis,resilient,7855
-Lusaka_PLS90_PV+battery+diesel,0.8238395355803119,Lusaka,90,PV+battery+diesel,topsis,resilient,7856
-Lusaka_PLS95_PV+battery+diesel,0.8237398532957165,Lusaka,95,PV+battery+diesel,topsis,resilient,7857
+Lusaka_PLS90_PV+battery+diesel,0.823839535580312,Lusaka,90,PV+battery+diesel,topsis,resilient,7856
+Lusaka_PLS95_PV+battery+diesel,0.8237398532957168,Lusaka,95,PV+battery+diesel,topsis,resilient,7857
 Lusaka_PLS80_PV+battery+diesel,0.8237292284107978,Lusaka,80,PV+battery+diesel,topsis,resilient,7858
-Lusaka_PLS100_PV+battery+diesel,0.8237107507814776,Lusaka,100,PV+battery+diesel,topsis,resilient,7859
+Lusaka_PLS100_PV+battery+diesel,0.8237107507814777,Lusaka,100,PV+battery+diesel,topsis,resilient,7859
 Accra_PLS100_Diesel only,0.8237037963563911,Accra,100,Diesel only,topsis,resilient,7860
 Lodwar_PLS100_Diesel only,0.8237037963563911,Lodwar,100,Diesel only,topsis,resilient,7861
 Lodwar_PLS100_Diesel only,0.8237037963563911,Lodwar,100,Diesel only,topsis,resilient,7862
@@ -7956,7 +7956,7 @@ Lusaka_PLS80_Diesel only,0.8232499203552104,Lusaka,80,Diesel only,topsis,resilie
 Accra_PLS80_Diesel only,0.8232499203552104,Accra,80,Diesel only,topsis,resilient,7955
 Accra_PLS80_Diesel only,0.8232499203552104,Accra,80,Diesel only,topsis,resilient,7956
 Accra_PLS80_Diesel only,0.8232499203552104,Accra,80,Diesel only,topsis,resilient,7957
-Lusaka_PLS100_PV+battery+diesel,0.8230985034511253,Lusaka,100,PV+battery+diesel,topsis,resilient,7958
+Lusaka_PLS100_PV+battery+diesel,0.8230985034511255,Lusaka,100,PV+battery+diesel,topsis,resilient,7958
 Accra_PLS95_Diesel only,0.8230973156695439,Accra,95,Diesel only,topsis,resilient,7959
 Lusaka_PLS95_Diesel only,0.8230973156695439,Lusaka,95,Diesel only,topsis,resilient,7960
 Lodwar_PLS95_Diesel only,0.8230973156695439,Lodwar,95,Diesel only,topsis,resilient,7961
@@ -8003,7 +8003,7 @@ Accra_PLS100_Diesel only,0.822786549729562,Accra,100,Diesel only,topsis,resilien
 Lusaka_PLS100_Diesel only,0.822786549729562,Lusaka,100,Diesel only,topsis,resilient,8002
 Accra_PLS100_Diesel only,0.822786549729562,Accra,100,Diesel only,topsis,resilient,8003
 Accra_PLS85_PV+battery+diesel,0.8227838994898768,Accra,85,PV+battery+diesel,topsis,resilient,8004
-Accra_PLS90_PV+battery+diesel,0.8227462437970958,Accra,90,PV+battery+diesel,topsis,resilient,8005
+Accra_PLS90_PV+battery+diesel,0.8227462437970959,Accra,90,PV+battery+diesel,topsis,resilient,8005
 Lodwar_PLS85_PV+battery+diesel,0.822708398121836,Lodwar,85,PV+battery+diesel,topsis,resilient,8006
 Lusaka_PLS90_PV+battery+diesel,0.8226086147810853,Lusaka,90,PV+battery+diesel,topsis,resilient,8007
 Lusaka_PLS85_PV+battery+diesel,0.8225924391912681,Lusaka,85,PV+battery+diesel,topsis,resilient,8008
@@ -8060,7 +8060,7 @@ Accra_PLS85_PV+battery,0.8222765381815695,Accra,85,PV+battery,topsis,resilient,8
 Lodwar_PLS85_PV+battery+diesel,0.8222443731262784,Lodwar,85,PV+battery+diesel,topsis,resilient,8059
 Lusaka_PLS80_PV+battery+diesel,0.8221799722307598,Lusaka,80,PV+battery+diesel,topsis,resilient,8060
 Accra_PLS100_PV+battery+diesel,0.8221717225953914,Accra,100,PV+battery+diesel,topsis,resilient,8061
-Lodwar_PLS80_PV+battery+diesel,0.8221709866068692,Lodwar,80,PV+battery+diesel,topsis,resilient,8062
+Lodwar_PLS80_PV+battery+diesel,0.8221709866068694,Lodwar,80,PV+battery+diesel,topsis,resilient,8062
 Lusaka_PLS85_PV+battery+diesel,0.8221623781029462,Lusaka,85,PV+battery+diesel,topsis,resilient,8063
 Lusaka_PLS80_PV+battery+diesel,0.8221561617633705,Lusaka,80,PV+battery+diesel,topsis,resilient,8064
 Lusaka_PLS85_PV+battery+diesel,0.8221487421113955,Lusaka,85,PV+battery+diesel,topsis,resilient,8065
@@ -8132,7 +8132,7 @@ Accra_PLS100_Diesel only,0.8213237529608767,Accra,100,Diesel only,topsis,resilie
 Lusaka_PLS100_Diesel only,0.8213237529608767,Lusaka,100,Diesel only,topsis,resilient,8131
 Lusaka_PLS100_Diesel only,0.8213237529608767,Lusaka,100,Diesel only,topsis,resilient,8132
 Lodwar_PLS100_PV+battery+diesel,0.8212793247895736,Lodwar,100,PV+battery+diesel,topsis,resilient,8133
-Accra_PLS95_PV+battery+diesel,0.8212781385571855,Accra,95,PV+battery+diesel,topsis,resilient,8134
+Accra_PLS95_PV+battery+diesel,0.8212781385571856,Accra,95,PV+battery+diesel,topsis,resilient,8134
 Accra_PLS90_PV+battery,0.8212736948001936,Accra,90,PV+battery,topsis,resilient,8135
 Accra_PLS90_PV+battery,0.8212736948001936,Accra,90,PV+battery,topsis,resilient,8136
 Accra_PLS90_PV+battery,0.8212736948001936,Accra,90,PV+battery,topsis,resilient,8137
@@ -8204,7 +8204,7 @@ Lodwar_PLS100_PV+battery,0.8207042164530836,Lodwar,100,PV+battery,topsis,resilie
 Lodwar_PLS100_PV+battery,0.8207042164530836,Lodwar,100,PV+battery,topsis,resilient,8203
 Lodwar_PLS100_PV+battery,0.8207042164530836,Lodwar,100,PV+battery,topsis,resilient,8204
 Lodwar_PLS100_PV+battery,0.8207042164530836,Lodwar,100,PV+battery,topsis,resilient,8205
-Accra_PLS95_PV+battery+diesel,0.8206392594250748,Accra,95,PV+battery+diesel,topsis,resilient,8206
+Accra_PLS95_PV+battery+diesel,0.8206392594250749,Accra,95,PV+battery+diesel,topsis,resilient,8206
 Lusaka_PLS80_Diesel only,0.8206218794273193,Lusaka,80,Diesel only,topsis,resilient,8207
 Lodwar_PLS80_Diesel only,0.8206218794273193,Lodwar,80,Diesel only,topsis,resilient,8208
 Accra_PLS80_Diesel only,0.8206218794273193,Accra,80,Diesel only,topsis,resilient,8209
@@ -8245,7 +8245,7 @@ Lusaka_PLS100_PV+battery+diesel,0.8202231316224853,Lusaka,100,PV+battery+diesel,
 Accra_PLS100_PV+battery+diesel,0.8202208998925834,Accra,100,PV+battery+diesel,topsis,resilient,8244
 Lodwar_PLS100_PV+battery+diesel,0.8201143420801443,Lodwar,100,PV+battery+diesel,topsis,resilient,8245
 Lusaka_PLS95_PV+battery+diesel,0.8201035003922489,Lusaka,95,PV+battery+diesel,topsis,resilient,8246
-Accra_PLS100_PV+battery+diesel,0.8200720337401142,Accra,100,PV+battery+diesel,topsis,resilient,8247
+Accra_PLS100_PV+battery+diesel,0.8200720337401143,Accra,100,PV+battery+diesel,topsis,resilient,8247
 Lodwar_PLS85_PV+battery+diesel,0.8200583198985103,Lodwar,85,PV+battery+diesel,topsis,resilient,8248
 Accra_PLS80_PV+battery,0.820041110770917,Accra,80,PV+battery,topsis,resilient,8249
 Accra_PLS80_PV+battery,0.820041110770917,Accra,80,PV+battery,topsis,resilient,8250
@@ -8292,7 +8292,7 @@ Lusaka_PLS85_Diesel only,0.8196972590022154,Lusaka,85,Diesel only,topsis,resilie
 Lodwar_PLS85_Diesel only,0.8196972590022154,Lodwar,85,Diesel only,topsis,resilient,8291
 Accra_PLS80_PV+battery+diesel,0.8196607106110364,Accra,80,PV+battery+diesel,topsis,resilient,8292
 Lusaka_PLS95_PV+battery+diesel,0.8196135639343847,Lusaka,95,PV+battery+diesel,topsis,resilient,8293
-Lodwar_PLS90_PV+battery+diesel,0.8195402251030712,Lodwar,90,PV+battery+diesel,topsis,resilient,8294
+Lodwar_PLS90_PV+battery+diesel,0.8195402251030711,Lodwar,90,PV+battery+diesel,topsis,resilient,8294
 Accra_PLS85_PV+battery+diesel,0.8195362255948412,Accra,85,PV+battery+diesel,topsis,resilient,8295
 Lusaka_PLS85_PV+battery,0.8195123600418003,Lusaka,85,PV+battery,topsis,resilient,8296
 Lusaka_PLS85_PV+battery,0.8195123600418003,Lusaka,85,PV+battery,topsis,resilient,8297
@@ -8398,7 +8398,7 @@ Lusaka_PLS85_PV+battery+diesel,0.8180861638509923,Lusaka,85,PV+battery+diesel,to
 Lodwar_PLS100_PV+battery+diesel,0.8180646270746277,Lodwar,100,PV+battery+diesel,topsis,resilient,8397
 Accra_PLS85_PV+battery+diesel,0.818058605390562,Accra,85,PV+battery+diesel,topsis,resilient,8398
 Accra_PLS95_PV+battery+diesel,0.8180482095750056,Accra,95,PV+battery+diesel,topsis,resilient,8399
-Lusaka_PLS100_PV+battery+diesel,0.8179952648988983,Lusaka,100,PV+battery+diesel,topsis,resilient,8400
+Lusaka_PLS100_PV+battery+diesel,0.8179952648988985,Lusaka,100,PV+battery+diesel,topsis,resilient,8400
 Accra_PLS95_PV+battery+diesel,0.8179854264461547,Accra,95,PV+battery+diesel,topsis,resilient,8401
 Lusaka_PLS90_PV+battery+diesel,0.8179691617172944,Lusaka,90,PV+battery+diesel,topsis,resilient,8402
 Accra_PLS95_PV+battery,0.8179345395822486,Accra,95,PV+battery,topsis,resilient,8403
@@ -8460,15 +8460,15 @@ Lodwar_PLS85_Diesel only,0.8171820858299962,Lodwar,85,Diesel only,topsis,resilie
 Accra_PLS90_PV+battery+diesel,0.8171574984265395,Accra,90,PV+battery+diesel,topsis,resilient,8459
 Accra_PLS90_PV+battery+diesel,0.8170736959917586,Accra,90,PV+battery+diesel,topsis,resilient,8460
 Lusaka_PLS90_PV+battery+diesel,0.8170430449129723,Lusaka,90,PV+battery+diesel,topsis,resilient,8461
-Accra_PLS80_Diesel only,0.817021488485164,Accra,80,Diesel only,topsis,resilient,8462
-Accra_PLS80_Diesel only,0.817021488485164,Accra,80,Diesel only,topsis,resilient,8463
-Accra_PLS80_Diesel only,0.817021488485164,Accra,80,Diesel only,topsis,resilient,8464
-Lodwar_PLS80_Diesel only,0.817021488485164,Lodwar,80,Diesel only,topsis,resilient,8465
-Lodwar_PLS80_Diesel only,0.817021488485164,Lodwar,80,Diesel only,topsis,resilient,8466
-Lodwar_PLS80_Diesel only,0.817021488485164,Lodwar,80,Diesel only,topsis,resilient,8467
-Lusaka_PLS80_Diesel only,0.817021488485164,Lusaka,80,Diesel only,topsis,resilient,8468
-Lusaka_PLS80_Diesel only,0.817021488485164,Lusaka,80,Diesel only,topsis,resilient,8469
-Lusaka_PLS80_Diesel only,0.817021488485164,Lusaka,80,Diesel only,topsis,resilient,8470
+Accra_PLS80_Diesel only,0.8170214884851639,Accra,80,Diesel only,topsis,resilient,8462
+Accra_PLS80_Diesel only,0.8170214884851639,Accra,80,Diesel only,topsis,resilient,8463
+Accra_PLS80_Diesel only,0.8170214884851639,Accra,80,Diesel only,topsis,resilient,8464
+Lodwar_PLS80_Diesel only,0.8170214884851639,Lodwar,80,Diesel only,topsis,resilient,8465
+Lodwar_PLS80_Diesel only,0.8170214884851639,Lodwar,80,Diesel only,topsis,resilient,8466
+Lodwar_PLS80_Diesel only,0.8170214884851639,Lodwar,80,Diesel only,topsis,resilient,8467
+Lusaka_PLS80_Diesel only,0.8170214884851639,Lusaka,80,Diesel only,topsis,resilient,8468
+Lusaka_PLS80_Diesel only,0.8170214884851639,Lusaka,80,Diesel only,topsis,resilient,8469
+Lusaka_PLS80_Diesel only,0.8170214884851639,Lusaka,80,Diesel only,topsis,resilient,8470
 Lodwar_PLS100_Diesel only,0.8169809409202853,Lodwar,100,Diesel only,topsis,resilient,8471
 Lodwar_PLS100_Diesel only,0.8169809409202853,Lodwar,100,Diesel only,topsis,resilient,8472
 Lodwar_PLS100_Diesel only,0.8169809409202853,Lodwar,100,Diesel only,topsis,resilient,8473
@@ -8703,7 +8703,7 @@ Lodwar_PLS85_Diesel only,0.814676691208524,Lodwar,85,Diesel only,topsis,resilien
 Accra_PLS85_Diesel only,0.814676691208524,Accra,85,Diesel only,topsis,resilient,8702
 Accra_PLS85_Diesel only,0.814676691208524,Accra,85,Diesel only,topsis,resilient,8703
 Accra_PLS85_PV+battery+diesel,0.8146599938687117,Accra,85,PV+battery+diesel,topsis,resilient,8704
-Lodwar_PLS95_PV+battery+diesel,0.8146146469160688,Lodwar,95,PV+battery+diesel,topsis,resilient,8705
+Lodwar_PLS95_PV+battery+diesel,0.8146146469160689,Lodwar,95,PV+battery+diesel,topsis,resilient,8705
 Lusaka_PLS95_PV+battery+diesel,0.8146004888887167,Lusaka,95,PV+battery+diesel,topsis,resilient,8706
 Lusaka_PLS95_PV+battery+diesel,0.8145281938064247,Lusaka,95,PV+battery+diesel,topsis,resilient,8707
 Lodwar_PLS85_PV+battery+diesel,0.8145186757126108,Lodwar,85,PV+battery+diesel,topsis,resilient,8708
@@ -8711,7 +8711,7 @@ Lusaka_PLS85_PV+battery+diesel,0.8143967064439883,Lusaka,85,PV+battery+diesel,to
 Lusaka_PLS95_PV+battery+diesel,0.8143699602370348,Lusaka,95,PV+battery+diesel,topsis,resilient,8710
 Accra_PLS80_PV+battery+diesel,0.8143444464535752,Accra,80,PV+battery+diesel,topsis,resilient,8711
 Lusaka_PLS80_PV+battery+diesel,0.8143441508679086,Lusaka,80,PV+battery+diesel,topsis,resilient,8712
-Lusaka_PLS80_PV+battery+diesel,0.8143424515745956,Lusaka,80,PV+battery+diesel,topsis,resilient,8713
+Lusaka_PLS80_PV+battery+diesel,0.8143424515745957,Lusaka,80,PV+battery+diesel,topsis,resilient,8713
 Accra_PLS90_PV+battery+diesel,0.8143041144039831,Accra,90,PV+battery+diesel,topsis,resilient,8714
 Lusaka_PLS85_PV+battery+diesel,0.8142996762101402,Lusaka,85,PV+battery+diesel,topsis,resilient,8715
 Lodwar_PLS80_PV+battery+diesel,0.8142823275059303,Lodwar,80,PV+battery+diesel,topsis,resilient,8716
@@ -8727,7 +8727,7 @@ Lusaka_PLS100_PV+battery+diesel,0.8141085494715354,Lusaka,100,PV+battery+diesel,
 Accra_PLS100_PV+battery+diesel,0.8141038168793983,Accra,100,PV+battery+diesel,topsis,resilient,8726
 Lusaka_PLS90_PV+battery+diesel,0.8141024195641586,Lusaka,90,PV+battery+diesel,topsis,resilient,8727
 Lodwar_PLS80_PV+battery+diesel,0.8140712219533761,Lodwar,80,PV+battery+diesel,topsis,resilient,8728
-Lusaka_PLS90_PV+battery+diesel,0.8140623179252604,Lusaka,90,PV+battery+diesel,topsis,resilient,8729
+Lusaka_PLS90_PV+battery+diesel,0.8140623179252605,Lusaka,90,PV+battery+diesel,topsis,resilient,8729
 Lodwar_PLS100_PV+battery+diesel,0.8140355655680895,Lodwar,100,PV+battery+diesel,topsis,resilient,8730
 Accra_PLS80_PV+battery+diesel,0.8139951762337788,Accra,80,PV+battery+diesel,topsis,resilient,8731
 Lusaka_PLS85_Diesel only,0.813959262342276,Lusaka,85,Diesel only,topsis,resilient,8732
@@ -8741,15 +8741,15 @@ Lodwar_PLS85_Diesel only,0.813959262342276,Lodwar,85,Diesel only,topsis,resilien
 Lusaka_PLS85_Diesel only,0.813959262342276,Lusaka,85,Diesel only,topsis,resilient,8740
 Lusaka_PLS100_PV+battery+diesel,0.8138765370630254,Lusaka,100,PV+battery+diesel,topsis,resilient,8741
 Lodwar_PLS90_PV+battery+diesel,0.8138625243933153,Lodwar,90,PV+battery+diesel,topsis,resilient,8742
-Lodwar_PLS90_Diesel only,0.8138169203220711,Lodwar,90,Diesel only,topsis,resilient,8743
-Lodwar_PLS90_Diesel only,0.8138169203220711,Lodwar,90,Diesel only,topsis,resilient,8744
-Lodwar_PLS90_Diesel only,0.8138169203220711,Lodwar,90,Diesel only,topsis,resilient,8745
-Accra_PLS90_Diesel only,0.8138169203220711,Accra,90,Diesel only,topsis,resilient,8746
-Accra_PLS90_Diesel only,0.8138169203220711,Accra,90,Diesel only,topsis,resilient,8747
-Accra_PLS90_Diesel only,0.8138169203220711,Accra,90,Diesel only,topsis,resilient,8748
-Lusaka_PLS90_Diesel only,0.8138169203220711,Lusaka,90,Diesel only,topsis,resilient,8749
-Lusaka_PLS90_Diesel only,0.8138169203220711,Lusaka,90,Diesel only,topsis,resilient,8750
-Lusaka_PLS90_Diesel only,0.8138169203220711,Lusaka,90,Diesel only,topsis,resilient,8751
+Lodwar_PLS90_Diesel only,0.813816920322071,Lodwar,90,Diesel only,topsis,resilient,8743
+Lodwar_PLS90_Diesel only,0.813816920322071,Lodwar,90,Diesel only,topsis,resilient,8744
+Lodwar_PLS90_Diesel only,0.813816920322071,Lodwar,90,Diesel only,topsis,resilient,8745
+Accra_PLS90_Diesel only,0.813816920322071,Accra,90,Diesel only,topsis,resilient,8746
+Accra_PLS90_Diesel only,0.813816920322071,Accra,90,Diesel only,topsis,resilient,8747
+Accra_PLS90_Diesel only,0.813816920322071,Accra,90,Diesel only,topsis,resilient,8748
+Lusaka_PLS90_Diesel only,0.813816920322071,Lusaka,90,Diesel only,topsis,resilient,8749
+Lusaka_PLS90_Diesel only,0.813816920322071,Lusaka,90,Diesel only,topsis,resilient,8750
+Lusaka_PLS90_Diesel only,0.813816920322071,Lusaka,90,Diesel only,topsis,resilient,8751
 Lodwar_PLS100_PV+battery,0.8137864416083123,Lodwar,100,PV+battery,topsis,resilient,8752
 Lodwar_PLS100_PV+battery,0.8137864416083123,Lodwar,100,PV+battery,topsis,resilient,8753
 Lodwar_PLS100_PV+battery,0.8137864416083123,Lodwar,100,PV+battery,topsis,resilient,8754
@@ -8907,12 +8907,12 @@ Lodwar_PLS85_PV+battery,0.8117266308484729,Lodwar,85,PV+battery,topsis,resilient
 Lodwar_PLS85_PV+battery,0.8117266308484729,Lodwar,85,PV+battery,topsis,resilient,8906
 Accra_PLS80_PV+battery+diesel,0.8117001741690608,Accra,80,PV+battery+diesel,topsis,resilient,8907
 Lusaka_PLS80_PV+battery+diesel,0.8116804225404209,Lusaka,80,PV+battery+diesel,topsis,resilient,8908
-Lusaka_PLS100_PV+battery+diesel,0.8116580949854517,Lusaka,100,PV+battery+diesel,topsis,resilient,8909
+Lusaka_PLS100_PV+battery+diesel,0.8116580949854518,Lusaka,100,PV+battery+diesel,topsis,resilient,8909
 Lusaka_PLS85_PV+battery+diesel,0.8116291521761935,Lusaka,85,PV+battery+diesel,topsis,resilient,8910
 Lusaka_PLS95_PV+battery+diesel,0.811619831868431,Lusaka,95,PV+battery+diesel,topsis,resilient,8911
 Lusaka_PLS80_PV+battery+diesel,0.8116009345409989,Lusaka,80,PV+battery+diesel,topsis,resilient,8912
 Accra_PLS95_PV+battery+diesel,0.8115879101396215,Accra,95,PV+battery+diesel,topsis,resilient,8913
-Accra_PLS85_PV+battery+diesel,0.8114970325721435,Accra,85,PV+battery+diesel,topsis,resilient,8914
+Accra_PLS85_PV+battery+diesel,0.8114970325721433,Accra,85,PV+battery+diesel,topsis,resilient,8914
 Accra_PLS90_PV+battery,0.8114936844962022,Accra,90,PV+battery,topsis,resilient,8915
 Accra_PLS90_PV+battery,0.8114936844962022,Accra,90,PV+battery,topsis,resilient,8916
 Accra_PLS90_PV+battery,0.8114936844962022,Accra,90,PV+battery,topsis,resilient,8917
@@ -8970,7 +8970,7 @@ Accra_PLS85_PV+battery,0.8112900070788355,Accra,85,PV+battery,topsis,resilient,8
 Accra_PLS85_PV+battery,0.8112900070788355,Accra,85,PV+battery,topsis,resilient,8969
 Lodwar_PLS95_PV+battery+diesel,0.8110913918045943,Lodwar,95,PV+battery+diesel,topsis,resilient,8970
 Lusaka_PLS85_PV+battery+diesel,0.8110649687207624,Lusaka,85,PV+battery+diesel,topsis,resilient,8971
-Lusaka_PLS90_PV+battery+diesel,0.8110514139133709,Lusaka,90,PV+battery+diesel,topsis,resilient,8972
+Lusaka_PLS90_PV+battery+diesel,0.8110514139133707,Lusaka,90,PV+battery+diesel,topsis,resilient,8972
 Lusaka_PLS90_PV+battery+diesel,0.8110131947876963,Lusaka,90,PV+battery+diesel,topsis,resilient,8973
 Accra_PLS80_PV+battery+diesel,0.8109442633568985,Accra,80,PV+battery+diesel,topsis,resilient,8974
 Lusaka_PLS80_PV+battery+diesel,0.8109416792309044,Lusaka,80,PV+battery+diesel,topsis,resilient,8975
@@ -9014,15 +9014,15 @@ Lusaka_PLS80_Diesel only,0.8106192013688046,Lusaka,80,Diesel only,topsis,resilie
 Lodwar_PLS80_Diesel only,0.8106192013688046,Lodwar,80,Diesel only,topsis,resilient,9013
 Lodwar_PLS80_Diesel only,0.8106192013688046,Lodwar,80,Diesel only,topsis,resilient,9014
 Accra_PLS80_Diesel only,0.8106192013688046,Accra,80,Diesel only,topsis,resilient,9015
-Accra_PLS100_Diesel only,0.8105590363465371,Accra,100,Diesel only,topsis,resilient,9016
-Accra_PLS100_Diesel only,0.8105590363465371,Accra,100,Diesel only,topsis,resilient,9017
-Lodwar_PLS100_Diesel only,0.8105590363465371,Lodwar,100,Diesel only,topsis,resilient,9018
-Lusaka_PLS100_Diesel only,0.8105590363465371,Lusaka,100,Diesel only,topsis,resilient,9019
-Lusaka_PLS100_Diesel only,0.8105590363465371,Lusaka,100,Diesel only,topsis,resilient,9020
-Lodwar_PLS100_Diesel only,0.8105590363465371,Lodwar,100,Diesel only,topsis,resilient,9021
-Lodwar_PLS100_Diesel only,0.8105590363465371,Lodwar,100,Diesel only,topsis,resilient,9022
-Accra_PLS100_Diesel only,0.8105590363465371,Accra,100,Diesel only,topsis,resilient,9023
-Lusaka_PLS100_Diesel only,0.8105590363465371,Lusaka,100,Diesel only,topsis,resilient,9024
+Accra_PLS100_Diesel only,0.8105590363465373,Accra,100,Diesel only,topsis,resilient,9016
+Accra_PLS100_Diesel only,0.8105590363465373,Accra,100,Diesel only,topsis,resilient,9017
+Lodwar_PLS100_Diesel only,0.8105590363465373,Lodwar,100,Diesel only,topsis,resilient,9018
+Lusaka_PLS100_Diesel only,0.8105590363465373,Lusaka,100,Diesel only,topsis,resilient,9019
+Lusaka_PLS100_Diesel only,0.8105590363465373,Lusaka,100,Diesel only,topsis,resilient,9020
+Lodwar_PLS100_Diesel only,0.8105590363465373,Lodwar,100,Diesel only,topsis,resilient,9021
+Lodwar_PLS100_Diesel only,0.8105590363465373,Lodwar,100,Diesel only,topsis,resilient,9022
+Accra_PLS100_Diesel only,0.8105590363465373,Accra,100,Diesel only,topsis,resilient,9023
+Lusaka_PLS100_Diesel only,0.8105590363465373,Lusaka,100,Diesel only,topsis,resilient,9024
 Accra_PLS100_PV+battery,0.8105530957400037,Accra,100,PV+battery,topsis,resilient,9025
 Accra_PLS100_PV+battery,0.8105530957400037,Accra,100,PV+battery,topsis,resilient,9026
 Accra_PLS100_PV+battery,0.8105530957400037,Accra,100,PV+battery,topsis,resilient,9027
@@ -9058,15 +9058,15 @@ Accra_PLS85_PV+battery+diesel,0.8098332155837435,Accra,85,PV+battery+diesel,tops
 Lodwar_PLS100_PV+battery+diesel,0.8098270798346043,Lodwar,100,PV+battery+diesel,topsis,resilient,9057
 Lodwar_PLS85_PV+battery+diesel,0.809819797218643,Lodwar,85,PV+battery+diesel,topsis,resilient,9058
 Lodwar_PLS95_PV+battery+diesel,0.8096991556689661,Lodwar,95,PV+battery+diesel,topsis,resilient,9059
-Lusaka_PLS90_Diesel only,0.8096520599805566,Lusaka,90,Diesel only,topsis,resilient,9060
-Lodwar_PLS90_Diesel only,0.8096520599805566,Lodwar,90,Diesel only,topsis,resilient,9061
-Accra_PLS90_Diesel only,0.8096520599805566,Accra,90,Diesel only,topsis,resilient,9062
-Accra_PLS90_Diesel only,0.8096520599805566,Accra,90,Diesel only,topsis,resilient,9063
-Lodwar_PLS90_Diesel only,0.8096520599805566,Lodwar,90,Diesel only,topsis,resilient,9064
-Lusaka_PLS90_Diesel only,0.8096520599805566,Lusaka,90,Diesel only,topsis,resilient,9065
-Accra_PLS90_Diesel only,0.8096520599805566,Accra,90,Diesel only,topsis,resilient,9066
-Lodwar_PLS90_Diesel only,0.8096520599805566,Lodwar,90,Diesel only,topsis,resilient,9067
-Lusaka_PLS90_Diesel only,0.8096520599805566,Lusaka,90,Diesel only,topsis,resilient,9068
+Lusaka_PLS90_Diesel only,0.8096520599805564,Lusaka,90,Diesel only,topsis,resilient,9060
+Lodwar_PLS90_Diesel only,0.8096520599805564,Lodwar,90,Diesel only,topsis,resilient,9061
+Accra_PLS90_Diesel only,0.8096520599805564,Accra,90,Diesel only,topsis,resilient,9062
+Accra_PLS90_Diesel only,0.8096520599805564,Accra,90,Diesel only,topsis,resilient,9063
+Lodwar_PLS90_Diesel only,0.8096520599805564,Lodwar,90,Diesel only,topsis,resilient,9064
+Lusaka_PLS90_Diesel only,0.8096520599805564,Lusaka,90,Diesel only,topsis,resilient,9065
+Accra_PLS90_Diesel only,0.8096520599805564,Accra,90,Diesel only,topsis,resilient,9066
+Lodwar_PLS90_Diesel only,0.8096520599805564,Lodwar,90,Diesel only,topsis,resilient,9067
+Lusaka_PLS90_Diesel only,0.8096520599805564,Lusaka,90,Diesel only,topsis,resilient,9068
 Accra_PLS90_PV+battery+diesel,0.8096450955825084,Accra,90,PV+battery+diesel,topsis,resilient,9069
 Lodwar_PLS100_PV+battery+diesel,0.8096352028558368,Lodwar,100,PV+battery+diesel,topsis,resilient,9070
 Lodwar_PLS95_PV+battery+diesel,0.809632296641386,Lodwar,95,PV+battery+diesel,topsis,resilient,9071
@@ -9118,7 +9118,7 @@ Accra_PLS100_PV+battery,0.8091225336444383,Accra,100,PV+battery,topsis,resilient
 Accra_PLS100_PV+battery,0.8091225336444383,Accra,100,PV+battery,topsis,resilient,9117
 Accra_PLS100_PV+battery,0.8091225336444383,Accra,100,PV+battery,topsis,resilient,9118
 Lodwar_PLS85_PV+battery+diesel,0.809114664333698,Lodwar,85,PV+battery+diesel,topsis,resilient,9119
-Accra_PLS85_PV+battery+diesel,0.8090931975759796,Accra,85,PV+battery+diesel,topsis,resilient,9120
+Accra_PLS85_PV+battery+diesel,0.8090931975759795,Accra,85,PV+battery+diesel,topsis,resilient,9120
 Lusaka_PLS80_PV+battery+diesel,0.8090657523464132,Lusaka,80,PV+battery+diesel,topsis,resilient,9121
 Accra_PLS95_PV+battery+diesel,0.8090649390935359,Accra,95,PV+battery+diesel,topsis,resilient,9122
 Accra_PLS100_PV+battery+diesel,0.8090343400583867,Accra,100,PV+battery+diesel,topsis,resilient,9123
@@ -9232,7 +9232,7 @@ Lodwar_PLS80_Diesel only,0.8077941556902005,Lodwar,80,Diesel only,topsis,resilie
 Lusaka_PLS80_Diesel only,0.8077941556902005,Lusaka,80,Diesel only,topsis,resilient,9231
 Lusaka_PLS80_Diesel only,0.8077941556902005,Lusaka,80,Diesel only,topsis,resilient,9232
 Lusaka_PLS85_PV+battery+diesel,0.8077650066230236,Lusaka,85,PV+battery+diesel,topsis,resilient,9233
-Lusaka_PLS80_PV+battery+diesel,0.8076894035717959,Lusaka,80,PV+battery+diesel,topsis,resilient,9234
+Lusaka_PLS80_PV+battery+diesel,0.807689403571796,Lusaka,80,PV+battery+diesel,topsis,resilient,9234
 Accra_PLS80_PV+battery,0.8076820769578765,Accra,80,PV+battery,topsis,resilient,9235
 Accra_PLS80_PV+battery,0.8076820769578765,Accra,80,PV+battery,topsis,resilient,9236
 Accra_PLS80_PV+battery,0.8076820769578765,Accra,80,PV+battery,topsis,resilient,9237
@@ -9278,7 +9278,7 @@ Accra_PLS95_Diesel only,0.807286515548679,Accra,95,Diesel only,topsis,resilient,
 Accra_PLS80_PV+battery+diesel,0.8072851601445182,Accra,80,PV+battery+diesel,topsis,resilient,9277
 Lusaka_PLS80_PV+battery+diesel,0.8072277300534677,Lusaka,80,PV+battery+diesel,topsis,resilient,9278
 Accra_PLS100_PV+battery+diesel,0.8072228004884286,Accra,100,PV+battery+diesel,topsis,resilient,9279
-Lodwar_PLS95_PV+battery+diesel,0.8070604651972726,Lodwar,95,PV+battery+diesel,topsis,resilient,9280
+Lodwar_PLS95_PV+battery+diesel,0.8070604651972728,Lodwar,95,PV+battery+diesel,topsis,resilient,9280
 Accra_PLS100_PV+battery+diesel,0.8070398305112367,Accra,100,PV+battery+diesel,topsis,resilient,9281
 Accra_PLS85_PV+battery+diesel,0.8070203860254598,Accra,85,PV+battery+diesel,topsis,resilient,9282
 Lodwar_PLS100_Diesel only,0.8070084107455631,Lodwar,100,Diesel only,topsis,resilient,9283
@@ -9337,16 +9337,16 @@ Lusaka_PLS90_Diesel only,0.8064122680850524,Lusaka,90,Diesel only,topsis,resilie
 Accra_PLS90_Diesel only,0.8064122680850524,Accra,90,Diesel only,topsis,resilient,9336
 Accra_PLS90_Diesel only,0.8064122680850524,Accra,90,Diesel only,topsis,resilient,9337
 Accra_PLS90_Diesel only,0.8064122680850524,Accra,90,Diesel only,topsis,resilient,9338
-Lodwar_PLS100_Diesel only,0.8063442999629308,Lodwar,100,Diesel only,topsis,resilient,9339
-Lusaka_PLS100_Diesel only,0.8063442999629308,Lusaka,100,Diesel only,topsis,resilient,9340
-Lusaka_PLS100_Diesel only,0.8063442999629308,Lusaka,100,Diesel only,topsis,resilient,9341
-Lusaka_PLS100_Diesel only,0.8063442999629308,Lusaka,100,Diesel only,topsis,resilient,9342
-Lodwar_PLS100_Diesel only,0.8063442999629308,Lodwar,100,Diesel only,topsis,resilient,9343
-Lodwar_PLS100_Diesel only,0.8063442999629308,Lodwar,100,Diesel only,topsis,resilient,9344
-Lodwar_PLS100_Diesel only,0.8063442999629308,Lodwar,100,Diesel only,topsis,resilient,9345
-Accra_PLS100_Diesel only,0.8063442999629308,Accra,100,Diesel only,topsis,resilient,9346
-Accra_PLS100_Diesel only,0.8063442999629308,Accra,100,Diesel only,topsis,resilient,9347
-Accra_PLS100_Diesel only,0.8063442999629308,Accra,100,Diesel only,topsis,resilient,9348
+Lodwar_PLS100_Diesel only,0.806344299962931,Lodwar,100,Diesel only,topsis,resilient,9339
+Lusaka_PLS100_Diesel only,0.806344299962931,Lusaka,100,Diesel only,topsis,resilient,9340
+Lusaka_PLS100_Diesel only,0.806344299962931,Lusaka,100,Diesel only,topsis,resilient,9341
+Lusaka_PLS100_Diesel only,0.806344299962931,Lusaka,100,Diesel only,topsis,resilient,9342
+Lodwar_PLS100_Diesel only,0.806344299962931,Lodwar,100,Diesel only,topsis,resilient,9343
+Lodwar_PLS100_Diesel only,0.806344299962931,Lodwar,100,Diesel only,topsis,resilient,9344
+Lodwar_PLS100_Diesel only,0.806344299962931,Lodwar,100,Diesel only,topsis,resilient,9345
+Accra_PLS100_Diesel only,0.806344299962931,Accra,100,Diesel only,topsis,resilient,9346
+Accra_PLS100_Diesel only,0.806344299962931,Accra,100,Diesel only,topsis,resilient,9347
+Accra_PLS100_Diesel only,0.806344299962931,Accra,100,Diesel only,topsis,resilient,9348
 Lusaka_PLS95_PV+battery,0.8062918887024487,Lusaka,95,PV+battery,topsis,resilient,9349
 Lusaka_PLS95_PV+battery,0.8062918887024487,Lusaka,95,PV+battery,topsis,resilient,9350
 Lusaka_PLS95_PV+battery,0.8062918887024487,Lusaka,95,PV+battery,topsis,resilient,9351
@@ -9682,7 +9682,7 @@ Lusaka_PLS90_Diesel only,0.8028144578939709,Lusaka,90,Diesel only,topsis,resilie
 Lusaka_PLS90_Diesel only,0.8028144578939709,Lusaka,90,Diesel only,topsis,resilient,9681
 Lodwar_PLS90_Diesel only,0.8028144578939709,Lodwar,90,Diesel only,topsis,resilient,9682
 Accra_PLS90_Diesel only,0.8028144578939709,Accra,90,Diesel only,topsis,resilient,9683
-Lusaka_PLS95_PV+battery+diesel,0.802668690287685,Lusaka,95,PV+battery+diesel,topsis,resilient,9684
+Lusaka_PLS95_PV+battery+diesel,0.8026686902876851,Lusaka,95,PV+battery+diesel,topsis,resilient,9684
 Accra_PLS100_PV+battery+diesel,0.8026615780234647,Accra,100,PV+battery+diesel,topsis,resilient,9685
 Lusaka_PLS95_Diesel only,0.8026042878837001,Lusaka,95,Diesel only,topsis,resilient,9686
 Lusaka_PLS95_Diesel only,0.8026042878837001,Lusaka,95,Diesel only,topsis,resilient,9687
@@ -9731,33 +9731,33 @@ Accra_PLS80_Diesel only,0.8022803685580727,Accra,80,Diesel only,topsis,resilient
 Lodwar_PLS80_Diesel only,0.8022803685580727,Lodwar,80,Diesel only,topsis,resilient,9730
 Accra_PLS80_Diesel only,0.8022803685580727,Accra,80,Diesel only,topsis,resilient,9731
 Lodwar_PLS80_Diesel only,0.8022803685580727,Lodwar,80,Diesel only,topsis,resilient,9732
-Accra_PLS100_Diesel only,0.8022086839920541,Accra,100,Diesel only,topsis,resilient,9733
-Lusaka_PLS100_Diesel only,0.8022086839920541,Lusaka,100,Diesel only,topsis,resilient,9734
-Accra_PLS100_Diesel only,0.8022086839920541,Accra,100,Diesel only,topsis,resilient,9735
-Lusaka_PLS100_Diesel only,0.8022086839920541,Lusaka,100,Diesel only,topsis,resilient,9736
-Accra_PLS100_Diesel only,0.8022086839920541,Accra,100,Diesel only,topsis,resilient,9737
-Lusaka_PLS100_Diesel only,0.8022086839920541,Lusaka,100,Diesel only,topsis,resilient,9738
-Lodwar_PLS100_Diesel only,0.8022086839920541,Lodwar,100,Diesel only,topsis,resilient,9739
-Lodwar_PLS100_Diesel only,0.8022086839920541,Lodwar,100,Diesel only,topsis,resilient,9740
-Lodwar_PLS100_Diesel only,0.8022086839920541,Lodwar,100,Diesel only,topsis,resilient,9741
+Accra_PLS100_Diesel only,0.8022086839920543,Accra,100,Diesel only,topsis,resilient,9733
+Lusaka_PLS100_Diesel only,0.8022086839920543,Lusaka,100,Diesel only,topsis,resilient,9734
+Accra_PLS100_Diesel only,0.8022086839920543,Accra,100,Diesel only,topsis,resilient,9735
+Lusaka_PLS100_Diesel only,0.8022086839920543,Lusaka,100,Diesel only,topsis,resilient,9736
+Accra_PLS100_Diesel only,0.8022086839920543,Accra,100,Diesel only,topsis,resilient,9737
+Lusaka_PLS100_Diesel only,0.8022086839920543,Lusaka,100,Diesel only,topsis,resilient,9738
+Lodwar_PLS100_Diesel only,0.8022086839920543,Lodwar,100,Diesel only,topsis,resilient,9739
+Lodwar_PLS100_Diesel only,0.8022086839920543,Lodwar,100,Diesel only,topsis,resilient,9740
+Lodwar_PLS100_Diesel only,0.8022086839920543,Lodwar,100,Diesel only,topsis,resilient,9741
 Lodwar_PLS95_PV+battery+diesel,0.802156299792141,Lodwar,95,PV+battery+diesel,topsis,resilient,9742
 Lodwar_PLS85_PV+battery+diesel,0.8021057479824185,Lodwar,85,PV+battery+diesel,topsis,resilient,9743
-Lusaka_PLS90_Diesel only,0.8021008505939391,Lusaka,90,Diesel only,topsis,resilient,9744
-Lodwar_PLS90_Diesel only,0.8021008505939391,Lodwar,90,Diesel only,topsis,resilient,9745
-Lodwar_PLS90_Diesel only,0.8021008505939391,Lodwar,90,Diesel only,topsis,resilient,9746
-Lodwar_PLS90_Diesel only,0.8021008505939391,Lodwar,90,Diesel only,topsis,resilient,9747
-Accra_PLS90_Diesel only,0.8021008505939391,Accra,90,Diesel only,topsis,resilient,9748
-Lusaka_PLS90_Diesel only,0.8021008505939391,Lusaka,90,Diesel only,topsis,resilient,9749
-Accra_PLS90_Diesel only,0.8021008505939391,Accra,90,Diesel only,topsis,resilient,9750
-Accra_PLS90_Diesel only,0.8021008505939391,Accra,90,Diesel only,topsis,resilient,9751
-Lusaka_PLS90_Diesel only,0.8021008505939391,Lusaka,90,Diesel only,topsis,resilient,9752
+Lusaka_PLS90_Diesel only,0.8021008505939393,Lusaka,90,Diesel only,topsis,resilient,9744
+Lodwar_PLS90_Diesel only,0.8021008505939393,Lodwar,90,Diesel only,topsis,resilient,9745
+Lodwar_PLS90_Diesel only,0.8021008505939393,Lodwar,90,Diesel only,topsis,resilient,9746
+Lodwar_PLS90_Diesel only,0.8021008505939393,Lodwar,90,Diesel only,topsis,resilient,9747
+Accra_PLS90_Diesel only,0.8021008505939393,Accra,90,Diesel only,topsis,resilient,9748
+Lusaka_PLS90_Diesel only,0.8021008505939393,Lusaka,90,Diesel only,topsis,resilient,9749
+Accra_PLS90_Diesel only,0.8021008505939393,Accra,90,Diesel only,topsis,resilient,9750
+Accra_PLS90_Diesel only,0.8021008505939393,Accra,90,Diesel only,topsis,resilient,9751
+Lusaka_PLS90_Diesel only,0.8021008505939393,Lusaka,90,Diesel only,topsis,resilient,9752
 Lusaka_PLS95_PV+battery+diesel,0.8020970608700531,Lusaka,95,PV+battery+diesel,topsis,resilient,9753
 Lusaka_PLS80_PV+battery+diesel,0.8020580283568567,Lusaka,80,PV+battery+diesel,topsis,resilient,9754
 Accra_PLS90_PV+battery+diesel,0.8019636179761285,Accra,90,PV+battery+diesel,topsis,resilient,9755
 Lusaka_PLS85_PV+battery+diesel,0.8019127191073394,Lusaka,85,PV+battery+diesel,topsis,resilient,9756
 Lusaka_PLS80_PV+battery+diesel,0.8018704563240693,Lusaka,80,PV+battery+diesel,topsis,resilient,9757
 Lusaka_PLS85_PV+battery+diesel,0.8017181719976811,Lusaka,85,PV+battery+diesel,topsis,resilient,9758
-Accra_PLS80_PV+battery+diesel,0.8016494484865129,Accra,80,PV+battery+diesel,topsis,resilient,9759
+Accra_PLS80_PV+battery+diesel,0.8016494484865131,Accra,80,PV+battery+diesel,topsis,resilient,9759
 Lusaka_PLS90_PV+battery+diesel,0.8016314176014353,Lusaka,90,PV+battery+diesel,topsis,resilient,9760
 Lodwar_PLS80_PV+battery+diesel,0.8016088287672852,Lodwar,80,PV+battery+diesel,topsis,resilient,9761
 Lodwar_PLS80_PV+battery+diesel,0.801442786885311,Lodwar,80,PV+battery+diesel,topsis,resilient,9762
@@ -9874,16 +9874,16 @@ Accra_PLS85_PV+battery+diesel,0.7998058636280315,Accra,85,PV+battery+diesel,tops
 Lusaka_PLS85_PV+battery+diesel,0.7997775714216294,Lusaka,85,PV+battery+diesel,topsis,resilient,9873
 Accra_PLS100_PV+battery+diesel,0.7997434039961783,Accra,100,PV+battery+diesel,topsis,resilient,9874
 Accra_PLS80_PV+battery+diesel,0.7996797927284485,Accra,80,PV+battery+diesel,topsis,resilient,9875
-Lusaka_PLS85_Diesel only,0.7996393804049986,Lusaka,85,Diesel only,topsis,resilient,9876
-Accra_PLS85_Diesel only,0.7996393804049986,Accra,85,Diesel only,topsis,resilient,9877
-Lodwar_PLS85_Diesel only,0.7996393804049986,Lodwar,85,Diesel only,topsis,resilient,9878
-Accra_PLS85_Diesel only,0.7996393804049986,Accra,85,Diesel only,topsis,resilient,9879
-Accra_PLS85_Diesel only,0.7996393804049986,Accra,85,Diesel only,topsis,resilient,9880
-Lusaka_PLS85_Diesel only,0.7996393804049986,Lusaka,85,Diesel only,topsis,resilient,9881
-Lodwar_PLS85_Diesel only,0.7996393804049986,Lodwar,85,Diesel only,topsis,resilient,9882
-Lusaka_PLS85_Diesel only,0.7996393804049986,Lusaka,85,Diesel only,topsis,resilient,9883
-Lodwar_PLS85_Diesel only,0.7996393804049986,Lodwar,85,Diesel only,topsis,resilient,9884
-Accra_PLS100_PV+battery+diesel,0.7996218857570815,Accra,100,PV+battery+diesel,topsis,resilient,9885
+Lusaka_PLS85_Diesel only,0.7996393804049987,Lusaka,85,Diesel only,topsis,resilient,9876
+Accra_PLS85_Diesel only,0.7996393804049987,Accra,85,Diesel only,topsis,resilient,9877
+Lodwar_PLS85_Diesel only,0.7996393804049987,Lodwar,85,Diesel only,topsis,resilient,9878
+Accra_PLS85_Diesel only,0.7996393804049987,Accra,85,Diesel only,topsis,resilient,9879
+Accra_PLS85_Diesel only,0.7996393804049987,Accra,85,Diesel only,topsis,resilient,9880
+Lusaka_PLS85_Diesel only,0.7996393804049987,Lusaka,85,Diesel only,topsis,resilient,9881
+Lodwar_PLS85_Diesel only,0.7996393804049987,Lodwar,85,Diesel only,topsis,resilient,9882
+Lusaka_PLS85_Diesel only,0.7996393804049987,Lusaka,85,Diesel only,topsis,resilient,9883
+Lodwar_PLS85_Diesel only,0.7996393804049987,Lodwar,85,Diesel only,topsis,resilient,9884
+Accra_PLS100_PV+battery+diesel,0.7996218857570814,Accra,100,PV+battery+diesel,topsis,resilient,9885
 Lusaka_PLS80_PV+battery+diesel,0.7994814269832292,Lusaka,80,PV+battery+diesel,topsis,resilient,9886
 Lodwar_PLS80_Diesel only,0.7994794815997157,Lodwar,80,Diesel only,topsis,resilient,9887
 Accra_PLS80_Diesel only,0.7994794815997157,Accra,80,Diesel only,topsis,resilient,9888
@@ -10000,15 +10000,15 @@ Accra_PLS85_PV+battery+diesel,0.7981451060910638,Accra,85,PV+battery+diesel,tops
 Lodwar_PLS90_PV+battery+diesel,0.7979797793077765,Lodwar,90,PV+battery+diesel,topsis,resilient,9999
 Lodwar_PLS100_PV+battery+diesel,0.7979628584171344,Lodwar,100,PV+battery+diesel,topsis,resilient,10000
 Lodwar_PLS80_PV+battery+diesel,0.7978784906670551,Lodwar,80,PV+battery+diesel,topsis,resilient,10001
-Lodwar_PLS85_Diesel only,0.7978536237708272,Lodwar,85,Diesel only,topsis,resilient,10002
-Lusaka_PLS85_Diesel only,0.7978536237708272,Lusaka,85,Diesel only,topsis,resilient,10003
-Accra_PLS85_Diesel only,0.7978536237708272,Accra,85,Diesel only,topsis,resilient,10004
-Accra_PLS85_Diesel only,0.7978536237708272,Accra,85,Diesel only,topsis,resilient,10005
-Lusaka_PLS85_Diesel only,0.7978536237708272,Lusaka,85,Diesel only,topsis,resilient,10006
-Lodwar_PLS85_Diesel only,0.7978536237708272,Lodwar,85,Diesel only,topsis,resilient,10007
-Accra_PLS85_Diesel only,0.7978536237708272,Accra,85,Diesel only,topsis,resilient,10008
-Lodwar_PLS85_Diesel only,0.7978536237708272,Lodwar,85,Diesel only,topsis,resilient,10009
-Lusaka_PLS85_Diesel only,0.7978536237708272,Lusaka,85,Diesel only,topsis,resilient,10010
+Lodwar_PLS85_Diesel only,0.7978536237708274,Lodwar,85,Diesel only,topsis,resilient,10002
+Lusaka_PLS85_Diesel only,0.7978536237708274,Lusaka,85,Diesel only,topsis,resilient,10003
+Accra_PLS85_Diesel only,0.7978536237708274,Accra,85,Diesel only,topsis,resilient,10004
+Accra_PLS85_Diesel only,0.7978536237708274,Accra,85,Diesel only,topsis,resilient,10005
+Lusaka_PLS85_Diesel only,0.7978536237708274,Lusaka,85,Diesel only,topsis,resilient,10006
+Lodwar_PLS85_Diesel only,0.7978536237708274,Lodwar,85,Diesel only,topsis,resilient,10007
+Accra_PLS85_Diesel only,0.7978536237708274,Accra,85,Diesel only,topsis,resilient,10008
+Lodwar_PLS85_Diesel only,0.7978536237708274,Lodwar,85,Diesel only,topsis,resilient,10009
+Lusaka_PLS85_Diesel only,0.7978536237708274,Lusaka,85,Diesel only,topsis,resilient,10010
 Lusaka_PLS100_PV+battery+diesel,0.7977721112065412,Lusaka,100,PV+battery+diesel,topsis,resilient,10011
 Lusaka_PLS100_PV+battery+diesel,0.7977152344754328,Lusaka,100,PV+battery+diesel,topsis,resilient,10012
 Lusaka_PLS100_PV+battery+diesel,0.79762401314446,Lusaka,100,PV+battery+diesel,topsis,resilient,10013
@@ -10089,7 +10089,7 @@ Lodwar_PLS95_PV+battery+diesel,0.7968891337200356,Lodwar,95,PV+battery+diesel,to
 Accra_PLS90_PV+battery+diesel,0.7968765386406907,Accra,90,PV+battery+diesel,topsis,resilient,10088
 Lodwar_PLS80_PV+battery+diesel,0.7968715246888919,Lodwar,80,PV+battery+diesel,topsis,resilient,10089
 Accra_PLS80_PV+battery+diesel,0.7968714135604957,Accra,80,PV+battery+diesel,topsis,resilient,10090
-Lodwar_PLS85_PV+battery+diesel,0.7967687197445901,Lodwar,85,PV+battery+diesel,topsis,resilient,10091
+Lodwar_PLS85_PV+battery+diesel,0.7967687197445902,Lodwar,85,PV+battery+diesel,topsis,resilient,10091
 Accra_PLS85_PV+battery+diesel,0.796668645477018,Accra,85,PV+battery+diesel,topsis,resilient,10092
 Lusaka_PLS95_PV+battery+diesel,0.7966546960805356,Lusaka,95,PV+battery+diesel,topsis,resilient,10093
 Accra_PLS80_PV+battery+diesel,0.7966173683249412,Accra,80,PV+battery+diesel,topsis,resilient,10094
@@ -10172,15 +10172,15 @@ Lodwar_PLS80_Diesel only,0.7957681748886297,Lodwar,80,Diesel only,topsis,resilie
 Lodwar_PLS80_Diesel only,0.7957681748886297,Lodwar,80,Diesel only,topsis,resilient,10171
 Lodwar_PLS80_Diesel only,0.7957681748886297,Lodwar,80,Diesel only,topsis,resilient,10172
 Lodwar_PLS95_PV+battery+diesel,0.7957613786447485,Lodwar,95,PV+battery+diesel,topsis,resilient,10173
-Lusaka_PLS95_Diesel only,0.795732714650487,Lusaka,95,Diesel only,topsis,resilient,10174
-Lodwar_PLS95_Diesel only,0.795732714650487,Lodwar,95,Diesel only,topsis,resilient,10175
-Lodwar_PLS95_Diesel only,0.795732714650487,Lodwar,95,Diesel only,topsis,resilient,10176
-Accra_PLS95_Diesel only,0.795732714650487,Accra,95,Diesel only,topsis,resilient,10177
-Lusaka_PLS95_Diesel only,0.795732714650487,Lusaka,95,Diesel only,topsis,resilient,10178
-Lodwar_PLS95_Diesel only,0.795732714650487,Lodwar,95,Diesel only,topsis,resilient,10179
-Accra_PLS95_Diesel only,0.795732714650487,Accra,95,Diesel only,topsis,resilient,10180
-Accra_PLS95_Diesel only,0.795732714650487,Accra,95,Diesel only,topsis,resilient,10181
-Lusaka_PLS95_Diesel only,0.795732714650487,Lusaka,95,Diesel only,topsis,resilient,10182
+Lusaka_PLS95_Diesel only,0.7957327146504872,Lusaka,95,Diesel only,topsis,resilient,10174
+Lodwar_PLS95_Diesel only,0.7957327146504872,Lodwar,95,Diesel only,topsis,resilient,10175
+Lodwar_PLS95_Diesel only,0.7957327146504872,Lodwar,95,Diesel only,topsis,resilient,10176
+Accra_PLS95_Diesel only,0.7957327146504872,Accra,95,Diesel only,topsis,resilient,10177
+Lusaka_PLS95_Diesel only,0.7957327146504872,Lusaka,95,Diesel only,topsis,resilient,10178
+Lodwar_PLS95_Diesel only,0.7957327146504872,Lodwar,95,Diesel only,topsis,resilient,10179
+Accra_PLS95_Diesel only,0.7957327146504872,Accra,95,Diesel only,topsis,resilient,10180
+Accra_PLS95_Diesel only,0.7957327146504872,Accra,95,Diesel only,topsis,resilient,10181
+Lusaka_PLS95_Diesel only,0.7957327146504872,Lusaka,95,Diesel only,topsis,resilient,10182
 Lodwar_PLS85_PV+battery,0.7956270463967248,Lodwar,85,PV+battery,topsis,resilient,10183
 Lodwar_PLS85_PV+battery,0.7956270463967248,Lodwar,85,PV+battery,topsis,resilient,10184
 Lodwar_PLS85_PV+battery,0.7956270463967248,Lodwar,85,PV+battery,topsis,resilient,10185
@@ -10293,15 +10293,15 @@ Accra_PLS95_PV+battery,0.7940993356879065,Accra,95,PV+battery,topsis,resilient,1
 Lusaka_PLS80_PV+battery+diesel,0.7940475769334712,Lusaka,80,PV+battery+diesel,topsis,resilient,10292
 Lusaka_PLS80_PV+battery+diesel,0.7939375024929626,Lusaka,80,PV+battery+diesel,topsis,resilient,10293
 Lodwar_PLS90_PV+battery+diesel,0.7938030858004427,Lodwar,90,PV+battery+diesel,topsis,resilient,10294
-Lodwar_PLS100_Diesel only,0.7937565171715811,Lodwar,100,Diesel only,topsis,resilient,10295
-Lusaka_PLS100_Diesel only,0.7937565171715811,Lusaka,100,Diesel only,topsis,resilient,10296
-Lodwar_PLS100_Diesel only,0.7937565171715811,Lodwar,100,Diesel only,topsis,resilient,10297
-Lusaka_PLS100_Diesel only,0.7937565171715811,Lusaka,100,Diesel only,topsis,resilient,10298
-Lusaka_PLS100_Diesel only,0.7937565171715811,Lusaka,100,Diesel only,topsis,resilient,10299
-Lodwar_PLS100_Diesel only,0.7937565171715811,Lodwar,100,Diesel only,topsis,resilient,10300
-Accra_PLS100_Diesel only,0.7937565171715811,Accra,100,Diesel only,topsis,resilient,10301
-Accra_PLS100_Diesel only,0.7937565171715811,Accra,100,Diesel only,topsis,resilient,10302
-Accra_PLS100_Diesel only,0.7937565171715811,Accra,100,Diesel only,topsis,resilient,10303
+Lodwar_PLS100_Diesel only,0.7937565171715812,Lodwar,100,Diesel only,topsis,resilient,10295
+Lusaka_PLS100_Diesel only,0.7937565171715812,Lusaka,100,Diesel only,topsis,resilient,10296
+Lodwar_PLS100_Diesel only,0.7937565171715812,Lodwar,100,Diesel only,topsis,resilient,10297
+Lusaka_PLS100_Diesel only,0.7937565171715812,Lusaka,100,Diesel only,topsis,resilient,10298
+Lusaka_PLS100_Diesel only,0.7937565171715812,Lusaka,100,Diesel only,topsis,resilient,10299
+Lodwar_PLS100_Diesel only,0.7937565171715812,Lodwar,100,Diesel only,topsis,resilient,10300
+Accra_PLS100_Diesel only,0.7937565171715812,Accra,100,Diesel only,topsis,resilient,10301
+Accra_PLS100_Diesel only,0.7937565171715812,Accra,100,Diesel only,topsis,resilient,10302
+Accra_PLS100_Diesel only,0.7937565171715812,Accra,100,Diesel only,topsis,resilient,10303
 Lodwar_PLS85_PV+battery+diesel,0.7936900784991613,Lodwar,85,PV+battery+diesel,topsis,resilient,10304
 Lusaka_PLS85_Diesel only,0.7936185248162693,Lusaka,85,Diesel only,topsis,resilient,10305
 Lusaka_PLS85_Diesel only,0.7936185248162693,Lusaka,85,Diesel only,topsis,resilient,10306
@@ -10346,7 +10346,7 @@ Lusaka_PLS80_Diesel only,0.7931433748189759,Lusaka,80,Diesel only,topsis,resilie
 Lusaka_PLS95_PV+battery+diesel,0.793038500583564,Lusaka,95,PV+battery+diesel,topsis,resilient,10345
 Lodwar_PLS95_PV+battery+diesel,0.7930056489721717,Lodwar,95,PV+battery+diesel,topsis,resilient,10346
 Lusaka_PLS85_PV+battery+diesel,0.7929348304277132,Lusaka,85,PV+battery+diesel,topsis,resilient,10347
-Lusaka_PLS80_PV+battery+diesel,0.7928553169074626,Lusaka,80,PV+battery+diesel,topsis,resilient,10348
+Lusaka_PLS80_PV+battery+diesel,0.7928553169074627,Lusaka,80,PV+battery+diesel,topsis,resilient,10348
 Accra_PLS85_Diesel only,0.7927651845025545,Accra,85,Diesel only,topsis,resilient,10349
 Accra_PLS85_Diesel only,0.7927651845025545,Accra,85,Diesel only,topsis,resilient,10350
 Lodwar_PLS85_Diesel only,0.7927651845025545,Lodwar,85,Diesel only,topsis,resilient,10351
@@ -10433,8 +10433,8 @@ Lusaka_PLS90_PV+battery,0.7918131373547385,Lusaka,90,PV+battery,topsis,resilient
 Lusaka_PLS90_PV+battery,0.7918131373547385,Lusaka,90,PV+battery,topsis,resilient,10432
 Lodwar_PLS90_PV+battery+diesel,0.7916478075592668,Lodwar,90,PV+battery+diesel,topsis,resilient,10433
 Accra_PLS80_PV+battery+diesel,0.7916046457432702,Accra,80,PV+battery+diesel,topsis,resilient,10434
-Accra_PLS100_PV+battery+diesel,0.7915549741758914,Accra,100,PV+battery+diesel,topsis,resilient,10435
-Accra_PLS95_PV+battery+diesel,0.7915288515576079,Accra,95,PV+battery+diesel,topsis,resilient,10436
+Accra_PLS100_PV+battery+diesel,0.7915549741758916,Accra,100,PV+battery+diesel,topsis,resilient,10435
+Accra_PLS95_PV+battery+diesel,0.791528851557608,Accra,95,PV+battery+diesel,topsis,resilient,10436
 Lodwar_PLS85_PV+battery+diesel,0.7913948657385358,Lodwar,85,PV+battery+diesel,topsis,resilient,10437
 Lodwar_PLS90_PV+battery,0.7913706094642365,Lodwar,90,PV+battery,topsis,resilient,10438
 Lodwar_PLS90_PV+battery,0.7913706094642365,Lodwar,90,PV+battery,topsis,resilient,10439
@@ -10467,15 +10467,15 @@ Accra_PLS80_PV+battery,0.7909082171134084,Accra,80,PV+battery,topsis,resilient,1
 Accra_PLS80_PV+battery,0.7909082171134084,Accra,80,PV+battery,topsis,resilient,10466
 Accra_PLS80_PV+battery,0.7909082171134084,Accra,80,PV+battery,topsis,resilient,10467
 Accra_PLS80_PV+battery,0.7909082171134084,Accra,80,PV+battery,topsis,resilient,10468
-Lodwar_PLS90_Diesel only,0.7908848111066356,Lodwar,90,Diesel only,topsis,resilient,10469
-Accra_PLS90_Diesel only,0.7908848111066356,Accra,90,Diesel only,topsis,resilient,10470
-Lodwar_PLS90_Diesel only,0.7908848111066356,Lodwar,90,Diesel only,topsis,resilient,10471
-Accra_PLS90_Diesel only,0.7908848111066356,Accra,90,Diesel only,topsis,resilient,10472
-Lodwar_PLS90_Diesel only,0.7908848111066356,Lodwar,90,Diesel only,topsis,resilient,10473
-Lusaka_PLS90_Diesel only,0.7908848111066356,Lusaka,90,Diesel only,topsis,resilient,10474
-Lusaka_PLS90_Diesel only,0.7908848111066356,Lusaka,90,Diesel only,topsis,resilient,10475
-Lusaka_PLS90_Diesel only,0.7908848111066356,Lusaka,90,Diesel only,topsis,resilient,10476
-Accra_PLS90_Diesel only,0.7908848111066356,Accra,90,Diesel only,topsis,resilient,10477
+Lodwar_PLS90_Diesel only,0.7908848111066357,Lodwar,90,Diesel only,topsis,resilient,10469
+Accra_PLS90_Diesel only,0.7908848111066357,Accra,90,Diesel only,topsis,resilient,10470
+Lodwar_PLS90_Diesel only,0.7908848111066357,Lodwar,90,Diesel only,topsis,resilient,10471
+Accra_PLS90_Diesel only,0.7908848111066357,Accra,90,Diesel only,topsis,resilient,10472
+Lodwar_PLS90_Diesel only,0.7908848111066357,Lodwar,90,Diesel only,topsis,resilient,10473
+Lusaka_PLS90_Diesel only,0.7908848111066357,Lusaka,90,Diesel only,topsis,resilient,10474
+Lusaka_PLS90_Diesel only,0.7908848111066357,Lusaka,90,Diesel only,topsis,resilient,10475
+Lusaka_PLS90_Diesel only,0.7908848111066357,Lusaka,90,Diesel only,topsis,resilient,10476
+Accra_PLS90_Diesel only,0.7908848111066357,Accra,90,Diesel only,topsis,resilient,10477
 Lusaka_PLS85_PV+battery,0.7908775405887062,Lusaka,85,PV+battery,topsis,resilient,10478
 Lusaka_PLS85_PV+battery,0.7908775405887062,Lusaka,85,PV+battery,topsis,resilient,10479
 Lusaka_PLS85_PV+battery,0.7908775405887062,Lusaka,85,PV+battery,topsis,resilient,10480
@@ -10485,15 +10485,15 @@ Lusaka_PLS85_PV+battery,0.7908775405887062,Lusaka,85,PV+battery,topsis,resilient
 Lusaka_PLS85_PV+battery,0.7908775405887062,Lusaka,85,PV+battery,topsis,resilient,10484
 Lusaka_PLS85_PV+battery,0.7908775405887062,Lusaka,85,PV+battery,topsis,resilient,10485
 Lusaka_PLS85_PV+battery,0.7908775405887062,Lusaka,85,PV+battery,topsis,resilient,10486
-Lusaka_PLS100_Diesel only,0.7908442052448348,Lusaka,100,Diesel only,topsis,resilient,10487
-Accra_PLS100_Diesel only,0.7908442052448348,Accra,100,Diesel only,topsis,resilient,10488
-Accra_PLS100_Diesel only,0.7908442052448348,Accra,100,Diesel only,topsis,resilient,10489
-Lodwar_PLS100_Diesel only,0.7908442052448348,Lodwar,100,Diesel only,topsis,resilient,10490
-Lodwar_PLS100_Diesel only,0.7908442052448348,Lodwar,100,Diesel only,topsis,resilient,10491
-Lusaka_PLS100_Diesel only,0.7908442052448348,Lusaka,100,Diesel only,topsis,resilient,10492
-Lodwar_PLS100_Diesel only,0.7908442052448348,Lodwar,100,Diesel only,topsis,resilient,10493
-Accra_PLS100_Diesel only,0.7908442052448348,Accra,100,Diesel only,topsis,resilient,10494
-Lusaka_PLS100_Diesel only,0.7908442052448348,Lusaka,100,Diesel only,topsis,resilient,10495
+Lusaka_PLS100_Diesel only,0.7908442052448349,Lusaka,100,Diesel only,topsis,resilient,10487
+Accra_PLS100_Diesel only,0.7908442052448349,Accra,100,Diesel only,topsis,resilient,10488
+Accra_PLS100_Diesel only,0.7908442052448349,Accra,100,Diesel only,topsis,resilient,10489
+Lodwar_PLS100_Diesel only,0.7908442052448349,Lodwar,100,Diesel only,topsis,resilient,10490
+Lodwar_PLS100_Diesel only,0.7908442052448349,Lodwar,100,Diesel only,topsis,resilient,10491
+Lusaka_PLS100_Diesel only,0.7908442052448349,Lusaka,100,Diesel only,topsis,resilient,10492
+Lodwar_PLS100_Diesel only,0.7908442052448349,Lodwar,100,Diesel only,topsis,resilient,10493
+Accra_PLS100_Diesel only,0.7908442052448349,Accra,100,Diesel only,topsis,resilient,10494
+Lusaka_PLS100_Diesel only,0.7908442052448349,Lusaka,100,Diesel only,topsis,resilient,10495
 Lusaka_PLS100_PV+battery+diesel,0.7908287540972283,Lusaka,100,PV+battery+diesel,topsis,resilient,10496
 Lusaka_PLS90_PV+battery+diesel,0.7908249422968419,Lusaka,90,PV+battery+diesel,topsis,resilient,10497
 Lodwar_PLS100_PV+battery,0.7907163769640748,Lodwar,100,PV+battery,topsis,resilient,10498
@@ -10851,9 +10851,9 @@ Lusaka_PLS95_Diesel only,0.7855369928993207,Lusaka,95,Diesel only,topsis,resilie
 Lusaka_PLS95_Diesel only,0.7855369928993207,Lusaka,95,Diesel only,topsis,resilient,10850
 Lodwar_PLS95_Diesel only,0.7855369928993207,Lodwar,95,Diesel only,topsis,resilient,10851
 Accra_PLS80_PV+battery+diesel,0.7855278862853824,Accra,80,PV+battery+diesel,topsis,resilient,10852
-Accra_PLS95_PV+battery+diesel,0.7854077993178263,Accra,95,PV+battery+diesel,topsis,resilient,10853
+Accra_PLS95_PV+battery+diesel,0.7854077993178264,Accra,95,PV+battery+diesel,topsis,resilient,10853
 Lodwar_PLS100_PV+battery+diesel,0.7853582218786693,Lodwar,100,PV+battery+diesel,topsis,resilient,10854
-Lusaka_PLS100_PV+battery+diesel,0.7853553123150885,Lusaka,100,PV+battery+diesel,topsis,resilient,10855
+Lusaka_PLS100_PV+battery+diesel,0.7853553123150886,Lusaka,100,PV+battery+diesel,topsis,resilient,10855
 Accra_PLS80_PV+battery,0.7852051786807193,Accra,80,PV+battery,topsis,resilient,10856
 Accra_PLS80_PV+battery,0.7852051786807193,Accra,80,PV+battery,topsis,resilient,10857
 Accra_PLS80_PV+battery,0.7852051786807193,Accra,80,PV+battery,topsis,resilient,10858
@@ -10877,7 +10877,7 @@ Lusaka_PLS80_PV+battery,0.7847115402031057,Lusaka,80,PV+battery,topsis,resilient
 Lusaka_PLS80_PV+battery,0.7847115402031057,Lusaka,80,PV+battery,topsis,resilient,10876
 Lusaka_PLS80_PV+battery,0.7847115402031057,Lusaka,80,PV+battery,topsis,resilient,10877
 Lodwar_PLS95_PV+battery+diesel,0.7844635835525058,Lodwar,95,PV+battery+diesel,topsis,resilient,10878
-Accra_PLS80_PV+battery+diesel,0.7844485799799129,Accra,80,PV+battery+diesel,topsis,resilient,10879
+Accra_PLS80_PV+battery+diesel,0.7844485799799131,Accra,80,PV+battery+diesel,topsis,resilient,10879
 Lusaka_PLS100_Diesel only,0.7843890334185302,Lusaka,100,Diesel only,topsis,resilient,10880
 Lodwar_PLS100_Diesel only,0.7843890334185302,Lodwar,100,Diesel only,topsis,resilient,10881
 Lusaka_PLS100_Diesel only,0.7843890334185302,Lusaka,100,Diesel only,topsis,resilient,10882
@@ -10953,15 +10953,15 @@ Lusaka_PLS90_Diesel only,0.7834397973381464,Lusaka,90,Diesel only,topsis,resilie
 Lusaka_PLS90_Diesel only,0.7834397973381464,Lusaka,90,Diesel only,topsis,resilient,10952
 Accra_PLS90_Diesel only,0.7834397973381464,Accra,90,Diesel only,topsis,resilient,10953
 Lusaka_PLS80_PV+battery+diesel,0.783439495261758,Lusaka,80,PV+battery+diesel,topsis,resilient,10954
-Lodwar_PLS80_Diesel only,0.7833001733191179,Lodwar,80,Diesel only,topsis,resilient,10955
-Lusaka_PLS80_Diesel only,0.7833001733191179,Lusaka,80,Diesel only,topsis,resilient,10956
-Lodwar_PLS80_Diesel only,0.7833001733191179,Lodwar,80,Diesel only,topsis,resilient,10957
-Accra_PLS80_Diesel only,0.7833001733191179,Accra,80,Diesel only,topsis,resilient,10958
-Lusaka_PLS80_Diesel only,0.7833001733191179,Lusaka,80,Diesel only,topsis,resilient,10959
-Accra_PLS80_Diesel only,0.7833001733191179,Accra,80,Diesel only,topsis,resilient,10960
-Lodwar_PLS80_Diesel only,0.7833001733191179,Lodwar,80,Diesel only,topsis,resilient,10961
-Accra_PLS80_Diesel only,0.7833001733191179,Accra,80,Diesel only,topsis,resilient,10962
-Lusaka_PLS80_Diesel only,0.7833001733191179,Lusaka,80,Diesel only,topsis,resilient,10963
+Lodwar_PLS80_Diesel only,0.783300173319118,Lodwar,80,Diesel only,topsis,resilient,10955
+Lusaka_PLS80_Diesel only,0.783300173319118,Lusaka,80,Diesel only,topsis,resilient,10956
+Lodwar_PLS80_Diesel only,0.783300173319118,Lodwar,80,Diesel only,topsis,resilient,10957
+Accra_PLS80_Diesel only,0.783300173319118,Accra,80,Diesel only,topsis,resilient,10958
+Lusaka_PLS80_Diesel only,0.783300173319118,Lusaka,80,Diesel only,topsis,resilient,10959
+Accra_PLS80_Diesel only,0.783300173319118,Accra,80,Diesel only,topsis,resilient,10960
+Lodwar_PLS80_Diesel only,0.783300173319118,Lodwar,80,Diesel only,topsis,resilient,10961
+Accra_PLS80_Diesel only,0.783300173319118,Accra,80,Diesel only,topsis,resilient,10962
+Lusaka_PLS80_Diesel only,0.783300173319118,Lusaka,80,Diesel only,topsis,resilient,10963
 Accra_PLS95_PV+battery+diesel,0.783243772103752,Accra,95,PV+battery+diesel,topsis,resilient,10964
 Accra_PLS80_PV+battery+diesel,0.7831415518573965,Accra,80,PV+battery+diesel,topsis,resilient,10965
 Accra_PLS80_PV+battery+diesel,0.7831328608491043,Accra,80,PV+battery+diesel,topsis,resilient,10966
@@ -11108,7 +11108,7 @@ Accra_PLS80_Diesel only,0.7799846263359226,Accra,80,Diesel only,topsis,resilient
 Accra_PLS80_Diesel only,0.7799846263359226,Accra,80,Diesel only,topsis,resilient,11107
 Accra_PLS80_Diesel only,0.7799846263359226,Accra,80,Diesel only,topsis,resilient,11108
 Lusaka_PLS80_Diesel only,0.7799846263359226,Lusaka,80,Diesel only,topsis,resilient,11109
-Lusaka_PLS90_PV+battery+diesel,0.7797961973232966,Lusaka,90,PV+battery+diesel,topsis,resilient,11110
+Lusaka_PLS90_PV+battery+diesel,0.7797961973232967,Lusaka,90,PV+battery+diesel,topsis,resilient,11110
 Lodwar_PLS85_Diesel only,0.7796620982996353,Lodwar,85,Diesel only,topsis,resilient,11111
 Lusaka_PLS85_Diesel only,0.7796620982996353,Lusaka,85,Diesel only,topsis,resilient,11112
 Lodwar_PLS85_Diesel only,0.7796620982996353,Lodwar,85,Diesel only,topsis,resilient,11113
@@ -11118,17 +11118,17 @@ Accra_PLS85_Diesel only,0.7796620982996353,Accra,85,Diesel only,topsis,resilient
 Lusaka_PLS85_Diesel only,0.7796620982996353,Lusaka,85,Diesel only,topsis,resilient,11117
 Accra_PLS85_Diesel only,0.7796620982996353,Accra,85,Diesel only,topsis,resilient,11118
 Accra_PLS85_Diesel only,0.7796620982996353,Accra,85,Diesel only,topsis,resilient,11119
-Lodwar_PLS100_PV+battery+diesel,0.7796415484295461,Lodwar,100,PV+battery+diesel,topsis,resilient,11120
+Lodwar_PLS100_PV+battery+diesel,0.7796415484295464,Lodwar,100,PV+battery+diesel,topsis,resilient,11120
 Lodwar_PLS100_PV+battery+diesel,0.7795003194359786,Lodwar,100,PV+battery+diesel,topsis,resilient,11121
-Lodwar_PLS80_Diesel only,0.7794793859609916,Lodwar,80,Diesel only,topsis,resilient,11122
-Lodwar_PLS80_Diesel only,0.7794793859609916,Lodwar,80,Diesel only,topsis,resilient,11123
-Accra_PLS80_Diesel only,0.7794793859609916,Accra,80,Diesel only,topsis,resilient,11124
-Accra_PLS80_Diesel only,0.7794793859609916,Accra,80,Diesel only,topsis,resilient,11125
-Accra_PLS80_Diesel only,0.7794793859609916,Accra,80,Diesel only,topsis,resilient,11126
-Lusaka_PLS80_Diesel only,0.7794793859609916,Lusaka,80,Diesel only,topsis,resilient,11127
-Lusaka_PLS80_Diesel only,0.7794793859609916,Lusaka,80,Diesel only,topsis,resilient,11128
-Lusaka_PLS80_Diesel only,0.7794793859609916,Lusaka,80,Diesel only,topsis,resilient,11129
-Lodwar_PLS80_Diesel only,0.7794793859609916,Lodwar,80,Diesel only,topsis,resilient,11130
+Lodwar_PLS80_Diesel only,0.7794793859609918,Lodwar,80,Diesel only,topsis,resilient,11122
+Lodwar_PLS80_Diesel only,0.7794793859609918,Lodwar,80,Diesel only,topsis,resilient,11123
+Accra_PLS80_Diesel only,0.7794793859609918,Accra,80,Diesel only,topsis,resilient,11124
+Accra_PLS80_Diesel only,0.7794793859609918,Accra,80,Diesel only,topsis,resilient,11125
+Accra_PLS80_Diesel only,0.7794793859609918,Accra,80,Diesel only,topsis,resilient,11126
+Lusaka_PLS80_Diesel only,0.7794793859609918,Lusaka,80,Diesel only,topsis,resilient,11127
+Lusaka_PLS80_Diesel only,0.7794793859609918,Lusaka,80,Diesel only,topsis,resilient,11128
+Lusaka_PLS80_Diesel only,0.7794793859609918,Lusaka,80,Diesel only,topsis,resilient,11129
+Lodwar_PLS80_Diesel only,0.7794793859609918,Lodwar,80,Diesel only,topsis,resilient,11130
 Accra_PLS100_PV+battery+diesel,0.7794715969818108,Accra,100,PV+battery+diesel,topsis,resilient,11131
 Accra_PLS80_PV+battery+diesel,0.7793143602773377,Accra,80,PV+battery+diesel,topsis,resilient,11132
 Lodwar_PLS100_PV+battery+diesel,0.7793127341098492,Lodwar,100,PV+battery+diesel,topsis,resilient,11133
@@ -11222,7 +11222,7 @@ Lodwar_PLS80_PV+battery,0.7781352257972532,Lodwar,80,PV+battery,topsis,resilient
 Lodwar_PLS80_PV+battery,0.7781352257972532,Lodwar,80,PV+battery,topsis,resilient,11221
 Lodwar_PLS95_PV+battery+diesel,0.7781307615600177,Lodwar,95,PV+battery+diesel,topsis,resilient,11222
 Accra_PLS80_PV+battery+diesel,0.7781158092271944,Accra,80,PV+battery+diesel,topsis,resilient,11223
-Accra_PLS100_PV+battery+diesel,0.7779888068343125,Accra,100,PV+battery+diesel,topsis,resilient,11224
+Accra_PLS100_PV+battery+diesel,0.7779888068343126,Accra,100,PV+battery+diesel,topsis,resilient,11224
 Accra_PLS95_PV+battery+diesel,0.7778965547239444,Accra,95,PV+battery+diesel,topsis,resilient,11225
 Lusaka_PLS90_PV+battery+diesel,0.7778047143010354,Lusaka,90,PV+battery+diesel,topsis,resilient,11226
 Accra_PLS100_PV+battery,0.7775874211826934,Accra,100,PV+battery,topsis,resilient,11227
@@ -11542,15 +11542,15 @@ Lodwar_PLS95_PV+battery,0.7681762633313111,Lodwar,95,PV+battery,topsis,resilient
 Lodwar_PLS95_PV+battery,0.7681762633313111,Lodwar,95,PV+battery,topsis,resilient,11541
 Lodwar_PLS95_PV+battery,0.7681762633313111,Lodwar,95,PV+battery,topsis,resilient,11542
 Lodwar_PLS95_PV+battery,0.7681762633313111,Lodwar,95,PV+battery,topsis,resilient,11543
-Lusaka_PLS100_Diesel only,0.7681501584050773,Lusaka,100,Diesel only,topsis,resilient,11544
-Lusaka_PLS100_Diesel only,0.7681501584050773,Lusaka,100,Diesel only,topsis,resilient,11545
-Lodwar_PLS100_Diesel only,0.7681501584050773,Lodwar,100,Diesel only,topsis,resilient,11546
-Accra_PLS100_Diesel only,0.7681501584050773,Accra,100,Diesel only,topsis,resilient,11547
-Accra_PLS100_Diesel only,0.7681501584050773,Accra,100,Diesel only,topsis,resilient,11548
-Accra_PLS100_Diesel only,0.7681501584050773,Accra,100,Diesel only,topsis,resilient,11549
-Lusaka_PLS100_Diesel only,0.7681501584050773,Lusaka,100,Diesel only,topsis,resilient,11550
-Lodwar_PLS100_Diesel only,0.7681501584050773,Lodwar,100,Diesel only,topsis,resilient,11551
-Lodwar_PLS100_Diesel only,0.7681501584050773,Lodwar,100,Diesel only,topsis,resilient,11552
+Lusaka_PLS100_Diesel only,0.7681501584050775,Lusaka,100,Diesel only,topsis,resilient,11544
+Lusaka_PLS100_Diesel only,0.7681501584050775,Lusaka,100,Diesel only,topsis,resilient,11545
+Lodwar_PLS100_Diesel only,0.7681501584050775,Lodwar,100,Diesel only,topsis,resilient,11546
+Accra_PLS100_Diesel only,0.7681501584050775,Accra,100,Diesel only,topsis,resilient,11547
+Accra_PLS100_Diesel only,0.7681501584050775,Accra,100,Diesel only,topsis,resilient,11548
+Accra_PLS100_Diesel only,0.7681501584050775,Accra,100,Diesel only,topsis,resilient,11549
+Lusaka_PLS100_Diesel only,0.7681501584050775,Lusaka,100,Diesel only,topsis,resilient,11550
+Lodwar_PLS100_Diesel only,0.7681501584050775,Lodwar,100,Diesel only,topsis,resilient,11551
+Lodwar_PLS100_Diesel only,0.7681501584050775,Lodwar,100,Diesel only,topsis,resilient,11552
 Lodwar_PLS90_PV+battery,0.7680581780368484,Lodwar,90,PV+battery,topsis,resilient,11553
 Lodwar_PLS90_PV+battery,0.7680581780368484,Lodwar,90,PV+battery,topsis,resilient,11554
 Lodwar_PLS90_PV+battery,0.7680581780368484,Lodwar,90,PV+battery,topsis,resilient,11555
@@ -11607,15 +11607,15 @@ Accra_PLS90_Diesel only,0.767420229467253,Accra,90,Diesel only,topsis,resilient,
 Lusaka_PLS90_Diesel only,0.767420229467253,Lusaka,90,Diesel only,topsis,resilient,11606
 Accra_PLS90_Diesel only,0.767420229467253,Accra,90,Diesel only,topsis,resilient,11607
 Lodwar_PLS90_Diesel only,0.767420229467253,Lodwar,90,Diesel only,topsis,resilient,11608
-Accra_PLS95_Diesel only,0.7671584138030967,Accra,95,Diesel only,topsis,resilient,11609
-Lusaka_PLS95_Diesel only,0.7671584138030967,Lusaka,95,Diesel only,topsis,resilient,11610
-Lusaka_PLS95_Diesel only,0.7671584138030967,Lusaka,95,Diesel only,topsis,resilient,11611
-Lodwar_PLS95_Diesel only,0.7671584138030967,Lodwar,95,Diesel only,topsis,resilient,11612
-Lusaka_PLS95_Diesel only,0.7671584138030967,Lusaka,95,Diesel only,topsis,resilient,11613
-Lodwar_PLS95_Diesel only,0.7671584138030967,Lodwar,95,Diesel only,topsis,resilient,11614
-Lodwar_PLS95_Diesel only,0.7671584138030967,Lodwar,95,Diesel only,topsis,resilient,11615
-Accra_PLS95_Diesel only,0.7671584138030967,Accra,95,Diesel only,topsis,resilient,11616
-Accra_PLS95_Diesel only,0.7671584138030967,Accra,95,Diesel only,topsis,resilient,11617
+Accra_PLS95_Diesel only,0.7671584138030968,Accra,95,Diesel only,topsis,resilient,11609
+Lusaka_PLS95_Diesel only,0.7671584138030968,Lusaka,95,Diesel only,topsis,resilient,11610
+Lusaka_PLS95_Diesel only,0.7671584138030968,Lusaka,95,Diesel only,topsis,resilient,11611
+Lodwar_PLS95_Diesel only,0.7671584138030968,Lodwar,95,Diesel only,topsis,resilient,11612
+Lusaka_PLS95_Diesel only,0.7671584138030968,Lusaka,95,Diesel only,topsis,resilient,11613
+Lodwar_PLS95_Diesel only,0.7671584138030968,Lodwar,95,Diesel only,topsis,resilient,11614
+Lodwar_PLS95_Diesel only,0.7671584138030968,Lodwar,95,Diesel only,topsis,resilient,11615
+Accra_PLS95_Diesel only,0.7671584138030968,Accra,95,Diesel only,topsis,resilient,11616
+Accra_PLS95_Diesel only,0.7671584138030968,Accra,95,Diesel only,topsis,resilient,11617
 Accra_PLS90_Diesel only,0.7670654019425042,Accra,90,Diesel only,topsis,resilient,11618
 Lusaka_PLS90_Diesel only,0.7670654019425042,Lusaka,90,Diesel only,topsis,resilient,11619
 Lodwar_PLS90_Diesel only,0.7670654019425042,Lodwar,90,Diesel only,topsis,resilient,11620
@@ -11771,7 +11771,7 @@ Lusaka_PLS100_Diesel only,0.765273454886394,Lusaka,100,Diesel only,topsis,resili
 Accra_PLS100_Diesel only,0.765273454886394,Accra,100,Diesel only,topsis,resilient,11770
 Accra_PLS100_Diesel only,0.765273454886394,Accra,100,Diesel only,topsis,resilient,11771
 Accra_PLS95_PV+battery+diesel,0.7652568382420311,Accra,95,PV+battery+diesel,topsis,resilient,11772
-Accra_PLS100_PV+battery+diesel,0.7652219069182892,Accra,100,PV+battery+diesel,topsis,resilient,11773
+Accra_PLS100_PV+battery+diesel,0.7652219069182893,Accra,100,PV+battery+diesel,topsis,resilient,11773
 Lodwar_PLS80_PV+battery,0.7649040699794293,Lodwar,80,PV+battery,topsis,resilient,11774
 Lodwar_PLS80_PV+battery,0.7649040699794293,Lodwar,80,PV+battery,topsis,resilient,11775
 Lodwar_PLS80_PV+battery,0.7649040699794293,Lodwar,80,PV+battery,topsis,resilient,11776
@@ -12113,15 +12113,15 @@ Lodwar_PLS90_PV+battery,0.7576331840746988,Lodwar,90,PV+battery,topsis,resilient
 Lodwar_PLS90_PV+battery,0.7576331840746988,Lodwar,90,PV+battery,topsis,resilient,12112
 Lodwar_PLS90_PV+battery,0.7576331840746988,Lodwar,90,PV+battery,topsis,resilient,12113
 Lodwar_PLS80_PV+battery+diesel,0.7572100048456726,Lodwar,80,PV+battery+diesel,topsis,resilient,12114
-Lusaka_PLS85_Diesel only,0.7571923646021319,Lusaka,85,Diesel only,topsis,resilient,12115
-Accra_PLS85_Diesel only,0.7571923646021319,Accra,85,Diesel only,topsis,resilient,12116
-Accra_PLS85_Diesel only,0.7571923646021319,Accra,85,Diesel only,topsis,resilient,12117
-Lusaka_PLS85_Diesel only,0.7571923646021319,Lusaka,85,Diesel only,topsis,resilient,12118
-Accra_PLS85_Diesel only,0.7571923646021319,Accra,85,Diesel only,topsis,resilient,12119
-Lusaka_PLS85_Diesel only,0.7571923646021319,Lusaka,85,Diesel only,topsis,resilient,12120
-Lodwar_PLS85_Diesel only,0.7571923646021319,Lodwar,85,Diesel only,topsis,resilient,12121
-Lodwar_PLS85_Diesel only,0.7571923646021319,Lodwar,85,Diesel only,topsis,resilient,12122
-Lodwar_PLS85_Diesel only,0.7571923646021319,Lodwar,85,Diesel only,topsis,resilient,12123
+Lusaka_PLS85_Diesel only,0.757192364602132,Lusaka,85,Diesel only,topsis,resilient,12115
+Accra_PLS85_Diesel only,0.757192364602132,Accra,85,Diesel only,topsis,resilient,12116
+Accra_PLS85_Diesel only,0.757192364602132,Accra,85,Diesel only,topsis,resilient,12117
+Lusaka_PLS85_Diesel only,0.757192364602132,Lusaka,85,Diesel only,topsis,resilient,12118
+Accra_PLS85_Diesel only,0.757192364602132,Accra,85,Diesel only,topsis,resilient,12119
+Lusaka_PLS85_Diesel only,0.757192364602132,Lusaka,85,Diesel only,topsis,resilient,12120
+Lodwar_PLS85_Diesel only,0.757192364602132,Lodwar,85,Diesel only,topsis,resilient,12121
+Lodwar_PLS85_Diesel only,0.757192364602132,Lodwar,85,Diesel only,topsis,resilient,12122
+Lodwar_PLS85_Diesel only,0.757192364602132,Lodwar,85,Diesel only,topsis,resilient,12123
 Lusaka_PLS95_PV+battery,0.7570798501081015,Lusaka,95,PV+battery,topsis,resilient,12124
 Lusaka_PLS95_PV+battery,0.7570798501081015,Lusaka,95,PV+battery,topsis,resilient,12125
 Lusaka_PLS95_PV+battery,0.7570798501081015,Lusaka,95,PV+battery,topsis,resilient,12126
@@ -12172,7 +12172,7 @@ Accra_PLS95_PV+battery,0.7563808125322201,Accra,95,PV+battery,topsis,resilient,1
 Accra_PLS95_PV+battery,0.7563808125322201,Accra,95,PV+battery,topsis,resilient,12171
 Accra_PLS95_PV+battery,0.7563808125322201,Accra,95,PV+battery,topsis,resilient,12172
 Lodwar_PLS85_PV+battery+diesel,0.7562904864586901,Lodwar,85,PV+battery+diesel,topsis,resilient,12173
-Lusaka_PLS80_PV+battery+diesel,0.7559031252537637,Lusaka,80,PV+battery+diesel,topsis,resilient,12174
+Lusaka_PLS80_PV+battery+diesel,0.7559031252537638,Lusaka,80,PV+battery+diesel,topsis,resilient,12174
 Lusaka_PLS85_Diesel only,0.7555702078152168,Lusaka,85,Diesel only,topsis,resilient,12175
 Accra_PLS85_Diesel only,0.7555702078152168,Accra,85,Diesel only,topsis,resilient,12176
 Accra_PLS85_Diesel only,0.7555702078152168,Accra,85,Diesel only,topsis,resilient,12177
@@ -12238,15 +12238,15 @@ Accra_PLS90_PV+battery,0.7539802497938338,Accra,90,PV+battery,topsis,resilient,1
 Accra_PLS90_PV+battery,0.7539802497938338,Accra,90,PV+battery,topsis,resilient,12237
 Accra_PLS90_PV+battery,0.7539802497938338,Accra,90,PV+battery,topsis,resilient,12238
 Accra_PLS90_PV+battery,0.7539802497938338,Accra,90,PV+battery,topsis,resilient,12239
-Lusaka_PLS100_Diesel only,0.7537330649377281,Lusaka,100,Diesel only,topsis,resilient,12240
-Lusaka_PLS100_Diesel only,0.7537330649377281,Lusaka,100,Diesel only,topsis,resilient,12241
-Accra_PLS100_Diesel only,0.7537330649377281,Accra,100,Diesel only,topsis,resilient,12242
-Accra_PLS100_Diesel only,0.7537330649377281,Accra,100,Diesel only,topsis,resilient,12243
-Accra_PLS100_Diesel only,0.7537330649377281,Accra,100,Diesel only,topsis,resilient,12244
-Lodwar_PLS100_Diesel only,0.7537330649377281,Lodwar,100,Diesel only,topsis,resilient,12245
-Lodwar_PLS100_Diesel only,0.7537330649377281,Lodwar,100,Diesel only,topsis,resilient,12246
-Lodwar_PLS100_Diesel only,0.7537330649377281,Lodwar,100,Diesel only,topsis,resilient,12247
-Lusaka_PLS100_Diesel only,0.7537330649377281,Lusaka,100,Diesel only,topsis,resilient,12248
+Lusaka_PLS100_Diesel only,0.7537330649377283,Lusaka,100,Diesel only,topsis,resilient,12240
+Lusaka_PLS100_Diesel only,0.7537330649377283,Lusaka,100,Diesel only,topsis,resilient,12241
+Accra_PLS100_Diesel only,0.7537330649377283,Accra,100,Diesel only,topsis,resilient,12242
+Accra_PLS100_Diesel only,0.7537330649377283,Accra,100,Diesel only,topsis,resilient,12243
+Accra_PLS100_Diesel only,0.7537330649377283,Accra,100,Diesel only,topsis,resilient,12244
+Lodwar_PLS100_Diesel only,0.7537330649377283,Lodwar,100,Diesel only,topsis,resilient,12245
+Lodwar_PLS100_Diesel only,0.7537330649377283,Lodwar,100,Diesel only,topsis,resilient,12246
+Lodwar_PLS100_Diesel only,0.7537330649377283,Lodwar,100,Diesel only,topsis,resilient,12247
+Lusaka_PLS100_Diesel only,0.7537330649377283,Lusaka,100,Diesel only,topsis,resilient,12248
 Lodwar_PLS100_PV+battery,0.7536959768973209,Lodwar,100,PV+battery,topsis,resilient,12249
 Lodwar_PLS100_PV+battery,0.7536959768973209,Lodwar,100,PV+battery,topsis,resilient,12250
 Lodwar_PLS100_PV+battery,0.7536959768973209,Lodwar,100,PV+battery,topsis,resilient,12251
@@ -13301,15 +13301,15 @@ Lodwar_PLS80_PV+battery,0.7109593067968487,Lodwar,80,PV+battery,topsis,resilient
 Lodwar_PLS80_PV+battery,0.7109593067968487,Lodwar,80,PV+battery,topsis,resilient,13300
 Lodwar_PLS80_PV+battery,0.7109593067968487,Lodwar,80,PV+battery,topsis,resilient,13301
 Lodwar_PLS80_PV+battery,0.7109593067968487,Lodwar,80,PV+battery,topsis,resilient,13302
-Lodwar_PLS85_Diesel only,0.7107564757687671,Lodwar,85,Diesel only,topsis,resilient,13303
-Lodwar_PLS85_Diesel only,0.7107564757687671,Lodwar,85,Diesel only,topsis,resilient,13304
-Lodwar_PLS85_Diesel only,0.7107564757687671,Lodwar,85,Diesel only,topsis,resilient,13305
-Lusaka_PLS85_Diesel only,0.7107564757687671,Lusaka,85,Diesel only,topsis,resilient,13306
-Accra_PLS85_Diesel only,0.7107564757687671,Accra,85,Diesel only,topsis,resilient,13307
-Accra_PLS85_Diesel only,0.7107564757687671,Accra,85,Diesel only,topsis,resilient,13308
-Lusaka_PLS85_Diesel only,0.7107564757687671,Lusaka,85,Diesel only,topsis,resilient,13309
-Lusaka_PLS85_Diesel only,0.7107564757687671,Lusaka,85,Diesel only,topsis,resilient,13310
-Accra_PLS85_Diesel only,0.7107564757687671,Accra,85,Diesel only,topsis,resilient,13311
+Lodwar_PLS85_Diesel only,0.7107564757687672,Lodwar,85,Diesel only,topsis,resilient,13303
+Lodwar_PLS85_Diesel only,0.7107564757687672,Lodwar,85,Diesel only,topsis,resilient,13304
+Lodwar_PLS85_Diesel only,0.7107564757687672,Lodwar,85,Diesel only,topsis,resilient,13305
+Lusaka_PLS85_Diesel only,0.7107564757687672,Lusaka,85,Diesel only,topsis,resilient,13306
+Accra_PLS85_Diesel only,0.7107564757687672,Accra,85,Diesel only,topsis,resilient,13307
+Accra_PLS85_Diesel only,0.7107564757687672,Accra,85,Diesel only,topsis,resilient,13308
+Lusaka_PLS85_Diesel only,0.7107564757687672,Lusaka,85,Diesel only,topsis,resilient,13309
+Lusaka_PLS85_Diesel only,0.7107564757687672,Lusaka,85,Diesel only,topsis,resilient,13310
+Accra_PLS85_Diesel only,0.7107564757687672,Accra,85,Diesel only,topsis,resilient,13311
 Lusaka_PLS100_Diesel only,0.710693690835564,Lusaka,100,Diesel only,topsis,resilient,13312
 Lusaka_PLS100_Diesel only,0.710693690835564,Lusaka,100,Diesel only,topsis,resilient,13313
 Lodwar_PLS100_Diesel only,0.710693690835564,Lodwar,100,Diesel only,topsis,resilient,13314
@@ -13355,15 +13355,15 @@ Lusaka_PLS80_Diesel only,0.7096697716281255,Lusaka,80,Diesel only,topsis,resilie
 Accra_PLS80_Diesel only,0.7096697716281255,Accra,80,Diesel only,topsis,resilient,13354
 Lusaka_PLS80_Diesel only,0.7096697716281255,Lusaka,80,Diesel only,topsis,resilient,13355
 Accra_PLS80_Diesel only,0.7096697716281255,Accra,80,Diesel only,topsis,resilient,13356
-Lusaka_PLS95_Diesel only,0.7096028001098303,Lusaka,95,Diesel only,topsis,resilient,13357
-Lusaka_PLS95_Diesel only,0.7096028001098303,Lusaka,95,Diesel only,topsis,resilient,13358
-Accra_PLS95_Diesel only,0.7096028001098303,Accra,95,Diesel only,topsis,resilient,13359
-Accra_PLS95_Diesel only,0.7096028001098303,Accra,95,Diesel only,topsis,resilient,13360
-Lusaka_PLS95_Diesel only,0.7096028001098303,Lusaka,95,Diesel only,topsis,resilient,13361
-Accra_PLS95_Diesel only,0.7096028001098303,Accra,95,Diesel only,topsis,resilient,13362
-Lodwar_PLS95_Diesel only,0.7096028001098303,Lodwar,95,Diesel only,topsis,resilient,13363
-Lodwar_PLS95_Diesel only,0.7096028001098303,Lodwar,95,Diesel only,topsis,resilient,13364
-Lodwar_PLS95_Diesel only,0.7096028001098303,Lodwar,95,Diesel only,topsis,resilient,13365
+Lusaka_PLS95_Diesel only,0.7096028001098306,Lusaka,95,Diesel only,topsis,resilient,13357
+Lusaka_PLS95_Diesel only,0.7096028001098306,Lusaka,95,Diesel only,topsis,resilient,13358
+Accra_PLS95_Diesel only,0.7096028001098306,Accra,95,Diesel only,topsis,resilient,13359
+Accra_PLS95_Diesel only,0.7096028001098306,Accra,95,Diesel only,topsis,resilient,13360
+Lusaka_PLS95_Diesel only,0.7096028001098306,Lusaka,95,Diesel only,topsis,resilient,13361
+Accra_PLS95_Diesel only,0.7096028001098306,Accra,95,Diesel only,topsis,resilient,13362
+Lodwar_PLS95_Diesel only,0.7096028001098306,Lodwar,95,Diesel only,topsis,resilient,13363
+Lodwar_PLS95_Diesel only,0.7096028001098306,Lodwar,95,Diesel only,topsis,resilient,13364
+Lodwar_PLS95_Diesel only,0.7096028001098306,Lodwar,95,Diesel only,topsis,resilient,13365
 Lodwar_PLS85_PV+battery,0.7095776710549403,Lodwar,85,PV+battery,topsis,resilient,13366
 Lodwar_PLS85_PV+battery,0.7095776710549403,Lodwar,85,PV+battery,topsis,resilient,13367
 Lodwar_PLS85_PV+battery,0.7095776710549403,Lodwar,85,PV+battery,topsis,resilient,13368
@@ -13535,15 +13535,15 @@ Lodwar_PLS95_Diesel only,0.701886394283093,Lodwar,95,Diesel only,topsis,resilien
 Lusaka_PLS95_Diesel only,0.701886394283093,Lusaka,95,Diesel only,topsis,resilient,13534
 Lusaka_PLS95_Diesel only,0.701886394283093,Lusaka,95,Diesel only,topsis,resilient,13535
 Lodwar_PLS95_Diesel only,0.701886394283093,Lodwar,95,Diesel only,topsis,resilient,13536
-Lodwar_PLS90_Diesel only,0.7018787921331393,Lodwar,90,Diesel only,topsis,resilient,13537
-Accra_PLS90_Diesel only,0.7018787921331393,Accra,90,Diesel only,topsis,resilient,13538
-Accra_PLS90_Diesel only,0.7018787921331393,Accra,90,Diesel only,topsis,resilient,13539
-Lusaka_PLS90_Diesel only,0.7018787921331393,Lusaka,90,Diesel only,topsis,resilient,13540
-Accra_PLS90_Diesel only,0.7018787921331393,Accra,90,Diesel only,topsis,resilient,13541
-Lodwar_PLS90_Diesel only,0.7018787921331393,Lodwar,90,Diesel only,topsis,resilient,13542
-Lusaka_PLS90_Diesel only,0.7018787921331393,Lusaka,90,Diesel only,topsis,resilient,13543
-Lodwar_PLS90_Diesel only,0.7018787921331393,Lodwar,90,Diesel only,topsis,resilient,13544
-Lusaka_PLS90_Diesel only,0.7018787921331393,Lusaka,90,Diesel only,topsis,resilient,13545
+Lodwar_PLS90_Diesel only,0.7018787921331394,Lodwar,90,Diesel only,topsis,resilient,13537
+Accra_PLS90_Diesel only,0.7018787921331394,Accra,90,Diesel only,topsis,resilient,13538
+Accra_PLS90_Diesel only,0.7018787921331394,Accra,90,Diesel only,topsis,resilient,13539
+Lusaka_PLS90_Diesel only,0.7018787921331394,Lusaka,90,Diesel only,topsis,resilient,13540
+Accra_PLS90_Diesel only,0.7018787921331394,Accra,90,Diesel only,topsis,resilient,13541
+Lodwar_PLS90_Diesel only,0.7018787921331394,Lodwar,90,Diesel only,topsis,resilient,13542
+Lusaka_PLS90_Diesel only,0.7018787921331394,Lusaka,90,Diesel only,topsis,resilient,13543
+Lodwar_PLS90_Diesel only,0.7018787921331394,Lodwar,90,Diesel only,topsis,resilient,13544
+Lusaka_PLS90_Diesel only,0.7018787921331394,Lusaka,90,Diesel only,topsis,resilient,13545
 Lodwar_PLS100_PV+battery,0.7016168376238479,Lodwar,100,PV+battery,topsis,resilient,13546
 Lodwar_PLS100_PV+battery,0.7016168376238479,Lodwar,100,PV+battery,topsis,resilient,13547
 Lodwar_PLS100_PV+battery,0.7016168376238479,Lodwar,100,PV+battery,topsis,resilient,13548

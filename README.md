@@ -3,7 +3,7 @@
 ## Visão geral
 
 - **Objetivo:** apoiar decisões de operação de microgrids renováveis equilibrando custo, emissões e confiabilidade, comparando três métodos MCDM: TOPSIS (crisp), Fuzzy-TOPSIS e VIKOR.
-- **Critérios (dados do REopt):** custo = LCOE (fallback LCC); emissões = proxy calculada a partir de Fuel_cost e preço do diesel (fator 2.68 kgCO₂/L, fallback Fuel_cost se faltar preço); confiabilidade = Percent_Load_Target.
+- **Critérios (dados do REopt):** custo = LCOE (fallback LCC); emissões = proxy calculada a partir de Fuel_cost e preço do diesel (fator 2.68 kgCO₂/L; se faltar preço, usa Fuel_cost como proxy); confiabilidade = Percent_Load_Target.
 - **Perfis de pesos:** econômico (0.6/0.2/0.2), sustentável (0.25/0.45/0.30), resiliente (0.3/0.1/0.6).
 - **Fluxo:** extrair/ler CSV do REopt → aplicar TOPSIS/Fuzzy-TOPSIS/VIKOR → sensibilidade (pesos e v do VIKOR) → regra final (maioria → Borda → média de rank).
 - **Limitação:** emissões são proxy; as alternativas são as do REopt (PV + bateria/diesel), não os cenários C1–C4 solares/eólicos/híbridos/rede.
@@ -43,7 +43,7 @@
 - **Econômico:** TOPSIS → Lodwar_PLS85_PV+battery; Fuzzy-TOPSIS → Lodwar_PLS100_PV+battery; VIKOR → Lusaka_PLS100_PV+battery.
 - **Sustentável:** TOPSIS → Lodwar_PLS95_PV+battery; Fuzzy-TOPSIS → Lodwar_PLS100_PV+battery; VIKOR → Lodwar_PLS100_Diesel only (diverge).
 - **Resiliente:** TOPSIS → Lodwar_PLS95_PV+battery; Fuzzy-TOPSIS → Lodwar_PLS100_PV+battery; VIKOR → Lusaka_PLS100_PV+battery.
-- **Leitura:** PV+battery domina na maioria dos perfis/métodos; VIKOR diverge no sustentável por efeito da proxy de emissões e confiabilidade.
+- **Leitura:** PV+battery domina na maioria dos perfis/métodos; VIKOR diverge no sustentável por efeito da proxy de emissões e confiabilidade. Emissões são aproximadas; se faltar preço do diesel, Fuel_cost é usado como proxy para evitar NaN.
 
 ### Sensibilidade (v = 0.3/0.5/0.7)
 

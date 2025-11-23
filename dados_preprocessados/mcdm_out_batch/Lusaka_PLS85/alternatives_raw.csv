@@ -1,5 +1,0 @@
-alternative,LCOE_USD_per_kWh,PV_kW,Battery_kWh,Reliability_%,CO2_kg,CO2_route,alt_key,RES_Storage_Index
-Diesel,0.522892265490092,0.0,0.0,,52179.499906648714,fuel_cost_proxy,diesel,0.0
-PV+Battery,0.8976946551593914,22.80084090909091,64.80584152334153,,0.0,fuel_cost_proxy,pv+battery,1.0
-PV+Battery+Diesel,0.5339951019361607,7.2594176470588225,7.646641176470589,,45998.67242251025,fuel_cost_proxy,pv+battery+diesel,0.25826656329119224
-PV+Diesel,0.46193173517833014,4.697418928833456,0.0,,35609.90042518388,fuel_cost_proxy,pv+diesel,0.1442136833151792

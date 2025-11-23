@@ -1,5 +1,0 @@
-alternative,profile,method,score,rank
-PV+Battery,TOPSIS_resilient,topsis,0.7667934956697225,1
-PV+Battery+Diesel,TOPSIS_resilient,topsis,0.3241520806818674,2
-PV+Diesel,TOPSIS_resilient,topsis,0.28640691026295073,3
-Diesel,TOPSIS_resilient,topsis,0.20719829339680002,4

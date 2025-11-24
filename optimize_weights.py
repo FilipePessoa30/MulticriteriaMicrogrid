@@ -28,7 +28,7 @@ from build_ahp_structure import DATA_PATH, aggregate_metrics_by_alternative, par
 
 
 # Pesos iniciais da literatura (AHP)
-BASE_WEIGHTS = {"cost": 0.40, "emissions": 0.30, "reliability": 0.20, "social": 0.10}
+BASE_WEIGHTS = {"cost": 0.6923, "emissions": 0.3328, "reliability": 0.3492, "social": 0.3351}
 ALPHA = 0.5  # peso da consistencia
 BETA = 0.5   # peso da correlacao de ranking (rho)
 

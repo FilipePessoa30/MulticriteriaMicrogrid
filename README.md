@@ -23,12 +23,12 @@ _Titulo provisorio: **A Multi-Criteria Decision Model for Renewable Microgrid Op
 - Nivel 3: alternativas C1 Diesel-only; C2 PV + Battery; C3 Diesel + PV + Battery.
 
 ## Criterios e pesos iniciais (literatura)
-| Criterio | Descricao | Faixa | Peso inicial | Referencia |
-| --- | --- | --- | --- | --- |
-| Economico | Custo total e LCOE | 0.3-0.6 | 0.40 | Bohra et al., 2021 |
-| Ambiental | Emissoes totais e fracao renovavel | 0.2-0.5 | 0.30 | Rocha-Buelvas, 2025 |
-| Tecnico | Energia suprida, eficiencia da bateria | 0.2-0.4 | 0.20 | Song et al., 2022 |
-| Social | Acessibilidade e impacto local | 0.1-0.2 | 0.10 | Lu et al., 2021 |
+| Criterio | Descricao | Peso representativo | Referencia/Contexto |
+| --- | --- | --- | --- |
+| Economico | Custo total, CoE, NPC | 0.6923 | Bohra et al., 2021 (valor fixo para cenarios com foco economico) |
+| Ambiental | Fracao renovavel, pegada de carbono, impacto ecossistema | 0.3328 | Rocha-Buelvas, 2025 (maior peso encontrado no estudo, FAHP SC4 A4) |
+| Tecnico (Confiabilidade) | Confiabilidade, economia, tecnologia, protecao ambiental | 0.3492 | Song et al., 2022 (peso abrangente DEMATEL-AHP/CRITIC-EWM) |
+| Social | Aceitacao social, empregos, obstaculos locais | 0.3351 | Rocha-Buelvas, 2025 (maior peso encontrado, AHP SC1 A5) |
 
 ### Validacao do AHP
 | Metodo | Nome completo | Uso tipico | Referencia |
@@ -152,7 +152,7 @@ Funcao objetivo exemplo: Min f(W) = alpha * CR(W) + beta * (1 - rho(W)), alpha =
   ```
 
 ## Resultados de otimizacao (regret)
-- Baseline: regret = 0.4377734737 (w: 0.40/0.30/0.20/0.10).
+- Baseline: regret = 0.4163999763 (w: 0.6923/0.3328/0.3492/0.3351).
 - Melhores por metaheuristica (execucoes `runs_*.csv`):
   - VNS: 0.1214687459 (0.3206608381 / 0.0000000000 / 0.1560573560 / 0.5232818060).
   - Tabu: 0.1348949419 (0.5763681853 / 0.0048817464 / 0.2765960002 / 0.1421540680).

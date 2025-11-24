@@ -26,7 +26,7 @@ from apply_mcdm_profiles import compute_profile_results
 from build_ahp_structure import DATA_PATH, aggregate_metrics_by_alternative, parse_diesel_map
 
 
-BASE_WEIGHTS = {"cost": 0.40, "emissions": 0.30, "reliability": 0.20, "social": 0.10}
+BASE_WEIGHTS = {"cost": 0.6923, "emissions": 0.3328, "reliability": 0.3492, "social": 0.3351}
 METHOD_RANK_COLS = ["fuzzy_topsis_rank", "vikor_rank", "copras_rank", "moora_rank"]
 METHOD_SCORE_COL = "fuzzy_topsis_score"
 

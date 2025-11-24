@@ -61,6 +61,12 @@ Funcao objetivo exemplo: Min f(W) = alpha * CR(W) + beta * (1 - rho(W)), alpha =
 | ILS | Iterated Local Search | Refinamento com perturbacoes | Stutzle 2001 |
 | Hybrid VNS + TS / VND | Combina vizinhancas e memoria | Ajuste multi-criterio | Wei 2019 |
 
+## Parametros MCDM (referencias)
+| Parametro | Valor | Interpretacao | Referencias |
+| --- | --- | --- | --- |
+| Fuzziness | 0.05 | Nivel de incerteza baixo/moderado em MCDM fuzzy | Otay & Kahraman, 2022; Peng et al., 2020 |
+| VIKOR v | 0.5 | Solucao de compromisso balanceada (maioritario = minoritario) | Kahraman & Otay, 2021; Sivaraja et al., 2020 |
+
 ## Metodos MCDM
 | Metodo | Tipo | Entrada | Vantagem principal | Aplicabilidade | Referencia |
 | --- | --- | --- | --- | --- | --- |

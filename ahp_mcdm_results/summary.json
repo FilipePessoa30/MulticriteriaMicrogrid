@@ -1,0 +1,160 @@
+{
+  "source_csv": "dados_preprocessados\\reopt_ALL_blocks_v3_8.csv",
+  "diesel_price_per_liter": 1.2,
+  "profiles": {
+    "economic": {
+      "weights": {
+        "cost": 0.6,
+        "emissions": 0.2,
+        "reliability": 0.2,
+        "social": 0.0
+      },
+      "csv": "ahp_mcdm_results\\mcdm_economic.csv",
+      "winner_by_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "sustainable": {
+      "weights": {
+        "cost": 0.25,
+        "emissions": 0.45,
+        "reliability": 0.2,
+        "social": 0.1
+      },
+      "csv": "ahp_mcdm_results\\mcdm_sustainable.csv",
+      "winner_by_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "resilient": {
+      "weights": {
+        "cost": 0.3,
+        "emissions": 0.1,
+        "reliability": 0.5,
+        "social": 0.1
+      },
+      "csv": "ahp_mcdm_results\\mcdm_resilient.csv",
+      "winner_by_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "social": {
+      "weights": {
+        "cost": 0.2,
+        "emissions": 0.1,
+        "reliability": 0.3,
+        "social": 0.4
+      },
+      "csv": "ahp_mcdm_results\\mcdm_social.csv",
+      "winner_by_fuzzy_topsis": [
+        "C2"
+      ]
+    }
+  },
+  "criteria_tree": {
+    "goal": "Escolher a melhor estrategia operacional da microgrid",
+    "criteria": {
+      "economic": {
+        "label": "Economico",
+        "metrics": [
+          {
+            "id": "lcoe",
+            "label": "Custo nivelado de energia (LCOE)",
+            "source": "LCOE_breakdown ou LCOE_$_per_kWh"
+          },
+          {
+            "id": "tlcc",
+            "label": "Custo total do ciclo de vida (TLCC)",
+            "source": "PV cost + Battery cost + Diesel O&M + Fuel_cost"
+          },
+          {
+            "id": "fuel_cost",
+            "label": "Custo do combustivel",
+            "source": "Fuel_cost_$"
+          },
+          {
+            "id": "payback_npv",
+            "label": "Payback / NPV",
+            "source": "Derivado dos custos e receitas"
+          }
+        ]
+      },
+      "environmental": {
+        "label": "Ambiental",
+        "metrics": [
+          {
+            "id": "emissions",
+            "label": "Emissoes totais de CO2",
+            "source": "Fuel_cost_$ * 2.68 / preco_diesel"
+          },
+          {
+            "id": "renewable_fraction",
+            "label": "Fracao renovavel (%)",
+            "source": "(energia PV + eolica) / total"
+          },
+          {
+            "id": "fossil_consumption",
+            "label": "Consumo de combustivel fossil",
+            "source": "Geracao diesel / eficiencia media"
+          }
+        ]
+      },
+      "technical": {
+        "label": "Tecnico / Operacional",
+        "metrics": [
+          {
+            "id": "reliability",
+            "label": "Confiabilidade energetica (%)",
+            "source": "(energia suprida / demanda total) * 100"
+          },
+          {
+            "id": "diesel_use",
+            "label": "Uso do gerador diesel (%)",
+            "source": "energia gerada por diesel / total"
+          },
+          {
+            "id": "battery_efficiency",
+            "label": "Eficiencia da bateria / autoconsumo PV",
+            "source": "energia devolvida / total carregada"
+          },
+          {
+            "id": "excess_energy",
+            "label": "Energia excedente (%)",
+            "source": "(geracao total - demanda util) / geracao total"
+          }
+        ]
+      },
+      "social": {
+        "label": "Social / Contextual",
+        "metrics": [
+          {
+            "id": "demand_served",
+            "label": "Atendimento da demanda comunitaria (%)",
+            "source": "perfis atendidos / total"
+          },
+          {
+            "id": "energy_accessibility",
+            "label": "Acessibilidade energetica",
+            "source": "LCOE ajustado por renda media"
+          },
+          {
+            "id": "local_jobs",
+            "label": "Criacao de emprego local",
+            "source": "escala qualitativa 1-5"
+          }
+        ]
+      }
+    },
+    "alternatives": {
+      "C1": {
+        "label": "Diesel-only"
+      },
+      "C2": {
+        "label": "PV + Battery"
+      },
+      "C3": {
+        "label": "Diesel + PV + Battery (Hibrido)"
+      }
+    }
+  }
+}

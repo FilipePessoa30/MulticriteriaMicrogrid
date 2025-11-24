@@ -1,0 +1,165 @@
+{
+  "ahp": {
+    "goal": "Escolher a melhor estrategia operacional da microgrid",
+    "criteria": {
+      "economic": {
+        "label": "Economico",
+        "metrics": [
+          {
+            "id": "lcoe",
+            "label": "Custo nivelado de energia (LCOE)",
+            "source": "LCOE_breakdown ou LCOE_$_per_kWh"
+          },
+          {
+            "id": "tlcc",
+            "label": "Custo total do ciclo de vida (TLCC)",
+            "source": "PV cost + Battery cost + Diesel O&M + Fuel_cost"
+          },
+          {
+            "id": "fuel_cost",
+            "label": "Custo do combustivel",
+            "source": "Fuel_cost_$"
+          },
+          {
+            "id": "payback_npv",
+            "label": "Payback / NPV",
+            "source": "Derivado dos custos e receitas"
+          }
+        ]
+      },
+      "environmental": {
+        "label": "Ambiental",
+        "metrics": [
+          {
+            "id": "emissions",
+            "label": "Emissoes totais de CO2",
+            "source": "Fuel_cost_$ * 2.68 / preco_diesel"
+          },
+          {
+            "id": "renewable_fraction",
+            "label": "Fracao renovavel (%)",
+            "source": "(energia PV + eolica) / total"
+          },
+          {
+            "id": "fossil_consumption",
+            "label": "Consumo de combustivel fossil",
+            "source": "Geracao diesel / eficiencia media"
+          }
+        ]
+      },
+      "technical": {
+        "label": "Tecnico / Operacional",
+        "metrics": [
+          {
+            "id": "reliability",
+            "label": "Confiabilidade energetica (%)",
+            "source": "(energia suprida / demanda total) * 100"
+          },
+          {
+            "id": "diesel_use",
+            "label": "Uso do gerador diesel (%)",
+            "source": "energia gerada por diesel / total"
+          },
+          {
+            "id": "battery_efficiency",
+            "label": "Eficiencia da bateria / autoconsumo PV",
+            "source": "energia devolvida / total carregada"
+          },
+          {
+            "id": "excess_energy",
+            "label": "Energia excedente (%)",
+            "source": "(geracao total - demanda util) / geracao total"
+          }
+        ]
+      },
+      "social": {
+        "label": "Social / Contextual",
+        "metrics": [
+          {
+            "id": "demand_served",
+            "label": "Atendimento da demanda comunitaria (%)",
+            "source": "perfis atendidos / total"
+          },
+          {
+            "id": "energy_accessibility",
+            "label": "Acessibilidade energetica",
+            "source": "LCOE ajustado por renda media"
+          },
+          {
+            "id": "local_jobs",
+            "label": "Criacao de emprego local",
+            "source": "escala qualitativa 1-5"
+          }
+        ]
+      }
+    },
+    "alternatives": {
+      "C1": {
+        "label": "Diesel-only"
+      },
+      "C2": {
+        "label": "PV + Battery"
+      },
+      "C3": {
+        "label": "Diesel + PV + Battery (Hibrido)"
+      }
+    }
+  },
+  "metrics_by_alternative": {
+    "C1": {
+      "LCOE_$_per_kWh": 0.5232357764169083,
+      "TLCC_$": 60416.977128873674,
+      "Fuel_cost_$": 52310.558728312695,
+      "Emissions_kgCO2": 116826.91449323168,
+      "Fossil_fuel_liters": 43592.13227359392,
+      "Percent_Load_Target": 89.99901555424296,
+      "Diesel_cost_share": 0.8596232967330888
+    },
+    "C2": {
+      "LCOE_$_per_kWh": 0.7449671020999743,
+      "TLCC_$": 84699.30507179497,
+      "Fuel_cost_$": 0.0,
+      "Emissions_kgCO2": 0.0,
+      "Fossil_fuel_liters": 0.0,
+      "Percent_Load_Target": 90.00102859493931,
+      "Diesel_cost_share": 0.0
+    },
+    "C3": {
+      "LCOE_$_per_kWh": 0.4599492044843493,
+      "TLCC_$": 53486.990927460625,
+      "Fuel_cost_$": 33619.77685365037,
+      "Emissions_kgCO2": 75084.16830648584,
+      "Fossil_fuel_liters": 28016.480711375312,
+      "Percent_Load_Target": 90.0,
+      "Diesel_cost_share": 0.6221271924972829
+    }
+  },
+  "diesel_price_per_liter": 1.2,
+  "source_csv": "dados_preprocessados\\reopt_ALL_blocks_v3_8.csv",
+  "profiles": {
+    "economic": {
+      "cost": 0.6,
+      "emissions": 0.2,
+      "reliability": 0.2,
+      "social": 0.0
+    },
+    "sustainable": {
+      "cost": 0.25,
+      "emissions": 0.45,
+      "reliability": 0.2,
+      "social": 0.1
+    },
+    "resilient": {
+      "cost": 0.3,
+      "emissions": 0.1,
+      "reliability": 0.5,
+      "social": 0.1
+    },
+    "social": {
+      "cost": 0.2,
+      "emissions": 0.1,
+      "reliability": 0.3,
+      "social": 0.4
+    }
+  }
+}

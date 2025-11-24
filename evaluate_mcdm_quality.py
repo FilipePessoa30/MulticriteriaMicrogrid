@@ -31,16 +31,59 @@ METHOD_RANK_COLS = ["fuzzy_topsis_rank", "vikor_rank", "copras_rank", "moora_ran
 METHOD_SCORE_COL = "fuzzy_topsis_score"
 
 
-def read_weights_file(path: Path) -> Dict[str, float]:
+def extract_weight_rows(df: pd.DataFrame) -> List[Dict[str, float]]:
+    cols = df.columns
+    keys = []
+    for base in ("cost", "emissions", "reliability", "social"):
+        if base in cols:
+            keys.append(base)
+        elif f"w_{base}" in cols:
+            keys.append(f"w_{base}")
+    if len(keys) < 4:
+        return []
+    rows = []
+    for _, row in df.iterrows():
+        weights = {}
+        for base in ("cost", "emissions", "reliability", "social"):
+            if base in row:
+                weights[base] = float(row[base])
+            elif f"w_{base}" in row:
+                weights[base] = float(row[f"w_{base}"])
+        rows.append(weights)
+    return rows
+
+
+def read_weights_file(path: Path) -> List[Dict[str, float]]:
+    if path.suffix.lower() == ".json":
+        data = json.loads(path.read_text())
+        weights = {}
+        for k in ("cost", "emissions", "reliability", "social"):
+            if k in data:
+                weights[k] = float(data[k])
+            elif f"w_{k}" in data:
+                weights[k] = float(data[f"w_{k}"])
+        return [weights] if weights else []
     df = pd.read_csv(path)
-    row = df.iloc[0]
-    weights = {}
-    for k in ("cost", "emissions", "reliability", "social"):
-        if k in row:
-            weights[k] = float(row[k])
-        elif f"w_{k}" in row:
-            weights[k] = float(row[f"w_{k}"])
-    return weights
+    return extract_weight_rows(df)
+
+
+def empty_result(label: str) -> Dict[str, float]:
+    return {
+        "label": label,
+        "robust_spearman": float("nan"),
+        "regret_mean": float("nan"),
+        "winner_pareto": float("nan"),
+        "cr_proxy": float("nan"),
+        "stability_win_rate": float("nan"),
+        "stability_rank_change": float("nan"),
+        "cv_win_rate": float("nan"),
+        "cv_rank_change": float("nan"),
+        "w_cost": float("nan"),
+        "w_emissions": float("nan"),
+        "w_reliability": float("nan"),
+        "w_social": float("nan"),
+        "parse_error": "missing_weights",
+    }
 
 
 def cr_proxy(weights: Dict[str, float]) -> float:
@@ -173,7 +216,8 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Avalia pesos MCDM com multiplas metricas de desempenho.")
     parser.add_argument("--csv", type=Path, default=DATA_PATH, help="CSV consolidado (dados_preprocessados/reopt_ALL_blocks_v3_8.csv)")
     parser.add_argument("--diesel-price", type=float, default=1.2, help="Preco do diesel (USD/L)")
-    parser.add_argument("--weights", type=Path, nargs="+", required=False, help="Arquivos CSV com pesos (colunas cost/emissions/reliability/social)")
+    parser.add_argument("--weights", type=Path, nargs="+", required=False, help="Arquivos CSV/JSON com pesos (colunas cost/emissions/reliability/social ou chaves w_cost, etc.)")
+    parser.add_argument("--auto", action="store_true", help="Coletar automaticamente best_weights/best_*weights/best_*.json em weight_optimization/ e neighborhood_results/")
     parser.add_argument("--fuzziness", type=float, default=0.05, help="Fator fuzzy")
     parser.add_argument("--vikor-v", type=float, default=0.5, help="Parametro v do VIKOR")
     parser.add_argument("--seed", type=int, default=42, help="Semente base")
@@ -198,12 +242,34 @@ def main() -> None:
         }
     )
 
+    weight_files: List[Path] = []
+    if args.auto:
+        roots = [Path("weight_optimization"), Path("neighborhood_results")]
+        patterns = ["best_weights.csv", "best_*weights.csv", "best_*.json", "runs_*.csv", "summary_global.csv"]
+        for root in roots:
+            if root.exists():
+                for pat in patterns:
+                    weight_files.extend(root.rglob(pat))
     if args.weights:
-        for w_path in args.weights:
-            weights = read_weights_file(w_path)
+        weight_files.extend(args.weights)
+
+    seen = set()
+    for w_path in weight_files:
+        if not w_path.exists():
+            continue
+        key = str(w_path.resolve())
+        if key in seen:
+            continue
+        seen.add(key)
+        weights_list = read_weights_file(w_path)
+        if not weights_list:
+            rows.append(empty_result(w_path.stem))
+            continue
+        for idx, weights in enumerate(weights_list):
+            label = f"{w_path.stem}" if len(weights_list) == 1 else f"{w_path.stem}_{idx}"
             rows.append(
                 {
-                    "label": w_path.stem,
+                    "label": label,
                     **evaluate_weights(metrics_df, baseline_ranks, weights, args.fuzziness, args.vikor_v, seed=args.seed),
                     **{f"w_{k}": v for k, v in weights.items()},
                 }

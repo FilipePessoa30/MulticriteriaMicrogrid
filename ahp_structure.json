@@ -110,7 +110,7 @@
       "LCOE_$_per_kWh": 0.5232357764169083,
       "TLCC_$": 60416.977128873674,
       "Fuel_cost_$": 52310.558728312695,
-      "Emissions_kgCO2": 116826.91449323168,
+      "Emissions_kgCO2": 116390.99317049577,
       "Fossil_fuel_liters": 43592.13227359392,
       "Percent_Load_Target": 89.99901555424296,
       "Diesel_cost_share": 0.8596232967330888
@@ -128,7 +128,7 @@
       "LCOE_$_per_kWh": 0.4599492044843493,
       "TLCC_$": 53486.990927460625,
       "Fuel_cost_$": 33619.77685365037,
-      "Emissions_kgCO2": 75084.16830648584,
+      "Emissions_kgCO2": 74804.00349937208,
       "Fossil_fuel_liters": 28016.480711375312,
       "Percent_Load_Target": 90.0,
       "Diesel_cost_share": 0.6221271924972829

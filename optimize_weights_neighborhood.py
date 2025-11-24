@@ -28,7 +28,7 @@ import numpy as np
 import pandas as pd
 
 from apply_mcdm_profiles import compute_profile_results
-from build_ahp_structure import DATA_PATH, aggregate_metrics_by_alternative
+from build_ahp_structure import DATA_PATH, aggregate_metrics_by_alternative, parse_diesel_map
 
 
 BASE_WEIGHTS = {"cost": 0.40, "emissions": 0.30, "reliability": 0.20, "social": 0.10}
@@ -178,6 +178,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Metaheuristicas de vizinhanca para otimizar pesos AHP/MCDM.")
     parser.add_argument("--csv", type=Path, default=DATA_PATH, help="CSV consolidado")
     parser.add_argument("--diesel-price", type=float, default=1.2, help="Preco do diesel (USD/L)")
+    parser.add_argument("--diesel-map", type=str, help="Mapa Region:preco (ex: Accra:0.95,Lusaka:1.16,Lodwar:0.85)")
     parser.add_argument("--fuzziness", type=float, default=0.05, help="Fator fuzzy")
     parser.add_argument("--vikor-v", type=float, default=0.5, help="Parametro v VIKOR")
     parser.add_argument("--runs", type=int, default=20, help="Execucoes por algoritmo")
@@ -188,8 +189,11 @@ def main() -> None:
     args.out_dir.mkdir(parents=True, exist_ok=True)
     rng_master = np.random.default_rng(args.seed)
 
+    price_map = parse_diesel_map(args.diesel_map)
     df_raw = pd.read_csv(args.csv)
-    metrics_df = aggregate_metrics_by_alternative(df_raw, diesel_price_per_liter=args.diesel_price)
+    metrics_df = aggregate_metrics_by_alternative(
+        df_raw, diesel_price_per_liter=args.diesel_price, diesel_price_map=price_map
+    )
     metrics_df = metrics_df.dropna(axis=1, how="all")
     base_res = compute_profile_results(metrics_df, profile_name="base", profile_weights=BASE_WEIGHTS, fuzziness=args.fuzziness, vikor_v=args.vikor_v)
     baseline_ranks = base_res["fuzzy_topsis_rank"]

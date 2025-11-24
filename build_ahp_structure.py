@@ -78,9 +78,28 @@ CRITERIA_TREE = {
 }
 
 
-def _add_derived_columns(df: pd.DataFrame, diesel_price_per_liter: float) -> pd.DataFrame:
+def parse_diesel_map(map_str: str | None) -> Dict[str, float]:
+    if not map_str:
+        return {}
+    mapping = {}
+    for pair in map_str.split(","):
+        if ":" not in pair:
+            continue
+        region, price = pair.split(":", 1)
+        try:
+            mapping[region.strip()] = float(price.strip())
+        except ValueError:
+            continue
+    return mapping
+
+
+def _add_derived_columns(df: pd.DataFrame, diesel_price_per_liter: float, diesel_price_map: Dict[str, float]) -> pd.DataFrame:
     """Gera colunas derivadas com base nos dados disponiveis no CSV."""
     df = df.copy()
+
+    def price_for_row(row) -> float:
+        region = str(row.get("Region", "")).strip()
+        return float(diesel_price_map.get(region, diesel_price_per_liter))
 
     # TLCC como soma dos custos de CAPEX/O&M + combustivel (usa colunas disponiveis)
     cost_cols = [
@@ -101,8 +120,8 @@ def _add_derived_columns(df: pd.DataFrame, diesel_price_per_liter: float) -> pd.
 
     # Emissoes e consumo fossil (litros) como aproximacao via custo do combustivel
     if "Fuel_cost_$" in df.columns:
-        df["Emissions_kgCO2"] = df["Fuel_cost_$"] * 2.68 / diesel_price_per_liter
-        df["Fossil_fuel_liters"] = df["Fuel_cost_$"] / diesel_price_per_liter
+        df["Emissions_kgCO2"] = df.apply(lambda r: r["Fuel_cost_$"] * 2.67 / price_for_row(r), axis=1)
+        df["Fossil_fuel_liters"] = df.apply(lambda r: r["Fuel_cost_$"] / price_for_row(r), axis=1)
     else:
         df["Emissions_kgCO2"] = np.nan
         df["Fossil_fuel_liters"] = np.nan
@@ -138,6 +157,7 @@ def _default_alternative_filters() -> Dict[str, Callable[[pd.DataFrame], pd.Data
 def aggregate_metrics_by_alternative(
     df: pd.DataFrame,
     diesel_price_per_liter: float,
+    diesel_price_map: Dict[str, float] | None = None,
     alternative_filters: Dict[str, Callable[[pd.DataFrame], pd.DataFrame]] | None = None,
 ) -> pd.DataFrame:
     """
@@ -145,7 +165,7 @@ def aggregate_metrics_by_alternative(
 
     Apenas metricas presentes sao retornadas. Valores ausentes permanecem como NaN.
     """
-    df = _add_derived_columns(df, diesel_price_per_liter)
+    df = _add_derived_columns(df, diesel_price_per_liter, diesel_price_map or {})
     filters = alternative_filters or _default_alternative_filters()
 
     metric_columns: List[str] = []
@@ -182,13 +202,17 @@ def aggregate_metrics_by_alternative(
 def build_ahp_structure(
     df: pd.DataFrame,
     diesel_price_per_liter: float = 1.0,
+    diesel_price_map: Dict[str, float] | None = None,
     alternative_filters: Dict[str, Callable[[pd.DataFrame], pd.DataFrame]] | None = None,
 ) -> Dict:
     """
     Monta dicionario com a hierarquia AHP e as metricas agregadas por alternativa.
     """
     metrics_table = aggregate_metrics_by_alternative(
-        df, diesel_price_per_liter=diesel_price_per_liter, alternative_filters=alternative_filters
+        df,
+        diesel_price_per_liter=diesel_price_per_liter,
+        diesel_price_map=diesel_price_map,
+        alternative_filters=alternative_filters,
     )
     structure = {
         "ahp": CRITERIA_TREE,
@@ -207,12 +231,14 @@ def save_json(structure: Dict, out_path: Path) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Constroi estrutura AHP a partir do CSV processado do REopt.")
     parser.add_argument("--csv", type=Path, default=DATA_PATH, help="Caminho para dados_preprocessados/reopt_ALL_blocks_v3_8.csv")
-    parser.add_argument("--diesel-price", type=float, default=1.0, help="Preco do diesel (USD/L) para estimar emissoes e consumo")
+    parser.add_argument("--diesel-price", type=float, default=1.0, help="Preco do diesel (USD/L) default")
+    parser.add_argument("--diesel-map", type=str, help="Mapa Region:preco separados por virgula (ex: Accra:0.95,Lusaka:1.16)")
     parser.add_argument("--out", type=Path, default=Path("ahp_structure.json"), help="Arquivo JSON de saida")
     args = parser.parse_args()
 
     df = pd.read_csv(args.csv)
-    structure = build_ahp_structure(df, diesel_price_per_liter=args.diesel_price)
+    price_map = parse_diesel_map(args.diesel_map)
+    structure = build_ahp_structure(df, diesel_price_per_liter=args.diesel_price, diesel_price_map=price_map)
 
     save_json(structure, args.out)
     # resumo rapido no console

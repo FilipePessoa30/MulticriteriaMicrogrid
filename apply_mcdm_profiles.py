@@ -27,6 +27,7 @@ from build_ahp_structure import (
     DATA_PATH,
     PROFILES,
     aggregate_metrics_by_alternative,
+    parse_diesel_map,
 )
 
 
@@ -258,7 +259,8 @@ def compute_profile_results(
 def main() -> None:
     parser = argparse.ArgumentParser(description="Aplica metodos MCDM nas alternativas agregadas por AHP.")
     parser.add_argument("--csv", type=Path, default=DATA_PATH, help="Caminho para dados_preprocessados/reopt_ALL_blocks_v3_8.csv")
-    parser.add_argument("--diesel-price", type=float, default=1.0, help="Preco do diesel (USD/L) para estimar emissoes e consumo")
+    parser.add_argument("--diesel-price", type=float, default=1.0, help="Preco do diesel (USD/L) default")
+    parser.add_argument("--diesel-map", type=str, help="Mapa Region:preco (ex: Accra:0.95,Lusaka:1.16,Lodwar:0.85)")
     parser.add_argument("--fuzziness", type=float, default=0.05, help="Fator de fuzzificacao para Fuzzy-TOPSIS (0-1)")
     parser.add_argument("--vikor-v", type=float, default=0.5, help="Parametro v no VIKOR (0-1)")
     parser.add_argument("--out-dir", type=Path, default=Path("ahp_mcdm_results"), help="Diretorio de saida")
@@ -267,7 +269,10 @@ def main() -> None:
     args.out_dir.mkdir(parents=True, exist_ok=True)
 
     df_raw = pd.read_csv(args.csv)
-    metrics_df = aggregate_metrics_by_alternative(df_raw, diesel_price_per_liter=args.diesel_price)
+    price_map = parse_diesel_map(args.diesel_map)
+    metrics_df = aggregate_metrics_by_alternative(
+        df_raw, diesel_price_per_liter=args.diesel_price, diesel_price_map=price_map
+    )
     metrics_df = metrics_df.dropna(axis=1, how="all")
 
     summary = {

@@ -24,7 +24,7 @@ import numpy as np
 import pandas as pd
 
 from apply_mcdm_profiles import compute_profile_results
-from build_ahp_structure import DATA_PATH, aggregate_metrics_by_alternative
+from build_ahp_structure import DATA_PATH, aggregate_metrics_by_alternative, parse_diesel_map
 
 
 # Pesos iniciais da literatura (AHP)
@@ -302,6 +302,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Otimiza pesos AHP com PSO/GA/SA em multiplas configuracoes.")
     parser.add_argument("--csv", type=Path, default=DATA_PATH, help="CSV consolidado (dados_preprocessados/reopt_ALL_blocks_v3_8.csv)")
     parser.add_argument("--diesel-price", type=float, default=1.2, help="Preco do diesel (USD/L)")
+    parser.add_argument("--diesel-map", type=str, help="Mapa Region:preco (ex: Accra:0.95,Lusaka:1.16,Lodwar:0.85)")
     parser.add_argument("--fuzziness", type=float, default=0.05, help="Fator fuzzy para Fuzzy-TOPSIS")
     parser.add_argument("--vikor-v", type=float, default=0.5, help="Parametro v do VIKOR")
     parser.add_argument("--runs", type=int, default=30, help="Numero de execucoes por configuracao")
@@ -345,8 +346,11 @@ def main() -> None:
     ]
 
     # Dados agregados
+    price_map = parse_diesel_map(args.diesel_map)
     df_raw = pd.read_csv(args.csv)
-    metrics_df = aggregate_metrics_by_alternative(df_raw, diesel_price_per_liter=args.diesel_price)
+    metrics_df = aggregate_metrics_by_alternative(
+        df_raw, diesel_price_per_liter=args.diesel_price, diesel_price_map=price_map
+    )
     metrics_df = metrics_df.dropna(axis=1, how="all")
 
     base_result = compute_profile_results(metrics_df, profile_name="base", profile_weights=BASE_WEIGHTS, fuzziness=args.fuzziness, vikor_v=args.vikor_v)

@@ -2,159 +2,165 @@
 _Titulo provisorio: **A Multi-Criteria Decision Model for Renewable Microgrid Operation Using AHP and Metaheuristic Weight Optimization: Balancing Economic, Environmental, Technical, and Social Criteria**_
 
 ## Metodologia final (AHP + otimizacao de pesos)
-- Integra AHP (pesos derivados da literatura) com otimizacao via PSO, GA, SA e metaheuristicas de vizinhanca (VNS, Tabu, ILS, hibrida).
-- Compara alternativas Diesel-only (C1), PV + Battery (C2) e Diesel + PV + Battery (C3) por metodos MCDM (Fuzzy-TOPSIS, VIKOR, COPRAS, MOORA).
-- Avalia robustez, consistencia e melhoria de desempenho com varias metricas (robustez de ranking, regret, Pareto, estabilidade, CV).
+- Integra AHP (pesos da literatura) com otimizacao via PSO, GA, SA e vizinhancas (VNS, Tabu, ILS, hibrida).
+- Compara C1 Diesel-only, C2 PV + Battery, C3 Diesel + PV + Battery por Fuzzy-TOPSIS, VIKOR, COPRAS, MOORA.
+- Avalia robustez, consistencia e melhoria com metricas de ranking, regret, Pareto, estabilidade e CV.
 
 ## Etapas do modelo
 | Etapa | Descricao | Ferramentas |
 | --- | --- | --- |
-| 1. Coleta e preparacao dos dados | Extracao de custos, emissoes e confiabilidade das planilhas ReOpt LCOE Results e Load Profile Explorer. | Excel / Python |
-| 2. Estruturacao hierarquica (AHP) | Objetivo -> Criterios (Economico, Ambiental, Tecnico, Social) -> Alternativas (C1-C3). | Python |
-| 3. Atribuicao inicial de pesos (literatura) | Pesos validados por Bohra (2021), Song (2022), Lu (2021), Rocha-Buelvas (2025). | Base AHP |
-| 4. Otimizacao dos pesos via metaheuristicas | PSO, GA, SA; VNS, Tabu, ILS e hibrida VNS+Tabu. | Python (pymoo, deap, pyswarm) |
-| 5. Normalizacao e aplicacao dos metodos MCDM | Fuzzy-TOPSIS, VIKOR, COPRAS, MOORA com pesos originais e otimizados. | Python (pymcdm, numpy, scikit-fuzzy) |
-| 6. Avaliacao de melhoria | Comparacao de rankings e consistencia antes/depois (Spearman, Kendall tau, CR AHP). | Python / Matplotlib |
-| 7. Analise de sensibilidade e visualizacao | Convergencia entre rankings, pesos e perfis decisorios. | Python / Streamlit |
+| 1. Coleta e preparacao | Custos, emissoes, confiabilidade (ReOpt LCOE Results, Load Profile Explorer). | Excel / Python |
+| 2. AHP hierarquico | Objetivo -> Criterios (Econ, Ambient, Tec, Social) -> Alternativas (C1-C3). | Python |
+| 3. Pesos iniciais (literatura) | Bohra 2021; Song 2022; Lu 2021; Rocha-Buelvas 2025. | Base AHP |
+| 4. Otimizacao de pesos | PSO/GA/SA + VNS/Tabu/ILS/Hybrid. | pymoo, deap, pyswarm |
+| 5. Aplicacao MCDM | Fuzzy-TOPSIS, VIKOR, COPRAS, MOORA. | pymcdm, numpy, scikit-fuzzy |
+| 6. Avaliacao de melhoria | Spearman, Kendall, CR AHP. | Python / Matplotlib |
+| 7. Sensibilidade/visualizacao | Convergencia de rankings, pesos, perfis. | Python / Streamlit |
 
-## Estrutura hierarquica AHP
-- Nivel 1 (objetivo): escolher a melhor estrategia operacional da microgrid.
-- Nivel 2 (criterios): Economico, Ambiental, Tecnico (Confiabilidade), Social.
-- Nivel 3 (alternativas): C1 Diesel-only; C2 PV + Battery; C3 Diesel + PV + Battery.
-- Pesos iniciais: derivados da literatura e ajustados por metaheuristicas para perfis (economico, sustentavel, resiliente, social).
+## Estrutura AHP
+- Nivel 1: escolher a melhor estrategia operacional da microgrid.
+- Nivel 2: criterios Economico, Ambiental, Tecnico (Confiabilidade), Social.
+- Nivel 3: alternativas C1 Diesel-only; C2 PV + Battery; C3 Diesel + PV + Battery.
 
 ## Criterios e pesos iniciais (literatura)
-| Criterio | Descricao | Faixa na literatura | Peso inicial | Referencia |
+| Criterio | Descricao | Faixa | Peso inicial | Referencia |
 | --- | --- | --- | --- | --- |
 | Economico | Custo total e LCOE | 0.3-0.6 | 0.40 | Bohra et al., 2021 |
 | Ambiental | Emissoes totais e fracao renovavel | 0.2-0.5 | 0.30 | Rocha-Buelvas, 2025 |
-| Tecnico (Confiabilidade) | Energia suprida, eficiencia da bateria | 0.2-0.4 | 0.20 | Song et al., 2022 |
+| Tecnico | Energia suprida, eficiencia da bateria | 0.2-0.4 | 0.20 | Song et al., 2022 |
 | Social | Acessibilidade e impacto local | 0.1-0.2 | 0.10 | Lu et al., 2021 |
 
 ### Validacao do AHP
-| Metodo | Nome completo | Uso tipico | Referencia academica |
+| Metodo | Nome completo | Uso tipico | Referencia |
 | --- | --- | --- | --- |
-| AHP | Analytic Hierarchy Process | Derivacao de pesos de criterios (base de muitos hibridos) | Ogrodnik, 2019 |
+| AHP | Analytic Hierarchy Process | Derivacao de pesos de criterios (base de hibridos) | Ogrodnik, 2019 |
 
-## Otimizacao dos pesos (PSO, GA, SA)
-| Algoritmo | Estrategia | Funcao objetivo | Referencia |
+## Precos de diesel por regiao (planilha "1 - Microgrid_ReOpt_LCOE_Results_Explorer.xlsm")
+| Pais / Regiao | USD/gal | USD/L | Observacao |
 | --- | --- | --- | --- |
-| PSO | Busca coletiva de particulas | Minimizar CR e maximizar estabilidade de ranking | Yu et al., 2020 |
-| GA | Selecao e cruzamento | Minimizar diferenca entre ranking AHP e MCDM + CR | Nemova et al., 2024 |
-| SA | Busca local com resfriamento | Minimizar inconsistencia residual e desvios entre perfis | Rad et al., 2024 |
+| Tanzania (Lodwar) | 3.20 | ~0.85 | 0.85 = 3.20 / 3.785 |
+| Gana (Accra) | 3.60 | ~0.95 | 0.95 = 3.60 / 3.785 |
+| Zambia (Lusaka) | 4.40 | ~1.16 | 1.16 = 4.40 / 3.785 |
+- Conversao usada: USD/L = USD/gal / 3.785 (ex.: 3.60 / 3.785 ≈ 0.95 USD/L).
+- Mapa passado aos scripts via `--diesel-map "Accra:0.95,Lusaka:1.16,Lodwar:0.85"`; fator de emissao: 2.67 kg CO₂/L.
 
-Funcao objetivo (exemplo): Min f(W) = alpha * CR(W) + beta * (1 - rho(W)), com alpha = beta = 0.5; CR(W): razao de consistencia; rho(W): correlacao de Spearman entre rankings pre e pos otimizacao.
-
-## Metaheuristicas de vizinhanca (pesos)
-| Metaheuristica | Caracteristica | Aplicacao em pesos | Referencias |
+## Otimizacao (PSO, GA, SA)
+| Algoritmo | Estrategia | Objetivo | Referencia |
 | --- | --- | --- | --- |
-| VNS (Variable Neighborhood Search) | Alterna entre vizinhancas sistematicamente | Ajuste progressivo de pesos ate convergencia | Rodrigues 2022; Garcia-Gonzalez 2006 |
-| Tabu Search (TS) | Evita ciclos e otimos locais | Ajuste iterativo de pesos com memoria | Matijevic 2023 |
-| Iterated Local Search (ILS) | Reaproveita solucoes locais com perturbacoes | Refinamento fino dos pesos do AHP | Stutzle 2001 |
-| Hybrid VNS + TS / VND | Combina vizinhancas adaptativas e memoria | Ajuste simultaneo multi-criterio de pesos | Wei 2019 |
+| PSO | Busca coletiva | Minimizar CR e maximizar estabilidade | Yu et al., 2020 |
+| GA | Selecao e cruzamento | Minimizar diferenca AHP x MCDM + CR | Nemova et al., 2024 |
+| SA | Resfriamento | Minimizar inconsistencia residual | Rad et al., 2024 |
 
-## Metodos multicriterio aplicados
+Funcao objetivo exemplo: Min f(W) = alpha * CR(W) + beta * (1 - rho(W)), alpha = beta = 0.5; CR(W) = razao de consistencia; rho(W) = Spearman pre vs pos.
+
+## Metaheuristicas de vizinhanca
+| Metaheuristica | Caracteristica | Aplicacao | Referencias |
+| --- | --- | --- | --- |
+| VNS | Alterna vizinhancas | Ajuste progressivo de pesos | Rodrigues 2022; Garcia-Gonzalez 2006 |
+| Tabu Search | Evita ciclos | Ajuste iterativo com memoria | Matijevic 2023 |
+| ILS | Iterated Local Search | Refinamento com perturbacoes | Stutzle 2001 |
+| Hybrid VNS + TS / VND | Combina vizinhancas e memoria | Ajuste multi-criterio | Wei 2019 |
+
+## Metodos MCDM
 | Metodo | Tipo | Entrada | Vantagem principal | Aplicabilidade | Referencia |
 | --- | --- | --- | --- | --- | --- |
-| Fuzzy-TOPSIS | Fuzzy | Matriz de decisao fuzzy + pesos linguisticos | Trata incerteza nas preferencias e criterios | Ideal para julgamentos subjetivos | Zamani-Sabzi et al., 2016 |
-| VIKOR | Deterministico | Valores normalizados + parametro v | Solucao de compromisso entre criterios conflitantes | Trade-offs custo × emissao × confiabilidade | Salabun et al., 2020 |
-| COPRAS | Deterministico | Matriz normalizada proporcional | Estavel e facil de implementar | Validacao e robustez de ranking | Radulescu & Radulescu, 2024 |
-| MOORA | Deterministico | Razao normalizada (beneficio/custo) | Simples e eficiente | Referencia base e verificacao de consistencia | Singh & Pathak, 2024 |
+| Fuzzy-TOPSIS | Fuzzy | Matriz fuzzy + pesos linguisticos | Trata incerteza | Julgamentos subjetivos | Zamani-Sabzi et al., 2016 |
+| VIKOR | Deterministico | Valores normalizados + v | Solucao de compromisso | Trade-offs custo x emissao x confiabilidade | Salabun et al., 2020 |
+| COPRAS | Deterministico | Matriz normalizada proporcional | Estavel e simples | Validacao e robustez | Radulescu & Radulescu, 2024 |
+| MOORA | Deterministico | Razao normalizada (beneficio/custo) | Simples e eficiente | Referencia base e consistencia | Singh & Pathak, 2024 |
 
-## Metricas de avaliacao (robustez/qualidade)
-| Metrica | Usada em MCDM? | Base conceitual | Referencias |
+## Metricas de avaliacao
+| Metrica | Usada em MCDM? | Base | Referencias |
 | --- | --- | --- | --- |
 | Robustez de ranking | Sim | Consistencia entre metodos | McPhail 2018; Fernandez 2001 |
 | Regret / Utility | Sim | Minimiza arrependimento | Ning & You 2018; Groetzner 2021 |
 | Dominancia / Pareto | Sim | Eficiencia multiobjetivo | Saif 2014; Lagaros 2007 |
 | Consistencia (CR AHP) | Sim | Validacao de pesos AHP | Mufazzal 2021 |
-| Estabilidade a ruido / cenario | Sim | Robustez sob incerteza | Kim 2015; Li 2018 |
+| Estabilidade a ruido / cenario | Sim | Robustez a incerteza | Kim 2015; Li 2018 |
 | Validacao cruzada temporal | Sim | Generalizacao de decisao | Ning & You 2018 |
 
-## Ferramentas e implementacao
+## Ferramentas
 | Componente | Ferramenta |
 | --- | --- |
 | AHP/Fuzzy-AHP | ahpy, scikit-fuzzy |
 | Otimizacao de pesos | pyswarm, deap, simanneal |
-| MCDM (TOPSIS, VIKOR, COPRAS, MOORA) | pymcdm, numpy, pandas |
-| Analise de sensibilidade e graficos | matplotlib, plotly, streamlit |
+| MCDM | pymcdm, numpy, pandas |
+| Sensibilidade/graficos | matplotlib, plotly, streamlit |
 
 ## Scripts e exemplos
-- `build_ahp_structure.py`: monta a hierarquia AHP e agrega metricas por alternativa a partir do CSV consolidado.
-- `apply_mcdm_profiles.py`: aplica Fuzzy-TOPSIS, VIKOR, COPRAS, MOORA para cada perfil (economico, sustentavel, resiliente, social) e gera CSV/JSON em `ahp_mcdm_results/`.
+- `build_ahp_structure.py`: agrega metricas por alternativa.
+- `apply_mcdm_profiles.py`: roda MCDM por perfil baseline.
   ```powershell
   python apply_mcdm_profiles.py `
     --csv dados_preprocessados\reopt_ALL_blocks_v3_8.csv `
     --diesel-price 1.2 `
+    --diesel-map "Accra:0.95,Lusaka:1.16,Lodwar:0.85" `
     --fuzziness 0.05 `
     --vikor-v 0.5 `
     --out-dir ahp_mcdm_results
   ```
-- `optimize_weights.py`: PSO/GA/SA (8 configs cada), executa `--runs` vezes (ex.: 30) e salva em `weight_optimization/`.
+- `optimize_weights.py`: PSO/GA/SA, 8 configs cada, multiplas execucoes.
   ```powershell
   python optimize_weights.py `
     --csv dados_preprocessados\reopt_ALL_blocks_v3_8.csv `
     --diesel-price 1.2 `
+    --diesel-map "Accra:0.95,Lusaka:1.16,Lodwar:0.85" `
     --fuzziness 0.05 `
     --vikor-v 0.5 `
     --runs 30 `
     --seed 123 `
     --out-dir weight_optimization
   ```
-- `optimize_weights_neighborhood.py`: VNS, Tabu, ILS e hibrido VNS+Tabu, executa `--runs` vezes (ex.: 30) e salva em `neighborhood_results/`.
+- `optimize_weights_neighborhood.py`: VNS, Tabu, ILS, Hybrid.
   ```powershell
   python optimize_weights_neighborhood.py `
     --csv dados_preprocessados\reopt_ALL_blocks_v3_8.csv `
     --diesel-price 1.2 `
+    --diesel-map "Accra:0.95,Lusaka:1.16,Lodwar:0.85" `
     --fuzziness 0.05 `
     --vikor-v 0.5 `
     --runs 30 `
     --seed 321 `
     --out-dir neighborhood_results
   ```
-- `evaluate_mcdm_quality.py`: avalia pesos (baseline + geneticos + vizinhanca) com robustez, regret, Pareto, estabilidade e CV. `--auto` varre `weight_optimization/`, `neighborhood_results/`, `summary_global.csv` e `runs_*.csv`.
+- `evaluate_mcdm_quality.py`: avalia pesos (baseline + geneticos + vizinhanca); `--auto` varre `weight_optimization/`, `neighborhood_results/`, `summary_global.csv` e `runs_*.csv`.
   ```powershell
   python evaluate_mcdm_quality.py `
     --csv dados_preprocessados\reopt_ALL_blocks_v3_8.csv `
     --diesel-price 1.2 `
+    --diesel-map "Accra:0.95,Lusaka:1.16,Lodwar:0.85" `
     --fuzziness 0.05 `
     --vikor-v 0.5 `
     --auto `
     --out eval_quality_all.csv
   ```
-
-## Resultados de otimizacao (regret_mean menor = melhor)
-- Baseline: regret = 0.4377734737 (w: 0.40/0.30/0.20/0.10).
-- Melhores vistos por metaheuristica (execucoes `runs_*.csv`):
-  - VNS: regret = 0.1214687459 com w_cost=0.3206608381, w_emissions=0.0000000000, w_reliability=0.1560573560, w_social=0.5232818060.
-  - Tabu Search: regret = 0.1348949419 com w_cost=0.5763681853, w_emissions=0.0048817464, w_reliability=0.2765960002, w_social=0.1421540680.
-  - ILS: regret = 0.2004044126 com w_cost=0.3074530348, w_emissions=0.0181989677, w_reliability=0.2041180049, w_social=0.4702299925.
-  - Hybrid VNS+Tabu: regret = 0.2343004034 com w_cost=0.3337491064, w_emissions=0.0312942730, w_reliability=0.1355886034, w_social=0.4993680173.
-
-## Execucao dos MCDM com pesos base e otimizados
-- Baseline (perfis economico/sustentavel/resiliente/social): C2 ficou em 1º em todos os metodos (Fuzzy-TOPSIS, VIKOR, COPRAS, MOORA). Arquivos em `ahp_mcdm_results/mcdm_<perfil>.csv` e resumo em `ahp_mcdm_results/summary.json`.
-- Pesos otimizados (melhores regret):
-  - VNS_best, Tabu_best, ILS_best, Hybrid_best: C2 ficou em 1º nos quatro metodos (Fuzzy-TOPSIS, VIKOR, COPRAS, MOORA) em todos os conjuntos. Arquivos em `optimized_mcdm_results/mcdm_<label>.csv` e resumo em `optimized_mcdm_results/summary.json`.
-- Como rodar novamente:
+- `apply_optimized_weights.py`: aplica MCDM com os melhores pesos (VNS/Tabu/ILS/Hybrid).
   ```powershell
-  # baseline por perfil
-  python apply_mcdm_profiles.py `
-    --csv dados_preprocessados\reopt_ALL_blocks_v3_8.csv `
-    --diesel-price 1.2 `
-    --fuzziness 0.05 `
-    --vikor-v 0.5 `
-    --out-dir ahp_mcdm_results
-
-  # pesos otimizados (melhores VNS/Tabu/ILS/Hybrid)
   python apply_optimized_weights.py `
     --csv dados_preprocessados\reopt_ALL_blocks_v3_8.csv `
     --diesel-price 1.2 `
+    --diesel-map "Accra:0.95,Lusaka:1.16,Lodwar:0.85" `
     --fuzziness 0.05 `
     --vikor-v 0.5 `
     --out-dir optimized_mcdm_results
   ```
 
+## Resultados de otimizacao (regret)
+- Baseline: regret = 0.4377734737 (w: 0.40/0.30/0.20/0.10).
+- Melhores por metaheuristica (execucoes `runs_*.csv`):
+  - VNS: 0.1214687459 (0.3206608381 / 0.0000000000 / 0.1560573560 / 0.5232818060).
+  - Tabu: 0.1348949419 (0.5763681853 / 0.0048817464 / 0.2765960002 / 0.1421540680).
+  - ILS: 0.2004044126 (0.3074530348 / 0.0181989677 / 0.2041180049 / 0.4702299925).
+  - Hybrid: 0.2343004034 (0.3337491064 / 0.0312942730 / 0.1355886034 / 0.4993680173).
+
+## Resultados MCDM (baseline x otimizados)
+- Baseline (perfis):
+  - Economico: C2 liderou Fuzzy-TOPSIS, COPRAS e MOORA; VIKOR elegeu C3 (C2 em 2o).
+  - Sustentavel, Resiliente, Social: C2 em 1o nos quatro metodos.
+- Otimizados (VNS_best, Tabu_best, ILS_best, Hybrid_best): C2 em 1o nos quatro metodos (Fuzzy-TOPSIS, VIKOR, COPRAS, MOORA) em todos os conjuntos.
+- Arquivos: baseline em `ahp_mcdm_results/`, otimizados em `optimized_mcdm_results/`.
+
 ## Conclusao
-- Parte de pesos validados (AHP), otimiza via PSO/GA/SA e tambem por metaheuristicas de vizinhanca, e compara em quatro metodos MCDM.
-- Garante consistencia, robustez e transparencia ao escolher entre Diesel-only, PV + Battery e Hibrido.
-- Combina fundamentacao teorica e otimizacao computacional para decisao multicriterio em microgrids renovaveis.
+- Parte de pesos validados (AHP), otimiza via PSO/GA/SA e vizinhanca, e compara em quatro metodos MCDM.
+- Vencedor consistente: C2 (PV + Battery) na maioria dos casos; unica divergencia: baseline economico no VIKOR (C3).
+- Modelo transparente, robusto e reprodutivel para decisao multicriterio em microgrids renovaveis.

@@ -23,7 +23,7 @@ import numpy as np
 import pandas as pd
 
 from apply_mcdm_profiles import compute_profile_results
-from build_ahp_structure import DATA_PATH, aggregate_metrics_by_alternative
+from build_ahp_structure import DATA_PATH, aggregate_metrics_by_alternative, parse_diesel_map
 
 
 BASE_WEIGHTS = {"cost": 0.40, "emissions": 0.30, "reliability": 0.20, "social": 0.10}
@@ -216,6 +216,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Avalia pesos MCDM com multiplas metricas de desempenho.")
     parser.add_argument("--csv", type=Path, default=DATA_PATH, help="CSV consolidado (dados_preprocessados/reopt_ALL_blocks_v3_8.csv)")
     parser.add_argument("--diesel-price", type=float, default=1.2, help="Preco do diesel (USD/L)")
+    parser.add_argument("--diesel-map", type=str, help="Mapa Region:preco (ex: Accra:0.95,Lusaka:1.16,Lodwar:0.85)")
     parser.add_argument("--weights", type=Path, nargs="+", required=False, help="Arquivos CSV/JSON com pesos (colunas cost/emissions/reliability/social ou chaves w_cost, etc.)")
     parser.add_argument("--auto", action="store_true", help="Coletar automaticamente best_weights/best_*weights/best_*.json em weight_optimization/ e neighborhood_results/")
     parser.add_argument("--fuzziness", type=float, default=0.05, help="Fator fuzzy")
@@ -224,8 +225,11 @@ def main() -> None:
     parser.add_argument("--out", type=Path, default=Path("eval_quality.csv"), help="Saida CSV")
     args = parser.parse_args()
 
+    price_map = parse_diesel_map(args.diesel_map)
     df_raw = pd.read_csv(args.csv)
-    metrics_df = aggregate_metrics_by_alternative(df_raw, diesel_price_per_liter=args.diesel_price)
+    metrics_df = aggregate_metrics_by_alternative(
+        df_raw, diesel_price_per_liter=args.diesel_price, diesel_price_map=price_map
+    )
     metrics_df = metrics_df.dropna(axis=1, how="all")
 
     # baseline ranks para Spearman com metodos

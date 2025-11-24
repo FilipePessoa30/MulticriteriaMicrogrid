@@ -131,6 +131,13 @@ Funcao objetivo (exemplo): Min f(W) = alpha * CR(W) + beta * (1 - rho(W)), com a
   - ILS: regret = 0.2004044126 com w_cost=0.3074530348, w_emissions=0.0181989677, w_reliability=0.2041180049, w_social=0.4702299925.
   - Hybrid VNS+Tabu: regret = 0.2343004034 com w_cost=0.3337491064, w_emissions=0.0312942730, w_reliability=0.1355886034, w_social=0.4993680173.
 
+## Resultados MCDM (baseline x pesos otimizados)
+- Baseline (perfis economico/sustentavel/resiliente/social): vencedor Fuzzy-TOPSIS = C2 (PV + Battery) em todos.
+- Pesos otimizados (VNS, Tabu, ILS, Hybrid): vencedor Fuzzy-TOPSIS = C2 em todos os quatro conjuntos.
+- Arquivos:
+  - Baseline/perfis: `ahp_mcdm_results/mcdm_<perfil>.csv`, resumo em `ahp_mcdm_results/summary.json`.
+  - Otimizados: `optimized_mcdm_results/mcdm_<label>.csv`, resumo em `optimized_mcdm_results/summary.json`.
+
 ## Conclusao
 - Parte de pesos validados (AHP), otimiza via PSO/GA/SA e tambem por metaheuristicas de vizinhanca, e compara em quatro metodos MCDM.
 - Garante consistencia, robustez e transparencia ao escolher entre Diesel-only, PV + Battery e Hibrido.

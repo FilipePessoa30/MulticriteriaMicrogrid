@@ -31,6 +31,11 @@ _Titulo provisorio: **A Multi-Criteria Decision Model for Renewable Microgrid Op
 | Tecnico (Confiabilidade) | Energia suprida, eficiencia da bateria | 0.2-0.4 | 0.20 | Song et al., 2022 |
 | Social | Acessibilidade e impacto local | 0.1-0.2 | 0.10 | Lu et al., 2021 |
 
+### Validacao do AHP
+| Metodo | Nome completo | Uso tipico | Referencia academica |
+| --- | --- | --- | --- |
+| AHP | Analytic Hierarchy Process | Derivacao de pesos de criterios (base de muitos hibridos) | Ogrodnik, 2019 |
+
 ## Otimizacao dos pesos (PSO, GA, SA)
 | Algoritmo | Estrategia | Funcao objetivo | Referencia |
 | --- | --- | --- | --- |

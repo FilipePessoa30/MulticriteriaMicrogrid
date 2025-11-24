@@ -49,12 +49,12 @@ Funcao objetivo (exemplo): Min f(W) = alpha * CR(W) + beta * (1 - rho(W)), com a
 | Hybrid VNS + TS / VND | Combina vizinhancas adaptativas e memoria | Ajuste simultaneo multi-criterio de pesos | Wei 2019 |
 
 ## Metodos multicriterio aplicados
-| Metodo | Tipo | Funcao | Vantagem |
-| --- | --- | --- | --- |
-| Fuzzy-TOPSIS | Fuzzy | Similaridade com solucao ideal | Captura incerteza nas preferencias |
-| VIKOR | Deterministico | Solucao de compromisso | Equilibrio entre criterios conflitantes |
-| COPRAS | Deterministico | Avaliacao proporcional direta | Estabilidade e simplicidade |
-| MOORA | Deterministico | Razao normalizada | Leve e valida cruzada |
+| Metodo | Tipo | Entrada | Vantagem principal | Aplicabilidade | Referencia |
+| --- | --- | --- | --- | --- | --- |
+| Fuzzy-TOPSIS | Fuzzy | Matriz de decisao fuzzy + pesos linguisticos | Trata incerteza nas preferencias e criterios | Ideal para julgamentos subjetivos | Zamani-Sabzi et al., 2016 |
+| VIKOR | Deterministico | Valores normalizados + parametro v | Solucao de compromisso entre criterios conflitantes | Trade-offs custo × emissao × confiabilidade | Salabun et al., 2020 |
+| COPRAS | Deterministico | Matriz normalizada proporcional | Estavel e facil de implementar | Validacao e robustez de ranking | Radulescu & Radulescu, 2024 |
+| MOORA | Deterministico | Razao normalizada (beneficio/custo) | Simples e eficiente | Referencia base e verificacao de consistencia | Singh & Pathak, 2024 |
 
 ## Metricas de avaliacao (robustez/qualidade)
 | Metrica | Usada em MCDM? | Base conceitual | Referencias |

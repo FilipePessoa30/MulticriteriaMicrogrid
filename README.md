@@ -1,5 +1,5 @@
 # Modelo multicriterio para operacao de microgrids renovaveis
-_Titulo provisorio: **A Multi-Criteria Decision Model for Renewable Microgrid Operation Using AHP and Metaheuristic Weight Optimization: Balancing Cost, Emissions, and Reliability**_
+_Titulo provisorio: **A Multi-Criteria Decision Model for Renewable Microgrid Operation Using AHP and Metaheuristic Weight Optimization: Balancing Economic, Environmental, Technical, and Social Criteria**_
 
 ## Metodologia final (AHP + otimizacao de pesos)
 - Integra AHP (pesos derivados da literatura) com otimizacao via PSO, GA, SA e metaheuristicas de vizinhanca (VNS, Tabu, ILS, hibrida).

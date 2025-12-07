@@ -1,6 +1,9 @@
 """
-Otimiza pesos dos criterios (cost, emissions, reliability, social) com PSO, GA e SA
-usando multiplas configuracoes por metaheuristica e 30 execucoes por configuracao.
+Otimiza pesos dos criterios (cost, emissions, reliability, social) com tres blocos de metaheuristicas:
+- ABC (Cherif & Ladhari, 2016)
+- HC/SA/PSO (Kizielewicz & Salabun, 2020)
+- PSO-SA hibrido (Sarani Rad et al., 2024)
+Cada bloco roda 8 configuracoes e 30 execucoes por configuracao (ajustavel via --runs).
 
 Saidas organizadas em subpastas: out_dir/<algoritmo>/<config_name>/ com:
 - runs.csv (todas as execucoes, 10 casas decimais)
@@ -94,13 +97,6 @@ def evaluate(weights: Dict[str, float], metrics_df: pd.DataFrame, baseline_ranks
     return float(objective), float(cr), float(rho)
 
 
-def crossover(parent1: np.ndarray, parent2: np.ndarray, rng: np.random.Generator) -> Tuple[np.ndarray, np.ndarray]:
-    alpha = rng.uniform(0.2, 0.8)
-    child1 = alpha * parent1 + (1 - alpha) * parent2
-    child2 = alpha * parent2 + (1 - alpha) * parent1
-    return child1, child2
-
-
 def mutate(vec: np.ndarray, rng: np.random.Generator, rate: float = 0.1) -> np.ndarray:
     noise = rng.normal(0, rate, size=vec.shape)
     mutated = np.clip(vec + noise, 1e-9, None)
@@ -144,50 +140,40 @@ def run_pso(metrics_df: pd.DataFrame, baseline_ranks: pd.Series, fuzziness: floa
     return normalize_weights(gbest), history
 
 
-def run_ga(metrics_df: pd.DataFrame, baseline_ranks: pd.Series, fuzziness: float, vikor_v: float, rng: np.random.Generator, config: Dict) -> Tuple[Dict[str, float], List[float]]:
-    dim = 4
-    pop_size = config.get("pop_size", 30)
-    generations = config.get("generations", 50)
-    mut_rate = config.get("mutation_rate", 0.1)
+def run_hc(metrics_df: pd.DataFrame, baseline_ranks: pd.Series, fuzziness: float, vikor_v: float, rng: np.random.Generator, config: Dict) -> Tuple[Dict[str, float], List[float]]:
+    """Hill-Climbing simples: aceita apenas vizinhos que melhoram a funcao objetivo."""
+    steps = config.get("steps", 200)
+    neighbor_rate = config.get("neighbor_rate", 0.05)
 
-    population = rng.dirichlet(np.ones(dim), size=pop_size)
-    history = []
+    current = rng.dirichlet(np.ones(4))
+    current_w = normalize_weights(current)
+    current_obj, _, _ = evaluate(current_w, metrics_df, baseline_ranks, fuzziness, vikor_v)
+    best = current.copy()
+    best_obj = current_obj
+    history = [best_obj]
 
-    def fitness(individual: np.ndarray) -> float:
-        weights = normalize_weights(individual)
-        obj, _, _ = evaluate(weights, metrics_df, baseline_ranks, fuzziness, vikor_v)
-        return obj
+    for _ in range(steps):
+        neighbor = mutate(current, rng, rate=neighbor_rate)
+        neigh_w = normalize_weights(neighbor)
+        neigh_obj, _, _ = evaluate(neigh_w, metrics_df, baseline_ranks, fuzziness, vikor_v)
+        if neigh_obj < current_obj:
+            current = neighbor
+            current_obj = neigh_obj
+            if neigh_obj < best_obj:
+                best = neighbor
+                best_obj = neigh_obj
+        history.append(best_obj)
 
-    for _ in range(generations):
-        scores = np.array([fitness(ind) for ind in population])
-        best_idx = int(np.argmin(scores))
-        best = population[best_idx].copy()
-        history.append(scores[best_idx])
-
-        new_pop = [best]
-        while len(new_pop) < pop_size:
-            parents_idx = rng.choice(pop_size, size=2, replace=False)
-            p1, p2 = population[parents_idx[0]], population[parents_idx[1]]
-            c1, c2 = crossover(p1, p2, rng)
-            if rng.random() < mut_rate:
-                c1 = mutate(c1, rng, rate=mut_rate)
-            if rng.random() < mut_rate:
-                c2 = mutate(c2, rng, rate=mut_rate)
-            new_pop.extend([c1, c2])
-        population = np.array(new_pop[:pop_size])
-
-    final_scores = np.array([fitness(ind) for ind in population])
-    best_idx = int(np.argmin(final_scores))
-    return normalize_weights(population[best_idx]), history
+    return normalize_weights(best), history
 
 
-def run_sa(metrics_df: pd.DataFrame, baseline_ranks: pd.Series, fuzziness: float, vikor_v: float, rng: np.random.Generator, config: Dict) -> Tuple[Dict[str, float], List[float]]:
+def run_sa(metrics_df: pd.DataFrame, baseline_ranks: pd.Series, fuzziness: float, vikor_v: float, rng: np.random.Generator, config: Dict, start: np.ndarray | None = None) -> Tuple[Dict[str, float], List[float]]:
     steps = config.get("steps", 200)
     temp = config.get("temp", 1.0)
     cooling = config.get("cooling", 0.97)
     neighbor_rate = config.get("neighbor_rate", 0.05)
 
-    current = rng.dirichlet(np.ones(4))
+    current = start.copy() if start is not None else rng.dirichlet(np.ones(4))
     current_w = normalize_weights(current)
     current_obj, _, _ = evaluate(current_w, metrics_df, baseline_ranks, fuzziness, vikor_v)
     best = current.copy()
@@ -211,6 +197,116 @@ def run_sa(metrics_df: pd.DataFrame, baseline_ranks: pd.Series, fuzziness: float
         temp *= cooling
 
     return normalize_weights(best), history
+
+
+def run_abc(metrics_df: pd.DataFrame, baseline_ranks: pd.Series, fuzziness: float, vikor_v: float, rng: np.random.Generator, config: Dict) -> Tuple[Dict[str, float], List[float]]:
+    """Artificial Bee Colony adaptado para pesos VIKOR (soma 1)."""
+    dim = 4
+    foods = config.get("foods", 20)  # fontes = abelhas empregadas = onlookers
+    iterations = config.get("iterations", 60)
+    limit = config.get("limit", 10)  # limite sem melhoria para virar scout
+
+    positions = rng.dirichlet(np.ones(dim), size=foods)
+    trials = np.zeros(foods, dtype=int)
+    objs = np.zeros(foods)
+    fits = np.zeros(foods)
+
+    def eval_source(vec: np.ndarray) -> Tuple[float, float]:
+        w = normalize_weights(vec)
+        obj, _, _ = evaluate(w, metrics_df, baseline_ranks, fuzziness, vikor_v)
+        fitness = 1.0 / (obj + 1e-12)
+        return obj, fitness
+
+    for i in range(foods):
+        obj, fit = eval_source(positions[i])
+        objs[i] = obj
+        fits[i] = fit
+
+    best_idx = int(np.argmin(objs))
+    best_vec = positions[best_idx].copy()
+    best_obj = objs[best_idx]
+    history: List[float] = [best_obj]
+
+    def mutate_neighbor(i: int) -> np.ndarray:
+        k = int(rng.integers(0, foods))
+        while k == i:
+            k = int(rng.integers(0, foods))
+        j = int(rng.integers(0, dim))
+        phi = rng.uniform(-1, 1)
+        candidate = positions[i].copy()
+        candidate[j] = positions[i][j] + phi * (positions[i][j] - positions[k][j])
+        candidate = np.clip(candidate, 1e-9, None)
+        candidate = candidate / candidate.sum()
+        return candidate
+
+    for _ in range(iterations):
+        # Abelhas empregadas
+        for i in range(foods):
+            cand = mutate_neighbor(i)
+            cand_obj, cand_fit = eval_source(cand)
+            if cand_obj < objs[i]:
+                positions[i] = cand
+                objs[i] = cand_obj
+                fits[i] = cand_fit
+                trials[i] = 0
+            else:
+                trials[i] += 1
+
+        # Abelhas observadoras
+        prob = fits / (fits.sum() + 1e-12)
+        for _ in range(foods):
+            i = int(rng.choice(foods, p=prob))
+            cand = mutate_neighbor(i)
+            cand_obj, cand_fit = eval_source(cand)
+            if cand_obj < objs[i]:
+                positions[i] = cand
+                objs[i] = cand_obj
+                fits[i] = cand_fit
+                trials[i] = 0
+            else:
+                trials[i] += 1
+
+        # Abelhas exploradoras
+        for i in range(foods):
+            if trials[i] >= limit:
+                positions[i] = rng.dirichlet(np.ones(dim))
+                objs[i], fits[i] = eval_source(positions[i])
+                trials[i] = 0
+
+        best_idx = int(np.argmin(objs))
+        if objs[best_idx] < best_obj:
+            best_obj = objs[best_idx]
+            best_vec = positions[best_idx].copy()
+        history.append(best_obj)
+
+    return normalize_weights(best_vec), history
+
+
+def run_pso_sa_hybrid(metrics_df: pd.DataFrame, baseline_ranks: pd.Series, fuzziness: float, vikor_v: float, rng: np.random.Generator, config: Dict) -> Tuple[Dict[str, float], List[float]]:
+    """Hibrido: PSO seguido de refinamento por SA iniciando do melhor enxame."""
+    # separar parametros de PSO e SA
+    pso_cfg = {
+        "particles": config.get("pso_particles", config.get("particles", 20)),
+        "iterations": config.get("pso_iterations", config.get("iterations", 40)),
+        "w": config.get("w", 0.7),
+        "c1": config.get("c1", 1.4),
+        "c2": config.get("c2", 1.4),
+    }
+    sa_cfg = {
+        "steps": config.get("sa_steps", 80),
+        "temp": config.get("sa_temp", 1.0),
+        "cooling": config.get("sa_cooling", 0.97),
+        "neighbor_rate": config.get("sa_neighbor_rate", 0.05),
+    }
+
+    # PSO
+    best_pso_weights, pso_hist = run_pso(metrics_df, baseline_ranks, fuzziness, vikor_v, rng, pso_cfg)
+    # SA refinando
+    start_vec = np.array(list(best_pso_weights.values()), dtype=float)
+    sa_weights, sa_hist = run_sa(metrics_df, baseline_ranks, fuzziness, vikor_v, rng, sa_cfg, start=start_vec)
+    # concatena historico
+    history = pso_hist + sa_hist
+    return sa_weights, history
 
 
 def aggregate_histories(histories: List[List[float]]) -> Tuple[np.ndarray, np.ndarray]:
@@ -299,7 +395,7 @@ def save_runs_table(runs: List[Dict], out_path: Path) -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Otimiza pesos AHP com PSO/GA/SA em multiplas configuracoes.")
+    parser = argparse.ArgumentParser(description="Otimiza pesos AHP com ABC, HC/SA/PSO e PSO-SA em multiplas configuracoes.")
     parser.add_argument("--csv", type=Path, default=DATA_PATH, help="CSV consolidado (dados_preprocessados/reopt_ALL_blocks_v3_8.csv)")
     parser.add_argument("--diesel-price", type=float, default=1.2, help="Preco do diesel (USD/L)")
     parser.add_argument("--diesel-map", type=str, help="Mapa Region:preco (ex: Accra:0.95,Lusaka:1.16,Lodwar:0.85)")
@@ -313,38 +409,37 @@ def main() -> None:
     args.out_dir.mkdir(parents=True, exist_ok=True)
     master_rng = np.random.default_rng(args.seed)
 
-    # Grids de configuracao (>=8 cada)
-    pso_grid = [
-        {"name": "pso_1", "particles": 15, "iterations": 30, "w": 0.7, "c1": 1.4, "c2": 1.4},
-        {"name": "pso_2", "particles": 25, "iterations": 40, "w": 0.6, "c1": 1.6, "c2": 1.6},
-        {"name": "pso_3", "particles": 35, "iterations": 50, "w": 0.8, "c1": 1.2, "c2": 1.6},
-        {"name": "pso_4", "particles": 20, "iterations": 60, "w": 0.5, "c1": 2.0, "c2": 2.0},
-        {"name": "pso_5", "particles": 30, "iterations": 35, "w": 0.9, "c1": 1.0, "c2": 1.0},
-        {"name": "pso_6", "particles": 18, "iterations": 45, "w": 0.65, "c1": 1.8, "c2": 1.3},
-        {"name": "pso_7", "particles": 28, "iterations": 55, "w": 0.75, "c1": 1.3, "c2": 1.8},
-        {"name": "pso_8", "particles": 22, "iterations": 70, "w": 0.55, "c1": 2.1, "c2": 1.7},
+    # Grids de configuracao
+    abc_grid = [
+        {"name": "abc_1", "foods": 15, "iterations": 40, "limit": 8},
+        {"name": "abc_2", "foods": 20, "iterations": 50, "limit": 10},
+        {"name": "abc_3", "foods": 25, "iterations": 60, "limit": 12},
+        {"name": "abc_4", "foods": 18, "iterations": 70, "limit": 9},
+        {"name": "abc_5", "foods": 22, "iterations": 55, "limit": 10},
+        {"name": "abc_6", "foods": 30, "iterations": 80, "limit": 15},
+        {"name": "abc_7", "foods": 16, "iterations": 90, "limit": 7},
+        {"name": "abc_8", "foods": 24, "iterations": 65, "limit": 11},
     ]
-    ga_grid = [
-        {"name": "ga_1", "pop_size": 20, "generations": 30, "mutation_rate": 0.05},
-        {"name": "ga_2", "pop_size": 30, "generations": 40, "mutation_rate": 0.10},
-        {"name": "ga_3", "pop_size": 40, "generations": 50, "mutation_rate": 0.15},
-        {"name": "ga_4", "pop_size": 25, "generations": 60, "mutation_rate": 0.12},
-        {"name": "ga_5", "pop_size": 35, "generations": 35, "mutation_rate": 0.08},
-        {"name": "ga_6", "pop_size": 28, "generations": 45, "mutation_rate": 0.20},
-        {"name": "ga_7", "pop_size": 32, "generations": 55, "mutation_rate": 0.07},
-        {"name": "ga_8", "pop_size": 24, "generations": 70, "mutation_rate": 0.18},
+    kiz_grid = [
+        {"name": "kiz_hc_1", "method": "HC", "steps": 120, "neighbor_rate": 0.05},
+        {"name": "kiz_hc_2", "method": "HC", "steps": 200, "neighbor_rate": 0.07},
+        {"name": "kiz_hc_3", "method": "HC", "steps": 300, "neighbor_rate": 0.05},
+        {"name": "kiz_sa_1", "method": "SA", "steps": 180, "temp": 1.0, "cooling": 0.95, "neighbor_rate": 0.05},
+        {"name": "kiz_sa_2", "method": "SA", "steps": 250, "temp": 1.2, "cooling": 0.94, "neighbor_rate": 0.08},
+        {"name": "kiz_sa_3", "method": "SA", "steps": 300, "temp": 1.6, "cooling": 0.95, "neighbor_rate": 0.07},
+        {"name": "kiz_pso_1", "method": "PSO", "particles": 20, "iterations": 50, "w": 0.7, "c1": 1.4, "c2": 1.4},
+        {"name": "kiz_pso_2", "method": "PSO", "particles": 28, "iterations": 60, "w": 0.6, "c1": 1.6, "c2": 1.6},
     ]
-    sa_grid = [
-        {"name": "sa_1", "steps": 120, "temp": 1.0, "cooling": 0.95, "neighbor_rate": 0.05},
-        {"name": "sa_2", "steps": 180, "temp": 1.5, "cooling": 0.96, "neighbor_rate": 0.07},
-        {"name": "sa_3", "steps": 200, "temp": 2.0, "cooling": 0.97, "neighbor_rate": 0.05},
-        {"name": "sa_4", "steps": 250, "temp": 1.2, "cooling": 0.94, "neighbor_rate": 0.08},
-        {"name": "sa_5", "steps": 160, "temp": 0.8, "cooling": 0.93, "neighbor_rate": 0.06},
-        {"name": "sa_6", "steps": 220, "temp": 1.8, "cooling": 0.92, "neighbor_rate": 0.04},
-        {"name": "sa_7", "steps": 140, "temp": 1.0, "cooling": 0.90, "neighbor_rate": 0.10},
-        {"name": "sa_8", "steps": 300, "temp": 2.2, "cooling": 0.95, "neighbor_rate": 0.05},
+    pso_sa_grid = [
+        {"name": "pso_sa_1", "particles": 15, "iterations": 30, "w": 0.7, "c1": 1.4, "c2": 1.4, "sa_steps": 60, "sa_temp": 1.0, "sa_cooling": 0.96, "sa_neighbor_rate": 0.05},
+        {"name": "pso_sa_2", "particles": 20, "iterations": 40, "w": 0.6, "c1": 1.6, "c2": 1.6, "sa_steps": 80, "sa_temp": 1.2, "sa_cooling": 0.95, "sa_neighbor_rate": 0.06},
+        {"name": "pso_sa_3", "particles": 25, "iterations": 50, "w": 0.8, "c1": 1.2, "c2": 1.6, "sa_steps": 100, "sa_temp": 1.5, "sa_cooling": 0.94, "sa_neighbor_rate": 0.05},
+        {"name": "pso_sa_4", "particles": 18, "iterations": 60, "w": 0.5, "c1": 2.0, "c2": 2.0, "sa_steps": 90, "sa_temp": 1.0, "sa_cooling": 0.93, "sa_neighbor_rate": 0.07},
+        {"name": "pso_sa_5", "particles": 30, "iterations": 35, "w": 0.9, "c1": 1.0, "c2": 1.0, "sa_steps": 70, "sa_temp": 0.8, "sa_cooling": 0.95, "sa_neighbor_rate": 0.08},
+        {"name": "pso_sa_6", "particles": 18, "iterations": 45, "w": 0.65, "c1": 1.8, "c2": 1.3, "sa_steps": 85, "sa_temp": 1.3, "sa_cooling": 0.96, "sa_neighbor_rate": 0.06},
+        {"name": "pso_sa_7", "particles": 28, "iterations": 55, "w": 0.75, "c1": 1.3, "c2": 1.8, "sa_steps": 95, "sa_temp": 1.1, "sa_cooling": 0.94, "sa_neighbor_rate": 0.05},
+        {"name": "pso_sa_8", "particles": 22, "iterations": 70, "w": 0.55, "c1": 2.1, "c2": 1.7, "sa_steps": 110, "sa_temp": 1.6, "sa_cooling": 0.95, "sa_neighbor_rate": 0.07},
     ]
-
     # Dados agregados
     price_map = parse_diesel_map(args.diesel_map)
     df_raw = pd.read_csv(args.csv)
@@ -375,10 +470,26 @@ def main() -> None:
 
             if algo == "PSO":
                 weights, hist = run_pso(metrics_df, baseline_ranks, args.fuzziness, args.vikor_v, rng, config)
-            elif algo == "GA":
-                weights, hist = run_ga(metrics_df, baseline_ranks, args.fuzziness, args.vikor_v, rng, config)
-            else:
+            elif algo == "ABC":
+                weights, hist = run_abc(metrics_df, baseline_ranks, args.fuzziness, args.vikor_v, rng, config)
+            elif algo == "HC":
+                weights, hist = run_hc(metrics_df, baseline_ranks, args.fuzziness, args.vikor_v, rng, config)
+            elif algo == "SA":
                 weights, hist = run_sa(metrics_df, baseline_ranks, args.fuzziness, args.vikor_v, rng, config)
+            elif algo == "PSO_SA":
+                weights, hist = run_pso_sa_hybrid(metrics_df, baseline_ranks, args.fuzziness, args.vikor_v, rng, config)
+            elif algo == "HC_SA_PSO":
+                method = config.get("method")
+                if method == "HC":
+                    weights, hist = run_hc(metrics_df, baseline_ranks, args.fuzziness, args.vikor_v, rng, config)
+                elif method == "SA":
+                    weights, hist = run_sa(metrics_df, baseline_ranks, args.fuzziness, args.vikor_v, rng, config)
+                elif method == "PSO":
+                    weights, hist = run_pso(metrics_df, baseline_ranks, args.fuzziness, args.vikor_v, rng, config)
+                else:
+                    raise ValueError(f"Metodo desconhecido em HC_SA_PSO: {method}")
+            else:
+                raise ValueError(f"Algoritmo desconhecido: {algo}")
 
             obj, cr, rho = evaluate(weights, metrics_df, baseline_ranks, args.fuzziness, args.vikor_v)
             histories_all[algo].append(hist)
@@ -411,6 +522,8 @@ def main() -> None:
             "cr_std": float(crs.std(ddof=0)),
             "t_stat_vs_baseline": t_stat,
             "p_value_vs_baseline": p_val,
+            "significant_vs_baseline": bool(p_val < 0.05),
+            "better_than_baseline": bool(objs.mean() < baseline_obj),
         }
 
         # ranks com melhor peso
@@ -442,15 +555,17 @@ def main() -> None:
                 "objective_mean": stats["objective_mean"],
                 "objective_std": stats["objective_std"],
                 "p_value_vs_baseline": stats["p_value_vs_baseline"],
+                "significant_vs_baseline": stats["significant_vs_baseline"],
+                "better_than_baseline": stats["better_than_baseline"],
             }
         )
 
-    for cfg in pso_grid:
-        run_config("PSO", cfg)
-    for cfg in ga_grid:
-        run_config("GA", cfg)
-    for cfg in sa_grid:
-        run_config("SA", cfg)
+    for cfg in abc_grid:
+        run_config("ABC", cfg)
+    for cfg in kiz_grid:
+        run_config("HC_SA_PSO", cfg)
+    for cfg in pso_sa_grid:
+        run_config("PSO_SA", cfg)
 
     pd.DataFrame(global_summary_rows).to_csv(args.out_dir / "summary_global.csv", index=False, float_format="%.10f")
 
@@ -458,7 +573,7 @@ def main() -> None:
         "source_csv": str(args.csv),
         "baseline_weights": BASE_WEIGHTS,
         "baseline_objective": baseline_obj,
-        "grids": {"PSO": pso_grid, "GA": ga_grid, "SA": sa_grid},
+        "grids": {"ABC": abc_grid, "HC_SA_PSO": kiz_grid, "PSO_SA": pso_sa_grid},
         "runs_per_config": args.runs,
         "seed_base": args.seed,
     }

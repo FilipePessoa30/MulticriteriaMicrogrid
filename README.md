@@ -44,12 +44,12 @@ _Titulo provisorio: **A Multi-Criteria Decision Model for Renewable Microgrid Op
 - Conversao usada: USD/L = USD/gal / 3.785 (ex.: 3.60 / 3.785 ≈ 0.95 USD/L).
 - Mapa passado aos scripts via `--diesel-map "Accra:0.95,Lusaka:1.16,Lodwar:0.85"`; fator de emissao: 2.67 kg CO₂/L.
 
-## Otimizacao (PSO, GA, SA)
-| Algoritmo | Estrategia | Objetivo | Referencia |
-| --- | --- | --- | --- |
-| PSO | Busca coletiva | Minimizar CR e maximizar estabilidade | Yu et al., 2020 |
-| GA | Selecao e cruzamento | Minimizar diferenca AHP x MCDM + CR | Nemova et al., 2024 |
-| SA | Resfriamento | Minimizar inconsistencia residual | Rad et al., 2024 |
+## Meta-heuristicas geneticas
+| Meta-heuristica | Objetivo Especifico para Validacao | Referencia |
+| --- | --- | --- |
+| PSO-SA Hibrido | Refinar matrizes AHP inconsistentes, minimizando a Inconsistencia (lambda max - N) e a Discrepancia (DI). | Sarani Rad et al., 2024 |
+| HC, SA, PSO | Encontrar os valores otimos de preferencias de Objetos Caracteristicos (COs) para um modelo MCDM (COMET). | Kizielewicz & Salabun, 2020 |
+| ABC (Artificial Bee Colony) | Otimizar e aprender os pesos dos criterios (criteria weights), que sao usados como input para o metodo MCDM VIKOR, minimizando o custo de classificacao de inventario (Funcao Objetivo). | Cherif & Ladhari, 2016 |
 
 Funcao objetivo exemplo: Min f(W) = alpha * CR(W) + beta * (1 - rho(W)), alpha = beta = 0.5; CR(W) = razao de consistencia; rho(W) = Spearman pre vs pos.
 

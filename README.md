@@ -54,12 +54,13 @@ _Titulo provisorio: **A Multi-Criteria Decision Model for Renewable Microgrid Op
 Funcao objetivo exemplo: Min f(W) = alpha * CR(W) + beta * (1 - rho(W)), alpha = beta = 0.5; CR(W) = razao de consistencia; rho(W) = Spearman pre vs pos.
 
 ## Metaheuristicas de vizinhanca
-| Metaheuristica | Caracteristica | Aplicacao | Referencias |
-| --- | --- | --- | --- |
-| VNS | Alterna vizinhancas | Ajuste progressivo de pesos | Rodrigues 2022; Garcia-Gonzalez 2006 |
-| Tabu Search | Evita ciclos | Ajuste iterativo com memoria | Matijevic 2023 |
-| ILS | Iterated Local Search | Refinamento com perturbacoes | Stutzle 2001 |
-| Hybrid VNS + TS / VND | Combina vizinhancas e memoria | Ajuste multi-criterio | Wei 2019 |
+| Meta-heuristica (Tipo de Vizinhança) | Objetivo Especifico para Validacao | Referencia |
+| --- | --- | --- |
+| Hill-Climbing (HC), Simulated Annealing (SA) | Usados para encontrar os valores otimos de preferencias de Objetos Caracteristicos (COs), otimizando os parametros do modelo MCDM (COMET) e minimizando o erro de preferencia absoluto. | Kizielewicz & Salabun, 2020 |
+| Otimizacao Local Iterativa (Metodo das Decisoes Herdadas) | Solucionar problemas complexos de Otimizacao Multicriterio Nao-Linear (MCO) via varias otimizacoes locais iniciadas em pontos na vizinhanca da decisao anterior, usando funcao escalarizante. | Lotova et al., 2019 |
+| ILS (Iterative Local Search) | Otimizar uma funcao objetiva escalarizada que combina dois criterios com coeficiente de ponderacao (mu) em problema bi-criterio, validando busca em vizinhanca para solucoes de compromisso com pesos MCDM. | Aqil & Allali, 2021 |
+| Tabu Search Multi-Vizinhanca (MTS) | Aplicar tabu search com quatro vizinhancas restritas para otimizar alocacao multicriterio com multiplos orcamentos (MMCP), maximizando lucro total. | Liu & Pan, 2024 |
+| WILB (Weighted Iterated Local Branching) | Busca local iterativa guiada por restricoes de vizinhanca (local branching) para otimizacao binaria ponderada, direcionando a busca por probabilidade de flip das variaveis. | Rodrigues et al., 2022 |
 
 ## Parametros MCDM (referencias)
 | Parametro | Valor | Interpretacao | Referencias |

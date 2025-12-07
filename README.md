@@ -12,10 +12,11 @@ _Titulo provisorio: **A Multi-Criteria Decision Model for Renewable Microgrid Op
 | 1. Coleta e preparacao | Custos, emissoes, confiabilidade (ReOpt LCOE Results, Load Profile Explorer). | Excel / Python |
 | 2. AHP hierarquico | Objetivo -> Criterios (Econ, Ambient, Tec, Social) -> Alternativas (C1-C3). | Python |
 | 3. Pesos iniciais (literatura) | Bohra 2021; Song 2022; Lu 2021; Rocha-Buelvas 2025. | Base AHP |
-| 4. Otimizacao de pesos | PSO/GA/SA + VNS/Tabu/ILS/Hybrid. | pymoo, deap, pyswarm |
-| 5. Aplicacao MCDM | Fuzzy-TOPSIS, VIKOR, COPRAS, MOORA. | pymcdm, numpy, scikit-fuzzy |
-| 6. Avaliacao de melhoria | Spearman, Kendall, CR AHP. | Python / Matplotlib |
-| 7. Sensibilidade/visualizacao | Convergencia de rankings, pesos, perfis. | Python / Streamlit |
+| 4. Otimizacao de pesos (metaheuristicas geneticas) | ABC; HC/SA/PSO (COMET); PSO-SA hibrido. | numpy, pandas |
+| 5. Otimizacao de pesos (vizinhanca) | I2PLS, MTS, WILB, ILS, LBH. | numpy, pandas |
+| 6. Aplicacao MCDM | Fuzzy-TOPSIS, VIKOR, COPRAS, MOORA. | pymcdm, numpy, scikit-fuzzy |
+| 7. Avaliacao de melhoria | Spearman, Kendall, CR AHP; testes t contra baseline. | Python / matplotlib, scipy |
+| 8. Sensibilidade/visualizacao | Convergencia de rankings, pesos, perfis. | Python / Streamlit |
 
 ## Estrutura AHP
 - Nivel 1: escolher a melhor estrategia operacional da microgrid.
@@ -80,7 +81,7 @@ Funcao objetivo exemplo: Min f(W) = alpha * CR(W) + beta * (1 - rho(W)), alpha =
 | Metrica | Usada em MCDM? | Base | Referencias |
 | --- | --- | --- | --- |
 | Robustez de ranking | Sim | Consistencia entre metodos | McPhail 2018; Fernandez 2001 |
-| Regret / Utility | Sim | Minimiza arrependimento | Ning & You 2018; Groetzner 2021 |
+| Regret / Utility | Sim | Minimiza arrependimento | Ning & You 2018; Groetzner 2022 |
 | Dominancia / Pareto | Sim | Eficiencia multiobjetivo | Saif 2014; Lagaros 2007 |
 | Consistencia (CR AHP) | Sim | Validacao de pesos AHP | Mufazzal 2021 |
 | Estabilidade a ruido / cenario | Sim | Robustez a incerteza | Kim 2015; Li 2018 |
@@ -89,14 +90,26 @@ Funcao objetivo exemplo: Min f(W) = alpha * CR(W) + beta * (1 - rho(W)), alpha =
 ## Ferramentas
 | Componente | Ferramenta |
 | --- | --- |
-| AHP/Fuzzy-AHP | ahpy, scikit-fuzzy |
+| AHP| ahpy |
 | Otimizacao de pesos | pyswarm, deap, simanneal |
 | MCDM | pymcdm, numpy, pandas |
 | Sensibilidade/graficos | matplotlib, plotly, streamlit |
 
-## Scripts e exemplos
-- `build_ahp_structure.py`: agrega metricas por alternativa.
-- `apply_mcdm_profiles.py`: roda MCDM por perfil baseline.
+## Scripts e exemplos (ordem do fluxo)
+- (Etapa 1) `extract_load_profiles.py`: extrai e agrupa perfis de carga brutos em CSV de perfis de consumo por bloco/horario.
+  ```powershell
+  python extract_load_profiles.py `
+    --input-dir dados\load_profiles_raw `
+    --out dados_preprocessados\load_profiles_extracted.csv
+  ```
+- (Etapa 1) `extrair_tudo_reopt.py`: baixa/extrai resultados ReOpt (LCOE, custos, emissoes) para todos os cenarios, gerando CSV consolidado por bloco/regiao.
+  ```powershell
+  python extrair_tudo_reopt.py `
+    --input-dir dados\reopt_raw `
+    --out dados_preprocessados\reopt_ALL_blocks_v3_8.csv
+  ```
+- (Etapa 2/3) `build_ahp_structure.py`: agrega metricas por alternativa e constroi a estrutura AHP (baseline com pesos da literatura).
+- (Etapa 5) `apply_mcdm_profiles.py`: roda MCDM por perfil baseline.
   ```powershell
   python apply_mcdm_profiles.py `
     --csv dados_preprocessados\reopt_ALL_blocks_v3_8.csv `
@@ -106,7 +119,7 @@ Funcao objetivo exemplo: Min f(W) = alpha * CR(W) + beta * (1 - rho(W)), alpha =
     --vikor-v 0.5 `
     --out-dir ahp_mcdm_results
   ```
-- `optimize_weights.py`: PSO/GA/SA, 8 configs cada, multiplas execucoes.
+- (Etapa 4) `optimize_weights.py`: metaheuristicas geneticas (ABC; HC/SA/PSO; PSO-SA hibrido), 8 configs cada, multiplas execucoes.
   ```powershell
   python optimize_weights.py `
     --csv dados_preprocessados\reopt_ALL_blocks_v3_8.csv `
@@ -118,7 +131,7 @@ Funcao objetivo exemplo: Min f(W) = alpha * CR(W) + beta * (1 - rho(W)), alpha =
     --seed 123 `
     --out-dir weight_optimization
   ```
-- `optimize_weights_neighborhood.py`: VNS, Tabu, ILS, Hybrid.
+- (Etapa 4) `optimize_weights_neighborhood.py`: metaheuristicas de vizinhanca (I2PLS, MTS, WILB, ILS, LBH), 8 configs cada, multiplas execucoes.
   ```powershell
   python optimize_weights_neighborhood.py `
     --csv dados_preprocessados\reopt_ALL_blocks_v3_8.csv `
@@ -130,7 +143,7 @@ Funcao objetivo exemplo: Min f(W) = alpha * CR(W) + beta * (1 - rho(W)), alpha =
     --seed 321 `
     --out-dir neighborhood_results
   ```
-- `evaluate_mcdm_quality.py`: avalia pesos (baseline + geneticos + vizinhanca); `--auto` varre `weight_optimization/`, `neighborhood_results/`, `summary_global.csv` e `runs_*.csv`.
+- (Etapa 6) `evaluate_mcdm_quality.py`: avalia pesos (baseline + geneticos + vizinhanca); `--auto` varre `weight_optimization/`, `neighborhood_results/`, `summary_global.csv` e `runs_*.csv`.
   ```powershell
   python evaluate_mcdm_quality.py `
     --csv dados_preprocessados\reopt_ALL_blocks_v3_8.csv `
@@ -141,7 +154,7 @@ Funcao objetivo exemplo: Min f(W) = alpha * CR(W) + beta * (1 - rho(W)), alpha =
     --auto `
     --out eval_quality_all.csv
   ```
-- `apply_optimized_weights.py`: aplica MCDM com os melhores pesos (VNS/Tabu/ILS/Hybrid).
+- (Etapa 5/8) `apply_optimized_weights.py`: aplica MCDM com os melhores pesos (geneticos/vizinhanca) e gera perfis otimizados.
   ```powershell
   python apply_optimized_weights.py `
     --csv dados_preprocessados\reopt_ALL_blocks_v3_8.csv `

@@ -65,8 +65,8 @@ Funcao objetivo exemplo: Min f(W) = alpha * CR(W) + beta * (1 - rho(W)), alpha =
 ## Parametros MCDM (referencias)
 | Parametro | Valor | Interpretacao | Referencias |
 | --- | --- | --- | --- |
-| Fuzziness | 0.05 | Nivel de incerteza baixo/moderado em MCDM fuzzy | Otay & Kahraman, 2022; Peng et al., 2020 |
-| VIKOR v | 0.5 | Solucao de compromisso balanceada (maioritario = minoritario) | Kahraman & Otay, 2021; Sivaraja et al., 2020 |
+| Parâmetro de Defuzzificacao (Largura/Nivel de Incerteza) | 0.01 | Numero pequeno (tau) usado no denominador de termos em funcoes de Score Relativo (RSF) para defuzzificacao de pesos, representando estabilidade/margem de erro. | Otay & Kahraman, 2022 |
+| VIKOR v ou J | 0.5 | Solucao de compromisso balanceada: pesa utilidade de grupo maxima (J) e pesar individual minimo (1-J). | Peng et al., 2020; Otay & Kahraman, 2022 |
 
 ## Metodos MCDM
 | Metodo | Tipo | Entrada | Vantagem principal | Aplicabilidade | Referencia |
@@ -102,7 +102,7 @@ Funcao objetivo exemplo: Min f(W) = alpha * CR(W) + beta * (1 - rho(W)), alpha =
     --csv dados_preprocessados\reopt_ALL_blocks_v3_8.csv `
     --diesel-price 1.2 `
     --diesel-map "Accra:0.95,Lusaka:1.16,Lodwar:0.85" `
-    --fuzziness 0.05 `
+    --fuzziness 0.01 `
     --vikor-v 0.5 `
     --out-dir ahp_mcdm_results
   ```
@@ -112,7 +112,7 @@ Funcao objetivo exemplo: Min f(W) = alpha * CR(W) + beta * (1 - rho(W)), alpha =
     --csv dados_preprocessados\reopt_ALL_blocks_v3_8.csv `
     --diesel-price 1.2 `
     --diesel-map "Accra:0.95,Lusaka:1.16,Lodwar:0.85" `
-    --fuzziness 0.05 `
+    --fuzziness 0.01 `
     --vikor-v 0.5 `
     --runs 30 `
     --seed 123 `
@@ -124,7 +124,7 @@ Funcao objetivo exemplo: Min f(W) = alpha * CR(W) + beta * (1 - rho(W)), alpha =
     --csv dados_preprocessados\reopt_ALL_blocks_v3_8.csv `
     --diesel-price 1.2 `
     --diesel-map "Accra:0.95,Lusaka:1.16,Lodwar:0.85" `
-    --fuzziness 0.05 `
+    --fuzziness 0.01 `
     --vikor-v 0.5 `
     --runs 30 `
     --seed 321 `
@@ -136,7 +136,7 @@ Funcao objetivo exemplo: Min f(W) = alpha * CR(W) + beta * (1 - rho(W)), alpha =
     --csv dados_preprocessados\reopt_ALL_blocks_v3_8.csv `
     --diesel-price 1.2 `
     --diesel-map "Accra:0.95,Lusaka:1.16,Lodwar:0.85" `
-    --fuzziness 0.05 `
+    --fuzziness 0.01 `
     --vikor-v 0.5 `
     --auto `
     --out eval_quality_all.csv
@@ -147,7 +147,7 @@ Funcao objetivo exemplo: Min f(W) = alpha * CR(W) + beta * (1 - rho(W)), alpha =
     --csv dados_preprocessados\reopt_ALL_blocks_v3_8.csv `
     --diesel-price 1.2 `
     --diesel-map "Accra:0.95,Lusaka:1.16,Lodwar:0.85" `
-    --fuzziness 0.05 `
+    --fuzziness 0.01 `
     --vikor-v 0.5 `
     --out-dir optimized_mcdm_results
   ```

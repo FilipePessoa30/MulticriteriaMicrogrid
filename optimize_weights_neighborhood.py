@@ -25,6 +25,7 @@ import json
 from pathlib import Path
 from typing import Dict, List, Tuple
 
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
@@ -323,6 +324,71 @@ def run_algo(name: str, config: Dict, metrics_df: pd.DataFrame, baseline_ranks: 
     return best, {"objective": obj, "cr": cr, "rho": rho, "history": hist}
 
 
+def aggregate_histories(histories: List[List[float]]) -> Tuple[np.ndarray, np.ndarray]:
+    if not histories:
+        return np.array([]), np.array([])
+    max_len = min(len(h) for h in histories)
+    trimmed = np.array([h[:max_len] for h in histories])
+    mean = np.nanmean(trimmed, axis=0)
+    std = np.nanstd(trimmed, axis=0)
+    return mean, std
+
+
+def plot_history(histories: List[List[float]], out_path: Path) -> None:
+    mean, std = aggregate_histories(histories)
+    if mean.size == 0:
+        return
+    x = np.arange(len(mean))
+    plt.figure(figsize=(7, 4))
+    plt.plot(x, mean, label="media")
+    plt.fill_between(x, mean - std, mean + std, alpha=0.15)
+    plt.xlabel("Iteracao")
+    plt.ylabel("Objetivo (menor melhor)")
+    plt.legend()
+    plt.tight_layout()
+    plt.savefig(out_path, dpi=200)
+    plt.close()
+
+
+def plot_best_history(history: List[float], out_path: Path) -> None:
+    if not history:
+        return
+    plt.figure(figsize=(7, 4))
+    plt.plot(np.arange(len(history)), history, label="best run")
+    plt.xlabel("Iteracao")
+    plt.ylabel("Objetivo (menor melhor)")
+    plt.legend()
+    plt.tight_layout()
+    plt.savefig(out_path, dpi=200)
+    plt.close()
+
+
+def plot_objective_boxplot(objectives: List[float], out_path: Path) -> None:
+    if not objectives:
+        return
+    plt.figure(figsize=(6, 4))
+    plt.boxplot(objectives, labels=["runs"], showmeans=True)
+    plt.ylabel("Objetivo (menor melhor)")
+    plt.tight_layout()
+    plt.savefig(out_path, dpi=200)
+    plt.close()
+
+
+def plot_weights(before: Dict[str, float], after: Dict[str, float], out_path: Path) -> None:
+    labels = list(before.keys())
+    x = np.arange(len(labels))
+    width = 0.35
+    plt.figure(figsize=(6, 4))
+    plt.bar(x - width / 2, [before[k] for k in labels], width, label="Base")
+    plt.bar(x + width / 2, [after[k] for k in labels], width, label="Melhor")
+    plt.xticks(x, labels)
+    plt.ylabel("Peso")
+    plt.legend()
+    plt.tight_layout()
+    plt.savefig(out_path, dpi=200)
+    plt.close()
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Metaheuristicas de vizinhanca para otimizar pesos AHP/MCDM (I2PLS, MTS, WILB, ILS, LBH).")
     parser.add_argument("--csv", type=Path, default=DATA_PATH, help="CSV consolidado")
@@ -481,6 +547,28 @@ def main() -> None:
                 "baseline_cr": baseline_cr,
             }
             pd.DataFrame([stats_row]).to_csv(cfg_dir / "stats_summary.csv", index=False, float_format="%.10f")
+            # melhor execucao
+            best_impr = {
+                "objective": best_global["objective"],
+                "rho": best_global["rho"],
+                "cr": best_global["cr"],
+                "seed": best_global["seed"],
+            }
+            pd.DataFrame([best_impr]).to_csv(cfg_dir / "best_improvements.csv", index=False, float_format="%.10f")
+            best_weights = {k.replace("w_", ""): v for k, v in best_global.items() if k.startswith("w_")}
+            pd.DataFrame([best_weights]).to_csv(cfg_dir / "best_weights.csv", index=False, float_format="%.10f")
+
+            # ranks base e melhor
+            base_res.to_csv(cfg_dir / "ranks_base.csv", index=False, float_format="%.10f")
+            best_res = compute_profile_results(metrics_df, profile_name="best", profile_weights=best_weights, fuzziness=args.fuzziness, vikor_v=args.vikor_v)
+            best_res.to_csv(cfg_dir / "ranks_best.csv", index=False, float_format="%.10f")
+
+            # graficos
+            plot_history(histories, cfg_dir / "objective_history.png")
+            best_history = histories[int(np.argmin(objs))] if len(histories) == len(objs) else []
+            plot_best_history(best_history, cfg_dir / "best_run_history.png")
+            plot_objective_boxplot(objs.tolist(), cfg_dir / "objective_boxplot.png")
+            plot_weights(BASE_WEIGHTS, best_weights, cfg_dir / f"weights_{algo}.png")
 
             summary_global.append(
                 {

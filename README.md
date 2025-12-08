@@ -66,8 +66,18 @@ Funcao objetivo exemplo: Min f(W) = alpha * CR(W) + beta * (1 - rho(W)), alpha =
 ## Parametros MCDM (referencias)
 | Parametro | Valor | Interpretacao | Referencias |
 | --- | --- | --- | --- |
-| Parâmetro de Defuzzificacao (Largura/Nivel de Incerteza) | 0.01 | Numero pequeno (tau) usado no denominador de termos em funcoes de Score Relativo (RSF) para defuzzificacao de pesos, representando estabilidade/margem de erro. | Otay & Kahraman, 2022 |
+| Parametro de Defuzzificacao (Largura/Nivel de Incerteza) | 0.01 | Numero pequeno (tau) usado no denominador de termos em funcoes de Score Relativo (RSF) para defuzzificacao de pesos, representando estabilidade/margem de erro. | Otay & Kahraman, 2022 |
 | VIKOR v ou J | 0.5 | Solucao de compromisso balanceada: pesa utilidade de grupo maxima (J) e pesar individual minimo (1-J). | Peng et al., 2020; Otay & Kahraman, 2022 |
+
+## Metricas de calibracao de pesos e funcoes objetivo em MCDM/MOO
+| Abordagem / Metodo | Principio central (funcao objetivo implicita) | Metrica de calibracao / otimizacao | Titulo do artigo |
+| --- | --- | --- | --- |
+| Entropia | Dar maior peso a criterios com maior dispersao; peso w_j inversamente proporcional a entropia e_j. | e_j dos valores normalizados; w_j = (1 - e_j) / sum(1 - e_j). | Integration of objective weighting methods for criteria and MCDM methods: application in material selection |
+| MEREC | Peso maior para criterios cuja remocao causa maior desvio (E_j) no desempenho geral. | w_j proporcional a E_j (variacao do score quando o criterio e removido). | Integration of objective weighting methods for criteria and MCDM methods: application in material selection |
+| LOPCOW | Peso pela mudanca percentual logaritmica (dispersao dos dados). | PV_j derivado do desvio padrao; w_j = PV_j / sum(PV_j). | Integration of objective weighting methods for criteria and MCDM methods: application in material selection |
+| CRITIC | Combinar variancia (sigma_j) e nao-redundancia (1 - r_ij) para definir importancia. | C_j = sigma_j * (1 - sum r_ij); pesos normalizados de C_j. | Integration of objective weighting methods for criteria and MCDM methods: application in material selection |
+| MEAN | Pesos iguais assumindo igual importancia. | w_j = 1 / n. | Integration of objective weighting methods for criteria and MCDM methods: application in material selection |
+| Bayes / IDOCRIW | Integrar pesos de metodos distintos como variaveis aleatorias (media geometrica ponderada). | alpha_j = sum(omega_j * W_j) / sum(omega_j * W_j). | The Recalculation of the Weights of Criteria in MCDM Methods Using the Bayes Approach |
 
 ## Metodos MCDM
 | Metodo | Tipo | Entrada | Vantagem principal | Aplicabilidade | Referencia |

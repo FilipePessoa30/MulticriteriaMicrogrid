@@ -32,8 +32,24 @@ from build_ahp_structure import DATA_PATH, aggregate_metrics_by_alternative, par
 
 # Pesos iniciais da literatura (AHP)
 BASE_WEIGHTS = {"cost": 0.6923, "emissions": 0.3328, "reliability": 0.3492, "social": 0.3351}
-ALPHA = 0.5  # peso da consistencia
-BETA = 0.5   # peso da correlacao de ranking (rho)
+
+# Objetivos suportados (tabela do README)
+OBJECTIVE_KEYS = ["entropy", "merec", "lopcow", "critic", "mean", "bayes"]
+
+
+def detect_directions_simple(columns: List[str]) -> Dict[str, str]:
+    directions: Dict[str, str] = {}
+    for col in columns:
+        low = col.lower()
+        if any(k in low for k in ["cost", "lcoe", "emission", "fossil", "tlcc"]):
+            directions[col] = "min"
+        elif "diesel_cost_share" in low:
+            directions[col] = "min"
+        elif "percent_load_target" in low:
+            directions[col] = "max"
+        else:
+            directions[col] = "max"
+    return directions
 
 
 def try_ttest(values: List[float], baseline: float) -> Tuple[float, float]:
@@ -89,12 +105,181 @@ def normalize_weights(w: np.ndarray) -> Dict[str, float]:
     return dict(zip(keys, w.tolist()))
 
 
-def evaluate(weights: Dict[str, float], metrics_df: pd.DataFrame, baseline_ranks: pd.Series, fuzziness: float, vikor_v: float) -> Tuple[float, float, float]:
+def evaluate_multi(
+    weights: Dict[str, float],
+    metrics_df: pd.DataFrame,
+    baseline_ranks: Dict[str, pd.Series],
+    baseline_scores: Dict[str, pd.Series],
+    fuzziness: float,
+    vikor_v: float,
+    weight_refs: Dict[str, Dict[str, float]],
+    objective_key: str,
+) -> Dict[str, float]:
     cr = cr_proxy(weights)
     result = compute_profile_results(metrics_df, profile_name="opt", profile_weights=weights, fuzziness=fuzziness, vikor_v=vikor_v)
-    rho = spearman_corr(result["fuzzy_topsis_rank"], baseline_ranks)
-    objective = ALPHA * cr + BETA * (1 - rho)
-    return float(objective), float(cr), float(rho)
+
+    rhos = []
+    for key, col in [
+        ("topsis", "fuzzy_topsis_rank"),
+        ("vikor", "vikor_rank"),
+        ("copras", "copras_rank"),
+        ("moora", "moora_rank"),
+    ]:
+        rhos.append(spearman_corr(result[col], baseline_ranks[key]))
+    rho_mean = float(np.mean(rhos))
+
+    deltas = []
+    for key, col in [
+        ("topsis", "fuzzy_topsis_score"),
+        ("vikor", "vikor_score"),
+        ("copras", "copras_score"),
+        ("moora", "moora_score"),
+    ]:
+        base = baseline_scores[key]
+        cur = result[col]
+        deltas.append(np.mean(np.abs(cur - base) / (np.abs(base) + 1e-9)))
+    score_delta = float(np.mean(deltas))
+
+    diffs = {}
+    for name, ref in weight_refs.items():
+        diffs[f"{name}_diff"] = float(np.mean(np.abs(np.array(list(weights.values())) - np.array(list(ref.values())))))
+
+    if objective_key not in weight_refs:
+        raise ValueError(f"Objetivo desconhecido: {objective_key}")
+    objective = diffs[f"{objective_key}_diff"]
+    return {
+        "objective": objective,
+        "cr": float(cr),
+        "rho_mean": rho_mean,
+        "score_delta": score_delta,
+        **diffs,
+    }
+
+
+def compute_entropy_weights(metrics_df: pd.DataFrame) -> Dict[str, float]:
+    data = metrics_df.to_numpy(dtype=float)
+    # min-max normalize cols to avoid negatives
+    col_min = np.nanmin(data, axis=0)
+    col_max = np.nanmax(data, axis=0)
+    denom = (col_max - col_min)
+    denom[denom == 0] = 1.0
+    norm = (data - col_min) / denom
+    # avoid log(0)
+    prob = norm / np.clip(norm.sum(axis=0, keepdims=True), 1e-12, None)
+    prob[prob <= 0] = 1e-12
+    m = data.shape[0]
+    k = 1.0 / np.log(m) if m > 1 else 0.0
+    entropy = -k * np.sum(prob * np.log(prob), axis=0)
+    dj = 1 - entropy
+    weights = dj / np.clip(dj.sum(), 1e-12, None)
+    return normalize_weights(weights)
+
+
+def compute_critic_weights(metrics_df: pd.DataFrame) -> Dict[str, float]:
+    data = metrics_df.to_numpy(dtype=float)
+    col_min = np.nanmin(data, axis=0)
+    col_max = np.nanmax(data, axis=0)
+    denom = (col_max - col_min)
+    denom[denom == 0] = 1.0
+    norm = (data - col_min) / denom
+    std = np.std(norm, axis=0, ddof=0)
+    corr = np.corrcoef(norm, rowvar=False)
+    if np.isnan(corr).any():
+        corr = np.nan_to_num(corr, nan=0.0)
+    c_info = std * (1 - np.mean(corr, axis=0))
+    weights = c_info / np.clip(c_info.sum(), 1e-12, None)
+    return normalize_weights(weights)
+
+
+def compute_score_delta(metrics_df: pd.DataFrame, weights: Dict[str, float], baseline_scores: Dict[str, pd.Series], fuzziness: float, vikor_v: float) -> float:
+    res = compute_profile_results(metrics_df, profile_name="opt", profile_weights=weights, fuzziness=fuzziness, vikor_v=vikor_v)
+    deltas = []
+    for key, col in [("topsis", "fuzzy_topsis_score"), ("vikor", "vikor_score"), ("copras", "copras_score"), ("moora", "moora_score")]:
+        base = baseline_scores[key]
+        cur = res[col]
+        deltas.append(np.mean(np.abs(cur - base) / (np.abs(base) + 1e-9)))
+    return float(np.mean(deltas))
+
+
+def compute_mean_weights(metrics_df: pd.DataFrame) -> Dict[str, float]:
+    n = metrics_df.shape[1]
+    if n == 0:
+        return normalize_weights(np.ones(4))
+    w = np.ones(n) / n
+    return normalize_weights(w)
+
+
+def compute_merec_weights(metrics_df: pd.DataFrame) -> Dict[str, float]:
+    data = metrics_df.to_numpy(dtype=float)
+    m, n = data.shape
+    if m == 0 or n == 0:
+        return normalize_weights(np.ones(4))
+    directions = detect_directions_simple(metrics_df.columns.tolist())
+    norm = np.zeros_like(data, dtype=float)
+    for j, col in enumerate(metrics_df.columns):
+        col_data = data[:, j]
+        if directions.get(col, "max") == "max":
+            minv = np.nanmin(col_data)
+            denom = np.nanmax(col_data) - minv
+            denom = denom if denom != 0 else 1.0
+            norm[:, j] = (col_data - minv) / denom
+        else:
+            maxv = np.nanmax(col_data)
+            denom = maxv - np.nanmin(col_data)
+            denom = denom if denom != 0 else 1.0
+            norm[:, j] = (maxv - col_data) / denom
+    norm = np.clip(norm, 1e-12, None)
+    S = np.log(1 + np.sum(np.abs(np.log(norm)), axis=1))
+    E = np.zeros(n)
+    for j in range(n):
+        temp = np.delete(norm, j, axis=1)
+        S_prime = np.log(1 + np.sum(np.abs(np.log(temp)), axis=1))
+        E[j] = np.sum(np.abs(S - S_prime))
+    weights = E / np.clip(E.sum(), 1e-12, None)
+    return normalize_weights(weights)
+
+
+def compute_lopcow_weights(metrics_df: pd.DataFrame) -> Dict[str, float]:
+    data = metrics_df.to_numpy(dtype=float)
+    m, n = data.shape
+    if m == 0 or n == 0:
+        return normalize_weights(np.ones(4))
+    col_min = np.nanmin(data, axis=0)
+    col_max = np.nanmax(data, axis=0)
+    denom = (col_max - col_min)
+    denom[denom == 0] = 1.0
+    norm = (data - col_min) / denom
+    std = np.std(norm, axis=0, ddof=0)
+    pv = std * np.log1p(denom)
+    weights = pv / np.clip(pv.sum(), 1e-12, None)
+    return normalize_weights(weights)
+
+
+def compute_bayes_weights(base_w: Dict[str, float], obj_w: Dict[str, float]) -> Dict[str, float]:
+    # combinacao simples via produto seguido de normalizacao (media geometrica ponderada)
+    keys = list(base_w.keys())
+    base_vec = np.array([base_w[k] for k in keys], dtype=float)
+    obj_vec = np.array([obj_w.get(k, 0.0) for k in keys], dtype=float)
+    combined = base_vec * obj_vec
+    if combined.sum() == 0:
+        combined = base_vec
+    combined = combined / combined.sum()
+    return dict(zip(keys, combined.tolist()))
+
+
+def evaluate_objective_value(
+    weights: Dict[str, float],
+    metrics_df: pd.DataFrame,
+    baseline_ranks: Dict[str, pd.Series],
+    baseline_scores: Dict[str, pd.Series],
+    weight_refs: Dict[str, Dict[str, float]],
+    fuzziness: float,
+    vikor_v: float,
+    objective_key: str,
+) -> Tuple[float, float, float]:
+    """Retorna (objetivo, cr, rho_mean) usando a funcao objetivo escolhida."""
+    res = evaluate_multi(weights, metrics_df, baseline_ranks, baseline_scores, fuzziness, vikor_v, weight_refs, objective_key)
+    return res["objective"], res["cr"], res["rho_mean"]
 
 
 def mutate(vec: np.ndarray, rng: np.random.Generator, rate: float = 0.1) -> np.ndarray:
@@ -103,7 +288,17 @@ def mutate(vec: np.ndarray, rng: np.random.Generator, rate: float = 0.1) -> np.n
     return mutated / mutated.sum()
 
 
-def run_pso(metrics_df: pd.DataFrame, baseline_ranks: pd.Series, fuzziness: float, vikor_v: float, rng: np.random.Generator, config: Dict) -> Tuple[Dict[str, float], List[float]]:
+def run_pso(
+    metrics_df: pd.DataFrame,
+    baseline_ranks: Dict[str, pd.Series],
+    baseline_scores: Dict[str, pd.Series],
+    weight_refs: Dict[str, Dict[str, float]],
+    fuzziness: float,
+    vikor_v: float,
+    objective_key: str,
+    rng: np.random.Generator,
+    config: Dict,
+) -> Tuple[Dict[str, float], List[float]]:
     dim = 4
     particles = config.get("particles", 20)
     iterations = config.get("iterations", 50)
@@ -122,7 +317,7 @@ def run_pso(metrics_df: pd.DataFrame, baseline_ranks: pd.Series, fuzziness: floa
     for _ in range(iterations):
         for i in range(particles):
             weights = normalize_weights(positions[i])
-            obj, _, _ = evaluate(weights, metrics_df, baseline_ranks, fuzziness, vikor_v)
+            obj, _, _ = evaluate_objective_value(weights, metrics_df, baseline_ranks, baseline_scores, weight_refs, fuzziness, vikor_v, objective_key)
             if obj < pbest_scores[i]:
                 pbest_scores[i] = obj
                 pbest[i] = positions[i].copy()
@@ -140,14 +335,24 @@ def run_pso(metrics_df: pd.DataFrame, baseline_ranks: pd.Series, fuzziness: floa
     return normalize_weights(gbest), history
 
 
-def run_hc(metrics_df: pd.DataFrame, baseline_ranks: pd.Series, fuzziness: float, vikor_v: float, rng: np.random.Generator, config: Dict) -> Tuple[Dict[str, float], List[float]]:
+def run_hc(
+    metrics_df: pd.DataFrame,
+    baseline_ranks: Dict[str, pd.Series],
+    baseline_scores: Dict[str, pd.Series],
+    weight_refs: Dict[str, Dict[str, float]],
+    fuzziness: float,
+    vikor_v: float,
+    objective_key: str,
+    rng: np.random.Generator,
+    config: Dict,
+) -> Tuple[Dict[str, float], List[float]]:
     """Hill-Climbing simples: aceita apenas vizinhos que melhoram a funcao objetivo."""
     steps = config.get("steps", 200)
     neighbor_rate = config.get("neighbor_rate", 0.05)
 
     current = rng.dirichlet(np.ones(4))
     current_w = normalize_weights(current)
-    current_obj, _, _ = evaluate(current_w, metrics_df, baseline_ranks, fuzziness, vikor_v)
+    current_obj, _, _ = evaluate_objective_value(current_w, metrics_df, baseline_ranks, baseline_scores, weight_refs, fuzziness, vikor_v, objective_key)
     best = current.copy()
     best_obj = current_obj
     history = [best_obj]
@@ -155,7 +360,7 @@ def run_hc(metrics_df: pd.DataFrame, baseline_ranks: pd.Series, fuzziness: float
     for _ in range(steps):
         neighbor = mutate(current, rng, rate=neighbor_rate)
         neigh_w = normalize_weights(neighbor)
-        neigh_obj, _, _ = evaluate(neigh_w, metrics_df, baseline_ranks, fuzziness, vikor_v)
+        neigh_obj, _, _ = evaluate_objective_value(neigh_w, metrics_df, baseline_ranks, baseline_scores, weight_refs, fuzziness, vikor_v, objective_key)
         if neigh_obj < current_obj:
             current = neighbor
             current_obj = neigh_obj
@@ -167,7 +372,18 @@ def run_hc(metrics_df: pd.DataFrame, baseline_ranks: pd.Series, fuzziness: float
     return normalize_weights(best), history
 
 
-def run_sa(metrics_df: pd.DataFrame, baseline_ranks: pd.Series, fuzziness: float, vikor_v: float, rng: np.random.Generator, config: Dict, start: np.ndarray | None = None) -> Tuple[Dict[str, float], List[float]]:
+def run_sa(
+    metrics_df: pd.DataFrame,
+    baseline_ranks: Dict[str, pd.Series],
+    baseline_scores: Dict[str, pd.Series],
+    weight_refs: Dict[str, Dict[str, float]],
+    fuzziness: float,
+    vikor_v: float,
+    objective_key: str,
+    rng: np.random.Generator,
+    config: Dict,
+    start: np.ndarray | None = None,
+) -> Tuple[Dict[str, float], List[float]]:
     steps = config.get("steps", 200)
     temp = config.get("temp", 1.0)
     cooling = config.get("cooling", 0.97)
@@ -175,7 +391,7 @@ def run_sa(metrics_df: pd.DataFrame, baseline_ranks: pd.Series, fuzziness: float
 
     current = start.copy() if start is not None else rng.dirichlet(np.ones(4))
     current_w = normalize_weights(current)
-    current_obj, _, _ = evaluate(current_w, metrics_df, baseline_ranks, fuzziness, vikor_v)
+    current_obj, _, _ = evaluate_objective_value(current_w, metrics_df, baseline_ranks, baseline_scores, weight_refs, fuzziness, vikor_v, objective_key)
     best = current.copy()
     best_obj = current_obj
     history = [best_obj]
@@ -183,7 +399,7 @@ def run_sa(metrics_df: pd.DataFrame, baseline_ranks: pd.Series, fuzziness: float
     for _ in range(steps):
         neighbor = mutate(current, rng, rate=neighbor_rate)
         neigh_w = normalize_weights(neighbor)
-        neigh_obj, _, _ = evaluate(neigh_w, metrics_df, baseline_ranks, fuzziness, vikor_v)
+        neigh_obj, _, _ = evaluate_objective_value(neigh_w, metrics_df, baseline_ranks, baseline_scores, weight_refs, fuzziness, vikor_v, objective_key)
 
         if neigh_obj < current_obj or rng.random() < np.exp(-(neigh_obj - current_obj) / max(temp, 1e-6)):
             current = neighbor
@@ -199,7 +415,17 @@ def run_sa(metrics_df: pd.DataFrame, baseline_ranks: pd.Series, fuzziness: float
     return normalize_weights(best), history
 
 
-def run_abc(metrics_df: pd.DataFrame, baseline_ranks: pd.Series, fuzziness: float, vikor_v: float, rng: np.random.Generator, config: Dict) -> Tuple[Dict[str, float], List[float]]:
+def run_abc(
+    metrics_df: pd.DataFrame,
+    baseline_ranks: Dict[str, pd.Series],
+    baseline_scores: Dict[str, pd.Series],
+    weight_refs: Dict[str, Dict[str, float]],
+    fuzziness: float,
+    vikor_v: float,
+    objective_key: str,
+    rng: np.random.Generator,
+    config: Dict,
+) -> Tuple[Dict[str, float], List[float]]:
     """Artificial Bee Colony adaptado para pesos VIKOR (soma 1)."""
     dim = 4
     foods = config.get("foods", 20)  # fontes = abelhas empregadas = onlookers
@@ -213,7 +439,7 @@ def run_abc(metrics_df: pd.DataFrame, baseline_ranks: pd.Series, fuzziness: floa
 
     def eval_source(vec: np.ndarray) -> Tuple[float, float]:
         w = normalize_weights(vec)
-        obj, _, _ = evaluate(w, metrics_df, baseline_ranks, fuzziness, vikor_v)
+        obj, _, _ = evaluate_objective_value(w, metrics_df, baseline_ranks, baseline_scores, weight_refs, fuzziness, vikor_v, objective_key)
         fitness = 1.0 / (obj + 1e-12)
         return obj, fitness
 
@@ -282,7 +508,17 @@ def run_abc(metrics_df: pd.DataFrame, baseline_ranks: pd.Series, fuzziness: floa
     return normalize_weights(best_vec), history
 
 
-def run_pso_sa_hybrid(metrics_df: pd.DataFrame, baseline_ranks: pd.Series, fuzziness: float, vikor_v: float, rng: np.random.Generator, config: Dict) -> Tuple[Dict[str, float], List[float]]:
+def run_pso_sa_hybrid(
+    metrics_df: pd.DataFrame,
+    baseline_ranks: Dict[str, pd.Series],
+    baseline_scores: Dict[str, pd.Series],
+    weight_refs: Dict[str, Dict[str, float]],
+    fuzziness: float,
+    vikor_v: float,
+    objective_key: str,
+    rng: np.random.Generator,
+    config: Dict,
+) -> Tuple[Dict[str, float], List[float]]:
     """Hibrido: PSO seguido de refinamento por SA iniciando do melhor enxame."""
     # separar parametros de PSO e SA
     pso_cfg = {
@@ -300,10 +536,10 @@ def run_pso_sa_hybrid(metrics_df: pd.DataFrame, baseline_ranks: pd.Series, fuzzi
     }
 
     # PSO
-    best_pso_weights, pso_hist = run_pso(metrics_df, baseline_ranks, fuzziness, vikor_v, rng, pso_cfg)
+    best_pso_weights, pso_hist = run_pso(metrics_df, baseline_ranks, baseline_scores, weight_refs, fuzziness, vikor_v, objective_key, rng, pso_cfg)
     # SA refinando
     start_vec = np.array(list(best_pso_weights.values()), dtype=float)
-    sa_weights, sa_hist = run_sa(metrics_df, baseline_ranks, fuzziness, vikor_v, rng, sa_cfg, start=start_vec)
+    sa_weights, sa_hist = run_sa(metrics_df, baseline_ranks, baseline_scores, weight_refs, fuzziness, vikor_v, objective_key, rng, sa_cfg, start=start_vec)
     # concatena historico
     history = pso_hist + sa_hist
     return sa_weights, history
@@ -388,6 +624,9 @@ def save_runs_table(runs: List[Dict], out_path: Path) -> None:
             "objective": r["objective"],
             "rho": r["rho"],
             "cr_proxy": r["cr"],
+            "score_delta": r.get("score_delta"),
+            "entropy_diff": r.get("entropy_diff"),
+            "critic_diff": r.get("critic_diff"),
         }
         row.update({f"w_{k}": v for k, v in r["weights"].items()})
         rows.append(row)
@@ -404,9 +643,11 @@ def main() -> None:
     parser.add_argument("--runs", type=int, default=30, help="Numero de execucoes por configuracao")
     parser.add_argument("--seed", type=int, default=123, help="Semente base")
     parser.add_argument("--out-dir", type=Path, default=Path("weight_optimization"), help="Diretorio de saida")
+    parser.add_argument("--objective", type=str, choices=OBJECTIVE_KEYS, default="entropy", help="Funcao objetivo (tabela do README)")
     args = parser.parse_args()
 
-    args.out_dir.mkdir(parents=True, exist_ok=True)
+    out_base = args.out_dir / args.objective
+    out_base.mkdir(parents=True, exist_ok=True)
     master_rng = np.random.default_rng(args.seed)
 
     # Grids de configuracao
@@ -449,14 +690,42 @@ def main() -> None:
     metrics_df = metrics_df.dropna(axis=1, how="all")
 
     base_result = compute_profile_results(metrics_df, profile_name="base", profile_weights=BASE_WEIGHTS, fuzziness=args.fuzziness, vikor_v=args.vikor_v)
-    baseline_ranks = base_result["fuzzy_topsis_rank"]
-    baseline_obj, baseline_cr, baseline_rho = evaluate(BASE_WEIGHTS, metrics_df, baseline_ranks, args.fuzziness, args.vikor_v)
+    baseline_ranks = {
+        "topsis": base_result["fuzzy_topsis_rank"],
+        "vikor": base_result["vikor_rank"],
+        "copras": base_result["copras_rank"],
+        "moora": base_result["moora_rank"],
+    }
+    baseline_scores = {
+        "topsis": base_result["fuzzy_topsis_score"],
+        "vikor": base_result["vikor_score"],
+        "copras": base_result["copras_score"],
+        "moora": base_result["moora_score"],
+    }
+    entropy_weights = compute_entropy_weights(metrics_df)
+    critic_weights = compute_critic_weights(metrics_df)
+    merec_weights = compute_merec_weights(metrics_df)
+    lopcow_weights = compute_lopcow_weights(metrics_df)
+    mean_weights = compute_mean_weights(metrics_df)
+    bayes_weights = compute_bayes_weights(BASE_WEIGHTS, entropy_weights)
+    weight_refs = {
+        "entropy": entropy_weights,
+        "critic": critic_weights,
+        "merec": merec_weights,
+        "lopcow": lopcow_weights,
+        "mean": mean_weights,
+        "bayes": bayes_weights,
+    }
+    baseline_eval = evaluate_multi(BASE_WEIGHTS, metrics_df, baseline_ranks, baseline_scores, args.fuzziness, args.vikor_v, weight_refs, args.objective)
+    baseline_obj = baseline_eval["objective"]
+    baseline_cr = baseline_eval["cr"]
+    baseline_rho = baseline_eval["rho_mean"]
 
     global_summary_rows = []
 
     def run_config(algo: str, config: Dict) -> None:
         cfg_name = config["name"]
-        cfg_dir = args.out_dir / algo / cfg_name
+        cfg_dir = out_base / algo / cfg_name
         cfg_dir.mkdir(parents=True, exist_ok=True)
 
         histories_all: Dict[str, List[List[float]]] = {algo: []}
@@ -469,32 +738,51 @@ def main() -> None:
             rng = np.random.default_rng(seed)
 
             if algo == "PSO":
-                weights, hist = run_pso(metrics_df, baseline_ranks, args.fuzziness, args.vikor_v, rng, config)
+                weights, hist = run_pso(metrics_df, baseline_ranks, baseline_scores, weight_refs, args.fuzziness, args.vikor_v, args.objective, rng, config)
             elif algo == "ABC":
-                weights, hist = run_abc(metrics_df, baseline_ranks, args.fuzziness, args.vikor_v, rng, config)
+                weights, hist = run_abc(metrics_df, baseline_ranks, baseline_scores, weight_refs, args.fuzziness, args.vikor_v, args.objective, rng, config)
             elif algo == "HC":
-                weights, hist = run_hc(metrics_df, baseline_ranks, args.fuzziness, args.vikor_v, rng, config)
+                weights, hist = run_hc(metrics_df, baseline_ranks, baseline_scores, weight_refs, args.fuzziness, args.vikor_v, args.objective, rng, config)
             elif algo == "SA":
-                weights, hist = run_sa(metrics_df, baseline_ranks, args.fuzziness, args.vikor_v, rng, config)
+                weights, hist = run_sa(metrics_df, baseline_ranks, baseline_scores, weight_refs, args.fuzziness, args.vikor_v, args.objective, rng, config)
             elif algo == "PSO_SA":
-                weights, hist = run_pso_sa_hybrid(metrics_df, baseline_ranks, args.fuzziness, args.vikor_v, rng, config)
+                weights, hist = run_pso_sa_hybrid(metrics_df, baseline_ranks, baseline_scores, weight_refs, args.fuzziness, args.vikor_v, args.objective, rng, config)
             elif algo == "HC_SA_PSO":
                 method = config.get("method")
                 if method == "HC":
-                    weights, hist = run_hc(metrics_df, baseline_ranks, args.fuzziness, args.vikor_v, rng, config)
+                    weights, hist = run_hc(metrics_df, baseline_ranks, baseline_scores, weight_refs, args.fuzziness, args.vikor_v, args.objective, rng, config)
                 elif method == "SA":
-                    weights, hist = run_sa(metrics_df, baseline_ranks, args.fuzziness, args.vikor_v, rng, config)
+                    weights, hist = run_sa(metrics_df, baseline_ranks, baseline_scores, weight_refs, args.fuzziness, args.vikor_v, args.objective, rng, config)
                 elif method == "PSO":
-                    weights, hist = run_pso(metrics_df, baseline_ranks, args.fuzziness, args.vikor_v, rng, config)
+                    weights, hist = run_pso(metrics_df, baseline_ranks, baseline_scores, weight_refs, args.fuzziness, args.vikor_v, args.objective, rng, config)
                 else:
                     raise ValueError(f"Metodo desconhecido em HC_SA_PSO: {method}")
             else:
                 raise ValueError(f"Algoritmo desconhecido: {algo}")
 
-            obj, cr, rho = evaluate(weights, metrics_df, baseline_ranks, args.fuzziness, args.vikor_v)
+            eval_res = evaluate_multi(weights, metrics_df, baseline_ranks, baseline_scores, args.fuzziness, args.vikor_v, weight_refs, args.objective)
+            obj = eval_res["objective"]
+            cr = eval_res["cr"]
+            rho = eval_res["rho_mean"]
             histories_all[algo].append(hist)
             objectives_all[algo].append(obj)
-            run_records.append({"seed": seed, "weights": weights, "objective": obj, "cr": cr, "rho": rho, "history": hist})
+            run_records.append(
+                {
+                    "seed": seed,
+                    "weights": weights,
+                    "objective": obj,
+                    "cr": cr,
+                    "rho": rho,
+                    "score_delta": eval_res["score_delta"],
+                    "entropy_diff": eval_res.get("entropy_diff"),
+                    "critic_diff": eval_res.get("critic_diff"),
+                    "merec_diff": eval_res.get("merec_diff"),
+                    "lopcow_diff": eval_res.get("lopcow_diff"),
+                    "mean_diff": eval_res.get("mean_diff"),
+                    "bayes_diff": eval_res.get("bayes_diff"),
+                    "history": hist,
+                }
+            )
 
         # salvar runs
         save_runs_table(run_records, cfg_dir / "runs.csv")
@@ -503,6 +791,13 @@ def main() -> None:
         objs = np.array([r["objective"] for r in run_records])
         rhos = np.array([r["rho"] for r in run_records])
         crs = np.array([r["cr"] for r in run_records])
+        sdelta = np.array([r.get("score_delta", np.nan) for r in run_records])
+        entd = np.array([r.get("entropy_diff", np.nan) for r in run_records])
+        crid = np.array([r.get("critic_diff", np.nan) for r in run_records])
+        merd = np.array([r.get("merec_diff", np.nan) for r in run_records])
+        lopd = np.array([r.get("lopcow_diff", np.nan) for r in run_records])
+        meand = np.array([r.get("mean_diff", np.nan) for r in run_records])
+        bayd = np.array([r.get("bayes_diff", np.nan) for r in run_records])
         best_idx = int(np.argmin(objs))
         best_weights = run_records[best_idx]["weights"]
         best_histories[algo] = run_records[best_idx]["history"]
@@ -510,6 +805,13 @@ def main() -> None:
             "objective": run_records[best_idx]["objective"],
             "rho": run_records[best_idx]["rho"],
             "cr": run_records[best_idx]["cr"],
+            "score_delta": run_records[best_idx].get("score_delta"),
+            "entropy_diff": run_records[best_idx].get("entropy_diff"),
+            "critic_diff": run_records[best_idx].get("critic_diff"),
+            "merec_diff": run_records[best_idx].get("merec_diff"),
+            "lopcow_diff": run_records[best_idx].get("lopcow_diff"),
+            "mean_diff": run_records[best_idx].get("mean_diff"),
+            "bayes_diff": run_records[best_idx].get("bayes_diff"),
             "seed": run_records[best_idx]["seed"],
         }
         t_stat, p_val = try_ttest(objs.tolist(), baseline_obj)
@@ -520,6 +822,14 @@ def main() -> None:
             "rho_std": float(rhos.std(ddof=0)),
             "cr_mean": float(crs.mean()),
             "cr_std": float(crs.std(ddof=0)),
+            "score_delta_mean": float(np.nanmean(sdelta)),
+            "score_delta_std": float(np.nanstd(sdelta)),
+            "entropy_diff_mean": float(np.nanmean(entd)),
+            "critic_diff_mean": float(np.nanmean(crid)),
+            "merec_diff_mean": float(np.nanmean(merd)),
+            "lopcow_diff_mean": float(np.nanmean(lopd)),
+            "mean_diff_mean": float(np.nanmean(meand)),
+            "bayes_diff_mean": float(np.nanmean(bayd)),
             "t_stat_vs_baseline": t_stat,
             "p_value_vs_baseline": p_val,
             "significant_vs_baseline": bool(p_val < 0.05),
@@ -550,6 +860,13 @@ def main() -> None:
                 "objective": improvements["objective"],
                 "rho": improvements["rho"],
                 "cr": improvements["cr"],
+                "score_delta": improvements.get("score_delta"),
+                "entropy_diff": improvements.get("entropy_diff"),
+                "critic_diff": improvements.get("critic_diff"),
+                "merec_diff": improvements.get("merec_diff"),
+                "lopcow_diff": improvements.get("lopcow_diff"),
+                "mean_diff": improvements.get("mean_diff"),
+                "bayes_diff": improvements.get("bayes_diff"),
                 "seed": improvements["seed"],
                 **{f"w_{k}": v for k, v in best_weights.items()},
                 "objective_mean": stats["objective_mean"],
@@ -567,18 +884,19 @@ def main() -> None:
     for cfg in pso_sa_grid:
         run_config("PSO_SA", cfg)
 
-    pd.DataFrame(global_summary_rows).to_csv(args.out_dir / "summary_global.csv", index=False, float_format="%.10f")
+    pd.DataFrame(global_summary_rows).to_csv(out_base / "summary_global.csv", index=False, float_format="%.10f")
 
     summary = {
         "source_csv": str(args.csv),
         "baseline_weights": BASE_WEIGHTS,
         "baseline_objective": baseline_obj,
+        "objective_key": args.objective,
         "grids": {"ABC": abc_grid, "HC_SA_PSO": kiz_grid, "PSO_SA": pso_sa_grid},
         "runs_per_config": args.runs,
         "seed_base": args.seed,
     }
-    (args.out_dir / "summary.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
-    print("Execucao completa. Resultados em", args.out_dir)
+    (out_base / "summary.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
+    print("Execucao completa. Resultados em", out_base)
 
 
 if __name__ == "__main__":

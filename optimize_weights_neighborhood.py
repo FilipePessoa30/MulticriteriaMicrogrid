@@ -34,8 +34,11 @@ from build_ahp_structure import DATA_PATH, aggregate_metrics_by_alternative, par
 
 
 BASE_WEIGHTS = {"cost": 0.40, "emissions": 0.30, "reliability": 0.20, "social": 0.10}
-ALPHA = 0.5
-BETAB = 0.5
+OBJECTIVE_KEYS = ["entropy", "merec", "lopcow", "critic", "mean", "bayes"]
+
+
+def cr_proxy(weights: Dict[str, float]) -> float:
+    return abs(sum(weights.values()) - 1.0)
 
 
 def normalize_weights(w: np.ndarray) -> Dict[str, float]:
@@ -61,12 +64,84 @@ def spearman_corr(rank_a: pd.Series, rank_b: pd.Series) -> float:
     return 1 - num / denom if denom else 0.0
 
 
-def evaluate(weights: Dict[str, float], metrics_df: pd.DataFrame, baseline_ranks: pd.Series, fuzziness: float, vikor_v: float) -> Tuple[float, float, float]:
-    cr = abs(sum(weights.values()) - 1.0)
-    res = compute_profile_results(metrics_df, profile_name="opt", profile_weights=weights, fuzziness=fuzziness, vikor_v=vikor_v)
-    rho = spearman_corr(res["fuzzy_topsis_rank"], baseline_ranks)
-    obj = ALPHA * cr + BETAB * (1 - rho)
-    return float(obj), float(cr), float(rho)
+def detect_directions_simple(columns: List[str]) -> Dict[str, str]:
+    directions: Dict[str, str] = {}
+    for col in columns:
+        low = col.lower()
+        if any(k in low for k in ["cost", "lcoe", "emission", "fossil", "tlcc"]):
+            directions[col] = "min"
+        elif "diesel_cost_share" in low:
+            directions[col] = "min"
+        elif "percent_load_target" in low:
+            directions[col] = "max"
+        else:
+            directions[col] = "max"
+    return directions
+
+
+def compute_merec_weights(metrics_df: pd.DataFrame) -> Dict[str, float]:
+    data = metrics_df.to_numpy(dtype=float)
+    m, n = data.shape
+    if m == 0 or n == 0:
+        return normalize_weights(np.ones(4))
+    directions = detect_directions_simple(metrics_df.columns.tolist())
+    norm = np.zeros_like(data, dtype=float)
+    for j, col in enumerate(metrics_df.columns):
+        col_data = data[:, j]
+        if directions.get(col, "max") == "max":
+            minv = np.nanmin(col_data)
+            denom = np.nanmax(col_data) - minv
+            denom = denom if denom != 0 else 1.0
+            norm[:, j] = (col_data - minv) / denom
+        else:
+            maxv = np.nanmax(col_data)
+            denom = maxv - np.nanmin(col_data)
+            denom = denom if denom != 0 else 1.0
+            norm[:, j] = (maxv - col_data) / denom
+    norm = np.clip(norm, 1e-12, None)
+    S = np.log(1 + np.sum(np.abs(np.log(norm)), axis=1))
+    E = np.zeros(n)
+    for j in range(n):
+        temp = np.delete(norm, j, axis=1)
+        S_prime = np.log(1 + np.sum(np.abs(np.log(temp)), axis=1))
+        E[j] = np.sum(np.abs(S - S_prime))
+    weights = E / np.clip(E.sum(), 1e-12, None)
+    return normalize_weights(weights)
+
+
+def compute_lopcow_weights(metrics_df: pd.DataFrame) -> Dict[str, float]:
+    data = metrics_df.to_numpy(dtype=float)
+    m, n = data.shape
+    if m == 0 or n == 0:
+        return normalize_weights(np.ones(4))
+    col_min = np.nanmin(data, axis=0)
+    col_max = np.nanmax(data, axis=0)
+    denom = (col_max - col_min)
+    denom[denom == 0] = 1.0
+    norm = (data - col_min) / denom
+    std = np.std(norm, axis=0, ddof=0)
+    pv = std * np.log1p(denom)
+    weights = pv / np.clip(pv.sum(), 1e-12, None)
+    return normalize_weights(weights)
+
+
+def compute_mean_weights(metrics_df: pd.DataFrame) -> Dict[str, float]:
+    n = metrics_df.shape[1]
+    if n == 0:
+        return normalize_weights(np.ones(4))
+    w = np.ones(n) / n
+    return normalize_weights(w)
+
+
+def compute_bayes_weights(base_w: Dict[str, float], obj_w: Dict[str, float]) -> Dict[str, float]:
+    keys = list(base_w.keys())
+    base_vec = np.array([base_w[k] for k in keys], dtype=float)
+    obj_vec = np.array([obj_w.get(k, 0.0) for k in keys], dtype=float)
+    combined = base_vec * obj_vec
+    if combined.sum() == 0:
+        combined = base_vec
+    combined = combined / combined.sum()
+    return dict(zip(keys, combined.tolist()))
 
 
 def random_weights(rng: np.random.Generator) -> Dict[str, float]:
@@ -84,11 +159,119 @@ def perturb(weights: Dict[str, float], rng: np.random.Generator, step: float, di
     return normalize_weights(w_vec + noise)
 
 
-def run_i2pls(metrics_df: pd.DataFrame, baseline_ranks: pd.Series, fuzziness: float, vikor_v: float, rng: np.random.Generator, config: Dict) -> Tuple[Dict[str, float], List[float]]:
+def compute_entropy_weights(metrics_df: pd.DataFrame) -> Dict[str, float]:
+    data = metrics_df.to_numpy(dtype=float)
+    col_min = np.nanmin(data, axis=0)
+    col_max = np.nanmax(data, axis=0)
+    denom = (col_max - col_min)
+    denom[denom == 0] = 1.0
+    norm = (data - col_min) / denom
+    prob = norm / np.clip(norm.sum(axis=0, keepdims=True), 1e-12, None)
+    prob[prob <= 0] = 1e-12
+    m = data.shape[0]
+    k = 1.0 / np.log(m) if m > 1 else 0.0
+    entropy = -k * np.sum(prob * np.log(prob), axis=0)
+    dj = 1 - entropy
+    weights = dj / np.clip(dj.sum(), 1e-12, None)
+    return normalize_weights(weights)
+
+
+def compute_critic_weights(metrics_df: pd.DataFrame) -> Dict[str, float]:
+    data = metrics_df.to_numpy(dtype=float)
+    col_min = np.nanmin(data, axis=0)
+    col_max = np.nanmax(data, axis=0)
+    denom = (col_max - col_min)
+    denom[denom == 0] = 1.0
+    norm = (data - col_min) / denom
+    std = np.std(norm, axis=0, ddof=0)
+    corr = np.corrcoef(norm, rowvar=False)
+    if np.isnan(corr).any():
+        corr = np.nan_to_num(corr, nan=0.0)
+    c_info = std * (1 - np.mean(corr, axis=0))
+    weights = c_info / np.clip(c_info.sum(), 1e-12, None)
+    return normalize_weights(weights)
+
+
+def evaluate_multi(
+    weights: Dict[str, float],
+    metrics_df: pd.DataFrame,
+    baseline_ranks: Dict[str, pd.Series],
+    baseline_scores: Dict[str, pd.Series],
+    fuzziness: float,
+    vikor_v: float,
+    weight_refs: Dict[str, Dict[str, float]],
+    objective_key: str,
+) -> Dict[str, float]:
+    cr = cr_proxy(weights)
+    res = compute_profile_results(metrics_df, profile_name="opt", profile_weights=weights, fuzziness=fuzziness, vikor_v=vikor_v)
+    rhos = []
+    for key, col in [
+        ("topsis", "fuzzy_topsis_rank"),
+        ("vikor", "vikor_rank"),
+        ("copras", "copras_rank"),
+        ("moora", "moora_rank"),
+    ]:
+        rhos.append(spearman_corr(res[col], baseline_ranks[key]))
+    rho_mean = float(np.mean(rhos))
+
+    deltas = []
+    for key, col in [
+        ("topsis", "fuzzy_topsis_score"),
+        ("vikor", "vikor_score"),
+        ("copras", "copras_score"),
+        ("moora", "moora_score"),
+    ]:
+        base = baseline_scores[key]
+        cur = res[col]
+        deltas.append(np.mean(np.abs(cur - base) / (np.abs(base) + 1e-9)))
+    score_delta = float(np.mean(deltas))
+
+    diffs = {}
+    for name, ref in weight_refs.items():
+        diffs[f"{name}_diff"] = float(np.mean(np.abs(np.array(list(weights.values())) - np.array(list(ref.values())))))
+
+    if objective_key not in weight_refs:
+        raise ValueError(f"Objetivo desconhecido: {objective_key}")
+    objective = diffs[f"{objective_key}_diff"]
+    return {
+        "objective": objective,
+        "cr": float(cr),
+        "rho_mean": rho_mean,
+        "score_delta": score_delta,
+        **diffs,
+        "res": res,
+    }
+
+
+def eval_objective(
+    weights: Dict[str, float],
+    metrics_df: pd.DataFrame,
+    baseline_ranks: Dict[str, pd.Series],
+    baseline_scores: Dict[str, pd.Series],
+    weight_refs: Dict[str, Dict[str, float]],
+    fuzziness: float,
+    vikor_v: float,
+    objective_key: str,
+) -> Dict[str, float]:
+    return evaluate_multi(weights, metrics_df, baseline_ranks, baseline_scores, fuzziness, vikor_v, weight_refs, objective_key=objective_key)
+
+
+def run_i2pls(
+    metrics_df: pd.DataFrame,
+    baseline_ranks: Dict[str, pd.Series],
+    baseline_scores: Dict[str, pd.Series],
+    weight_refs: Dict[str, Dict[str, float]],
+    fuzziness: float,
+    vikor_v: float,
+    rng: np.random.Generator,
+    config: Dict,
+    objective_key: str,
+) -> Tuple[Dict[str, float], List[float]]:
     """Iterated Two-Phase Local Search: VND+TS (explore) e perturbação por frequência (escape)."""
     current = random_weights(rng)
     best = current
-    best_obj, _, _ = evaluate(best, metrics_df, baseline_ranks, fuzziness, vikor_v)
+    best_eval = eval_objective(best, metrics_df, baseline_ranks, baseline_scores, weight_refs, fuzziness, vikor_v, objective_key)
+    best_obj = best_eval["objective"]
     history = [best_obj]
     freq = np.zeros(4)
     stall = 0
@@ -108,7 +291,8 @@ def run_i2pls(metrics_df: pd.DataFrame, baseline_ranks: pd.Series, fuzziness: fl
             for _ in range(6):
                 dims = [int(rng.integers(0, 4))]
                 cand = perturb(current, rng, step, dims=dims)
-                obj, _, _ = evaluate(cand, metrics_df, baseline_ranks, fuzziness, vikor_v)
+                cand_eval = eval_objective(cand, metrics_df, baseline_ranks, baseline_scores, weight_refs, fuzziness, vikor_v, objective_key)
+                obj = cand_eval["objective"]
                 history.append(obj)
                 freq[dims[0]] += 1
                 if obj < best_obj:
@@ -126,19 +310,20 @@ def run_i2pls(metrics_df: pd.DataFrame, baseline_ranks: pd.Series, fuzziness: fl
             tabu.append(key_cur)
         if len(tabu) > tabu_size:
             tabu.pop(0)
-        cand = perturb(current, rng, step_tabu)
-        key = tuple(round(v, 6) for v in cand.values())
-        tries = 0
-        while key in tabu and tries < 5:
             cand = perturb(current, rng, step_tabu)
             key = tuple(round(v, 6) for v in cand.values())
-            tries += 1
-        obj, _, _ = evaluate(cand, metrics_df, baseline_ranks, fuzziness, vikor_v)
-        history.append(obj)
-        if obj < best_obj:
-            best, best_obj = cand, obj
-            current = cand
-            improved = True
+            tries = 0
+            while key in tabu and tries < 5:
+                cand = perturb(current, rng, step_tabu)
+                key = tuple(round(v, 6) for v in cand.values())
+                tries += 1
+            cand_eval = eval_objective(cand, metrics_df, baseline_ranks, baseline_scores, weight_refs, fuzziness, vikor_v, objective_key)
+            obj = cand_eval["objective"]
+            history.append(obj)
+            if obj < best_obj:
+                best, best_obj = cand, obj
+                current = cand
+                improved = True
             stall = 0
         else:
             stall += 1
@@ -153,11 +338,22 @@ def run_i2pls(metrics_df: pd.DataFrame, baseline_ranks: pd.Series, fuzziness: fl
     return best, history
 
 
-def run_mts(metrics_df: pd.DataFrame, baseline_ranks: pd.Series, fuzziness: float, vikor_v: float, rng: np.random.Generator, config: Dict) -> Tuple[Dict[str, float], List[float]]:
+def run_mts(
+    metrics_df: pd.DataFrame,
+    baseline_ranks: Dict[str, pd.Series],
+    baseline_scores: Dict[str, pd.Series],
+    weight_refs: Dict[str, Dict[str, float]],
+    fuzziness: float,
+    vikor_v: float,
+    rng: np.random.Generator,
+    config: Dict,
+    objective_key: str,
+) -> Tuple[Dict[str, float], List[float]]:
     """Multi-Neighborhood Tabu Search com quatro passos de vizinhanca restritos."""
     current = random_weights(rng)
     best = current
-    best_obj, _, _ = evaluate(best, metrics_df, baseline_ranks, fuzziness, vikor_v)
+    best_eval = eval_objective(best, metrics_df, baseline_ranks, baseline_scores, weight_refs, fuzziness, vikor_v, objective_key)
+    best_obj = best_eval["objective"]
     history = [best_obj]
     tabu: List[Tuple[float, ...]] = []
     tabu_size = config.get("tabu_size", 25)
@@ -172,7 +368,8 @@ def run_mts(metrics_df: pd.DataFrame, baseline_ranks: pd.Series, fuzziness: floa
                 key = tuple(round(v, 6) for v in cand.values())
                 if key in tabu:
                     continue
-                obj, _, _ = evaluate(cand, metrics_df, baseline_ranks, fuzziness, vikor_v)
+                cand_eval = eval_objective(cand, metrics_df, baseline_ranks, baseline_scores, weight_refs, fuzziness, vikor_v, objective_key)
+                obj = cand_eval["objective"]
                 candidates.append((obj, cand, key))
                 history.append(obj)
         if not candidates:
@@ -189,11 +386,22 @@ def run_mts(metrics_df: pd.DataFrame, baseline_ranks: pd.Series, fuzziness: floa
     return best, history
 
 
-def run_wilb(metrics_df: pd.DataFrame, baseline_ranks: pd.Series, fuzziness: float, vikor_v: float, rng: np.random.Generator, config: Dict) -> Tuple[Dict[str, float], List[float]]:
+def run_wilb(
+    metrics_df: pd.DataFrame,
+    baseline_ranks: Dict[str, pd.Series],
+    baseline_scores: Dict[str, pd.Series],
+    weight_refs: Dict[str, Dict[str, float]],
+    fuzziness: float,
+    vikor_v: float,
+    rng: np.random.Generator,
+    config: Dict,
+    objective_key: str,
+) -> Tuple[Dict[str, float], List[float]]:
     """Weighted Iterated Local Branching simplificado com grupos de variaveis e deltas diferentes."""
     current = random_weights(rng)
     best = current
-    best_obj, _, _ = evaluate(best, metrics_df, baseline_ranks, fuzziness, vikor_v)
+    best_eval = eval_objective(best, metrics_df, baseline_ranks, baseline_scores, weight_refs, fuzziness, vikor_v, objective_key)
+    best_obj = best_eval["objective"]
     history = [best_obj]
     delta = config.get("delta", 0.05)
     delta_inc = config.get("delta_inc", 0.03)
@@ -211,7 +419,8 @@ def run_wilb(metrics_df: pd.DataFrame, baseline_ranks: pd.Series, fuzziness: flo
 
         # intensificacao: pequenos passos em g1/g2
         cand = perturb(current, rng, delta, dims=g1 + g2)
-        obj, _, _ = evaluate(cand, metrics_df, baseline_ranks, fuzziness, vikor_v)
+        cand_eval = eval_objective(cand, metrics_df, baseline_ranks, baseline_scores, weight_refs, fuzziness, vikor_v, objective_key)
+        obj = cand_eval["objective"]
         history.append(obj)
 
         if obj < best_obj:
@@ -223,7 +432,8 @@ def run_wilb(metrics_df: pd.DataFrame, baseline_ranks: pd.Series, fuzziness: flo
 
         # diversificacao leve: mexe em g3 com passo maior
         cand = perturb(current, rng, delta + 0.05, dims=g3 if g3 else None)
-        obj2, _, _ = evaluate(cand, metrics_df, baseline_ranks, fuzziness, vikor_v)
+        cand_eval2 = eval_objective(cand, metrics_df, baseline_ranks, baseline_scores, weight_refs, fuzziness, vikor_v, objective_key)
+        obj2 = cand_eval2["objective"]
         history.append(obj2)
         if obj2 < best_obj:
             best, best_obj = cand, obj2
@@ -237,7 +447,8 @@ def run_wilb(metrics_df: pd.DataFrame, baseline_ranks: pd.Series, fuzziness: flo
         # iteracao irregular opcional: forcar mudanca em g3
         if irreg and g3:
             cand = perturb(current, rng, delta + 0.08, dims=g3)
-            obj3, _, _ = evaluate(cand, metrics_df, baseline_ranks, fuzziness, vikor_v)
+            cand_eval3 = eval_objective(cand, metrics_df, baseline_ranks, baseline_scores, weight_refs, fuzziness, vikor_v, objective_key)
+            obj3 = cand_eval3["objective"]
             history.append(obj3)
             if obj3 < best_obj:
                 best, best_obj = cand, obj3
@@ -247,11 +458,22 @@ def run_wilb(metrics_df: pd.DataFrame, baseline_ranks: pd.Series, fuzziness: flo
     return best, history
 
 
-def run_ils_sa(metrics_df: pd.DataFrame, baseline_ranks: pd.Series, fuzziness: float, vikor_v: float, rng: np.random.Generator, config: Dict) -> Tuple[Dict[str, float], List[float]]:
+def run_ils_sa(
+    metrics_df: pd.DataFrame,
+    baseline_ranks: Dict[str, pd.Series],
+    baseline_scores: Dict[str, pd.Series],
+    weight_refs: Dict[str, Dict[str, float]],
+    fuzziness: float,
+    vikor_v: float,
+    rng: np.random.Generator,
+    config: Dict,
+    objective_key: str,
+) -> Tuple[Dict[str, float], List[float]]:
     """Iterated Local Search com aceitacao SA (ILS1/ILS2)."""
     current = random_weights(rng)
     best = current
-    best_obj, _, _ = evaluate(best, metrics_df, baseline_ranks, fuzziness, vikor_v)
+    best_eval = eval_objective(best, metrics_df, baseline_ranks, baseline_scores, weight_refs, fuzziness, vikor_v, objective_key)
+    best_obj = best_eval["objective"]
     history = [best_obj]
     temp = config.get("temp", 1.0)
     cooling = config.get("cooling", 0.97)
@@ -266,7 +488,8 @@ def run_ils_sa(metrics_df: pd.DataFrame, baseline_ranks: pd.Series, fuzziness: f
         candidates += [perturb(current, rng, step_large) for _ in range(2)]
         objs = []
         for cand in candidates:
-            obj, _, _ = evaluate(cand, metrics_df, baseline_ranks, fuzziness, vikor_v)
+            cand_eval = eval_objective(cand, metrics_df, baseline_ranks, baseline_scores, weight_refs, fuzziness, vikor_v, objective_key)
+            obj = cand_eval["objective"]
             objs.append((obj, cand))
             history.append(obj)
         objs.sort(key=lambda x: x[0])
@@ -285,11 +508,22 @@ def run_ils_sa(metrics_df: pd.DataFrame, baseline_ranks: pd.Series, fuzziness: f
     return best, history
 
 
-def run_lbh(metrics_df: pd.DataFrame, baseline_ranks: pd.Series, fuzziness: float, vikor_v: float, rng: np.random.Generator, config: Dict) -> Tuple[Dict[str, float], List[float]]:
+def run_lbh(
+    metrics_df: pd.DataFrame,
+    baseline_ranks: Dict[str, pd.Series],
+    baseline_scores: Dict[str, pd.Series],
+    weight_refs: Dict[str, Dict[str, float]],
+    fuzziness: float,
+    vikor_v: float,
+    rng: np.random.Generator,
+    config: Dict,
+    objective_key: str,
+) -> Tuple[Dict[str, float], List[float]]:
     """Local Branching Heuristic simplificado com raio (Lambda) adaptativo."""
     current = random_weights(rng)
     best = current
-    best_obj, _, _ = evaluate(best, metrics_df, baseline_ranks, fuzziness, vikor_v)
+    best_eval = eval_objective(best, metrics_df, baseline_ranks, baseline_scores, weight_refs, fuzziness, vikor_v, objective_key)
+    best_obj = best_eval["objective"]
     history = [best_obj]
     radius = config.get("radius", 0.08)
     base_radius = radius
@@ -297,7 +531,8 @@ def run_lbh(metrics_df: pd.DataFrame, baseline_ranks: pd.Series, fuzziness: floa
 
     for _ in range(max_iters):
         cand = perturb(current, rng, radius)
-        obj, _, _ = evaluate(cand, metrics_df, baseline_ranks, fuzziness, vikor_v)
+        cand_eval = eval_objective(cand, metrics_df, baseline_ranks, baseline_scores, weight_refs, fuzziness, vikor_v, objective_key)
+        obj = cand_eval["objective"]
         history.append(obj)
         if obj < best_obj:
             best, best_obj = cand, obj
@@ -309,19 +544,30 @@ def run_lbh(metrics_df: pd.DataFrame, baseline_ranks: pd.Series, fuzziness: floa
     return best, history
 
 
-def run_algo(name: str, config: Dict, metrics_df: pd.DataFrame, baseline_ranks: pd.Series, fuzziness: float, vikor_v: float, rng: np.random.Generator) -> Tuple[Dict[str, float], Dict]:
+def run_algo(
+    name: str,
+    config: Dict,
+    metrics_df: pd.DataFrame,
+    baseline_ranks: Dict[str, pd.Series],
+    baseline_scores: Dict[str, pd.Series],
+    weight_refs: Dict[str, Dict[str, float]],
+    fuzziness: float,
+    vikor_v: float,
+    rng: np.random.Generator,
+    objective_key: str,
+) -> Tuple[Dict[str, float], Dict]:
     if name == "I2PLS":
-        best, hist = run_i2pls(metrics_df, baseline_ranks, fuzziness, vikor_v, rng, config)
+        best, hist = run_i2pls(metrics_df, baseline_ranks, baseline_scores, weight_refs, fuzziness, vikor_v, rng, config, objective_key)
     elif name == "MTS":
-        best, hist = run_mts(metrics_df, baseline_ranks, fuzziness, vikor_v, rng, config)
+        best, hist = run_mts(metrics_df, baseline_ranks, baseline_scores, weight_refs, fuzziness, vikor_v, rng, config, objective_key)
     elif name == "WILB":
-        best, hist = run_wilb(metrics_df, baseline_ranks, fuzziness, vikor_v, rng, config)
+        best, hist = run_wilb(metrics_df, baseline_ranks, baseline_scores, weight_refs, fuzziness, vikor_v, rng, config, objective_key)
     elif name == "ILS":
-        best, hist = run_ils_sa(metrics_df, baseline_ranks, fuzziness, vikor_v, rng, config)
+        best, hist = run_ils_sa(metrics_df, baseline_ranks, baseline_scores, weight_refs, fuzziness, vikor_v, rng, config, objective_key)
     else:  # LBH
-        best, hist = run_lbh(metrics_df, baseline_ranks, fuzziness, vikor_v, rng, config)
-    obj, cr, rho = evaluate(best, metrics_df, baseline_ranks, fuzziness, vikor_v)
-    return best, {"objective": obj, "cr": cr, "rho": rho, "history": hist}
+        best, hist = run_lbh(metrics_df, baseline_ranks, baseline_scores, weight_refs, fuzziness, vikor_v, rng, config, objective_key)
+    eval_res = evaluate_multi(best, metrics_df, baseline_ranks, baseline_scores, fuzziness, vikor_v, weight_refs, objective_key)
+    return best, {"history": hist, **eval_res}
 
 
 def aggregate_histories(histories: List[List[float]]) -> Tuple[np.ndarray, np.ndarray]:
@@ -399,9 +645,11 @@ def main() -> None:
     parser.add_argument("--runs", type=int, default=30, help="Execucoes por configuracao")
     parser.add_argument("--seed", type=int, default=123, help="Semente base")
     parser.add_argument("--out-dir", type=Path, default=Path("neighborhood_results"), help="Diretorio de saida")
+    parser.add_argument("--objective", type=str, choices=OBJECTIVE_KEYS, default="entropy", help="Funcao objetivo (tabela do README)")
     args = parser.parse_args()
 
-    args.out_dir.mkdir(parents=True, exist_ok=True)
+    out_base = args.out_dir / args.objective
+    out_base.mkdir(parents=True, exist_ok=True)
     rng_master = np.random.default_rng(args.seed)
 
     price_map = parse_diesel_map(args.diesel_map)
@@ -411,8 +659,36 @@ def main() -> None:
     )
     metrics_df = metrics_df.dropna(axis=1, how="all")
     base_res = compute_profile_results(metrics_df, profile_name="base", profile_weights=BASE_WEIGHTS, fuzziness=args.fuzziness, vikor_v=args.vikor_v)
-    baseline_ranks = base_res["fuzzy_topsis_rank"]
-    baseline_obj, baseline_cr, baseline_rho = evaluate(BASE_WEIGHTS, metrics_df, baseline_ranks, args.fuzziness, args.vikor_v)
+    baseline_ranks = {
+        "topsis": base_res["fuzzy_topsis_rank"],
+        "vikor": base_res["vikor_rank"],
+        "copras": base_res["copras_rank"],
+        "moora": base_res["moora_rank"],
+    }
+    baseline_scores = {
+        "topsis": base_res["fuzzy_topsis_score"],
+        "vikor": base_res["vikor_score"],
+        "copras": base_res["copras_score"],
+        "moora": base_res["moora_score"],
+    }
+    entropy_w = compute_entropy_weights(metrics_df)
+    critic_w = compute_critic_weights(metrics_df)
+    merec_w = compute_merec_weights(metrics_df)
+    lopcow_w = compute_lopcow_weights(metrics_df)
+    mean_w = compute_mean_weights(metrics_df)
+    bayes_w = compute_bayes_weights(BASE_WEIGHTS, entropy_w)
+    weight_refs = {
+        "entropy": entropy_w,
+        "critic": critic_w,
+        "merec": merec_w,
+        "lopcow": lopcow_w,
+        "mean": mean_w,
+        "bayes": bayes_w,
+    }
+    baseline_eval = evaluate_multi(BASE_WEIGHTS, metrics_df, baseline_ranks, baseline_scores, args.fuzziness, args.vikor_v, weight_refs, args.objective)
+    baseline_obj = baseline_eval["objective"]
+    baseline_cr = baseline_eval["cr"]
+    baseline_rho = baseline_eval["rho_mean"]
 
     # grades de configuracoes (8 cada)
     i2pls_grid = [
@@ -497,7 +773,7 @@ def main() -> None:
     for algo, grid in grids.items():
         for cfg in grid:
             cfg_name = cfg["name"]
-            cfg_dir = args.out_dir / algo / cfg_name
+            cfg_dir = out_base / algo / cfg_name
             cfg_dir.mkdir(parents=True, exist_ok=True)
 
             records = []
@@ -508,12 +784,19 @@ def main() -> None:
             for _ in range(args.runs):
                 seed_run = int(rng_master.integers(0, 1_000_000_000))
                 rng = np.random.default_rng(seed_run)
-                best_w, info = run_algo(algo, cfg, metrics_df, baseline_ranks, args.fuzziness, args.vikor_v, rng)
+                best_w, info = run_algo(algo, cfg, metrics_df, baseline_ranks, baseline_scores, weight_refs, args.fuzziness, args.vikor_v, rng, args.objective)
                 record = {
                     "seed": seed_run,
                     "objective": info["objective"],
-                    "rho": info["rho"],
+                    "rho": info["rho_mean"],
                     "cr": info["cr"],
+                    "score_delta": info.get("score_delta"),
+                    "entropy_diff": info.get("entropy_diff"),
+                    "critic_diff": info.get("critic_diff"),
+                    "merec_diff": info.get("merec_diff"),
+                    "lopcow_diff": info.get("lopcow_diff"),
+                    "mean_diff": info.get("mean_diff"),
+                    "bayes_diff": info.get("bayes_diff"),
                     **{f"w_{k}": v for k, v in best_w.items()},
                 }
                 histories.append(info["history"])
@@ -529,6 +812,13 @@ def main() -> None:
             objs = df["objective"].values
             rhos = df["rho"].values
             crs = df["cr"].values
+            sdelta = df["score_delta"].values
+            entd = df["entropy_diff"].values
+            crid = df["critic_diff"].values
+            merd = df["merec_diff"].values
+            lopd = df["lopcow_diff"].values
+            meand = df["mean_diff"].values
+            bayd = df["bayes_diff"].values
             t_stat, p_val = try_ttest(objs.tolist(), baseline_obj)
             stats_row = {
                 "objective_mean": float(np.mean(objs)),
@@ -537,6 +827,14 @@ def main() -> None:
                 "rho_std": float(np.std(rhos, ddof=0)),
                 "cr_mean": float(np.mean(crs)),
                 "cr_std": float(np.std(crs, ddof=0)),
+                "score_delta_mean": float(np.mean(sdelta)),
+                "score_delta_std": float(np.std(sdelta, ddof=0)),
+                "entropy_diff_mean": float(np.mean(entd)),
+                "critic_diff_mean": float(np.mean(crid)),
+                "merec_diff_mean": float(np.mean(merd)),
+                "lopcow_diff_mean": float(np.mean(lopd)),
+                "mean_diff_mean": float(np.mean(meand)),
+                "bayes_diff_mean": float(np.mean(bayd)),
                 "t_stat_vs_baseline": t_stat,
                 "p_value_vs_baseline": p_val,
                 "significant_vs_baseline": bool(p_val < 0.05),
@@ -552,6 +850,13 @@ def main() -> None:
                 "objective": best_global["objective"],
                 "rho": best_global["rho"],
                 "cr": best_global["cr"],
+                "score_delta": best_global.get("score_delta"),
+                "entropy_diff": best_global.get("entropy_diff"),
+                "critic_diff": best_global.get("critic_diff"),
+                "merec_diff": best_global.get("merec_diff"),
+                "lopcow_diff": best_global.get("lopcow_diff"),
+                "mean_diff": best_global.get("mean_diff"),
+                "bayes_diff": best_global.get("bayes_diff"),
                 "seed": best_global["seed"],
             }
             pd.DataFrame([best_impr]).to_csv(cfg_dir / "best_improvements.csv", index=False, float_format="%.10f")
@@ -579,6 +884,13 @@ def main() -> None:
                     "objective_std": stats_row["objective_std"],
                     "rho_mean": stats_row["rho_mean"],
                     "cr_mean": stats_row["cr_mean"],
+                    "score_delta_mean": stats_row.get("score_delta_mean"),
+                    "entropy_diff_mean": stats_row.get("entropy_diff_mean"),
+                    "critic_diff_mean": stats_row.get("critic_diff_mean"),
+                    "merec_diff_mean": stats_row.get("merec_diff_mean"),
+                    "lopcow_diff_mean": stats_row.get("lopcow_diff_mean"),
+                    "mean_diff_mean": stats_row.get("mean_diff_mean"),
+                    "bayes_diff_mean": stats_row.get("bayes_diff_mean"),
                     "p_value_vs_baseline": p_val,
                     "significant_vs_baseline": stats_row["significant_vs_baseline"],
                     "better_than_baseline": stats_row["better_than_baseline"],
@@ -587,8 +899,8 @@ def main() -> None:
                 }
             )
 
-    pd.DataFrame(summary_global).to_csv(args.out_dir / "summary_global.csv", index=False, float_format="%.10f")
-    print("Concluido. Resultados em", args.out_dir)
+    pd.DataFrame(summary_global).to_csv(out_base / "summary_global.csv", index=False, float_format="%.10f")
+    print("Concluido. Resultados em", out_base)
 
 
 if __name__ == "__main__":

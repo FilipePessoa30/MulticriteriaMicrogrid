@@ -52,6 +52,19 @@ def normalize_weights(w: np.ndarray) -> Dict[str, float]:
     return dict(zip(keys, w.tolist()))
 
 
+def lexicographic_compare(obj_a: Tuple[float, float, float, float], obj_b: Tuple[float, float, float, float]) -> int:
+    """Compara dois objetivos multidimensionais lexicograficamente.
+    Retorna: -1 se a < b, 0 se a == b, 1 se a > b.
+    Menor é melhor (minimização).
+    """
+    for i in range(len(obj_a)):
+        if obj_a[i] < obj_b[i]:
+            return -1
+        elif obj_a[i] > obj_b[i]:
+            return 1
+    return 0
+
+
 def spearman_corr(rank_a: pd.Series, rank_b: pd.Series) -> float:
     a = rank_a.reindex(rank_b.index).astype(float).values
     b = rank_b.astype(float).values
@@ -232,9 +245,17 @@ def evaluate_multi(
 
     if objective_key not in weight_refs:
         raise ValueError(f"Objetivo desconhecido: {objective_key}")
-    objective = diffs[f"{objective_key}_diff"]
+    
+    # Objetivo multidimensional: tupla com diferenças individuais por critério
+    ref = weight_refs[objective_key]
+    w_vec = np.array([weights[k] for k in ["cost", "emissions", "reliability", "social"]])
+    ref_vec = np.array([ref[k] for k in ["cost", "emissions", "reliability", "social"]])
+    objective_tuple = tuple(np.abs(w_vec - ref_vec).tolist())
+    objective_scalar = float(np.mean(objective_tuple))  # mantém compatibilidade para logs
+    
     return {
-        "objective": objective,
+        "objective": objective_scalar,
+        "objective_tuple": objective_tuple,
         "cr": float(cr),
         "rho_mean": rho_mean,
         "score_delta": score_delta,
@@ -271,8 +292,8 @@ def run_i2pls(
     current = random_weights(rng)
     best = current
     best_eval = eval_objective(best, metrics_df, baseline_ranks, baseline_scores, weight_refs, fuzziness, vikor_v, objective_key)
-    best_obj = best_eval["objective"]
-    history = [best_obj]
+    best_obj = best_eval["objective_tuple"]
+    history = [best_eval["objective"]]
     freq = np.zeros(4)
     stall = 0
     stall_limit = config.get("stall_limit", 10)
@@ -292,10 +313,10 @@ def run_i2pls(
                 dims = [int(rng.integers(0, 4))]
                 cand = perturb(current, rng, step, dims=dims)
                 cand_eval = eval_objective(cand, metrics_df, baseline_ranks, baseline_scores, weight_refs, fuzziness, vikor_v, objective_key)
-                obj = cand_eval["objective"]
-                history.append(obj)
+                obj = cand_eval["objective_tuple"]
+                history.append(cand_eval["objective"])
                 freq[dims[0]] += 1
-                if obj < best_obj:
+                if lexicographic_compare(obj, best_obj) < 0:
                     best, best_obj = cand, obj
                     current = cand
                     improved = True
@@ -318,16 +339,16 @@ def run_i2pls(
                 key = tuple(round(v, 6) for v in cand.values())
                 tries += 1
             cand_eval = eval_objective(cand, metrics_df, baseline_ranks, baseline_scores, weight_refs, fuzziness, vikor_v, objective_key)
-            obj = cand_eval["objective"]
-            history.append(obj)
-            if obj < best_obj:
+            obj = cand_eval["objective_tuple"]
+            history.append(cand_eval["objective"])
+            if lexicographic_compare(obj, best_obj) < 0:
                 best, best_obj = cand, obj
                 current = cand
                 improved = True
             stall = 0
         else:
             stall += 1
-            current = cand if obj <= best_obj else current
+            current = cand if lexicographic_compare(obj, best_obj) <= 0 else current
 
         # Fase Escape por frequencia
         if stall >= stall_limit:
@@ -353,8 +374,8 @@ def run_mts(
     current = random_weights(rng)
     best = current
     best_eval = eval_objective(best, metrics_df, baseline_ranks, baseline_scores, weight_refs, fuzziness, vikor_v, objective_key)
-    best_obj = best_eval["objective"]
-    history = [best_obj]
+    best_obj = best_eval["objective_tuple"]
+    history = [best_eval["objective"]]
     tabu: List[Tuple[float, ...]] = []
     tabu_size = config.get("tabu_size", 25)
     steps = config.get("steps", [0.02, 0.05, 0.08, 0.12])  # Ne, Nr, Nc, NT
@@ -369,18 +390,18 @@ def run_mts(
                 if key in tabu:
                     continue
                 cand_eval = eval_objective(cand, metrics_df, baseline_ranks, baseline_scores, weight_refs, fuzziness, vikor_v, objective_key)
-                obj = cand_eval["objective"]
+                obj = cand_eval["objective_tuple"]
                 candidates.append((obj, cand, key))
-                history.append(obj)
+                history.append(cand_eval["objective"])
         if not candidates:
             continue
-        candidates.sort(key=lambda x: x[0])
+        candidates.sort(key=lambda x: (x[0][0], x[0][1], x[0][2], x[0][3]))  # ordenação lexicográfica
         obj, cand, key = candidates[0]
         tabu.append(key)
         if len(tabu) > tabu_size:
             tabu.pop(0)
         current = cand
-        if obj < best_obj:
+        if lexicographic_compare(obj, best_obj) < 0:
             best, best_obj = cand, obj
 
     return best, history
@@ -401,8 +422,8 @@ def run_wilb(
     current = random_weights(rng)
     best = current
     best_eval = eval_objective(best, metrics_df, baseline_ranks, baseline_scores, weight_refs, fuzziness, vikor_v, objective_key)
-    best_obj = best_eval["objective"]
-    history = [best_obj]
+    best_obj = best_eval["objective_tuple"]
+    history = [best_eval["objective"]]
     delta = config.get("delta", 0.05)
     delta_inc = config.get("delta_inc", 0.03)
     irreg = False
@@ -420,10 +441,10 @@ def run_wilb(
         # intensificacao: pequenos passos em g1/g2
         cand = perturb(current, rng, delta, dims=g1 + g2)
         cand_eval = eval_objective(cand, metrics_df, baseline_ranks, baseline_scores, weight_refs, fuzziness, vikor_v, objective_key)
-        obj = cand_eval["objective"]
-        history.append(obj)
+        obj = cand_eval["objective_tuple"]
+        history.append(cand_eval["objective"])
 
-        if obj < best_obj:
+        if lexicographic_compare(obj, best_obj) < 0:
             best, best_obj = cand, obj
             current = cand
             irreg = False
@@ -433,9 +454,9 @@ def run_wilb(
         # diversificacao leve: mexe em g3 com passo maior
         cand = perturb(current, rng, delta + 0.05, dims=g3 if g3 else None)
         cand_eval2 = eval_objective(cand, metrics_df, baseline_ranks, baseline_scores, weight_refs, fuzziness, vikor_v, objective_key)
-        obj2 = cand_eval2["objective"]
-        history.append(obj2)
-        if obj2 < best_obj:
+        obj2 = cand_eval2["objective_tuple"]
+        history.append(cand_eval2["objective"])
+        if lexicographic_compare(obj2, best_obj) < 0:
             best, best_obj = cand, obj2
             current = cand
             irreg = False
@@ -448,9 +469,9 @@ def run_wilb(
         if irreg and g3:
             cand = perturb(current, rng, delta + 0.08, dims=g3)
             cand_eval3 = eval_objective(cand, metrics_df, baseline_ranks, baseline_scores, weight_refs, fuzziness, vikor_v, objective_key)
-            obj3 = cand_eval3["objective"]
-            history.append(obj3)
-            if obj3 < best_obj:
+            obj3 = cand_eval3["objective_tuple"]
+            history.append(cand_eval3["objective"])
+            if lexicographic_compare(obj3, best_obj) < 0:
                 best, best_obj = cand, obj3
                 current = cand
                 delta = max(0.02, delta - 0.01)
@@ -473,8 +494,8 @@ def run_ils_sa(
     current = random_weights(rng)
     best = current
     best_eval = eval_objective(best, metrics_df, baseline_ranks, baseline_scores, weight_refs, fuzziness, vikor_v, objective_key)
-    best_obj = best_eval["objective"]
-    history = [best_obj]
+    best_obj = best_eval["objective_tuple"]
+    history = [best_eval["objective"]]
     temp = config.get("temp", 1.0)
     cooling = config.get("cooling", 0.97)
     step_small = config.get("step_small", 0.03)
@@ -489,18 +510,18 @@ def run_ils_sa(
         objs = []
         for cand in candidates:
             cand_eval = eval_objective(cand, metrics_df, baseline_ranks, baseline_scores, weight_refs, fuzziness, vikor_v, objective_key)
-            obj = cand_eval["objective"]
+            obj = cand_eval["objective_tuple"]
             objs.append((obj, cand))
-            history.append(obj)
-        objs.sort(key=lambda x: x[0])
+            history.append(cand_eval["objective"])
+        objs.sort(key=lambda x: (x[0][0], x[0][1], x[0][2], x[0][3]))  # ordenação lexicográfica
         best_neighbor_obj, best_neighbor = objs[0]
 
-        if best_neighbor_obj < best_obj:
+        if lexicographic_compare(best_neighbor_obj, best_obj) < 0:
             current = best_neighbor
             best = best_neighbor
             best_obj = best_neighbor_obj
         else:
-            delta = best_neighbor_obj - best_obj
+            delta = float(np.mean(best_neighbor_obj)) - float(np.mean(best_obj))
             if rng.random() < np.exp(-delta / max(temp, 1e-6)):
                 current = best_neighbor
         temp *= cooling
@@ -523,8 +544,8 @@ def run_lbh(
     current = random_weights(rng)
     best = current
     best_eval = eval_objective(best, metrics_df, baseline_ranks, baseline_scores, weight_refs, fuzziness, vikor_v, objective_key)
-    best_obj = best_eval["objective"]
-    history = [best_obj]
+    best_obj = best_eval["objective_tuple"]
+    history = [best_eval["objective"]]
     radius = config.get("radius", 0.08)
     base_radius = radius
     max_iters = config.get("iters", 80)
@@ -532,9 +553,9 @@ def run_lbh(
     for _ in range(max_iters):
         cand = perturb(current, rng, radius)
         cand_eval = eval_objective(cand, metrics_df, baseline_ranks, baseline_scores, weight_refs, fuzziness, vikor_v, objective_key)
-        obj = cand_eval["objective"]
-        history.append(obj)
-        if obj < best_obj:
+        obj = cand_eval["objective_tuple"]
+        history.append(cand_eval["objective"])
+        if lexicographic_compare(obj, best_obj) < 0:
             best, best_obj = cand, obj
             current = cand
             radius = base_radius  # intensificacao

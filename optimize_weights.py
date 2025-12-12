@@ -105,6 +105,19 @@ def normalize_weights(w: np.ndarray) -> Dict[str, float]:
     return dict(zip(keys, w.tolist()))
 
 
+def lexicographic_compare(obj_a: Tuple[float, float, float, float], obj_b: Tuple[float, float, float, float]) -> int:
+    """Compara dois objetivos multidimensionais lexicograficamente.
+    Retorna: -1 se a < b, 0 se a == b, 1 se a > b.
+    Menor é melhor (minimização).
+    """
+    for i in range(len(obj_a)):
+        if obj_a[i] < obj_b[i]:
+            return -1
+        elif obj_a[i] > obj_b[i]:
+            return 1
+    return 0
+
+
 def evaluate_multi(
     weights: Dict[str, float],
     metrics_df: pd.DataFrame,
@@ -146,9 +159,17 @@ def evaluate_multi(
 
     if objective_key not in weight_refs:
         raise ValueError(f"Objetivo desconhecido: {objective_key}")
-    objective = diffs[f"{objective_key}_diff"]
+    
+    # Objetivo multidimensional: tupla com diferenças individuais por critério
+    ref = weight_refs[objective_key]
+    w_vec = np.array([weights[k] for k in ["cost", "emissions", "reliability", "social"]])
+    ref_vec = np.array([ref[k] for k in ["cost", "emissions", "reliability", "social"]])
+    objective_tuple = tuple(np.abs(w_vec - ref_vec).tolist())
+    objective_scalar = float(np.mean(objective_tuple))  # mantém compatibilidade para logs
+    
     return {
-        "objective": objective,
+        "objective": objective_scalar,
+        "objective_tuple": objective_tuple,
         "cr": float(cr),
         "rho_mean": rho_mean,
         "score_delta": score_delta,
@@ -276,10 +297,10 @@ def evaluate_objective_value(
     fuzziness: float,
     vikor_v: float,
     objective_key: str,
-) -> Tuple[float, float, float]:
-    """Retorna (objetivo, cr, rho_mean) usando a funcao objetivo escolhida."""
+) -> Tuple[Tuple[float, float, float, float], float, float]:
+    """Retorna (objetivo_tuple, cr, rho_mean) usando ordenação lexicográfica."""
     res = evaluate_multi(weights, metrics_df, baseline_ranks, baseline_scores, fuzziness, vikor_v, weight_refs, objective_key)
-    return res["objective"], res["cr"], res["rho_mean"]
+    return res["objective_tuple"], res["cr"], res["rho_mean"]
 
 
 def mutate(vec: np.ndarray, rng: np.random.Generator, rate: float = 0.1) -> np.ndarray:
@@ -309,19 +330,19 @@ def run_pso(
     positions = rng.dirichlet(np.ones(dim), size=particles)
     velocities = np.zeros_like(positions)
     pbest = positions.copy()
-    pbest_scores = np.full(particles, np.inf)
+    pbest_scores = [(np.inf, np.inf, np.inf, np.inf) for _ in range(particles)]
     gbest = positions[0]
-    gbest_score = np.inf
+    gbest_score = (np.inf, np.inf, np.inf, np.inf)
     history = []
 
     for _ in range(iterations):
         for i in range(particles):
             weights = normalize_weights(positions[i])
             obj, _, _ = evaluate_objective_value(weights, metrics_df, baseline_ranks, baseline_scores, weight_refs, fuzziness, vikor_v, objective_key)
-            if obj < pbest_scores[i]:
+            if lexicographic_compare(obj, pbest_scores[i]) < 0:
                 pbest_scores[i] = obj
                 pbest[i] = positions[i].copy()
-            if obj < gbest_score:
+            if lexicographic_compare(obj, gbest_score) < 0:
                 gbest_score = obj
                 gbest = positions[i].copy()
 
@@ -330,7 +351,7 @@ def run_pso(
         positions = positions + velocities
         positions = np.clip(positions, 1e-9, None)
         positions = positions / positions.sum(axis=1, keepdims=True)
-        history.append(gbest_score)
+        history.append(float(np.mean(gbest_score)))  # para visualização
 
     return normalize_weights(gbest), history
 
@@ -394,22 +415,24 @@ def run_sa(
     current_obj, _, _ = evaluate_objective_value(current_w, metrics_df, baseline_ranks, baseline_scores, weight_refs, fuzziness, vikor_v, objective_key)
     best = current.copy()
     best_obj = current_obj
-    history = [best_obj]
+    history = [float(np.mean(best_obj))]
 
     for _ in range(steps):
         neighbor = mutate(current, rng, rate=neighbor_rate)
         neigh_w = normalize_weights(neighbor)
         neigh_obj, _, _ = evaluate_objective_value(neigh_w, metrics_df, baseline_ranks, baseline_scores, weight_refs, fuzziness, vikor_v, objective_key)
 
-        if neigh_obj < current_obj or rng.random() < np.exp(-(neigh_obj - current_obj) / max(temp, 1e-6)):
+        cmp = lexicographic_compare(neigh_obj, current_obj)
+        delta = float(np.mean(neigh_obj)) - float(np.mean(current_obj))
+        if cmp < 0 or rng.random() < np.exp(-delta / max(temp, 1e-6)):
             current = neighbor
             current_obj = neigh_obj
 
-        if neigh_obj < best_obj:
+        if lexicographic_compare(neigh_obj, best_obj) < 0:
             best = neighbor
             best_obj = neigh_obj
 
-        history.append(best_obj)
+        history.append(float(np.mean(best_obj)))
         temp *= cooling
 
     return normalize_weights(best), history
@@ -434,13 +457,13 @@ def run_abc(
 
     positions = rng.dirichlet(np.ones(dim), size=foods)
     trials = np.zeros(foods, dtype=int)
-    objs = np.zeros(foods)
+    objs = [(np.inf, np.inf, np.inf, np.inf) for _ in range(foods)]
     fits = np.zeros(foods)
 
-    def eval_source(vec: np.ndarray) -> Tuple[float, float]:
+    def eval_source(vec: np.ndarray) -> Tuple[Tuple[float, float, float, float], float]:
         w = normalize_weights(vec)
         obj, _, _ = evaluate_objective_value(w, metrics_df, baseline_ranks, baseline_scores, weight_refs, fuzziness, vikor_v, objective_key)
-        fitness = 1.0 / (obj + 1e-12)
+        fitness = 1.0 / (float(np.mean(obj)) + 1e-12)
         return obj, fitness
 
     for i in range(foods):
@@ -448,10 +471,13 @@ def run_abc(
         objs[i] = obj
         fits[i] = fit
 
-    best_idx = int(np.argmin(objs))
+    best_idx = 0
+    for i in range(1, foods):
+        if lexicographic_compare(objs[i], objs[best_idx]) < 0:
+            best_idx = i
     best_vec = positions[best_idx].copy()
     best_obj = objs[best_idx]
-    history: List[float] = [best_obj]
+    history: List[float] = [float(np.mean(best_obj))]
 
     def mutate_neighbor(i: int) -> np.ndarray:
         k = int(rng.integers(0, foods))
@@ -470,7 +496,7 @@ def run_abc(
         for i in range(foods):
             cand = mutate_neighbor(i)
             cand_obj, cand_fit = eval_source(cand)
-            if cand_obj < objs[i]:
+            if lexicographic_compare(cand_obj, objs[i]) < 0:
                 positions[i] = cand
                 objs[i] = cand_obj
                 fits[i] = cand_fit
@@ -484,7 +510,7 @@ def run_abc(
             i = int(rng.choice(foods, p=prob))
             cand = mutate_neighbor(i)
             cand_obj, cand_fit = eval_source(cand)
-            if cand_obj < objs[i]:
+            if lexicographic_compare(cand_obj, objs[i]) < 0:
                 positions[i] = cand
                 objs[i] = cand_obj
                 fits[i] = cand_fit
@@ -499,11 +525,14 @@ def run_abc(
                 objs[i], fits[i] = eval_source(positions[i])
                 trials[i] = 0
 
-        best_idx = int(np.argmin(objs))
-        if objs[best_idx] < best_obj:
+        best_idx = 0
+        for i in range(1, foods):
+            if lexicographic_compare(objs[i], objs[best_idx]) < 0:
+                best_idx = i
+        if lexicographic_compare(objs[best_idx], best_obj) < 0:
             best_obj = objs[best_idx]
             best_vec = positions[best_idx].copy()
-        history.append(best_obj)
+        history.append(float(np.mean(best_obj)))
 
     return normalize_weights(best_vec), history
 
@@ -761,7 +790,8 @@ def main() -> None:
                 raise ValueError(f"Algoritmo desconhecido: {algo}")
 
             eval_res = evaluate_multi(weights, metrics_df, baseline_ranks, baseline_scores, args.fuzziness, args.vikor_v, weight_refs, args.objective)
-            obj = eval_res["objective"]
+            obj = eval_res["objective"]  # escalar para salvar
+            obj_tuple = eval_res["objective_tuple"]  # tupla para comparações
             cr = eval_res["cr"]
             rho = eval_res["rho_mean"]
             histories_all[algo].append(hist)

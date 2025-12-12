@@ -34,7 +34,7 @@ from build_ahp_structure import DATA_PATH, aggregate_metrics_by_alternative, par
 BASE_WEIGHTS = {"cost": 0.6923, "emissions": 0.3328, "reliability": 0.3492, "social": 0.3351}
 
 # Objetivos suportados (tabela do README)
-OBJECTIVE_KEYS = ["entropy", "merec", "lopcow", "critic", "mean", "bayes"]
+OBJECTIVE_KEYS = ["entropy", "critic", "bayes"]
 
 
 def detect_directions_simple(columns: List[str]) -> Dict[str, str]:

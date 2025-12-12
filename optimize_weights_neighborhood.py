@@ -33,8 +33,8 @@ from apply_mcdm_profiles import compute_profile_results
 from build_ahp_structure import DATA_PATH, aggregate_metrics_by_alternative, parse_diesel_map
 
 
-BASE_WEIGHTS = {"cost": 0.40, "emissions": 0.30, "reliability": 0.20, "social": 0.10}
-OBJECTIVE_KEYS = ["entropy", "merec", "lopcow", "critic", "mean", "bayes"]
+BASE_WEIGHTS = {"cost": 0.6923, "emissions": 0.3328, "reliability": 0.3492, "social": 0.3351}
+OBJECTIVE_KEYS = ["entropy", "critic", "bayes"]
 
 
 def cr_proxy(weights: Dict[str, float]) -> float:

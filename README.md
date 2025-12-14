@@ -93,6 +93,10 @@ Funcao objetivo exemplo: Min f(W) = alpha _ CR(W) + beta _ (1 - rho(W)), alpha =
 | CRITIC             | Combinar variancia (sigma_j) e nao-redundancia (1 - r_ij) para definir importancia.                | C_j = sigma_j * (1 - sum r_ij); pesos normalizados de C_j.               | Integration of objective weighting methods for criteria and MCDM methods: application in material selection |
 | Bayes / IDOCRIW    | Integrar pesos de metodos distintos como variaveis aleatorias (media geometrica ponderada).        | alpha_j = sum(omega_j * W_j) / sum(omega_j * W_j).                       | The Recalculation of the Weights of Criteria in MCDM Methods Using the Bayes Approach                       |
 
+### Como escolher o objetivo na linha de comando
+- Cada execucao usa apenas uma funcao objetivo via `--objective {entropy|critic|bayes}`.
+- Para testar todas, rode o script tres vezes mudando o valor de `--objective`.
+
 ## Validacao da abordagem lexicografica
 
 | Conceito Implementado     | Validacao na Literatura                                                                                                                            | Fonte                 |
@@ -111,16 +115,16 @@ Funcao objetivo exemplo: Min f(W) = alpha _ CR(W) + beta _ (1 - rho(W)), alpha =
 | COPRAS       | Deterministico | Matriz normalizada proporcional     | Estavel e simples      | Validacao e robustez                        | Radulescu & Radulescu, 2024 |
 | MOORA        | Deterministico | Razao normalizada (beneficio/custo) | Simples e eficiente    | Referencia base e consistencia              | Singh & Pathak, 2024        |
 
-## Metricas de avaliacao
+## Metricas de avaliacao (implementadas)
 
-| Metrica                        | Usada em MCDM? | Base                       | Referencias                     |
-| ------------------------------ | -------------- | -------------------------- | ------------------------------- |
-| Robustez de ranking            | Sim            | Consistencia entre metodos | McPhail 2018; Fernandez 2001    |
-| Regret / Utility               | Sim            | Minimiza arrependimento    | Ning & You 2018; Groetzner 2022 |
-| Dominancia / Pareto            | Sim            | Eficiencia multiobjetivo   | Saif 2014; Lagaros 2007         |
-| Consistencia (CR AHP)          | Sim            | Validacao de pesos AHP     | Mufazzal 2021                   |
-| Estabilidade a ruido / cenario | Sim            | Robustez a incerteza       | Kim 2015; Li 2018               |
-| Validacao cruzada temporal     | Sim            | Generalizacao de decisao   | Ning & You 2018                 |
+| Metrica                        | Descricao no evaluate_mcdm_quality.py                         | Referencias                     |
+| ------------------------------ | -------------------------------------------------------------- | ------------------------------- |
+| Robustez de ranking            | Spearman medio entre ranks (TOPSIS/VIKOR/COPRAS/MOORA)        | McPhail 2018; Fernandez 2001    |
+| Regret / Utility               | Regret por metodo: TOPSIS, VIKOR, COPRAS, MOORA               | Ning & You 2018; Groetzner 2022 |
+| Dominancia / Pareto            | Checa se o vencedor TOPSIS esta na fronteira Pareto           | Saif 2014; Lagaros 2007         |
+| Consistencia (proxy)           | |sum(w) - 1| como proxy de consistencia                       | Mufazzal 2021 (CR como referencia) |
+| Estabilidade a ruido / cenario | Win-rate e variacao de rank com ruido 2%                      | Kim 2015; Li 2018               |
+| Validacao cruzada (ruido)      | Segunda rodada de ruido 5% para robustez adicional            | Ning & You 2018                 |
 
 ## Ferramentas
 
@@ -157,6 +161,7 @@ Funcao objetivo exemplo: Min f(W) = alpha _ CR(W) + beta _ (1 - rho(W)), alpha =
     --out-dir ahp_mcdm_results
   ```
 - (Etapa 4) `optimize_weights.py`: metaheuristicas geneticas (ABC; HC/SA/PSO; PSO-SA hibrido), 8 configs cada, multiplas execucoes.
+  - Use `--objective {entropy|critic|bayes}`; cada execucao usa um objetivo. Para varrer todos, rode 3 vezes mudando o valor.
   ```powershell
   python optimize_weights.py `
     --csv dados_preprocessados\reopt_ALL_blocks_v3_8.csv `
@@ -164,11 +169,13 @@ Funcao objetivo exemplo: Min f(W) = alpha _ CR(W) + beta _ (1 - rho(W)), alpha =
     --diesel-map "Accra:0.95,Lusaka:1.16,Lodwar:0.85" `
     --fuzziness 0.01 `
     --vikor-v 0.5 `
+    --objective entropy `
     --runs 30 `
     --seed 2024 `
     --out-dir weight_optimization
   ```
 - (Etapa 4) `optimize_weights_neighborhood.py`: metaheuristicas de vizinhanca (I2PLS, MTS, WILB, ILS, LBH), 8 configs cada, multiplas execucoes.
+  - Use `--objective {entropy|critic|bayes}`; cada execucao usa um objetivo. Para varrer todos, rode 3 vezes mudando o valor.
   ```powershell
   python optimize_weights_neighborhood.py `
     --csv dados_preprocessados\reopt_ALL_blocks_v3_8.csv `
@@ -176,6 +183,7 @@ Funcao objetivo exemplo: Min f(W) = alpha _ CR(W) + beta _ (1 - rho(W)), alpha =
     --diesel-map "Accra:0.95,Lusaka:1.16,Lodwar:0.85" `
     --fuzziness 0.01 `
     --vikor-v 0.5 `
+    --objective entropy `
     --runs 30 `
     --seed 2024 `
     --out-dir neighborhood_results
@@ -201,26 +209,35 @@ Funcao objetivo exemplo: Min f(W) = alpha _ CR(W) + beta _ (1 - rho(W)), alpha =
     --vikor-v 0.5 `
     --out-dir optimized_mcdm_results
   ```
+## Top 5 Genetic (from bayes objective runs)
+| Label                       | Objective | cost    | emissions | reliability | social   |
+| --------------------------- | --------- | ------- | --------- | ----------- | -------- |
+| bayes_HC_SA_PSO_kiz_sa_1    | bayes     | 0.4630  | 0.2254    | 0.1684      | 0.1428   |
+| bayes_ABC_abc_7             | bayes     | 0.4628  | 0.2288    | 0.1658      | 0.1426   |
+| bayes_HC_SA_PSO_kiz_sa_3    | bayes     | 0.4632  | 0.2279    | 0.1701      | 0.1388   |
+| bayes_ABC_abc_8             | bayes     | 0.4628  | 0.2408    | 0.1543      | 0.1421   |
+| bayes_ABC_abc_3             | bayes     | 0.4628  | 0.2218    | 0.1420      | 0.1733   |
 
-## Resultados de otimizacao (regret)
+## Top 5 Neighborhood (ranked by evaluation score; with objective)
+| Label          | Objective | cost    | emissions | reliability | social   |
+| -------------- | --------- | ------- | --------- | ----------- | -------- |
+| runs_lbh_3_22  | critic    | 0.1679  | 0.0114    | 0.8206      | 0.0000   |
+| runs_mts_2_17  | entropy   | 0.1825  | 0.0100    | 0.4417      | 0.3658   |
+| runs_lbh_8_15  | entropy   | 0.1811  | 0.0086    | 0.3340      | 0.4763   |
+| runs_i2pls_7_13| entropy   | 0.1826  | 0.0090    | 0.3128      | 0.4956   |
+| runs_lbh_8_23  | entropy   | 0.1908  | 0.0155    | 0.7936      | 0.0000   |
 
-- Baseline: regret = 0.4163999763 (w: 0.6923/0.3328/0.3492/0.3351).
-- Melhores por metaheuristica (execucoes `runs_*.csv`):
-  - VNS: 0.1214687459 (0.3206608381 / 0.0000000000 / 0.1560573560 / 0.5232818060).
-  - Tabu: 0.1348949419 (0.5763681853 / 0.0048817464 / 0.2765960002 / 0.1421540680).
-  - ILS: 0.2004044126 (0.3074530348 / 0.0181989677 / 0.2041180049 / 0.4702299925).
-  - Hybrid: 0.2343004034 (0.3337491064 / 0.0312942730 / 0.1355886034 / 0.4993680173).
+## Scripts (flow)
+- extract_load_profiles.py — prepare load profiles.
+- extrair_tudo_reopt.py — fetch/aggregate ReOpt results.
+- build_ahp_structure.py — aggregate metrics and build AHP baseline.
+- apply_mcdm_profiles.py — run baseline MCDM.
+- optimize_weights.py — genetic metaheuristics.
+- optimize_weights_neighborhood.py — neighborhood metaheuristics.
+- evaluate_mcdm_quality.py — evaluate all weights (auto or explicit).
+- apply_optimized_weights.py — apply best/selected weights and save MCDM outputs.
 
-## Resultados MCDM (baseline x otimizados)
-
-- Baseline (perfis):
-  - Economico: C2 liderou Fuzzy-TOPSIS, COPRAS e MOORA; VIKOR elegeu C3 (C2 em 2o).
-  - Sustentavel, Resiliente, Social: C2 em 1o nos quatro metodos.
-- Otimizados (VNS_best, Tabu_best, ILS_best, Hybrid_best): C2 em 1o nos quatro metodos (Fuzzy-TOPSIS, VIKOR, COPRAS, MOORA) em todos os conjuntos.
-- Arquivos: baseline em `ahp_mcdm_results/`, otimizados em `optimized_mcdm_results/`.
-
-## Conclusao
-
-- Parte de pesos validados (AHP), otimiza via PSO/GA/SA e vizinhanca, e compara em quatro metodos MCDM.
-- Vencedor consistente: C2 (PV + Battery) na maioria dos casos; unica divergencia: baseline economico no VIKOR (C3).
-- Modelo transparente, robusto e reprodutivel para decisao multicriterio em microgrids renovaveis.
+## Conclusion (results)
+- Genetic (bayes objective) top weights cluster around ~0.46 cost, ~0.22 emissions, with balanced reliability/social, always yielding C2 as TOPSIS winner.
+- Neighborhood bests (critic/entropy) include more extreme allocations (e.g., heavy reliability or social) but also converge on C2.
+- All optimized sets agree on C2 as the preferred alternative; differences reflect how trade-offs are distributed across reliability vs. social vs. emissions.

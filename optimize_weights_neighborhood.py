@@ -522,8 +522,14 @@ def run_ils_sa(
             best_obj = best_neighbor_obj
         else:
             delta = float(np.mean(best_neighbor_obj)) - float(np.mean(best_obj))
-            if rng.random() < np.exp(-delta / max(temp, 1e-6)):
+            if delta <= 0:
                 current = best_neighbor
+            else:
+                # evita overflow em exp quando delta/temp fica muito grande
+                exponent = -delta / max(temp, 1e-6)
+                exponent = min(exponent, 50.0)
+                if rng.random() < np.exp(exponent):
+                    current = best_neighbor
         temp *= cooling
 
     return best, history

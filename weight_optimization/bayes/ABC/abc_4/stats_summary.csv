@@ -1,0 +1,2 @@
+objective_mean,objective_std,rho_mean,rho_std,cr_mean,cr_std,score_delta_mean,score_delta_std,entropy_diff_mean,critic_diff_mean,merec_diff_mean,lopcow_diff_mean,mean_diff_mean,bayes_diff_mean,t_stat_vs_baseline,p_value_vs_baseline,significant_vs_baseline,better_than_baseline
+0.1119077287,0.0399036103,0.9750000000,0.0500000000,0.0000000000,0.0000000000,9054444.6958009284,16467378.0556409657,0.1791577463,0.1825213285,0.1734264351,0.2452632244,0.1929125814,0.1119077287,-8.8317175840,0.0000000010,True,True

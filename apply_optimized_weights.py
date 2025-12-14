@@ -1,12 +1,11 @@
 """
-Aplica os metodos MCDM (Fuzzy-TOPSIS, VIKOR, COPRAS, MOORA) usando os pesos
-otimizados das metaheuristicas de vizinhanca/estocasticas.
+Aplica os metodos MCDM (Fuzzy-TOPSIS, VIKOR, COPRAS, MOORA) usando pesos otimizados
+encontrados pelos scripts de busca (genetico e vizinhanca).
 
-Pesos predefinidos (os melhores regret_mean encontrados):
-- VNS
-- Tabu Search
-- ILS
-- Hybrid VNS+Tabu
+Coleta de pesos:
+- --auto: busca best_weights.csv / best_*weights.csv / best_*.json / summary_global.csv em
+  weight_optimization/ e neighborhood_results/.
+- --weights: arquivos CSV/JSON explicitamente informados.
 
 Saidas:
 - CSV por conjunto de pesos em `optimized_mcdm_results/`
@@ -18,7 +17,7 @@ from __future__ import annotations
 import argparse
 import json
 from pathlib import Path
-from typing import Dict
+from typing import Dict, List
 
 import pandas as pd
 
@@ -26,32 +25,55 @@ from apply_mcdm_profiles import compute_profile_results
 from build_ahp_structure import DATA_PATH, aggregate_metrics_by_alternative, parse_diesel_map
 
 
-BEST_WEIGHTS: Dict[str, Dict[str, float]] = {
-    "VNS_best": {
-        "cost": 0.3206608381,
-        "emissions": 0.0000000000,
-        "reliability": 0.1560573560,
-        "social": 0.5232818060,
-    },
-    "Tabu_best": {
-        "cost": 0.5763681853,
-        "emissions": 0.0048817464,
-        "reliability": 0.2765960002,
-        "social": 0.1421540680,
-    },
-    "ILS_best": {
-        "cost": 0.3074530348,
-        "emissions": 0.0181989677,
-        "reliability": 0.2041180049,
-        "social": 0.4702299925,
-    },
-    "Hybrid_best": {
-        "cost": 0.3337491064,
-        "emissions": 0.0312942730,
-        "reliability": 0.1355886034,
-        "social": 0.4993680173,
-    },
-}
+def extract_weight_rows(df: pd.DataFrame) -> List[Dict[str, float]]:
+    cols = df.columns
+    keys = []
+    for base in ("cost", "emissions", "reliability", "social"):
+        if base in cols:
+            keys.append(base)
+        elif f"w_{base}" in cols:
+            keys.append(f"w_{base}")
+    if len(keys) < 4:
+        return []
+    rows = []
+    for _, row in df.iterrows():
+        weights = {}
+        for base in ("cost", "emissions", "reliability", "social"):
+            if base in row:
+                weights[base] = float(row[base])
+            elif f"w_{base}" in row:
+                weights[base] = float(row[f"w_{base}"])
+        rows.append(weights)
+    return rows
+
+
+def read_weights_file(path: Path) -> List[Dict[str, float]]:
+    if path.suffix.lower() == ".json":
+        data = json.loads(path.read_text())
+        weights = {}
+        for k in ("cost", "emissions", "reliability", "social"):
+            if k in data:
+                weights[k] = float(data[k])
+            elif f"w_{k}" in data:
+                weights[k] = float(data[f"w_{k}"])
+        return [weights] if weights else []
+    df = pd.read_csv(path)
+    return extract_weight_rows(df)
+
+
+def label_for_path(path: Path, roots: List[Path]) -> str:
+    for root in roots:
+        try:
+            rel = path.relative_to(root)
+            parts = list(rel.parts)
+            if parts[-1].startswith("best_"):
+                parts[-1] = parts[-1].removeprefix("best_").removesuffix(path.suffix)
+            else:
+                parts[-1] = parts[-1].removesuffix(path.suffix)
+            return "_".join(parts)
+        except ValueError:
+            continue
+    return path.stem
 
 
 def main() -> None:
@@ -61,6 +83,8 @@ def main() -> None:
     parser.add_argument("--diesel-map", type=str, help="Mapa Region:preco (ex: Accra:0.95,Lusaka:1.16,Lodwar:0.85)")
     parser.add_argument("--fuzziness", type=float, default=0.05, help="Fator fuzzy para Fuzzy-TOPSIS")
     parser.add_argument("--vikor-v", type=float, default=0.5, help="Parametro v do VIKOR")
+    parser.add_argument("--weights", type=Path, nargs="+", help="Arquivos de pesos adicionais (CSV/JSON com colunas cost/emissions/reliability/social ou w_*)")
+    parser.add_argument("--auto", action="store_true", help="Coletar pesos automaticamente em weight_optimization/ e neighborhood_results/")
     parser.add_argument("--out-dir", type=Path, default=Path("optimized_mcdm_results"), help="Diretorio de saida")
     args = parser.parse_args()
 
@@ -73,6 +97,22 @@ def main() -> None:
     )
     metrics_df = metrics_df.dropna(axis=1, how="all")
 
+    weight_files: List[Path] = []
+    roots = [Path("weight_optimization"), Path("neighborhood_results")]
+    if args.auto:
+        patterns = ["best_weights.csv", "best_*weights.csv", "best_*.json", "summary_global.csv"]
+        for root in roots:
+            if root.exists():
+                for pat in patterns:
+                    weight_files.extend(root.rglob(pat))
+    if args.weights:
+        weight_files.extend(args.weights)
+
+    if not weight_files:
+        print("Nenhum arquivo de pesos encontrado. Use --auto ou --weights.")
+        return
+
+    seen = set()
     summary = {
         "source_csv": str(args.csv),
         "diesel_price_per_liter": args.diesel_price,
@@ -81,17 +121,29 @@ def main() -> None:
         "results": {},
     }
 
-    for label, weights in BEST_WEIGHTS.items():
-        result = compute_profile_results(metrics_df, profile_name=label, profile_weights=weights, fuzziness=args.fuzziness, vikor_v=args.vikor_v)
-        out_csv = args.out_dir / f"mcdm_{label}.csv"
-        result.to_csv(out_csv, float_format="%.10f")
-        winner = result.index[result["fuzzy_topsis_rank"] == 1].tolist()
-        summary["results"][label] = {
-            "weights": weights,
-            "csv": str(out_csv),
-            "winner_fuzzy_topsis": winner,
-        }
-        print(f"[{label}] vencedor (Fuzzy-TOPSIS): {winner}")
+    for w_path in weight_files:
+        if not w_path.exists():
+            continue
+        key = str(w_path.resolve())
+        if key in seen:
+            continue
+        seen.add(key)
+        weights_list = read_weights_file(w_path)
+        if not weights_list:
+            continue
+        base_label = label_for_path(w_path, roots)
+        for idx, weights in enumerate(weights_list):
+            label = base_label if len(weights_list) == 1 else f"{base_label}_{idx}"
+            out_csv = args.out_dir / f"mcdm_{label}.csv"
+            result = compute_profile_results(metrics_df, profile_name=label, profile_weights=weights, fuzziness=args.fuzziness, vikor_v=args.vikor_v)
+            result.to_csv(out_csv, float_format="%.10f")
+            winner = result.index[result["fuzzy_topsis_rank"] == 1].tolist()
+            summary["results"][label] = {
+                "weights": weights,
+                "csv": str(out_csv),
+                "winner_fuzzy_topsis": winner,
+            }
+            print(f"[{label}] vencedor (Fuzzy-TOPSIS): {winner}")
 
     (args.out_dir / "summary.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
     print(f"Resultados salvos em {args.out_dir}")

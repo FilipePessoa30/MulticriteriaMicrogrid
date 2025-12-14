@@ -424,7 +424,15 @@ def run_sa(
 
         cmp = lexicographic_compare(neigh_obj, current_obj)
         delta = float(np.mean(neigh_obj)) - float(np.mean(current_obj))
-        if cmp < 0 or rng.random() < np.exp(-delta / max(temp, 1e-6)):
+        if cmp < 0:
+            accept = True
+        elif delta <= 0:
+            accept = True
+        else:
+            exponent = -delta / max(temp, 1e-6)
+            exponent = min(exponent, 50.0)  # evita overflow em exp
+            accept = rng.random() < np.exp(exponent)
+        if accept:
             current = neighbor
             current_obj = neigh_obj
 
@@ -590,7 +598,16 @@ def plot_history(histories: Dict[str, List[List[float]]], out_path: Path) -> Non
         mean, std = aggregate_histories(runs)
         if mean.size == 0:
             continue
-        x = np.arange(len(mean))
+        mean = np.asarray(mean).ravel()
+        std = np.asarray(std).ravel()
+        if mean.size == 0 or std.size == 0:
+            continue
+        n = min(len(mean), len(std))
+        if n == 0:
+            continue
+        mean = mean[:n]
+        std = std[:n]
+        x = np.arange(n)
         plt.plot(x, mean, label=name)
         plt.fill_between(x, mean - std, mean + std, alpha=0.15)
     plt.xlabel("Iteracao")

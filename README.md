@@ -219,7 +219,7 @@ Example objective: Min f(W) = alpha _ CR(W) + beta _ (1 - rho(W)), alpha = beta 
 - All optimized weight sets (genetic and neighborhood, across entropy/critic/bayes) converge on C2 as the winner in all four MCDM methods.
 - Genetic (bayes objective) weights cluster around ~0.46 cost and ~0.22 emissions, with balanced reliability/social.
 - Neighborhood (critic/entropy) explore more extreme trade-offs (e.g., very high reliability or high social) and also point to C2.
-- Regret drops versus baseline; best neighborhood configs reach ~0.12~0.20 regret, and genetic bayes configs also beat the baseline.
+- Regret drops versus baseline; best neighborhood configs reach ~0.12?0.20 regret, and genetic bayes configs also beat the baseline.
 
 ## Top 5 Genetic (from bayes objective runs)
 

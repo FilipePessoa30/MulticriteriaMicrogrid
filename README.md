@@ -214,13 +214,12 @@ Example objective: Min f(W) = alpha _ CR(W) + beta _ (1 - rho(W)), alpha = beta 
     --out-dir optimized_mcdm_results
   ```
 
-## MCDM results (baseline vs optimized)
+## Results overview
 
-- Baseline profiles:
-  - Economic: C2 led Fuzzy-TOPSIS, COPRAS, MOORA; VIKOR chose C3 (C2 2nd).
-  - Sustainable, Resilient, Social: C2 in 1st for all four methods.
-- Optimized (VNS_best, Tabu_best, ILS_best, Hybrid_best): C2 in 1st for all methods (Fuzzy-TOPSIS, VIKOR, COPRAS, MOORA) across all sets.
-- Files: baseline in `ahp_mcdm_results/`, optimized in `optimized_mcdm_results/`.
+- All optimized weight sets (genetic and neighborhood, across entropy/critic/bayes) converge on C2 as the winner in all four MCDM methods.
+- Genetic (bayes objective) weights cluster around ~0.46 cost and ~0.22 emissions, with balanced reliability/social.
+- Neighborhood (critic/entropy) explore more extreme trade-offs (e.g., very high reliability or high social) and also point to C2.
+- Regret drops versus baseline; best neighborhood configs reach ~0.12?0.20 regret, and genetic bayes configs also beat the baseline.
 
 ## Top 5 Genetic (from bayes objective runs)
 

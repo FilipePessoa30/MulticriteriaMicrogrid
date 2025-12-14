@@ -214,15 +214,6 @@ Example objective: Min f(W) = alpha _ CR(W) + beta _ (1 - rho(W)), alpha = beta 
     --out-dir optimized_mcdm_results
   ```
 
-## Optimization results (regret)
-
-- Baseline: regret = 0.4163999763 (w: 0.6923 / 0.3328 / 0.3492 / 0.3351).
-- Best by neighborhood metaheuristic (runs\_\*.csv):
-  - VNS: 0.1214687459 (0.3206608381 / 0.0000000000 / 0.1560573560 / 0.5232818060).
-  - Tabu: 0.1348949419 (0.5763681853 / 0.0048817464 / 0.2765960002 / 0.1421540680).
-  - ILS: 0.2004044126 (0.3074530348 / 0.0181989677 / 0.2041180049 / 0.4702299925).
-  - Hybrid: 0.2343004034 (0.3337491064 / 0.0312942730 / 0.1355886034 / 0.4993680173).
-
 ## MCDM results (baseline vs optimized)
 
 - Baseline profiles:

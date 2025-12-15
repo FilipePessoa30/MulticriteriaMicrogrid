@@ -4,9 +4,9 @@ _Provisional title: **A Multi-Criteria Decision Model for Renewable Microgrid Op
 
 ## Final Methodology (AHP + weight optimization)
 
-- Integrates AHP (literature weights) with optimization via PSO, GA, SA, and neighborhood searches (VNS, Tabu, ILS, hybrid).
-- Compares C1 Diesel-only, C2 PV + Battery, C3 Diesel + PV + Battery using Fuzzy-TOPSIS, VIKOR, COPRAS, MOORA.
-- Assesses robustness, consistency, and improvement with ranking metrics, regret, Pareto, stability, and CV.
+- AHP baseline weights (literature) for four criteria, optimized via two blocks: genetic (ABC, HC/SA/PSO, PSO-SA) and neighborhood (I2PLS, MTS, WILB, ILS, LBH).
+- Runs three objective functions (entropy, critic, bayes) over C1 Diesel-only, C2 PV + Battery, C3 Diesel + PV + Battery, using Fuzzy-TOPSIS, VIKOR, COPRAS, MOORA.
+- Evaluates ranking robustness, regret per method, Pareto dominance, consistency proxy, and stability under noise (2%/5%).
 
 ## Active objective functions (3)
 

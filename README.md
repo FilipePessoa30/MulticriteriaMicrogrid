@@ -4,7 +4,7 @@ A multi-criteria decision model using AHP and metaheuristic weight optimization 
 
 ## Overview
 
-This research applies AHP (Analytic Hierarchy Process) with metaheuristic weight optimization to evaluate three microgrid alternatives across four criteria. The model uses genetic algorithms (ABC, HC, SA, PSO) and neighborhood search methods (I2PLS, MTS, WILB, ILS, LBH) with three objective functions (entropy, CRITIC, Bayes) to optimize criteria weights for four MCDM methods: Fuzzy-TOPSIS, VIKOR, COPRAS, and MOORA.
+This research applies AHP (Analytic Hierarchy Process) with metaheuristic weight optimization to evaluate three microgrid alternatives across four criteria. The model uses genetic algorithms (ABC, HC, SA, PSO) and neighborhood search methods (I2PLS, MTS, ILS, LBH, and a WILB-inspired approach) with three objective functions (entropy, CRITIC, Bayes) to optimize criteria weights for four MCDM methods: Fuzzy-TOPSIS, VIKOR, COPRAS, and MOORA.
 
 ## Project Structure
 
@@ -56,7 +56,10 @@ MulticriteriaMicrogrid/
 
 **Neighborhood Search:**
 
-- I2PLS, MTS, WILB, ILS, LBH - Various (see references)
+- I2PLS - Lotova et al., 2019 (adapted two-phase search for continuous weight space)
+- MTS, ILS - Aqil & Allali (2021), Liu & Pan (2024)
+- LBH - Aqil & Allali (2021), Liu & Pan (2024) (adaptive radius for continuous space)
+- WILB-inspired - Adapted local branching with variable groups (continuous space adaptation)
 
 ### 2. Objective Functions
 
@@ -241,7 +244,8 @@ ahpy, streamlit
 - Cherif & Ladhari (2016) - ABC for MCDM weight optimization
 - Kizielewicz & Salabun (2020) - HC/SA/PSO for COMET
 - Sarani Rad et al. (2024) - PSO-SA hybrid for AHP matrices
-- Lotova et al. (2019), Aqil & Allali (2021), Liu & Pan (2024), Rodrigues et al. (2022) - Neighborhood search
+- Lotova et al. (2019), Aqil & Allali (2021), Liu & Pan (2024) - Neighborhood search (I2PLS, ILS, MTS)
+- Rodrigues et al. (2022) - Local Branching concept (adapted for continuous weight space)
 
 ### MCDM Applications
 

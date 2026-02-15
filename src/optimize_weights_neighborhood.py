@@ -288,7 +288,13 @@ def run_i2pls(
     config: Dict,
     objective_key: str,
 ) -> Tuple[Dict[str, float], List[float]]:
-    """Iterated Two-Phase Local Search: VND+TS (explore) e perturbação por frequência (escape)."""
+    """
+    Iterated Two-Phase Local Search: VND+TS (explore) e perturbação por frequência (escape).
+    
+    Nota: O I2PLS original (Lotova et al., 2019) é projetado para problemas de otimização combinatorial.
+    Esta implementação adapta o conceito de busca local em duas fases (intensificação/diversificação)
+    para o problema de otimização de pesos contínuos do AHP, usando perturbações e lista tabu.
+    """
     current = random_weights(rng)
     best = current
     best_eval = eval_objective(best, metrics_df, baseline_ranks, baseline_scores, weight_refs, fuzziness, vikor_v, objective_key)
@@ -418,7 +424,13 @@ def run_wilb(
     config: Dict,
     objective_key: str,
 ) -> Tuple[Dict[str, float], List[float]]:
-    """Weighted Iterated Local Branching simplificado com grupos de variaveis e deltas diferentes."""
+    """
+    Técnica inspirada em WILB (Weighted Iterated Local Branching) adaptada para espaço contínuo.
+    
+    Nota: O WILB original (Rodrigues et al., 2022) é projetado para problemas de otimização binária.
+    Esta implementação adapta o conceito de branching local com grupos de variáveis para o problema
+    de otimização de pesos contínuos do AHP, usando deltas como raio de perturbação.
+    """
     current = random_weights(rng)
     best = current
     best_eval = eval_objective(best, metrics_df, baseline_ranks, baseline_scores, weight_refs, fuzziness, vikor_v, objective_key)
@@ -546,7 +558,12 @@ def run_lbh(
     config: Dict,
     objective_key: str,
 ) -> Tuple[Dict[str, float], List[float]]:
-    """Local Branching Heuristic simplificado com raio (Lambda) adaptativo."""
+    """
+    Local Branching Heuristic simplificado com raio (Lambda) adaptativo.
+    
+    Nota: Implementação para espaço contínuo usando raio de perturbação adaptativo
+    ao invés de restrições de branching em variáveis binárias.
+    """
     current = random_weights(rng)
     best = current
     best_eval = eval_objective(best, metrics_df, baseline_ranks, baseline_scores, weight_refs, fuzziness, vikor_v, objective_key)

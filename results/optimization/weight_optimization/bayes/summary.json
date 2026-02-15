@@ -1,0 +1,225 @@
+{
+  "source_csv": "dados_preprocessados\\reopt_ALL_blocks_v3_8.csv",
+  "baseline_weights": {
+    "cost": 0.6923,
+    "emissions": 0.3328,
+    "reliability": 0.3492,
+    "social": 0.3351
+  },
+  "baseline_objective": 0.17735,
+  "objective_key": "bayes",
+  "grids": {
+    "ABC": [
+      {
+        "name": "abc_1",
+        "foods": 15,
+        "iterations": 40,
+        "limit": 8
+      },
+      {
+        "name": "abc_2",
+        "foods": 20,
+        "iterations": 50,
+        "limit": 10
+      },
+      {
+        "name": "abc_3",
+        "foods": 25,
+        "iterations": 60,
+        "limit": 12
+      },
+      {
+        "name": "abc_4",
+        "foods": 18,
+        "iterations": 70,
+        "limit": 9
+      },
+      {
+        "name": "abc_5",
+        "foods": 22,
+        "iterations": 55,
+        "limit": 10
+      },
+      {
+        "name": "abc_6",
+        "foods": 30,
+        "iterations": 80,
+        "limit": 15
+      },
+      {
+        "name": "abc_7",
+        "foods": 16,
+        "iterations": 90,
+        "limit": 7
+      },
+      {
+        "name": "abc_8",
+        "foods": 24,
+        "iterations": 65,
+        "limit": 11
+      }
+    ],
+    "HC_SA_PSO": [
+      {
+        "name": "kiz_hc_1",
+        "method": "HC",
+        "steps": 120,
+        "neighbor_rate": 0.05
+      },
+      {
+        "name": "kiz_hc_2",
+        "method": "HC",
+        "steps": 200,
+        "neighbor_rate": 0.07
+      },
+      {
+        "name": "kiz_hc_3",
+        "method": "HC",
+        "steps": 300,
+        "neighbor_rate": 0.05
+      },
+      {
+        "name": "kiz_sa_1",
+        "method": "SA",
+        "steps": 180,
+        "temp": 1.0,
+        "cooling": 0.95,
+        "neighbor_rate": 0.05
+      },
+      {
+        "name": "kiz_sa_2",
+        "method": "SA",
+        "steps": 250,
+        "temp": 1.2,
+        "cooling": 0.94,
+        "neighbor_rate": 0.08
+      },
+      {
+        "name": "kiz_sa_3",
+        "method": "SA",
+        "steps": 300,
+        "temp": 1.6,
+        "cooling": 0.95,
+        "neighbor_rate": 0.07
+      },
+      {
+        "name": "kiz_pso_1",
+        "method": "PSO",
+        "particles": 20,
+        "iterations": 50,
+        "w": 0.7,
+        "c1": 1.4,
+        "c2": 1.4
+      },
+      {
+        "name": "kiz_pso_2",
+        "method": "PSO",
+        "particles": 28,
+        "iterations": 60,
+        "w": 0.6,
+        "c1": 1.6,
+        "c2": 1.6
+      }
+    ],
+    "PSO_SA": [
+      {
+        "name": "pso_sa_1",
+        "particles": 15,
+        "iterations": 30,
+        "w": 0.7,
+        "c1": 1.4,
+        "c2": 1.4,
+        "sa_steps": 60,
+        "sa_temp": 1.0,
+        "sa_cooling": 0.96,
+        "sa_neighbor_rate": 0.05
+      },
+      {
+        "name": "pso_sa_2",
+        "particles": 20,
+        "iterations": 40,
+        "w": 0.6,
+        "c1": 1.6,
+        "c2": 1.6,
+        "sa_steps": 80,
+        "sa_temp": 1.2,
+        "sa_cooling": 0.95,
+        "sa_neighbor_rate": 0.06
+      },
+      {
+        "name": "pso_sa_3",
+        "particles": 25,
+        "iterations": 50,
+        "w": 0.8,
+        "c1": 1.2,
+        "c2": 1.6,
+        "sa_steps": 100,
+        "sa_temp": 1.5,
+        "sa_cooling": 0.94,
+        "sa_neighbor_rate": 0.05
+      },
+      {
+        "name": "pso_sa_4",
+        "particles": 18,
+        "iterations": 60,
+        "w": 0.5,
+        "c1": 2.0,
+        "c2": 2.0,
+        "sa_steps": 90,
+        "sa_temp": 1.0,
+        "sa_cooling": 0.93,
+        "sa_neighbor_rate": 0.07
+      },
+      {
+        "name": "pso_sa_5",
+        "particles": 30,
+        "iterations": 35,
+        "w": 0.9,
+        "c1": 1.0,
+        "c2": 1.0,
+        "sa_steps": 70,
+        "sa_temp": 0.8,
+        "sa_cooling": 0.95,
+        "sa_neighbor_rate": 0.08
+      },
+      {
+        "name": "pso_sa_6",
+        "particles": 18,
+        "iterations": 45,
+        "w": 0.65,
+        "c1": 1.8,
+        "c2": 1.3,
+        "sa_steps": 85,
+        "sa_temp": 1.3,
+        "sa_cooling": 0.96,
+        "sa_neighbor_rate": 0.06
+      },
+      {
+        "name": "pso_sa_7",
+        "particles": 28,
+        "iterations": 55,
+        "w": 0.75,
+        "c1": 1.3,
+        "c2": 1.8,
+        "sa_steps": 95,
+        "sa_temp": 1.1,
+        "sa_cooling": 0.94,
+        "sa_neighbor_rate": 0.05
+      },
+      {
+        "name": "pso_sa_8",
+        "particles": 22,
+        "iterations": 70,
+        "w": 0.55,
+        "c1": 2.1,
+        "c2": 1.7,
+        "sa_steps": 110,
+        "sa_temp": 1.6,
+        "sa_cooling": 0.95,
+        "sa_neighbor_rate": 0.07
+      }
+    ]
+  },
+  "runs_per_config": 30,
+  "seed_base": 42
+}

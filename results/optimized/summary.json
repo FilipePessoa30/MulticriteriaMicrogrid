@@ -1,0 +1,4796 @@
+{
+  "source_csv": "dados_preprocessados\\reopt_ALL_blocks_v3_8.csv",
+  "diesel_price_per_liter": 1.2,
+  "fuzziness": 0.01,
+  "vikor_v": 0.5,
+  "results": {
+    "bayes_ABC_abc_1_weights": {
+      "weights": {
+        "cost": 0.4629419498,
+        "emissions": 0.2260170497,
+        "reliability": 0.1706398286,
+        "social": 0.1404011719
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_ABC_abc_1_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_ABC_abc_2_weights": {
+      "weights": {
+        "cost": 0.4629700753,
+        "emissions": 0.2211145286,
+        "reliability": 0.123444502,
+        "social": 0.1924708942
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_ABC_abc_2_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_ABC_abc_3_weights": {
+      "weights": {
+        "cost": 0.4629511031,
+        "emissions": 0.2421488196,
+        "reliability": 0.17191223,
+        "social": 0.1229878473
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_ABC_abc_3_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_ABC_abc_4_weights": {
+      "weights": {
+        "cost": 0.4629479465,
+        "emissions": 0.1719165135,
+        "reliability": 0.231408823,
+        "social": 0.133726717
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_ABC_abc_4_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_ABC_abc_5_weights": {
+      "weights": {
+        "cost": 0.4629525383,
+        "emissions": 0.1444507615,
+        "reliability": 0.19281085,
+        "social": 0.1997858501
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_ABC_abc_5_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_ABC_abc_6_weights": {
+      "weights": {
+        "cost": 0.462948385,
+        "emissions": 0.1575611377,
+        "reliability": 0.2125230884,
+        "social": 0.1669673889
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_ABC_abc_6_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_ABC_abc_7_weights": {
+      "weights": {
+        "cost": 0.4629176566,
+        "emissions": 0.2495008891,
+        "reliability": 0.1822210074,
+        "social": 0.105360447
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_ABC_abc_7_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_ABC_abc_8_weights": {
+      "weights": {
+        "cost": 0.4629492881,
+        "emissions": 0.2406378793,
+        "reliability": 0.1639620199,
+        "social": 0.1324508127
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_ABC_abc_8_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_HC_SA_PSO_kiz_hc_1_weights": {
+      "weights": {
+        "cost": 0.4618137054,
+        "emissions": 0.2652215532,
+        "reliability": 0.1719663641,
+        "social": 0.1009983773
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_HC_SA_PSO_kiz_hc_1_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_HC_SA_PSO_kiz_hc_2_weights": {
+      "weights": {
+        "cost": 0.4626111873,
+        "emissions": 0.2146189025,
+        "reliability": 0.1168618071,
+        "social": 0.2059081031
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_HC_SA_PSO_kiz_hc_2_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_HC_SA_PSO_kiz_hc_3_weights": {
+      "weights": {
+        "cost": 0.4629269901,
+        "emissions": 0.2354227059,
+        "reliability": 0.169707839,
+        "social": 0.1319424649
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_HC_SA_PSO_kiz_hc_3_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_HC_SA_PSO_kiz_pso_1_weights": {
+      "weights": {
+        "cost": 0.4629505401,
+        "emissions": 0.2492046274,
+        "reliability": 0.1658309208,
+        "social": 0.1220139117
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_HC_SA_PSO_kiz_pso_1_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_HC_SA_PSO_kiz_pso_2_weights": {
+      "weights": {
+        "cost": 0.4629554707,
+        "emissions": 0.222657052,
+        "reliability": 0.1415891749,
+        "social": 0.1727983023
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_HC_SA_PSO_kiz_pso_2_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_HC_SA_PSO_kiz_sa_1_weights": {
+      "weights": {
+        "cost": 0.4642555801,
+        "emissions": 0.2028556852,
+        "reliability": 0.1688119048,
+        "social": 0.1640768299
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_HC_SA_PSO_kiz_sa_1_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_HC_SA_PSO_kiz_sa_2_weights": {
+      "weights": {
+        "cost": 0.4633356059,
+        "emissions": 0.267284226,
+        "reliability": 0.146706844,
+        "social": 0.1226733241
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_HC_SA_PSO_kiz_sa_2_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_HC_SA_PSO_kiz_sa_3_weights": {
+      "weights": {
+        "cost": 0.4626153173,
+        "emissions": 0.2217354065,
+        "reliability": 0.165533482,
+        "social": 0.1501157942
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_HC_SA_PSO_kiz_sa_3_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_PSO_SA_pso_sa_1_weights": {
+      "weights": {
+        "cost": 0.4630572561,
+        "emissions": 0.2185165177,
+        "reliability": 0.1654707528,
+        "social": 0.1529554734
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_PSO_SA_pso_sa_1_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_PSO_SA_pso_sa_2_weights": {
+      "weights": {
+        "cost": 0.4629569906,
+        "emissions": 0.2004936209,
+        "reliability": 0.2226508798,
+        "social": 0.1138985087
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_PSO_SA_pso_sa_2_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_PSO_SA_pso_sa_3_weights": {
+      "weights": {
+        "cost": 0.4629264243,
+        "emissions": 0.2453728269,
+        "reliability": 0.2051468824,
+        "social": 0.0865538663
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_PSO_SA_pso_sa_3_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_PSO_SA_pso_sa_4_weights": {
+      "weights": {
+        "cost": 0.4629550672,
+        "emissions": 0.234407209,
+        "reliability": 0.1254111557,
+        "social": 0.1772265682
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_PSO_SA_pso_sa_4_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_PSO_SA_pso_sa_5_weights": {
+      "weights": {
+        "cost": 0.4628798794,
+        "emissions": 0.1563866453,
+        "reliability": 0.208712423,
+        "social": 0.1720210523
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_PSO_SA_pso_sa_5_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_PSO_SA_pso_sa_6_weights": {
+      "weights": {
+        "cost": 0.462981115,
+        "emissions": 0.2306180217,
+        "reliability": 0.157513652,
+        "social": 0.1488872113
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_PSO_SA_pso_sa_6_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_PSO_SA_pso_sa_7_weights": {
+      "weights": {
+        "cost": 0.4629386102,
+        "emissions": 0.243044262,
+        "reliability": 0.0999581164,
+        "social": 0.1940590114
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_PSO_SA_pso_sa_7_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_PSO_SA_pso_sa_8_weights": {
+      "weights": {
+        "cost": 0.4629566381,
+        "emissions": 0.1628376741,
+        "reliability": 0.2080883532,
+        "social": 0.1661173346
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_PSO_SA_pso_sa_8_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_ABC_abc_1_weights": {
+      "weights": {
+        "cost": 0.1685524836,
+        "emissions": 0.2669447554,
+        "reliability": 0.1245251254,
+        "social": 0.4399776356
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_ABC_abc_1_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_ABC_abc_2_weights": {
+      "weights": {
+        "cost": 0.168537466,
+        "emissions": 0.3193324044,
+        "reliability": 0.2202773519,
+        "social": 0.2918527777
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_ABC_abc_2_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_ABC_abc_3_weights": {
+      "weights": {
+        "cost": 0.1685315247,
+        "emissions": 0.3443426813,
+        "reliability": 0.1568471166,
+        "social": 0.3302786774
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_ABC_abc_3_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_ABC_abc_4_weights": {
+      "weights": {
+        "cost": 0.168533962,
+        "emissions": 0.227692552,
+        "reliability": 0.1468558816,
+        "social": 0.4569176043
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_ABC_abc_4_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_ABC_abc_5_weights": {
+      "weights": {
+        "cost": 0.1685310494,
+        "emissions": 0.2538760531,
+        "reliability": 0.1781772678,
+        "social": 0.3994156296
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_ABC_abc_5_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_ABC_abc_6_weights": {
+      "weights": {
+        "cost": 0.1685310808,
+        "emissions": 0.4017669079,
+        "reliability": 0.2198948975,
+        "social": 0.2098071138
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_ABC_abc_6_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_ABC_abc_7_weights": {
+      "weights": {
+        "cost": 0.1685318693,
+        "emissions": 0.2066247049,
+        "reliability": 0.4018976509,
+        "social": 0.2229457749
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_ABC_abc_7_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_ABC_abc_8_weights": {
+      "weights": {
+        "cost": 0.1685315737,
+        "emissions": 0.3831601714,
+        "reliability": 0.2599521283,
+        "social": 0.1883561265
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_ABC_abc_8_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_HC_SA_PSO_kiz_hc_1_weights": {
+      "weights": {
+        "cost": 0.1705833073,
+        "emissions": 0.2281603165,
+        "reliability": 0.3717674011,
+        "social": 0.2294889752
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_HC_SA_PSO_kiz_hc_1_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_HC_SA_PSO_kiz_hc_2_weights": {
+      "weights": {
+        "cost": 0.1694795509,
+        "emissions": 0.1880052337,
+        "reliability": 0.4806570132,
+        "social": 0.1618582023
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_HC_SA_PSO_kiz_hc_2_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_HC_SA_PSO_kiz_hc_3_weights": {
+      "weights": {
+        "cost": 0.1692742393,
+        "emissions": 0.2485726603,
+        "reliability": 0.439524801,
+        "social": 0.1426282995
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_HC_SA_PSO_kiz_hc_3_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_HC_SA_PSO_kiz_pso_1_weights": {
+      "weights": {
+        "cost": 0.1685308001,
+        "emissions": 0.2788082833,
+        "reliability": 0.3397970443,
+        "social": 0.2128638722
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_HC_SA_PSO_kiz_pso_1_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_HC_SA_PSO_kiz_pso_2_weights": {
+      "weights": {
+        "cost": 0.1685316077,
+        "emissions": 0.337361169,
+        "reliability": 0.3535287068,
+        "social": 0.1405785164
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_HC_SA_PSO_kiz_pso_2_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_HC_SA_PSO_kiz_sa_1_weights": {
+      "weights": {
+        "cost": 0.1693649272,
+        "emissions": 0.2393830695,
+        "reliability": 0.2460401187,
+        "social": 0.3452118846
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_HC_SA_PSO_kiz_sa_1_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_HC_SA_PSO_kiz_sa_2_weights": {
+      "weights": {
+        "cost": 0.1685967902,
+        "emissions": 0.2762029063,
+        "reliability": 0.1736459688,
+        "social": 0.3815543348
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_HC_SA_PSO_kiz_sa_2_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_HC_SA_PSO_kiz_sa_3_weights": {
+      "weights": {
+        "cost": 0.1688218681,
+        "emissions": 0.3800009409,
+        "reliability": 0.1355986982,
+        "social": 0.3155784927
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_HC_SA_PSO_kiz_sa_3_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_PSO_SA_pso_sa_1_weights": {
+      "weights": {
+        "cost": 0.1687044852,
+        "emissions": 0.2368787367,
+        "reliability": 0.164615318,
+        "social": 0.4298014601
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_PSO_SA_pso_sa_1_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_PSO_SA_pso_sa_2_weights": {
+      "weights": {
+        "cost": 0.1685522193,
+        "emissions": 0.3797234922,
+        "reliability": 0.2279206777,
+        "social": 0.2238036107
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_PSO_SA_pso_sa_2_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_PSO_SA_pso_sa_3_weights": {
+      "weights": {
+        "cost": 0.1685213523,
+        "emissions": 0.2521972445,
+        "reliability": 0.2981342423,
+        "social": 0.2811471609
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_PSO_SA_pso_sa_3_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_PSO_SA_pso_sa_4_weights": {
+      "weights": {
+        "cost": 0.1685308012,
+        "emissions": 0.5357497922,
+        "reliability": 0.1619812201,
+        "social": 0.1337381865
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_PSO_SA_pso_sa_4_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_PSO_SA_pso_sa_5_weights": {
+      "weights": {
+        "cost": 0.1685852731,
+        "emissions": 0.1986041209,
+        "reliability": 0.1967717642,
+        "social": 0.4360388418
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_PSO_SA_pso_sa_5_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_PSO_SA_pso_sa_6_weights": {
+      "weights": {
+        "cost": 0.1685312053,
+        "emissions": 0.1743839762,
+        "reliability": 0.3175547453,
+        "social": 0.3395300731
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_PSO_SA_pso_sa_6_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_PSO_SA_pso_sa_7_weights": {
+      "weights": {
+        "cost": 0.1685353361,
+        "emissions": 0.4261462277,
+        "reliability": 0.2279760882,
+        "social": 0.1773423479
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_PSO_SA_pso_sa_7_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_PSO_SA_pso_sa_8_weights": {
+      "weights": {
+        "cost": 0.1685308034,
+        "emissions": 0.4270663973,
+        "reliability": 0.1323990829,
+        "social": 0.2720037165
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_PSO_SA_pso_sa_8_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_ABC_abc_1_weights": {
+      "weights": {
+        "cost": 0.1825950369,
+        "emissions": 0.2256194795,
+        "reliability": 0.2181083774,
+        "social": 0.3736771062
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_ABC_abc_1_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_ABC_abc_2_weights": {
+      "weights": {
+        "cost": 0.1825900784,
+        "emissions": 0.3796869469,
+        "reliability": 0.2409142534,
+        "social": 0.1968087214
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_ABC_abc_2_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_ABC_abc_3_weights": {
+      "weights": {
+        "cost": 0.1825882236,
+        "emissions": 0.2626143792,
+        "reliability": 0.1434875429,
+        "social": 0.4113098543
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_ABC_abc_3_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_ABC_abc_4_weights": {
+      "weights": {
+        "cost": 0.1825963264,
+        "emissions": 0.316475074,
+        "reliability": 0.3607009233,
+        "social": 0.1402276763
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_ABC_abc_4_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_ABC_abc_5_weights": {
+      "weights": {
+        "cost": 0.1825904359,
+        "emissions": 0.3214176261,
+        "reliability": 0.2137339041,
+        "social": 0.282258034
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_ABC_abc_5_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_ABC_abc_6_weights": {
+      "weights": {
+        "cost": 0.1825847055,
+        "emissions": 0.2657911697,
+        "reliability": 0.3373574781,
+        "social": 0.2142666467
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_ABC_abc_6_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_ABC_abc_7_weights": {
+      "weights": {
+        "cost": 0.1825847541,
+        "emissions": 0.5192541711,
+        "reliability": 0.1712378011,
+        "social": 0.1269232737
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_ABC_abc_7_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_ABC_abc_8_weights": {
+      "weights": {
+        "cost": 0.1825959525,
+        "emissions": 0.2152492994,
+        "reliability": 0.1631307422,
+        "social": 0.4390240058
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_ABC_abc_8_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_HC_SA_PSO_kiz_hc_1_weights": {
+      "weights": {
+        "cost": 0.1828688517,
+        "emissions": 0.2809657674,
+        "reliability": 0.2611937767,
+        "social": 0.2749716042
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_HC_SA_PSO_kiz_hc_1_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_HC_SA_PSO_kiz_hc_2_weights": {
+      "weights": {
+        "cost": 0.1829144781,
+        "emissions": 0.4203817894,
+        "reliability": 0.2026391612,
+        "social": 0.1940645713
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_HC_SA_PSO_kiz_hc_2_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_HC_SA_PSO_kiz_hc_3_weights": {
+      "weights": {
+        "cost": 0.1828475721,
+        "emissions": 0.1939486129,
+        "reliability": 0.468571984,
+        "social": 0.154631831
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_HC_SA_PSO_kiz_hc_3_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_HC_SA_PSO_kiz_pso_1_weights": {
+      "weights": {
+        "cost": 0.182591593,
+        "emissions": 0.2577369065,
+        "reliability": 0.3936048353,
+        "social": 0.1660666653
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_HC_SA_PSO_kiz_pso_1_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_HC_SA_PSO_kiz_pso_2_weights": {
+      "weights": {
+        "cost": 0.1825849085,
+        "emissions": 0.3328830196,
+        "reliability": 0.200428051,
+        "social": 0.2841040208
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_HC_SA_PSO_kiz_pso_2_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_HC_SA_PSO_kiz_sa_1_weights": {
+      "weights": {
+        "cost": 0.1826329387,
+        "emissions": 0.2248673174,
+        "reliability": 0.3150810678,
+        "social": 0.2774186761
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_HC_SA_PSO_kiz_sa_1_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_HC_SA_PSO_kiz_sa_2_weights": {
+      "weights": {
+        "cost": 0.1831729066,
+        "emissions": 0.2806628791,
+        "reliability": 0.1304557119,
+        "social": 0.4057085023
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_HC_SA_PSO_kiz_sa_2_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_HC_SA_PSO_kiz_sa_3_weights": {
+      "weights": {
+        "cost": 0.1839292094,
+        "emissions": 0.2618337511,
+        "reliability": 0.4122143747,
+        "social": 0.1420226648
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_HC_SA_PSO_kiz_sa_3_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_PSO_SA_pso_sa_1_weights": {
+      "weights": {
+        "cost": 0.1828122879,
+        "emissions": 0.2124637543,
+        "reliability": 0.2553668568,
+        "social": 0.349357101
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_PSO_SA_pso_sa_1_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_PSO_SA_pso_sa_2_weights": {
+      "weights": {
+        "cost": 0.1825873277,
+        "emissions": 0.3498768543,
+        "reliability": 0.2755312804,
+        "social": 0.1920045376
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_PSO_SA_pso_sa_2_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_PSO_SA_pso_sa_3_weights": {
+      "weights": {
+        "cost": 0.1825905983,
+        "emissions": 0.3299413926,
+        "reliability": 0.2942755321,
+        "social": 0.1931924769
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_PSO_SA_pso_sa_3_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_PSO_SA_pso_sa_4_weights": {
+      "weights": {
+        "cost": 0.182584129,
+        "emissions": 0.4364504719,
+        "reliability": 0.1960090259,
+        "social": 0.1849563733
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_PSO_SA_pso_sa_4_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_PSO_SA_pso_sa_5_weights": {
+      "weights": {
+        "cost": 0.1825923501,
+        "emissions": 0.2947287556,
+        "reliability": 0.3151950612,
+        "social": 0.2074838332
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_PSO_SA_pso_sa_5_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_PSO_SA_pso_sa_6_weights": {
+      "weights": {
+        "cost": 0.1825864079,
+        "emissions": 0.3774026671,
+        "reliability": 0.1258225115,
+        "social": 0.3141884135
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_PSO_SA_pso_sa_6_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_PSO_SA_pso_sa_7_weights": {
+      "weights": {
+        "cost": 0.1826122208,
+        "emissions": 0.3178818567,
+        "reliability": 0.2422409355,
+        "social": 0.2572649871
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_PSO_SA_pso_sa_7_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_PSO_SA_pso_sa_8_weights": {
+      "weights": {
+        "cost": 0.182584679,
+        "emissions": 0.2616145269,
+        "reliability": 0.399289424,
+        "social": 0.1565113701
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_PSO_SA_pso_sa_8_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_summary_global_0": {
+      "weights": {
+        "cost": 0.4629419498,
+        "emissions": 0.2260170497,
+        "reliability": 0.1706398286,
+        "social": 0.1404011719
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_summary_global_0.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_summary_global_1": {
+      "weights": {
+        "cost": 0.4629700753,
+        "emissions": 0.2211145286,
+        "reliability": 0.123444502,
+        "social": 0.1924708942
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_summary_global_1.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_summary_global_2": {
+      "weights": {
+        "cost": 0.4629511031,
+        "emissions": 0.2421488196,
+        "reliability": 0.17191223,
+        "social": 0.1229878473
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_summary_global_2.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_summary_global_3": {
+      "weights": {
+        "cost": 0.4629479465,
+        "emissions": 0.1719165135,
+        "reliability": 0.231408823,
+        "social": 0.133726717
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_summary_global_3.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_summary_global_4": {
+      "weights": {
+        "cost": 0.4629525383,
+        "emissions": 0.1444507615,
+        "reliability": 0.19281085,
+        "social": 0.1997858501
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_summary_global_4.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_summary_global_5": {
+      "weights": {
+        "cost": 0.462948385,
+        "emissions": 0.1575611377,
+        "reliability": 0.2125230884,
+        "social": 0.1669673889
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_summary_global_5.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_summary_global_6": {
+      "weights": {
+        "cost": 0.4629176566,
+        "emissions": 0.2495008891,
+        "reliability": 0.1822210074,
+        "social": 0.105360447
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_summary_global_6.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_summary_global_7": {
+      "weights": {
+        "cost": 0.4629492881,
+        "emissions": 0.2406378793,
+        "reliability": 0.1639620199,
+        "social": 0.1324508127
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_summary_global_7.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_summary_global_8": {
+      "weights": {
+        "cost": 0.4618137054,
+        "emissions": 0.2652215532,
+        "reliability": 0.1719663641,
+        "social": 0.1009983773
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_summary_global_8.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_summary_global_9": {
+      "weights": {
+        "cost": 0.4626111873,
+        "emissions": 0.2146189025,
+        "reliability": 0.1168618071,
+        "social": 0.2059081031
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_summary_global_9.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_summary_global_10": {
+      "weights": {
+        "cost": 0.4629269901,
+        "emissions": 0.2354227059,
+        "reliability": 0.169707839,
+        "social": 0.1319424649
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_summary_global_10.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_summary_global_11": {
+      "weights": {
+        "cost": 0.4642555801,
+        "emissions": 0.2028556852,
+        "reliability": 0.1688119048,
+        "social": 0.1640768299
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_summary_global_11.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_summary_global_12": {
+      "weights": {
+        "cost": 0.4633356059,
+        "emissions": 0.267284226,
+        "reliability": 0.146706844,
+        "social": 0.1226733241
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_summary_global_12.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_summary_global_13": {
+      "weights": {
+        "cost": 0.4626153173,
+        "emissions": 0.2217354065,
+        "reliability": 0.165533482,
+        "social": 0.1501157942
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_summary_global_13.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_summary_global_14": {
+      "weights": {
+        "cost": 0.4629505401,
+        "emissions": 0.2492046274,
+        "reliability": 0.1658309208,
+        "social": 0.1220139117
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_summary_global_14.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_summary_global_15": {
+      "weights": {
+        "cost": 0.4629554707,
+        "emissions": 0.222657052,
+        "reliability": 0.1415891749,
+        "social": 0.1727983023
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_summary_global_15.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_summary_global_16": {
+      "weights": {
+        "cost": 0.4630572561,
+        "emissions": 0.2185165177,
+        "reliability": 0.1654707528,
+        "social": 0.1529554734
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_summary_global_16.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_summary_global_17": {
+      "weights": {
+        "cost": 0.4629569906,
+        "emissions": 0.2004936209,
+        "reliability": 0.2226508798,
+        "social": 0.1138985087
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_summary_global_17.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_summary_global_18": {
+      "weights": {
+        "cost": 0.4629264243,
+        "emissions": 0.2453728269,
+        "reliability": 0.2051468824,
+        "social": 0.0865538663
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_summary_global_18.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_summary_global_19": {
+      "weights": {
+        "cost": 0.4629550672,
+        "emissions": 0.234407209,
+        "reliability": 0.1254111557,
+        "social": 0.1772265682
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_summary_global_19.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_summary_global_20": {
+      "weights": {
+        "cost": 0.4628798794,
+        "emissions": 0.1563866453,
+        "reliability": 0.208712423,
+        "social": 0.1720210523
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_summary_global_20.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_summary_global_21": {
+      "weights": {
+        "cost": 0.462981115,
+        "emissions": 0.2306180217,
+        "reliability": 0.157513652,
+        "social": 0.1488872113
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_summary_global_21.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_summary_global_22": {
+      "weights": {
+        "cost": 0.4629386102,
+        "emissions": 0.243044262,
+        "reliability": 0.0999581164,
+        "social": 0.1940590114
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_summary_global_22.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_summary_global_23": {
+      "weights": {
+        "cost": 0.4629566381,
+        "emissions": 0.1628376741,
+        "reliability": 0.2080883532,
+        "social": 0.1661173346
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_summary_global_23.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_summary_global_0": {
+      "weights": {
+        "cost": 0.1685524836,
+        "emissions": 0.2669447554,
+        "reliability": 0.1245251254,
+        "social": 0.4399776356
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_summary_global_0.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_summary_global_1": {
+      "weights": {
+        "cost": 0.168537466,
+        "emissions": 0.3193324044,
+        "reliability": 0.2202773519,
+        "social": 0.2918527777
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_summary_global_1.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_summary_global_2": {
+      "weights": {
+        "cost": 0.1685315247,
+        "emissions": 0.3443426813,
+        "reliability": 0.1568471166,
+        "social": 0.3302786774
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_summary_global_2.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_summary_global_3": {
+      "weights": {
+        "cost": 0.168533962,
+        "emissions": 0.227692552,
+        "reliability": 0.1468558816,
+        "social": 0.4569176043
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_summary_global_3.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_summary_global_4": {
+      "weights": {
+        "cost": 0.1685310494,
+        "emissions": 0.2538760531,
+        "reliability": 0.1781772678,
+        "social": 0.3994156296
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_summary_global_4.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_summary_global_5": {
+      "weights": {
+        "cost": 0.1685310808,
+        "emissions": 0.4017669079,
+        "reliability": 0.2198948975,
+        "social": 0.2098071138
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_summary_global_5.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_summary_global_6": {
+      "weights": {
+        "cost": 0.1685318693,
+        "emissions": 0.2066247049,
+        "reliability": 0.4018976509,
+        "social": 0.2229457749
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_summary_global_6.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_summary_global_7": {
+      "weights": {
+        "cost": 0.1685315737,
+        "emissions": 0.3831601714,
+        "reliability": 0.2599521283,
+        "social": 0.1883561265
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_summary_global_7.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_summary_global_8": {
+      "weights": {
+        "cost": 0.1705833073,
+        "emissions": 0.2281603165,
+        "reliability": 0.3717674011,
+        "social": 0.2294889752
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_summary_global_8.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_summary_global_9": {
+      "weights": {
+        "cost": 0.1694795509,
+        "emissions": 0.1880052337,
+        "reliability": 0.4806570132,
+        "social": 0.1618582023
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_summary_global_9.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_summary_global_10": {
+      "weights": {
+        "cost": 0.1692742393,
+        "emissions": 0.2485726603,
+        "reliability": 0.439524801,
+        "social": 0.1426282995
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_summary_global_10.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_summary_global_11": {
+      "weights": {
+        "cost": 0.1693649272,
+        "emissions": 0.2393830695,
+        "reliability": 0.2460401187,
+        "social": 0.3452118846
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_summary_global_11.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_summary_global_12": {
+      "weights": {
+        "cost": 0.1685967902,
+        "emissions": 0.2762029063,
+        "reliability": 0.1736459688,
+        "social": 0.3815543348
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_summary_global_12.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_summary_global_13": {
+      "weights": {
+        "cost": 0.1688218681,
+        "emissions": 0.3800009409,
+        "reliability": 0.1355986982,
+        "social": 0.3155784927
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_summary_global_13.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_summary_global_14": {
+      "weights": {
+        "cost": 0.1685308001,
+        "emissions": 0.2788082833,
+        "reliability": 0.3397970443,
+        "social": 0.2128638722
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_summary_global_14.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_summary_global_15": {
+      "weights": {
+        "cost": 0.1685316077,
+        "emissions": 0.337361169,
+        "reliability": 0.3535287068,
+        "social": 0.1405785164
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_summary_global_15.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_summary_global_16": {
+      "weights": {
+        "cost": 0.1687044852,
+        "emissions": 0.2368787367,
+        "reliability": 0.164615318,
+        "social": 0.4298014601
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_summary_global_16.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_summary_global_17": {
+      "weights": {
+        "cost": 0.1685522193,
+        "emissions": 0.3797234922,
+        "reliability": 0.2279206777,
+        "social": 0.2238036107
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_summary_global_17.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_summary_global_18": {
+      "weights": {
+        "cost": 0.1685213523,
+        "emissions": 0.2521972445,
+        "reliability": 0.2981342423,
+        "social": 0.2811471609
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_summary_global_18.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_summary_global_19": {
+      "weights": {
+        "cost": 0.1685308012,
+        "emissions": 0.5357497922,
+        "reliability": 0.1619812201,
+        "social": 0.1337381865
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_summary_global_19.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_summary_global_20": {
+      "weights": {
+        "cost": 0.1685852731,
+        "emissions": 0.1986041209,
+        "reliability": 0.1967717642,
+        "social": 0.4360388418
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_summary_global_20.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_summary_global_21": {
+      "weights": {
+        "cost": 0.1685312053,
+        "emissions": 0.1743839762,
+        "reliability": 0.3175547453,
+        "social": 0.3395300731
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_summary_global_21.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_summary_global_22": {
+      "weights": {
+        "cost": 0.1685353361,
+        "emissions": 0.4261462277,
+        "reliability": 0.2279760882,
+        "social": 0.1773423479
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_summary_global_22.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_summary_global_23": {
+      "weights": {
+        "cost": 0.1685308034,
+        "emissions": 0.4270663973,
+        "reliability": 0.1323990829,
+        "social": 0.2720037165
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_summary_global_23.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_summary_global_0": {
+      "weights": {
+        "cost": 0.1825950369,
+        "emissions": 0.2256194795,
+        "reliability": 0.2181083774,
+        "social": 0.3736771062
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_summary_global_0.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_summary_global_1": {
+      "weights": {
+        "cost": 0.1825900784,
+        "emissions": 0.3796869469,
+        "reliability": 0.2409142534,
+        "social": 0.1968087214
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_summary_global_1.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_summary_global_2": {
+      "weights": {
+        "cost": 0.1825882236,
+        "emissions": 0.2626143792,
+        "reliability": 0.1434875429,
+        "social": 0.4113098543
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_summary_global_2.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_summary_global_3": {
+      "weights": {
+        "cost": 0.1825963264,
+        "emissions": 0.316475074,
+        "reliability": 0.3607009233,
+        "social": 0.1402276763
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_summary_global_3.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_summary_global_4": {
+      "weights": {
+        "cost": 0.1825904359,
+        "emissions": 0.3214176261,
+        "reliability": 0.2137339041,
+        "social": 0.282258034
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_summary_global_4.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_summary_global_5": {
+      "weights": {
+        "cost": 0.1825847055,
+        "emissions": 0.2657911697,
+        "reliability": 0.3373574781,
+        "social": 0.2142666467
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_summary_global_5.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_summary_global_6": {
+      "weights": {
+        "cost": 0.1825847541,
+        "emissions": 0.5192541711,
+        "reliability": 0.1712378011,
+        "social": 0.1269232737
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_summary_global_6.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_summary_global_7": {
+      "weights": {
+        "cost": 0.1825959525,
+        "emissions": 0.2152492994,
+        "reliability": 0.1631307422,
+        "social": 0.4390240058
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_summary_global_7.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_summary_global_8": {
+      "weights": {
+        "cost": 0.1828688517,
+        "emissions": 0.2809657674,
+        "reliability": 0.2611937767,
+        "social": 0.2749716042
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_summary_global_8.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_summary_global_9": {
+      "weights": {
+        "cost": 0.1829144781,
+        "emissions": 0.4203817894,
+        "reliability": 0.2026391612,
+        "social": 0.1940645713
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_summary_global_9.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_summary_global_10": {
+      "weights": {
+        "cost": 0.1828475721,
+        "emissions": 0.1939486129,
+        "reliability": 0.468571984,
+        "social": 0.154631831
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_summary_global_10.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_summary_global_11": {
+      "weights": {
+        "cost": 0.1826329387,
+        "emissions": 0.2248673174,
+        "reliability": 0.3150810678,
+        "social": 0.2774186761
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_summary_global_11.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_summary_global_12": {
+      "weights": {
+        "cost": 0.1831729066,
+        "emissions": 0.2806628791,
+        "reliability": 0.1304557119,
+        "social": 0.4057085023
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_summary_global_12.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_summary_global_13": {
+      "weights": {
+        "cost": 0.1839292094,
+        "emissions": 0.2618337511,
+        "reliability": 0.4122143747,
+        "social": 0.1420226648
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_summary_global_13.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_summary_global_14": {
+      "weights": {
+        "cost": 0.182591593,
+        "emissions": 0.2577369065,
+        "reliability": 0.3936048353,
+        "social": 0.1660666653
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_summary_global_14.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_summary_global_15": {
+      "weights": {
+        "cost": 0.1825849085,
+        "emissions": 0.3328830196,
+        "reliability": 0.200428051,
+        "social": 0.2841040208
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_summary_global_15.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_summary_global_16": {
+      "weights": {
+        "cost": 0.1828122879,
+        "emissions": 0.2124637543,
+        "reliability": 0.2553668568,
+        "social": 0.349357101
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_summary_global_16.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_summary_global_17": {
+      "weights": {
+        "cost": 0.1825873277,
+        "emissions": 0.3498768543,
+        "reliability": 0.2755312804,
+        "social": 0.1920045376
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_summary_global_17.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_summary_global_18": {
+      "weights": {
+        "cost": 0.1825905983,
+        "emissions": 0.3299413926,
+        "reliability": 0.2942755321,
+        "social": 0.1931924769
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_summary_global_18.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_summary_global_19": {
+      "weights": {
+        "cost": 0.182584129,
+        "emissions": 0.4364504719,
+        "reliability": 0.1960090259,
+        "social": 0.1849563733
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_summary_global_19.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_summary_global_20": {
+      "weights": {
+        "cost": 0.1825923501,
+        "emissions": 0.2947287556,
+        "reliability": 0.3151950612,
+        "social": 0.2074838332
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_summary_global_20.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_summary_global_21": {
+      "weights": {
+        "cost": 0.1825864079,
+        "emissions": 0.3774026671,
+        "reliability": 0.1258225115,
+        "social": 0.3141884135
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_summary_global_21.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_summary_global_22": {
+      "weights": {
+        "cost": 0.1826122208,
+        "emissions": 0.3178818567,
+        "reliability": 0.2422409355,
+        "social": 0.2572649871
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_summary_global_22.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_summary_global_23": {
+      "weights": {
+        "cost": 0.182584679,
+        "emissions": 0.2616145269,
+        "reliability": 0.399289424,
+        "social": 0.1565113701
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_summary_global_23.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_I2PLS_i2pls_1_weights": {
+      "weights": {
+        "cost": 0.463071227,
+        "emissions": 0.1966695223,
+        "reliability": 0.1591044207,
+        "social": 0.1811548301
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_I2PLS_i2pls_1_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_I2PLS_i2pls_2_weights": {
+      "weights": {
+        "cost": 0.4629616573,
+        "emissions": 0.250794454,
+        "reliability": 0.1575928232,
+        "social": 0.1286510655
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_I2PLS_i2pls_2_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_I2PLS_i2pls_3_weights": {
+      "weights": {
+        "cost": 0.4629876069,
+        "emissions": 0.213497041,
+        "reliability": 0.2154813221,
+        "social": 0.10803403
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_I2PLS_i2pls_3_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_I2PLS_i2pls_4_weights": {
+      "weights": {
+        "cost": 0.4626489312,
+        "emissions": 0.2407308169,
+        "reliability": 0.2057637677,
+        "social": 0.0908564843
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_I2PLS_i2pls_4_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_I2PLS_i2pls_5_weights": {
+      "weights": {
+        "cost": 0.4627523093,
+        "emissions": 0.1904681457,
+        "reliability": 0.2190221635,
+        "social": 0.1277573815
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_I2PLS_i2pls_5_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_I2PLS_i2pls_6_weights": {
+      "weights": {
+        "cost": 0.4629474918,
+        "emissions": 0.1655152904,
+        "reliability": 0.2210134947,
+        "social": 0.1505237231
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_I2PLS_i2pls_6_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_I2PLS_i2pls_7_weights": {
+      "weights": {
+        "cost": 0.4629591799,
+        "emissions": 0.2500484303,
+        "reliability": 0.1200381665,
+        "social": 0.1669542232
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_I2PLS_i2pls_7_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_I2PLS_i2pls_8_weights": {
+      "weights": {
+        "cost": 0.462958343,
+        "emissions": 0.2634362506,
+        "reliability": 0.1487810376,
+        "social": 0.1248243688
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_I2PLS_i2pls_8_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_ILS_ils_1_weights": {
+      "weights": {
+        "cost": 0.4629997524,
+        "emissions": 0.1974107606,
+        "reliability": 0.1806806883,
+        "social": 0.1589087987
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_ILS_ils_1_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_ILS_ils_2_weights": {
+      "weights": {
+        "cost": 0.4629502616,
+        "emissions": 0.239120474,
+        "reliability": 0.1418893914,
+        "social": 0.156039873
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_ILS_ils_2_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_ILS_ils_3_weights": {
+      "weights": {
+        "cost": 0.4629355744,
+        "emissions": 0.2234202751,
+        "reliability": 0.1516386224,
+        "social": 0.1620055281
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_ILS_ils_3_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_ILS_ils_4_weights": {
+      "weights": {
+        "cost": 0.4629409672,
+        "emissions": 0.1909653621,
+        "reliability": 0.2118101504,
+        "social": 0.1342835202
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_ILS_ils_4_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_ILS_ils_5_weights": {
+      "weights": {
+        "cost": 0.463172727,
+        "emissions": 0.2271009275,
+        "reliability": 0.1681528884,
+        "social": 0.1415734571
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_ILS_ils_5_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_ILS_ils_6_weights": {
+      "weights": {
+        "cost": 0.462945823,
+        "emissions": 0.2431008646,
+        "reliability": 0.1486180259,
+        "social": 0.1453352865
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_ILS_ils_6_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_ILS_ils_7_weights": {
+      "weights": {
+        "cost": 0.4628350934,
+        "emissions": 0.1897486336,
+        "reliability": 0.1906630782,
+        "social": 0.1567531949
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_ILS_ils_7_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_ILS_ils_8_weights": {
+      "weights": {
+        "cost": 0.462805728,
+        "emissions": 0.2608654982,
+        "reliability": 0.1286325768,
+        "social": 0.147696197
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_ILS_ils_8_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_LBH_lbh_1_weights": {
+      "weights": {
+        "cost": 0.4633165707,
+        "emissions": 0.235262292,
+        "reliability": 0.1178940388,
+        "social": 0.1835270985
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_LBH_lbh_1_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_LBH_lbh_2_weights": {
+      "weights": {
+        "cost": 0.4631221146,
+        "emissions": 0.2572513137,
+        "reliability": 0.140461918,
+        "social": 0.1391646537
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_LBH_lbh_2_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_LBH_lbh_3_weights": {
+      "weights": {
+        "cost": 0.4708232271,
+        "emissions": 0.2493468947,
+        "reliability": 0.0826345916,
+        "social": 0.1971952866
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_LBH_lbh_3_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_LBH_lbh_4_weights": {
+      "weights": {
+        "cost": 0.4630352917,
+        "emissions": 0.2010123369,
+        "reliability": 0.1654141697,
+        "social": 0.1705382017
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_LBH_lbh_4_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_LBH_lbh_5_weights": {
+      "weights": {
+        "cost": 0.4677337987,
+        "emissions": 0.2327750969,
+        "reliability": 0.1804780497,
+        "social": 0.1190130547
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_LBH_lbh_5_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_LBH_lbh_6_weights": {
+      "weights": {
+        "cost": 0.4626747467,
+        "emissions": 0.2204527949,
+        "reliability": 0.1337133428,
+        "social": 0.1831591156
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_LBH_lbh_6_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_LBH_lbh_7_weights": {
+      "weights": {
+        "cost": 0.4594058409,
+        "emissions": 0.2641703467,
+        "reliability": 0.1162663224,
+        "social": 0.1601574899
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_LBH_lbh_7_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_LBH_lbh_8_weights": {
+      "weights": {
+        "cost": 0.4630618335,
+        "emissions": 0.2397915523,
+        "reliability": 0.1254734162,
+        "social": 0.171673198
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_LBH_lbh_8_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_MTS_mts_1_weights": {
+      "weights": {
+        "cost": 0.4628636782,
+        "emissions": 0.2019912368,
+        "reliability": 0.1598412285,
+        "social": 0.1753038565
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_MTS_mts_1_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_MTS_mts_2_weights": {
+      "weights": {
+        "cost": 0.462800759,
+        "emissions": 0.1636687735,
+        "reliability": 0.1707188807,
+        "social": 0.2028115868
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_MTS_mts_2_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_MTS_mts_3_weights": {
+      "weights": {
+        "cost": 0.4629352165,
+        "emissions": 0.2500783097,
+        "reliability": 0.1678367895,
+        "social": 0.1191496843
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_MTS_mts_3_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_MTS_mts_4_weights": {
+      "weights": {
+        "cost": 0.4630078108,
+        "emissions": 0.1877324744,
+        "reliability": 0.1940781034,
+        "social": 0.1551816114
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_MTS_mts_4_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_MTS_mts_5_weights": {
+      "weights": {
+        "cost": 0.4629944575,
+        "emissions": 0.2496393828,
+        "reliability": 0.1210004057,
+        "social": 0.166365754
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_MTS_mts_5_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_MTS_mts_6_weights": {
+      "weights": {
+        "cost": 0.462947683,
+        "emissions": 0.2529592513,
+        "reliability": 0.1296859485,
+        "social": 0.1544071172
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_MTS_mts_6_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_MTS_mts_7_weights": {
+      "weights": {
+        "cost": 0.4627573607,
+        "emissions": 0.2267306093,
+        "reliability": 0.2135548311,
+        "social": 0.0969571989
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_MTS_mts_7_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_MTS_mts_8_weights": {
+      "weights": {
+        "cost": 0.4630173568,
+        "emissions": 0.2207466003,
+        "reliability": 0.1909439983,
+        "social": 0.1252920446
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_MTS_mts_8_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_WILB_wilb_1_weights": {
+      "weights": {
+        "cost": 0.460185871,
+        "emissions": 0.2157384426,
+        "reliability": 0.1545281122,
+        "social": 0.1695475742
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_WILB_wilb_1_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_WILB_wilb_2_weights": {
+      "weights": {
+        "cost": 0.4586320782,
+        "emissions": 0.200559098,
+        "reliability": 0.121482453,
+        "social": 0.2193263709
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_WILB_wilb_2_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_WILB_wilb_3_weights": {
+      "weights": {
+        "cost": 0.4638725028,
+        "emissions": 0.1876120972,
+        "reliability": 0.1858772442,
+        "social": 0.1626381558
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_WILB_wilb_3_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_WILB_wilb_4_weights": {
+      "weights": {
+        "cost": 0.4637229812,
+        "emissions": 0.2404708476,
+        "reliability": 0.1000102612,
+        "social": 0.19579591
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_WILB_wilb_4_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_WILB_wilb_5_weights": {
+      "weights": {
+        "cost": 0.4607516872,
+        "emissions": 0.2344564422,
+        "reliability": 0.1309253756,
+        "social": 0.1738664951
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_WILB_wilb_5_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_WILB_wilb_6_weights": {
+      "weights": {
+        "cost": 0.4625768394,
+        "emissions": 0.1797994789,
+        "reliability": 0.1894323236,
+        "social": 0.1681913581
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_WILB_wilb_6_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_WILB_wilb_7_weights": {
+      "weights": {
+        "cost": 0.4630558106,
+        "emissions": 0.2080938874,
+        "reliability": 0.1250438319,
+        "social": 0.2038064701
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_WILB_wilb_7_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_WILB_wilb_8_weights": {
+      "weights": {
+        "cost": 0.4639546816,
+        "emissions": 0.230898675,
+        "reliability": 0.1742238654,
+        "social": 0.1309227781
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_WILB_wilb_8_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_I2PLS_i2pls_1_weights": {
+      "weights": {
+        "cost": 0.1685325183,
+        "emissions": 0.2063670769,
+        "reliability": 0.4411324026,
+        "social": 0.1839680022
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_I2PLS_i2pls_1_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_I2PLS_i2pls_2_weights": {
+      "weights": {
+        "cost": 0.1685420493,
+        "emissions": 0.1947481239,
+        "reliability": 0.1888674871,
+        "social": 0.4478423396
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_I2PLS_i2pls_2_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_I2PLS_i2pls_3_weights": {
+      "weights": {
+        "cost": 0.1686014696,
+        "emissions": 0.3272700032,
+        "reliability": 0.147006918,
+        "social": 0.3571216092
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_I2PLS_i2pls_3_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_I2PLS_i2pls_4_weights": {
+      "weights": {
+        "cost": 0.1685403242,
+        "emissions": 0.32206702,
+        "reliability": 0.3748456884,
+        "social": 0.1345469675
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_I2PLS_i2pls_4_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_I2PLS_i2pls_5_weights": {
+      "weights": {
+        "cost": 0.1685556598,
+        "emissions": 0.2417816379,
+        "reliability": 0.3644149949,
+        "social": 0.2252477074
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_I2PLS_i2pls_5_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_I2PLS_i2pls_6_weights": {
+      "weights": {
+        "cost": 0.1686225655,
+        "emissions": 0.5357138924,
+        "reliability": 0.1705158874,
+        "social": 0.1251476547
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_I2PLS_i2pls_6_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_I2PLS_i2pls_7_weights": {
+      "weights": {
+        "cost": 0.1685344557,
+        "emissions": 0.3163797515,
+        "reliability": 0.2170041806,
+        "social": 0.2980816122
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_I2PLS_i2pls_7_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_I2PLS_i2pls_8_weights": {
+      "weights": {
+        "cost": 0.1685669993,
+        "emissions": 0.3136123291,
+        "reliability": 0.1213144827,
+        "social": 0.3965061889
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_I2PLS_i2pls_8_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_ILS_ils_1_weights": {
+      "weights": {
+        "cost": 0.1686722376,
+        "emissions": 0.3274016837,
+        "reliability": 0.3640365387,
+        "social": 0.13988954
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_ILS_ils_1_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_ILS_ils_2_weights": {
+      "weights": {
+        "cost": 0.1685557997,
+        "emissions": 0.4019889336,
+        "reliability": 0.1820817248,
+        "social": 0.2473735419
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_ILS_ils_2_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_ILS_ils_3_weights": {
+      "weights": {
+        "cost": 0.1686163841,
+        "emissions": 0.206774894,
+        "reliability": 0.3882287173,
+        "social": 0.2363800046
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_ILS_ils_3_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_ILS_ils_4_weights": {
+      "weights": {
+        "cost": 0.168542779,
+        "emissions": 0.223168937,
+        "reliability": 0.3854841669,
+        "social": 0.2228041171
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_ILS_ils_4_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_ILS_ils_5_weights": {
+      "weights": {
+        "cost": 0.1686690213,
+        "emissions": 0.4400176185,
+        "reliability": 0.2582314392,
+        "social": 0.133081921
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_ILS_ils_5_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_ILS_ils_6_weights": {
+      "weights": {
+        "cost": 0.1687079926,
+        "emissions": 0.255409374,
+        "reliability": 0.4306938015,
+        "social": 0.1451888318
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_ILS_ils_6_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_ILS_ils_7_weights": {
+      "weights": {
+        "cost": 0.1685559596,
+        "emissions": 0.391201743,
+        "reliability": 0.3089207732,
+        "social": 0.1313215241
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_ILS_ils_7_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_ILS_ils_8_weights": {
+      "weights": {
+        "cost": 0.1686206829,
+        "emissions": 0.2813257103,
+        "reliability": 0.1390347238,
+        "social": 0.4110188829
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_ILS_ils_8_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_LBH_lbh_1_weights": {
+      "weights": {
+        "cost": 0.1685456101,
+        "emissions": 0.2844154468,
+        "reliability": 0.1835026256,
+        "social": 0.3635363174
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_LBH_lbh_1_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_LBH_lbh_2_weights": {
+      "weights": {
+        "cost": 0.1722957161,
+        "emissions": 0.2068777803,
+        "reliability": 0.3287766123,
+        "social": 0.2920498914
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_LBH_lbh_2_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_LBH_lbh_3_weights": {
+      "weights": {
+        "cost": 0.170908546,
+        "emissions": 0.2113176037,
+        "reliability": 0.459845587,
+        "social": 0.1579282634
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_LBH_lbh_3_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_LBH_lbh_4_weights": {
+      "weights": {
+        "cost": 0.1742892169,
+        "emissions": 0.345528683,
+        "reliability": 0.19575531,
+        "social": 0.2844267901
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_LBH_lbh_4_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_LBH_lbh_5_weights": {
+      "weights": {
+        "cost": 0.1686493861,
+        "emissions": 0.4635517379,
+        "reliability": 0.2348519149,
+        "social": 0.1329469611
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_LBH_lbh_5_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_LBH_lbh_6_weights": {
+      "weights": {
+        "cost": 0.1772519638,
+        "emissions": 0.4956566285,
+        "reliability": 0.1839926016,
+        "social": 0.1430988061
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_LBH_lbh_6_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_LBH_lbh_7_weights": {
+      "weights": {
+        "cost": 0.1683245174,
+        "emissions": 0.2786844798,
+        "reliability": 0.2607998119,
+        "social": 0.2921911909
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_LBH_lbh_7_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_LBH_lbh_8_weights": {
+      "weights": {
+        "cost": 0.1698859454,
+        "emissions": 0.2359806292,
+        "reliability": 0.343723691,
+        "social": 0.2504097343
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_LBH_lbh_8_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_MTS_mts_1_weights": {
+      "weights": {
+        "cost": 0.1685323305,
+        "emissions": 0.2784470391,
+        "reliability": 0.2477870119,
+        "social": 0.3052336185
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_MTS_mts_1_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_MTS_mts_2_weights": {
+      "weights": {
+        "cost": 0.1685497554,
+        "emissions": 0.2146457243,
+        "reliability": 0.2181527591,
+        "social": 0.3986517612
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_MTS_mts_2_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_MTS_mts_3_weights": {
+      "weights": {
+        "cost": 0.1685919835,
+        "emissions": 0.3213520286,
+        "reliability": 0.3732666634,
+        "social": 0.1367893245
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_MTS_mts_3_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_MTS_mts_4_weights": {
+      "weights": {
+        "cost": 0.1685925607,
+        "emissions": 0.4697035264,
+        "reliability": 0.1401447604,
+        "social": 0.2215591526
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_MTS_mts_4_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_MTS_mts_5_weights": {
+      "weights": {
+        "cost": 0.1688251836,
+        "emissions": 0.2304026294,
+        "reliability": 0.1947853289,
+        "social": 0.4059868581
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_MTS_mts_5_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_MTS_mts_6_weights": {
+      "weights": {
+        "cost": 0.1685672751,
+        "emissions": 0.3461782473,
+        "reliability": 0.1535050785,
+        "social": 0.3317493991
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_MTS_mts_6_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_MTS_mts_7_weights": {
+      "weights": {
+        "cost": 0.1685383568,
+        "emissions": 0.2198554605,
+        "reliability": 0.3090918241,
+        "social": 0.3025143586
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_MTS_mts_7_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_MTS_mts_8_weights": {
+      "weights": {
+        "cost": 0.1685523378,
+        "emissions": 0.3517673147,
+        "reliability": 0.2545558021,
+        "social": 0.2251245454
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_MTS_mts_8_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_WILB_wilb_1_weights": {
+      "weights": {
+        "cost": 0.169001688,
+        "emissions": 0.2129843001,
+        "reliability": 0.2257114007,
+        "social": 0.3923026112
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_WILB_wilb_1_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_WILB_wilb_2_weights": {
+      "weights": {
+        "cost": 0.1695062889,
+        "emissions": 0.3427637529,
+        "reliability": 0.3451435803,
+        "social": 0.1425863779
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_WILB_wilb_2_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_WILB_wilb_3_weights": {
+      "weights": {
+        "cost": 0.1699589037,
+        "emissions": 0.256779157,
+        "reliability": 0.3950922463,
+        "social": 0.1781696929
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_WILB_wilb_3_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_WILB_wilb_4_weights": {
+      "weights": {
+        "cost": 0.1691636136,
+        "emissions": 0.4449458929,
+        "reliability": 0.2421322584,
+        "social": 0.1437582351
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_WILB_wilb_4_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_WILB_wilb_5_weights": {
+      "weights": {
+        "cost": 0.1692639546,
+        "emissions": 0.4384646728,
+        "reliability": 0.1396385774,
+        "social": 0.2526327952
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_WILB_wilb_5_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_WILB_wilb_6_weights": {
+      "weights": {
+        "cost": 0.1685541095,
+        "emissions": 0.4477066172,
+        "reliability": 0.1279302942,
+        "social": 0.255808979
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_WILB_wilb_6_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_WILB_wilb_7_weights": {
+      "weights": {
+        "cost": 0.1691865149,
+        "emissions": 0.4060240215,
+        "reliability": 0.240041451,
+        "social": 0.1847480126
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_WILB_wilb_7_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_WILB_wilb_8_weights": {
+      "weights": {
+        "cost": 0.1702108215,
+        "emissions": 0.1910940211,
+        "reliability": 0.293154702,
+        "social": 0.3455404554
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_WILB_wilb_8_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_I2PLS_i2pls_1_weights": {
+      "weights": {
+        "cost": 0.1827045643,
+        "emissions": 0.1979243782,
+        "reliability": 0.258845014,
+        "social": 0.3605260436
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_I2PLS_i2pls_1_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_I2PLS_i2pls_2_weights": {
+      "weights": {
+        "cost": 0.1825846813,
+        "emissions": 0.2095099842,
+        "reliability": 0.4278656597,
+        "social": 0.1800396748
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_I2PLS_i2pls_2_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_I2PLS_i2pls_3_weights": {
+      "weights": {
+        "cost": 0.1826339081,
+        "emissions": 0.1850158386,
+        "reliability": 0.3872507394,
+        "social": 0.2450995139
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_I2PLS_i2pls_3_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_I2PLS_i2pls_4_weights": {
+      "weights": {
+        "cost": 0.1827413586,
+        "emissions": 0.4574029829,
+        "reliability": 0.1565213444,
+        "social": 0.2033343142
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_I2PLS_i2pls_4_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_I2PLS_i2pls_5_weights": {
+      "weights": {
+        "cost": 0.1826370572,
+        "emissions": 0.5226628301,
+        "reliability": 0.1482682115,
+        "social": 0.1464319011
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_I2PLS_i2pls_5_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_I2PLS_i2pls_6_weights": {
+      "weights": {
+        "cost": 0.182586871,
+        "emissions": 0.2289326345,
+        "reliability": 0.3074494494,
+        "social": 0.2810310451
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_I2PLS_i2pls_6_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_I2PLS_i2pls_7_weights": {
+      "weights": {
+        "cost": 0.1825898687,
+        "emissions": 0.2228983149,
+        "reliability": 0.3905550585,
+        "social": 0.2039567579
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_I2PLS_i2pls_7_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_I2PLS_i2pls_8_weights": {
+      "weights": {
+        "cost": 0.1826147326,
+        "emissions": 0.2746417985,
+        "reliability": 0.1933103655,
+        "social": 0.3494331034
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_I2PLS_i2pls_8_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_ILS_ils_1_weights": {
+      "weights": {
+        "cost": 0.1825940021,
+        "emissions": 0.2521686254,
+        "reliability": 0.4317975476,
+        "social": 0.1334398249
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_ILS_ils_1_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_ILS_ils_2_weights": {
+      "weights": {
+        "cost": 0.1825990002,
+        "emissions": 0.3432584059,
+        "reliability": 0.1377076191,
+        "social": 0.3364349748
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_ILS_ils_2_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_ILS_ils_3_weights": {
+      "weights": {
+        "cost": 0.1827492762,
+        "emissions": 0.4388860773,
+        "reliability": 0.2150969562,
+        "social": 0.1632676904
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_ILS_ils_3_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_ILS_ils_4_weights": {
+      "weights": {
+        "cost": 0.1826577781,
+        "emissions": 0.4657589799,
+        "reliability": 0.1914853104,
+        "social": 0.1600979316
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_ILS_ils_4_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_ILS_ils_5_weights": {
+      "weights": {
+        "cost": 0.1826936602,
+        "emissions": 0.2609910377,
+        "reliability": 0.3464636242,
+        "social": 0.2098516779
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_ILS_ils_5_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_ILS_ils_6_weights": {
+      "weights": {
+        "cost": 0.1826405937,
+        "emissions": 0.3446008088,
+        "reliability": 0.2241365432,
+        "social": 0.2486220543
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_ILS_ils_6_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_ILS_ils_7_weights": {
+      "weights": {
+        "cost": 0.1825887483,
+        "emissions": 0.2269595843,
+        "reliability": 0.2691320594,
+        "social": 0.321319608
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_ILS_ils_7_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_ILS_ils_8_weights": {
+      "weights": {
+        "cost": 0.1826644453,
+        "emissions": 0.2525398042,
+        "reliability": 0.2062839665,
+        "social": 0.3585117839
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_ILS_ils_8_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_LBH_lbh_1_weights": {
+      "weights": {
+        "cost": 0.1826425257,
+        "emissions": 0.343469865,
+        "reliability": 0.2124167132,
+        "social": 0.2614708961
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_LBH_lbh_1_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_LBH_lbh_2_weights": {
+      "weights": {
+        "cost": 0.1835082352,
+        "emissions": 0.2286656897,
+        "reliability": 0.3905301559,
+        "social": 0.1972959193
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_LBH_lbh_2_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_LBH_lbh_3_weights": {
+      "weights": {
+        "cost": 0.1884613362,
+        "emissions": 0.3831150022,
+        "reliability": 0.2954865857,
+        "social": 0.1329370758
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_LBH_lbh_3_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_LBH_lbh_4_weights": {
+      "weights": {
+        "cost": 0.1908290828,
+        "emissions": 0.2548675676,
+        "reliability": 0.2681831696,
+        "social": 0.2861201801
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_LBH_lbh_4_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_LBH_lbh_5_weights": {
+      "weights": {
+        "cost": 0.1907158565,
+        "emissions": 0.1870472514,
+        "reliability": 0.3371580344,
+        "social": 0.2850788576
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_LBH_lbh_5_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_LBH_lbh_6_weights": {
+      "weights": {
+        "cost": 0.184612302,
+        "emissions": 0.2460678136,
+        "reliability": 0.2404231287,
+        "social": 0.3288967556
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_LBH_lbh_6_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_LBH_lbh_7_weights": {
+      "weights": {
+        "cost": 0.1837877465,
+        "emissions": 0.4106429117,
+        "reliability": 0.1897022092,
+        "social": 0.2158671325
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_LBH_lbh_7_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_LBH_lbh_8_weights": {
+      "weights": {
+        "cost": 0.1851751833,
+        "emissions": 0.2209348477,
+        "reliability": 0.2752641283,
+        "social": 0.3186258407
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_LBH_lbh_8_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_MTS_mts_1_weights": {
+      "weights": {
+        "cost": 0.1826324665,
+        "emissions": 0.2858768536,
+        "reliability": 0.2912465605,
+        "social": 0.2402441194
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_MTS_mts_1_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_MTS_mts_2_weights": {
+      "weights": {
+        "cost": 0.1826473095,
+        "emissions": 0.4317681106,
+        "reliability": 0.1887735975,
+        "social": 0.1968109824
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_MTS_mts_2_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_MTS_mts_3_weights": {
+      "weights": {
+        "cost": 0.1826226268,
+        "emissions": 0.2528357903,
+        "reliability": 0.1436892316,
+        "social": 0.4208523513
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_MTS_mts_3_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_MTS_mts_4_weights": {
+      "weights": {
+        "cost": 0.1826350174,
+        "emissions": 0.261320881,
+        "reliability": 0.2303942366,
+        "social": 0.325649865
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_MTS_mts_4_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_MTS_mts_5_weights": {
+      "weights": {
+        "cost": 0.1826183458,
+        "emissions": 0.3672370578,
+        "reliability": 0.1597203547,
+        "social": 0.2904242417
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_MTS_mts_5_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_MTS_mts_6_weights": {
+      "weights": {
+        "cost": 0.1826011685,
+        "emissions": 0.4356269954,
+        "reliability": 0.1567467314,
+        "social": 0.2250251047
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_MTS_mts_6_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_MTS_mts_7_weights": {
+      "weights": {
+        "cost": 0.1826495186,
+        "emissions": 0.3878591005,
+        "reliability": 0.2300804313,
+        "social": 0.1994109497
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_MTS_mts_7_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_MTS_mts_8_weights": {
+      "weights": {
+        "cost": 0.1826026982,
+        "emissions": 0.1891659582,
+        "reliability": 0.2257837896,
+        "social": 0.402447554
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_MTS_mts_8_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_WILB_wilb_1_weights": {
+      "weights": {
+        "cost": 0.1864326727,
+        "emissions": 0.1973387874,
+        "reliability": 0.312126659,
+        "social": 0.3041018809
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_WILB_wilb_1_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_WILB_wilb_2_weights": {
+      "weights": {
+        "cost": 0.1834387589,
+        "emissions": 0.3629402847,
+        "reliability": 0.2662611359,
+        "social": 0.1873598205
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_WILB_wilb_2_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_WILB_wilb_3_weights": {
+      "weights": {
+        "cost": 0.182798079,
+        "emissions": 0.2697399803,
+        "reliability": 0.1428120266,
+        "social": 0.404649914
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_WILB_wilb_3_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_WILB_wilb_4_weights": {
+      "weights": {
+        "cost": 0.1829341054,
+        "emissions": 0.2087648384,
+        "reliability": 0.3432415974,
+        "social": 0.2650594588
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_WILB_wilb_4_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_WILB_wilb_5_weights": {
+      "weights": {
+        "cost": 0.1846678056,
+        "emissions": 0.4472742983,
+        "reliability": 0.1921097712,
+        "social": 0.1759481248
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_WILB_wilb_5_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_WILB_wilb_6_weights": {
+      "weights": {
+        "cost": 0.1829175724,
+        "emissions": 0.2279913899,
+        "reliability": 0.2829289691,
+        "social": 0.3061620686
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_WILB_wilb_6_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_WILB_wilb_7_weights": {
+      "weights": {
+        "cost": 0.1826552701,
+        "emissions": 0.3488387367,
+        "reliability": 0.2723468648,
+        "social": 0.1961591285
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_WILB_wilb_7_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_WILB_wilb_8_weights": {
+      "weights": {
+        "cost": 0.1826327302,
+        "emissions": 0.3482893422,
+        "reliability": 0.2392622503,
+        "social": 0.2298156774
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_WILB_wilb_8_weights.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_I2PLS_i2pls_1_i2pls_1": {
+      "weights": {
+        "cost": 0.46307122698840825,
+        "emissions": 0.19666952227054343,
+        "reliability": 0.15910442067097938,
+        "social": 0.18115483007006894
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_I2PLS_i2pls_1_i2pls_1.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_I2PLS_i2pls_2_i2pls_2": {
+      "weights": {
+        "cost": 0.4629616573398214,
+        "emissions": 0.2507944539994176,
+        "reliability": 0.1575928232082331,
+        "social": 0.1286510654525278
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_I2PLS_i2pls_2_i2pls_2.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_I2PLS_i2pls_3_i2pls_3": {
+      "weights": {
+        "cost": 0.46298760689277324,
+        "emissions": 0.21349704095631455,
+        "reliability": 0.21548132210524187,
+        "social": 0.10803403004567035
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_I2PLS_i2pls_3_i2pls_3.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_I2PLS_i2pls_4_i2pls_4": {
+      "weights": {
+        "cost": 0.4626489311635387,
+        "emissions": 0.24073081688891118,
+        "reliability": 0.2057637676711493,
+        "social": 0.09085648427640076
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_I2PLS_i2pls_4_i2pls_4.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_I2PLS_i2pls_5_i2pls_5": {
+      "weights": {
+        "cost": 0.46275230931723643,
+        "emissions": 0.19046814567828205,
+        "reliability": 0.21902216350979653,
+        "social": 0.12775738149468494
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_I2PLS_i2pls_5_i2pls_5.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_I2PLS_i2pls_6_i2pls_6": {
+      "weights": {
+        "cost": 0.46294749177759076,
+        "emissions": 0.16551529044289673,
+        "reliability": 0.22101349472717524,
+        "social": 0.15052372305233738
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_I2PLS_i2pls_6_i2pls_6.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_I2PLS_i2pls_7_i2pls_7": {
+      "weights": {
+        "cost": 0.46295917989953533,
+        "emissions": 0.25004843032883545,
+        "reliability": 0.120038166534688,
+        "social": 0.1669542232369412
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_I2PLS_i2pls_7_i2pls_7.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_I2PLS_i2pls_8_i2pls_8": {
+      "weights": {
+        "cost": 0.4629583429933599,
+        "emissions": 0.2634362506487601,
+        "reliability": 0.14878103759322947,
+        "social": 0.12482436876465061
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_I2PLS_i2pls_8_i2pls_8.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_ILS_ils_1_ils_1": {
+      "weights": {
+        "cost": 0.4629997523701085,
+        "emissions": 0.1974107606372897,
+        "reliability": 0.18068068829066244,
+        "social": 0.15890879870193933
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_ILS_ils_1_ils_1.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_ILS_ils_2_ils_2": {
+      "weights": {
+        "cost": 0.462950261605021,
+        "emissions": 0.23912047395761704,
+        "reliability": 0.14188939139879023,
+        "social": 0.1560398730385717
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_ILS_ils_2_ils_2.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_ILS_ils_3_ils_3": {
+      "weights": {
+        "cost": 0.4629355744278283,
+        "emissions": 0.22342027512678234,
+        "reliability": 0.1516386223790069,
+        "social": 0.1620055280663824
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_ILS_ils_3_ils_3.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_ILS_ils_4_ils_4": {
+      "weights": {
+        "cost": 0.46294096723064504,
+        "emissions": 0.1909653621152653,
+        "reliability": 0.21181015042077161,
+        "social": 0.13428352023331797
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_ILS_ils_4_ils_4.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_ILS_ils_5_ils_5": {
+      "weights": {
+        "cost": 0.4631727269769489,
+        "emissions": 0.2271009275013445,
+        "reliability": 0.16815288838287568,
+        "social": 0.14157345713883096
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_ILS_ils_5_ils_5.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_ILS_ils_6_ils_6": {
+      "weights": {
+        "cost": 0.4629458229563088,
+        "emissions": 0.24310086457705832,
+        "reliability": 0.14861802591998144,
+        "social": 0.14533528654665145
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_ILS_ils_6_ils_6.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_ILS_ils_7_ils_7": {
+      "weights": {
+        "cost": 0.46283509337611495,
+        "emissions": 0.18974863355878524,
+        "reliability": 0.19066307820216746,
+        "social": 0.15675319486293232
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_ILS_ils_7_ils_7.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_ILS_ils_8_ils_8": {
+      "weights": {
+        "cost": 0.4628057280251429,
+        "emissions": 0.26086549822717464,
+        "reliability": 0.12863257675780732,
+        "social": 0.1476961969898752
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_ILS_ils_8_ils_8.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_LBH_lbh_1_lbh_1": {
+      "weights": {
+        "cost": 0.4633165706873649,
+        "emissions": 0.23526229195834386,
+        "reliability": 0.11789403883654474,
+        "social": 0.18352709851774648
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_LBH_lbh_1_lbh_1.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_LBH_lbh_2_lbh_2": {
+      "weights": {
+        "cost": 0.4631221146309547,
+        "emissions": 0.25725131366925935,
+        "reliability": 0.14046191802238325,
+        "social": 0.1391646536774027
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_LBH_lbh_2_lbh_2.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_LBH_lbh_3_lbh_3": {
+      "weights": {
+        "cost": 0.4708232271436933,
+        "emissions": 0.2493468946734668,
+        "reliability": 0.082634591558354,
+        "social": 0.1971952866244859
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_LBH_lbh_3_lbh_3.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_LBH_lbh_4_lbh_4": {
+      "weights": {
+        "cost": 0.46303529168916535,
+        "emissions": 0.20101233694230192,
+        "reliability": 0.1654141697137026,
+        "social": 0.1705382016548302
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_LBH_lbh_4_lbh_4.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_LBH_lbh_5_lbh_5": {
+      "weights": {
+        "cost": 0.46773379872706117,
+        "emissions": 0.23277509690966075,
+        "reliability": 0.18047804967824316,
+        "social": 0.11901305468503495
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_LBH_lbh_5_lbh_5.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_LBH_lbh_6_lbh_6": {
+      "weights": {
+        "cost": 0.4626747466788114,
+        "emissions": 0.22045279491413602,
+        "reliability": 0.13371334277586755,
+        "social": 0.18315911563118506
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_LBH_lbh_6_lbh_6.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_LBH_lbh_7_lbh_7": {
+      "weights": {
+        "cost": 0.45940584086267805,
+        "emissions": 0.26417034674604695,
+        "reliability": 0.11626632244252315,
+        "social": 0.16015748994875173
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_LBH_lbh_7_lbh_7.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_LBH_lbh_8_lbh_8": {
+      "weights": {
+        "cost": 0.46306183349743163,
+        "emissions": 0.23979155226874538,
+        "reliability": 0.12547341619862526,
+        "social": 0.17167319803519768
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_LBH_lbh_8_lbh_8.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_MTS_mts_1_mts_1": {
+      "weights": {
+        "cost": 0.46286367821303015,
+        "emissions": 0.20199123681365622,
+        "reliability": 0.15984122845711116,
+        "social": 0.1753038565162024
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_MTS_mts_1_mts_1.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_MTS_mts_2_mts_2": {
+      "weights": {
+        "cost": 0.46280075901950496,
+        "emissions": 0.16366877346385078,
+        "reliability": 0.1707188806901821,
+        "social": 0.20281158682646216
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_MTS_mts_2_mts_2.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_MTS_mts_3_mts_3": {
+      "weights": {
+        "cost": 0.4629352164838651,
+        "emissions": 0.2500783097388393,
+        "reliability": 0.16783678950398914,
+        "social": 0.11914968427330644
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_MTS_mts_3_mts_3.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_MTS_mts_4_mts_4": {
+      "weights": {
+        "cost": 0.46300781081408093,
+        "emissions": 0.18773247437798501,
+        "reliability": 0.19407810343349174,
+        "social": 0.15518161137444222
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_MTS_mts_4_mts_4.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_MTS_mts_5_mts_5": {
+      "weights": {
+        "cost": 0.46299445748297674,
+        "emissions": 0.24963938278989883,
+        "reliability": 0.12100040568513314,
+        "social": 0.1663657540419914
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_MTS_mts_5_mts_5.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_MTS_mts_6_mts_6": {
+      "weights": {
+        "cost": 0.462947682969785,
+        "emissions": 0.2529592512815787,
+        "reliability": 0.12968594852871573,
+        "social": 0.15440711721992062
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_MTS_mts_6_mts_6.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_MTS_mts_7_mts_7": {
+      "weights": {
+        "cost": 0.46275736072649465,
+        "emissions": 0.22673060925749067,
+        "reliability": 0.21355483111091184,
+        "social": 0.09695719890510279
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_MTS_mts_7_mts_7.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_MTS_mts_8_mts_8": {
+      "weights": {
+        "cost": 0.463017356819338,
+        "emissions": 0.22074660027203594,
+        "reliability": 0.19094399832987477,
+        "social": 0.12529204457875132
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_MTS_mts_8_mts_8.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_WILB_wilb_1_wilb_1": {
+      "weights": {
+        "cost": 0.46018587100907754,
+        "emissions": 0.21573844260128125,
+        "reliability": 0.1545281121803498,
+        "social": 0.16954757420929148
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_WILB_wilb_1_wilb_1.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_WILB_wilb_2_wilb_2": {
+      "weights": {
+        "cost": 0.45863207815021323,
+        "emissions": 0.2005590979762294,
+        "reliability": 0.12148245298395548,
+        "social": 0.21932637088960197
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_WILB_wilb_2_wilb_2.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_WILB_wilb_3_wilb_3": {
+      "weights": {
+        "cost": 0.4638725028345694,
+        "emissions": 0.18761209715220373,
+        "reliability": 0.185877244172632,
+        "social": 0.1626381558405949
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_WILB_wilb_3_wilb_3.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_WILB_wilb_4_wilb_4": {
+      "weights": {
+        "cost": 0.4637229812121086,
+        "emissions": 0.24047084761466245,
+        "reliability": 0.10001026117216284,
+        "social": 0.19579591000106614
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_WILB_wilb_4_wilb_4.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_WILB_wilb_5_wilb_5": {
+      "weights": {
+        "cost": 0.4607516871840636,
+        "emissions": 0.23445644215874967,
+        "reliability": 0.130925375594867,
+        "social": 0.17386649506231983
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_WILB_wilb_5_wilb_5.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_WILB_wilb_6_wilb_6": {
+      "weights": {
+        "cost": 0.46257683937360144,
+        "emissions": 0.17979947890640816,
+        "reliability": 0.18943232360939197,
+        "social": 0.16819135811059843
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_WILB_wilb_6_wilb_6.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_WILB_wilb_7_wilb_7": {
+      "weights": {
+        "cost": 0.46305581056458855,
+        "emissions": 0.20809388739300433,
+        "reliability": 0.12504383192817048,
+        "social": 0.20380647011423655
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_WILB_wilb_7_wilb_7.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "bayes_WILB_wilb_8_wilb_8": {
+      "weights": {
+        "cost": 0.46395468156254394,
+        "emissions": 0.2308986750153023,
+        "reliability": 0.17422386535109094,
+        "social": 0.13092277807106276
+      },
+      "csv": "optimized_mcdm_results\\mcdm_bayes_WILB_wilb_8_wilb_8.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_I2PLS_i2pls_1_i2pls_1": {
+      "weights": {
+        "cost": 0.16853251833571337,
+        "emissions": 0.206367076866365,
+        "reliability": 0.4411324025579522,
+        "social": 0.18396800223996929
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_I2PLS_i2pls_1_i2pls_1.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_I2PLS_i2pls_2_i2pls_2": {
+      "weights": {
+        "cost": 0.16854204934737727,
+        "emissions": 0.194748123948545,
+        "reliability": 0.18886748707817833,
+        "social": 0.44784233962589937
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_I2PLS_i2pls_2_i2pls_2.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_I2PLS_i2pls_3_i2pls_3": {
+      "weights": {
+        "cost": 0.16860146962758435,
+        "emissions": 0.32727000324201133,
+        "reliability": 0.1470069179574918,
+        "social": 0.3571216091729126
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_I2PLS_i2pls_3_i2pls_3.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_I2PLS_i2pls_4_i2pls_4": {
+      "weights": {
+        "cost": 0.16854032418161016,
+        "emissions": 0.3220670199679016,
+        "reliability": 0.3748456883935273,
+        "social": 0.13454696745696085
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_I2PLS_i2pls_4_i2pls_4.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_I2PLS_i2pls_5_i2pls_5": {
+      "weights": {
+        "cost": 0.16855565977171966,
+        "emissions": 0.24178163794289415,
+        "reliability": 0.3644149948517161,
+        "social": 0.22524770743367
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_I2PLS_i2pls_5_i2pls_5.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_I2PLS_i2pls_6_i2pls_6": {
+      "weights": {
+        "cost": 0.1686225655372211,
+        "emissions": 0.5357138923735971,
+        "reliability": 0.17051588738083837,
+        "social": 0.12514765470834324
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_I2PLS_i2pls_6_i2pls_6.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_I2PLS_i2pls_7_i2pls_7": {
+      "weights": {
+        "cost": 0.16853445569174985,
+        "emissions": 0.3163797514808197,
+        "reliability": 0.2170041805978554,
+        "social": 0.29808161222957497
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_I2PLS_i2pls_7_i2pls_7.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_I2PLS_i2pls_8_i2pls_8": {
+      "weights": {
+        "cost": 0.16856699926610536,
+        "emissions": 0.3136123291159672,
+        "reliability": 0.12131448270712504,
+        "social": 0.39650618891080236
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_I2PLS_i2pls_8_i2pls_8.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_ILS_ils_1_ils_1": {
+      "weights": {
+        "cost": 0.16867223758705585,
+        "emissions": 0.32740168372945244,
+        "reliability": 0.3640365386903625,
+        "social": 0.1398895399931292
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_ILS_ils_1_ils_1.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_ILS_ils_2_ils_2": {
+      "weights": {
+        "cost": 0.16855579973882462,
+        "emissions": 0.401988933553257,
+        "reliability": 0.18208172477499202,
+        "social": 0.24737354193292635
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_ILS_ils_2_ils_2.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_ILS_ils_3_ils_3": {
+      "weights": {
+        "cost": 0.1686163840965583,
+        "emissions": 0.20677489398342755,
+        "reliability": 0.3882287172721511,
+        "social": 0.23638000464786296
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_ILS_ils_3_ils_3.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_ILS_ils_4_ils_4": {
+      "weights": {
+        "cost": 0.16854277903603684,
+        "emissions": 0.22316893696602225,
+        "reliability": 0.3854841668650453,
+        "social": 0.2228041171328955
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_ILS_ils_4_ils_4.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_ILS_ils_5_ils_5": {
+      "weights": {
+        "cost": 0.16866902130007516,
+        "emissions": 0.44001761852993315,
+        "reliability": 0.2582314391695313,
+        "social": 0.13308192100046023
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_ILS_ils_5_ils_5.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_ILS_ils_6_ils_6": {
+      "weights": {
+        "cost": 0.16870799262984812,
+        "emissions": 0.2554093739933004,
+        "reliability": 0.4306938015347379,
+        "social": 0.14518883184211348
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_ILS_ils_6_ils_6.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_ILS_ils_7_ils_7": {
+      "weights": {
+        "cost": 0.168555959585,
+        "emissions": 0.3912017430453036,
+        "reliability": 0.30892077322007616,
+        "social": 0.1313215241496202
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_ILS_ils_7_ils_7.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_ILS_ils_8_ils_8": {
+      "weights": {
+        "cost": 0.16862068289628565,
+        "emissions": 0.28132571033800496,
+        "reliability": 0.1390347238313999,
+        "social": 0.4110188829343093
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_ILS_ils_8_ils_8.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_LBH_lbh_1_lbh_1": {
+      "weights": {
+        "cost": 0.16854561011109234,
+        "emissions": 0.28441544681826125,
+        "reliability": 0.18350262562167055,
+        "social": 0.36353631744897574
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_LBH_lbh_1_lbh_1.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_LBH_lbh_2_lbh_2": {
+      "weights": {
+        "cost": 0.1722957160616037,
+        "emissions": 0.2068777802553467,
+        "reliability": 0.328776612293257,
+        "social": 0.2920498913897926
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_LBH_lbh_2_lbh_2.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_LBH_lbh_3_lbh_3": {
+      "weights": {
+        "cost": 0.17090854595810248,
+        "emissions": 0.21131760368904226,
+        "reliability": 0.4598455869759779,
+        "social": 0.15792826337687726
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_LBH_lbh_3_lbh_3.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_LBH_lbh_4_lbh_4": {
+      "weights": {
+        "cost": 0.1742892169217046,
+        "emissions": 0.3455286829819509,
+        "reliability": 0.19575531001440558,
+        "social": 0.28442679008193883
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_LBH_lbh_4_lbh_4.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_LBH_lbh_5_lbh_5": {
+      "weights": {
+        "cost": 0.1686493861178407,
+        "emissions": 0.46355173791984816,
+        "reliability": 0.23485191487979043,
+        "social": 0.13294696108252063
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_LBH_lbh_5_lbh_5.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_LBH_lbh_6_lbh_6": {
+      "weights": {
+        "cost": 0.17725196381924285,
+        "emissions": 0.49565662854330195,
+        "reliability": 0.18399260157716285,
+        "social": 0.1430988060602923
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_LBH_lbh_6_lbh_6.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_LBH_lbh_7_lbh_7": {
+      "weights": {
+        "cost": 0.16832451742674578,
+        "emissions": 0.27868447981080124,
+        "reliability": 0.2607998118876273,
+        "social": 0.29219119087482576
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_LBH_lbh_7_lbh_7.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_LBH_lbh_8_lbh_8": {
+      "weights": {
+        "cost": 0.16988594541116894,
+        "emissions": 0.23598062924531174,
+        "reliability": 0.34372369099472866,
+        "social": 0.2504097343487906
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_LBH_lbh_8_lbh_8.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_MTS_mts_1_mts_1": {
+      "weights": {
+        "cost": 0.16853233047680624,
+        "emissions": 0.2784470391071186,
+        "reliability": 0.24778701193359798,
+        "social": 0.30523361848247715
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_MTS_mts_1_mts_1.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_MTS_mts_2_mts_2": {
+      "weights": {
+        "cost": 0.16854975543394993,
+        "emissions": 0.2146457242694944,
+        "reliability": 0.21815275909624032,
+        "social": 0.3986517612003152
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_MTS_mts_2_mts_2.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_MTS_mts_3_mts_3": {
+      "weights": {
+        "cost": 0.16859198348611923,
+        "emissions": 0.3213520285698043,
+        "reliability": 0.37326666340367615,
+        "social": 0.13678932454040021
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_MTS_mts_3_mts_3.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_MTS_mts_4_mts_4": {
+      "weights": {
+        "cost": 0.1685925606507907,
+        "emissions": 0.46970352637069973,
+        "reliability": 0.14014476042416413,
+        "social": 0.22155915255434536
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_MTS_mts_4_mts_4.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_MTS_mts_5_mts_5": {
+      "weights": {
+        "cost": 0.1688251835608772,
+        "emissions": 0.23040262941768852,
+        "reliability": 0.19478532892204914,
+        "social": 0.40598685809938506
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_MTS_mts_5_mts_5.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_MTS_mts_6_mts_6": {
+      "weights": {
+        "cost": 0.16856727508703742,
+        "emissions": 0.3461782472571204,
+        "reliability": 0.15350507852376938,
+        "social": 0.33174939913207274
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_MTS_mts_6_mts_6.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_MTS_mts_7_mts_7": {
+      "weights": {
+        "cost": 0.16853835680510892,
+        "emissions": 0.21985546048711263,
+        "reliability": 0.3090918240829147,
+        "social": 0.30251435862486376
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_MTS_mts_7_mts_7.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_MTS_mts_8_mts_8": {
+      "weights": {
+        "cost": 0.1685523377891601,
+        "emissions": 0.3517673146777283,
+        "reliability": 0.25455580209430784,
+        "social": 0.22512454543880359
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_MTS_mts_8_mts_8.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_WILB_wilb_1_wilb_1": {
+      "weights": {
+        "cost": 0.16900168801316817,
+        "emissions": 0.2129843000843958,
+        "reliability": 0.22571140069849965,
+        "social": 0.3923026112039363
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_WILB_wilb_1_wilb_1.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_WILB_wilb_2_wilb_2": {
+      "weights": {
+        "cost": 0.16950628885936123,
+        "emissions": 0.342763752930139,
+        "reliability": 0.3451435803019994,
+        "social": 0.14258637790850026
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_WILB_wilb_2_wilb_2.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_WILB_wilb_3_wilb_3": {
+      "weights": {
+        "cost": 0.16995890373420464,
+        "emissions": 0.2567791570209572,
+        "reliability": 0.3950922463019523,
+        "social": 0.17816969294288573
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_WILB_wilb_3_wilb_3.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_WILB_wilb_4_wilb_4": {
+      "weights": {
+        "cost": 0.16916361358028223,
+        "emissions": 0.44494589289704795,
+        "reliability": 0.24213225841495253,
+        "social": 0.1437582351077172
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_WILB_wilb_4_wilb_4.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_WILB_wilb_5_wilb_5": {
+      "weights": {
+        "cost": 0.16926395461234955,
+        "emissions": 0.4384646727671019,
+        "reliability": 0.1396385773730838,
+        "social": 0.2526327952474647
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_WILB_wilb_5_wilb_5.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_WILB_wilb_6_wilb_6": {
+      "weights": {
+        "cost": 0.1685541095454801,
+        "emissions": 0.4477066172023086,
+        "reliability": 0.12793029421067373,
+        "social": 0.2558089790415375
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_WILB_wilb_6_wilb_6.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_WILB_wilb_7_wilb_7": {
+      "weights": {
+        "cost": 0.16918651491454412,
+        "emissions": 0.40602402154825745,
+        "reliability": 0.24004145096234314,
+        "social": 0.18474801257485526
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_WILB_wilb_7_wilb_7.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "critic_WILB_wilb_8_wilb_8": {
+      "weights": {
+        "cost": 0.1702108214617807,
+        "emissions": 0.1910940210949401,
+        "reliability": 0.2931547019946173,
+        "social": 0.34554045544866174
+      },
+      "csv": "optimized_mcdm_results\\mcdm_critic_WILB_wilb_8_wilb_8.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_I2PLS_i2pls_1_i2pls_1": {
+      "weights": {
+        "cost": 0.18270456426135023,
+        "emissions": 0.19792437820213382,
+        "reliability": 0.2588450139750169,
+        "social": 0.3605260435614989
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_I2PLS_i2pls_1_i2pls_1.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_I2PLS_i2pls_2_i2pls_2": {
+      "weights": {
+        "cost": 0.18258468132520747,
+        "emissions": 0.20950998422888242,
+        "reliability": 0.4278656596762272,
+        "social": 0.1800396747696828
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_I2PLS_i2pls_2_i2pls_2.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_I2PLS_i2pls_3_i2pls_3": {
+      "weights": {
+        "cost": 0.18263390809180455,
+        "emissions": 0.1850158385991335,
+        "reliability": 0.38725073936219634,
+        "social": 0.24509951394686555
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_I2PLS_i2pls_3_i2pls_3.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_I2PLS_i2pls_4_i2pls_4": {
+      "weights": {
+        "cost": 0.18274135859536492,
+        "emissions": 0.4574029828796288,
+        "reliability": 0.15652134436777312,
+        "social": 0.20333431415723305
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_I2PLS_i2pls_4_i2pls_4.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_I2PLS_i2pls_5_i2pls_5": {
+      "weights": {
+        "cost": 0.18263705724439117,
+        "emissions": 0.5226628300728292,
+        "reliability": 0.14826821154382908,
+        "social": 0.14643190113895035
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_I2PLS_i2pls_5_i2pls_5.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_I2PLS_i2pls_6_i2pls_6": {
+      "weights": {
+        "cost": 0.1825868710448943,
+        "emissions": 0.2289326345486333,
+        "reliability": 0.30744944935322466,
+        "social": 0.28103104505324766
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_I2PLS_i2pls_6_i2pls_6.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_I2PLS_i2pls_7_i2pls_7": {
+      "weights": {
+        "cost": 0.18258986870663133,
+        "emissions": 0.22289831487828077,
+        "reliability": 0.3905550584798527,
+        "social": 0.20395675793523513
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_I2PLS_i2pls_7_i2pls_7.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_I2PLS_i2pls_8_i2pls_8": {
+      "weights": {
+        "cost": 0.18261473263004666,
+        "emissions": 0.27464179845511544,
+        "reliability": 0.19331036553897074,
+        "social": 0.34943310337586697
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_I2PLS_i2pls_8_i2pls_8.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_ILS_ils_1_ils_1": {
+      "weights": {
+        "cost": 0.18259400211214813,
+        "emissions": 0.2521686254075441,
+        "reliability": 0.4317975476058069,
+        "social": 0.1334398248745008
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_ILS_ils_1_ils_1.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_ILS_ils_2_ils_2": {
+      "weights": {
+        "cost": 0.18259900015068362,
+        "emissions": 0.3432584059138202,
+        "reliability": 0.1377076191048229,
+        "social": 0.33643497483067325
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_ILS_ils_2_ils_2.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_ILS_ils_3_ils_3": {
+      "weights": {
+        "cost": 0.18274927616502132,
+        "emissions": 0.43888607729705487,
+        "reliability": 0.2150969561596272,
+        "social": 0.1632676903782965
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_ILS_ils_3_ils_3.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_ILS_ils_4_ils_4": {
+      "weights": {
+        "cost": 0.1826577781168809,
+        "emissions": 0.46575897990682935,
+        "reliability": 0.19148531035470248,
+        "social": 0.16009793162158717
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_ILS_ils_4_ils_4.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_ILS_ils_5_ils_5": {
+      "weights": {
+        "cost": 0.18269366015571586,
+        "emissions": 0.2609910376678534,
+        "reliability": 0.3464636242477901,
+        "social": 0.2098516779286405
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_ILS_ils_5_ils_5.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_ILS_ils_6_ils_6": {
+      "weights": {
+        "cost": 0.18264059367433777,
+        "emissions": 0.3446008087996419,
+        "reliability": 0.2241365432284463,
+        "social": 0.24862205429757395
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_ILS_ils_6_ils_6.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_ILS_ils_7_ils_7": {
+      "weights": {
+        "cost": 0.182588748283343,
+        "emissions": 0.22695958431861654,
+        "reliability": 0.2691320593994812,
+        "social": 0.32131960799855913
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_ILS_ils_7_ils_7.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_ILS_ils_8_ils_8": {
+      "weights": {
+        "cost": 0.18266444531192053,
+        "emissions": 0.25253980422521377,
+        "reliability": 0.20628396652335476,
+        "social": 0.35851178393951083
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_ILS_ils_8_ils_8.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_LBH_lbh_1_lbh_1": {
+      "weights": {
+        "cost": 0.18264252572921844,
+        "emissions": 0.34346986497432463,
+        "reliability": 0.21241671320152528,
+        "social": 0.26147089609493157
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_LBH_lbh_1_lbh_1.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_LBH_lbh_2_lbh_2": {
+      "weights": {
+        "cost": 0.1835082351664853,
+        "emissions": 0.22866568968455286,
+        "reliability": 0.3905301558811695,
+        "social": 0.19729591926779216
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_LBH_lbh_2_lbh_2.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_LBH_lbh_3_lbh_3": {
+      "weights": {
+        "cost": 0.18846133623913702,
+        "emissions": 0.3831150022258006,
+        "reliability": 0.2954865856960504,
+        "social": 0.1329370758390119
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_LBH_lbh_3_lbh_3.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_LBH_lbh_4_lbh_4": {
+      "weights": {
+        "cost": 0.19082908276036295,
+        "emissions": 0.2548675675517667,
+        "reliability": 0.26818316963257527,
+        "social": 0.286120180055295
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_LBH_lbh_4_lbh_4.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_LBH_lbh_5_lbh_5": {
+      "weights": {
+        "cost": 0.19071585651778558,
+        "emissions": 0.18704725141227319,
+        "reliability": 0.33715803444933024,
+        "social": 0.28507885762061086
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_LBH_lbh_5_lbh_5.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_LBH_lbh_6_lbh_6": {
+      "weights": {
+        "cost": 0.1846123020191597,
+        "emissions": 0.24606781361611801,
+        "reliability": 0.24042312872427113,
+        "social": 0.3288967556404512
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_LBH_lbh_6_lbh_6.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_LBH_lbh_7_lbh_7": {
+      "weights": {
+        "cost": 0.18378774654885785,
+        "emissions": 0.41064291171615735,
+        "reliability": 0.18970220924874986,
+        "social": 0.21586713248623493
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_LBH_lbh_7_lbh_7.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_LBH_lbh_8_lbh_8": {
+      "weights": {
+        "cost": 0.18517518328429666,
+        "emissions": 0.22093484767309302,
+        "reliability": 0.2752641283127735,
+        "social": 0.3186258407298368
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_LBH_lbh_8_lbh_8.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_MTS_mts_1_mts_1": {
+      "weights": {
+        "cost": 0.18263246652030127,
+        "emissions": 0.2858768536046697,
+        "reliability": 0.2912465604758071,
+        "social": 0.24024411939922194
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_MTS_mts_1_mts_1.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_MTS_mts_2_mts_2": {
+      "weights": {
+        "cost": 0.18264730953017783,
+        "emissions": 0.4317681105875657,
+        "reliability": 0.18877359747723335,
+        "social": 0.19681098240502315
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_MTS_mts_2_mts_2.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_MTS_mts_3_mts_3": {
+      "weights": {
+        "cost": 0.18262262677908211,
+        "emissions": 0.25283579031316644,
+        "reliability": 0.14368923157708374,
+        "social": 0.4208523513306676
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_MTS_mts_3_mts_3.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_MTS_mts_4_mts_4": {
+      "weights": {
+        "cost": 0.18263501743878546,
+        "emissions": 0.26132088100523393,
+        "reliability": 0.23039423656932986,
+        "social": 0.32564986498665066
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_MTS_mts_4_mts_4.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_MTS_mts_5_mts_5": {
+      "weights": {
+        "cost": 0.18261834584221512,
+        "emissions": 0.3672370577652173,
+        "reliability": 0.15972035471044385,
+        "social": 0.2904242416821236
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_MTS_mts_5_mts_5.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_MTS_mts_6_mts_6": {
+      "weights": {
+        "cost": 0.1826011684708007,
+        "emissions": 0.4356269954276632,
+        "reliability": 0.1567467313883828,
+        "social": 0.22502510471315335
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_MTS_mts_6_mts_6.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_MTS_mts_7_mts_7": {
+      "weights": {
+        "cost": 0.1826495185694844,
+        "emissions": 0.38785910048890426,
+        "reliability": 0.23008043126352226,
+        "social": 0.19941094967808906
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_MTS_mts_7_mts_7.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_MTS_mts_8_mts_8": {
+      "weights": {
+        "cost": 0.18260269821795533,
+        "emissions": 0.18916595824058147,
+        "reliability": 0.22578378957312167,
+        "social": 0.4024475539683415
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_MTS_mts_8_mts_8.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_WILB_wilb_1_wilb_1": {
+      "weights": {
+        "cost": 0.18643267272538405,
+        "emissions": 0.1973387873559671,
+        "reliability": 0.312126658994108,
+        "social": 0.3041018809245408
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_WILB_wilb_1_wilb_1.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_WILB_wilb_2_wilb_2": {
+      "weights": {
+        "cost": 0.18343875888272643,
+        "emissions": 0.36294028470068934,
+        "reliability": 0.2662611359026791,
+        "social": 0.18735982051390504
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_WILB_wilb_2_wilb_2.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_WILB_wilb_3_wilb_3": {
+      "weights": {
+        "cost": 0.18279807898268025,
+        "emissions": 0.26973998034121266,
+        "reliability": 0.14281202662992656,
+        "social": 0.40464991404618045
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_WILB_wilb_3_wilb_3.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_WILB_wilb_4_wilb_4": {
+      "weights": {
+        "cost": 0.18293410543292374,
+        "emissions": 0.2087648383661132,
+        "reliability": 0.34324159737044246,
+        "social": 0.2650594588305205
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_WILB_wilb_4_wilb_4.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_WILB_wilb_5_wilb_5": {
+      "weights": {
+        "cost": 0.184667805589222,
+        "emissions": 0.4472742983460316,
+        "reliability": 0.19210977123041803,
+        "social": 0.1759481248343283
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_WILB_wilb_5_wilb_5.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_WILB_wilb_6_wilb_6": {
+      "weights": {
+        "cost": 0.18291757242912327,
+        "emissions": 0.22799138987125817,
+        "reliability": 0.2829289691474079,
+        "social": 0.3061620685522107
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_WILB_wilb_6_wilb_6.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_WILB_wilb_7_wilb_7": {
+      "weights": {
+        "cost": 0.18265527008509594,
+        "emissions": 0.3488387366902186,
+        "reliability": 0.27234686477074366,
+        "social": 0.1961591284539417
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_WILB_wilb_7_wilb_7.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "entropy_WILB_wilb_8_wilb_8": {
+      "weights": {
+        "cost": 0.18263273015494566,
+        "emissions": 0.3482893421679463,
+        "reliability": 0.23926225031311865,
+        "social": 0.2298156773639892
+      },
+      "csv": "optimized_mcdm_results\\mcdm_entropy_WILB_wilb_8_wilb_8.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "selected_weights_top_0": {
+      "weights": {
+        "cost": 0.462789603,
+        "emissions": 0.099274098,
+        "reliability": 0.186858653,
+        "social": 0.251077646
+      },
+      "csv": "optimized_mcdm_results\\mcdm_selected_weights_top_0.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "selected_weights_top_1": {
+      "weights": {
+        "cost": 0.4613462675,
+        "emissions": 0.424703822,
+        "reliability": 0.1139499104,
+        "social": 0.0
+      },
+      "csv": "optimized_mcdm_results\\mcdm_selected_weights_top_1.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "selected_weights_top_2": {
+      "weights": {
+        "cost": 0.4642756336,
+        "emissions": 0.0,
+        "reliability": 0.4715973429,
+        "social": 0.0641270234
+      },
+      "csv": "optimized_mcdm_results\\mcdm_selected_weights_top_2.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "selected_weights_top_3": {
+      "weights": {
+        "cost": 0.4502647834,
+        "emissions": 0.0,
+        "reliability": 0.5497352166,
+        "social": 0.0
+      },
+      "csv": "optimized_mcdm_results\\mcdm_selected_weights_top_3.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "selected_weights_top_4": {
+      "weights": {
+        "cost": 0.4628135183,
+        "emissions": 0.1781026525,
+        "reliability": 0.2711081631,
+        "social": 0.0879756662
+      },
+      "csv": "optimized_mcdm_results\\mcdm_selected_weights_top_4.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "selected_weights_top_5": {
+      "weights": {
+        "cost": 0.1685023831,
+        "emissions": 0.0663320659,
+        "reliability": 0.3005498079,
+        "social": 0.4646157431
+      },
+      "csv": "optimized_mcdm_results\\mcdm_selected_weights_top_5.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "selected_weights_top_6": {
+      "weights": {
+        "cost": 0.167920102,
+        "emissions": 0.0114341248,
+        "reliability": 0.8206457732,
+        "social": 0.0
+      },
+      "csv": "optimized_mcdm_results\\mcdm_selected_weights_top_6.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "selected_weights_top_7": {
+      "weights": {
+        "cost": 0.1655399985,
+        "emissions": 0.1774803411,
+        "reliability": 0.0,
+        "social": 0.6569796604
+      },
+      "csv": "optimized_mcdm_results\\mcdm_selected_weights_top_7.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "selected_weights_top_8": {
+      "weights": {
+        "cost": 0.166977869,
+        "emissions": 0.0,
+        "reliability": 0.0,
+        "social": 0.833022131
+      },
+      "csv": "optimized_mcdm_results\\mcdm_selected_weights_top_8.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "selected_weights_top_9": {
+      "weights": {
+        "cost": 0.1683493442,
+        "emissions": 0.2281242932,
+        "reliability": 0.1463240869,
+        "social": 0.4572022757
+      },
+      "csv": "optimized_mcdm_results\\mcdm_selected_weights_top_9.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "selected_weights_top_10": {
+      "weights": {
+        "cost": 0.1825543286,
+        "emissions": 0.0090404062,
+        "reliability": 0.3127775315,
+        "social": 0.4956277337
+      },
+      "csv": "optimized_mcdm_results\\mcdm_selected_weights_top_10.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "selected_weights_top_11": {
+      "weights": {
+        "cost": 0.1858442975,
+        "emissions": 0.3165738624,
+        "reliability": 0.1714553699,
+        "social": 0.3261264701
+      },
+      "csv": "optimized_mcdm_results\\mcdm_selected_weights_top_11.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "selected_weights_top_12": {
+      "weights": {
+        "cost": 0.1811148849,
+        "emissions": 0.0086276541,
+        "reliability": 0.333973472,
+        "social": 0.476283989
+      },
+      "csv": "optimized_mcdm_results\\mcdm_selected_weights_top_12.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "selected_weights_top_13": {
+      "weights": {
+        "cost": 0.1908175459,
+        "emissions": 0.0155379268,
+        "reliability": 0.7936445273,
+        "social": 0.0
+      },
+      "csv": "optimized_mcdm_results\\mcdm_selected_weights_top_13.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    },
+    "selected_weights_top_14": {
+      "weights": {
+        "cost": 0.1825332168,
+        "emissions": 0.0100254429,
+        "reliability": 0.4416804162,
+        "social": 0.3657609242
+      },
+      "csv": "optimized_mcdm_results\\mcdm_selected_weights_top_14.csv",
+      "winner_fuzzy_topsis": [
+        "C2"
+      ]
+    }
+  }
+}

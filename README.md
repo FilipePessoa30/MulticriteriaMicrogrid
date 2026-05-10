@@ -274,3 +274,25 @@ MIT License - See LICENSE file for details.
 
 - GitHub: [@FilipePessoa30](https://github.com/FilipePessoa30)
 - Repository: [MulticriteriaMicrogrid](https://github.com/FilipePessoa30/MulticriteriaMicrogrid)
+
+- ## Published Paper
+
+This repository is associated with the following published conference paper:
+
+- **Title:** *A Multi-Criteria Decision Model for Renewable Microgrid Operation Using AHP and Metaheuristic Weight Optmization*
+- **Conference:** 20th Annual IEEE International Systems Conference (SYSCON 2026)
+- **Year:** 2026
+- **Location:** Halifax, Canada
+- **IEEE Xplore:** https://ieeexplore.ieee.org/document/11503546
+- **DOI:** pending verification
+
+### How to Cite
+
+```bibtex
+@inproceedings{microgrid2026syscon,
+  title     = {A Multi-Criteria Decision Model for Renewable Microgrid Operation Using AHP and Metaheuristic Weight Optmization},
+  booktitle = {Proceedings of the 20th Annual IEEE International Systems Conference (SYSCON 2026)},
+  year      = {2026},
+  address   = {Halifax, Canada},
+  doi       = {TBD}
+}

@@ -284,7 +284,6 @@ This repository is associated with the following published conference paper:
 - **Year:** 2026
 - **Location:** Halifax, Canada
 - **IEEE Xplore:** https://ieeexplore.ieee.org/document/11503546
-- **DOI:** pending verification
 
 ### How to Cite
 
